@@ -1,0 +1,111 @@
+import { useEffect, useState } from "react";
+import Socials from "./Socials";
+import { KeyboardArrowUp } from "@mui/icons-material";
+import Accordion, { AccordionProps } from "./Accordion";
+import logo from "../../assets/Logo.svg";
+import { Link } from "react-router-dom";
+
+const Footer = () => {
+  const [accordionData, setAccordionData] = useState([
+    {
+      summary: "Home",
+      links: [
+        { link: "Support Center", to: "support" },
+        { link: "Customer Support", to: "support" },
+        { link: "Copyright", to: "#" },
+        { link: "Popular Campaign", to: "campaign" },
+      ],
+      isActive: false,
+    },
+    {
+      summary: "Our Information",
+      links: [
+        { link: "Return Policy", to: "returnPolicy" },
+        { link: "Privacy Policy", to: "privacyPolicy" },
+        { link: "Terms and Conditions", to: "termsAndConditions" },
+        { link: "Site Map", to: "siteMap" },
+        { link: "Store Hours", to: "storeHours" },
+      ],
+      isActive: false,
+    },
+    {
+      summary: "My Account",
+      links: [
+        { link: "Press Inquiries", to: "presInquiries" },
+        { link: "Social Media Directories", to: "socialMediaDir" },
+        { link: "Permission", to: "permission" },
+        { link: "Requests", to: "requests" },
+      ],
+      isActive: false,
+    },
+  ]);
+
+  const [mobile, setMobile] = useState(window.innerWidth < 768 ? true : false);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setMobile(window.innerWidth < 768 ? true : false);
+    });
+  }, [mobile]);
+
+  const handleAccordionMoves = (summary: string) => {
+    setAccordionData((prevData) => {
+      return prevData.map((data) => {
+        if (data.isActive) data.isActive = false;
+        return data.summary == summary
+          ? data.isActive
+            ? { ...data, isActive: false }
+            : { ...data, isActive: true }
+          : data;
+      });
+    });
+  };
+
+  const accordions = accordionData.map((data) => {
+    const { summary, links, isActive } = data;
+    return (
+      <Accordion
+        summary={summary}
+        links={links}
+        key={summary}
+        isActive={isActive}
+        handleChange={handleAccordionMoves}
+      />
+    );
+  });
+
+  return (
+    <footer className="w-full h-[100vh] bg-white flex flex-col md:grid md:grid-cols-footer md:grid-rows-footer md:place-content-center md:place-items-center md:h-[60vh] md:self-center">
+      <div className="w-full h-[20%] flex items-end justify-center pb-6 border md:border-none md:w-fit md:h-[80%] md:flex md:flex-col md:items-start md:gap-4 md:p-0 ">
+        {!mobile && (
+          <img
+            src={logo}
+            alt="logo"
+            className="w-[2rem] lg:w-[3rem] transition-all cursor-pointer xs:w-[1.5rem]"
+          />
+        )}
+        <span className="text-lg text-gray-800 text-center px-14 md:px-0 md:text-start">
+          Our shop is the best choice for buying footwear.
+        </span>
+        {!mobile && <Socials section="footer" />}
+      </div>
+      <div className="h-fit w-full border md:border-none flex flex-col items-center justify-center py-8 gap-8 md:w-[90%] md:h-[80%] md:flex-row md:gap-0 ">
+        {accordions}
+      </div>
+      <div className="w-full h-[30%] flex flex-col items-center justify-center gap-6 md:h-full md:col-span-2 md:border-t-2 md:flex-row md:items-center md:justify-between ">
+        {mobile && <Socials section="footer" />}
+        <p className="text-center text-md text-gray-700 px-4 md:p-0 md:text-base">
+          © 2021 Shop. Made with love for Brightscout{" "}
+        </p>
+        <a href="#top">
+          <KeyboardArrowUp
+            fontSize="large"
+            className="text-white rounded-full p-1 bg-[#A4A4A3] cursor-pointer animate-bounce "
+          />
+        </a>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

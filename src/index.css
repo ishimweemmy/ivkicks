@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Work Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .decoration {
+    background: linear-gradient(97.49deg, #8aa8f8 -0.43%, #315bff 144.53%);
+  }
+}
+
+::selection {
+  background-color: #ff3c76d9;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
