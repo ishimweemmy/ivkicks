@@ -18,7 +18,7 @@ const QualityCard: FC<QualityCProps> = (props) => {
     <div className="w-full h-fit py-[.5rem] flex flex-col items-center justify-center gap-[3rem]">
       <div className="w-full h-[50%] relative grid place-items-center">
         <div
-          className="h-[12rem] w-[85%] bg-cover rounded-md z-10"
+          className="h-[12rem] w-[85%] minSm:h-[15rem] bg-cover rounded-md z-10 bg-no-repeat"
           style={{
             backgroundImage: `url(${imgSrc})`,
             backgroundPosition: "center",
