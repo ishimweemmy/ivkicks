@@ -43,7 +43,7 @@ const Home = () => {
               className="w-4 h-4 cursor-pointer xl:w-6 xl:h-6"
             />
           </div>
-          <div className="flex flex-col items-start justify-center gap-[1rem] pl-24 mt-[1rem] md:justify-start md:pl-0 md:flex-row md:gap-[4rem] xMiniTablet:items-center xMiniTablet:mr-[25%] lsm:ml-[0%] md:pt-4 lssm:items-center lssm:mr-[50%]">
+          <div className="flex flex-col items-start justify-center gap-[1rem] pl-24 mt-[1rem] md:justify-start md:p-0 md:flex-row md:gap-[4rem] xMiniTablet:items-center xMiniTablet:mr-[25%] lsm:ml-[0%] md:pt-4 lssm:items-center lssm:mr-[50%]">
             <div className="flex items-center justify-center gap-4">
               <img src={checkIcon} alt="" className="w-[1.3rem]" />
               <span className="text-xs text-gray-800 whitespace-pre xl:text-base xl:font-medium xMiniTablet:text-base lsm:text-sm">
