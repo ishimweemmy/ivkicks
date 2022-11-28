@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import Description from "../components/About/Description";
 import { descriptionsData } from "../data/descriptionsData";
 import mcQueenWear from "../assets/mcQueenWear.jpeg";

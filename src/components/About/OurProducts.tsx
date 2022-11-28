@@ -1,4 +1,3 @@
-import React from "react";
 import OurProduct, { OurProductProps } from "./OurProduct";
 
 const OurProducts = () => {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ButtonGroup } from '@material-ui/core';
 
 const Switch = () => {

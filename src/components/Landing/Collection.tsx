@@ -1,4 +1,3 @@
-import React from "react";
 import { SwiperSlide } from "swiper/react";
 import collectionSneaker from "/server-assets/arrival3.png";
 import type { FC } from "react";

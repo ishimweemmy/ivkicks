@@ -1,4 +1,3 @@
-import React from "react";
 import type { FC } from "react";
 import arrivalShoe from '../../assets/image 7.png';
 import { color, FeaturedProInterface } from "./FeaturedPro";

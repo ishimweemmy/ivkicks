@@ -1,4 +1,3 @@
-import React from "react";
 import shoe1 from "../../assets/image 1.png";
 import addToCartIcon from "../../assets/Group.svg";
 import filledStar from "../../assets/Star 4.svg";
