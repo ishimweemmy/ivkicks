@@ -1,4 +1,3 @@
-import React from "react";
 import Triangle, { TriangleProps } from "./Triangle";
 
 const FounderMessage = () => {

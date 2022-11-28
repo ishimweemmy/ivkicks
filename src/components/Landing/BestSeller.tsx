@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import Switch from "./Switch";
 import bestSellerPic from "../../assets/image6.png";
 import filledStar from "../../assets/Star 4.svg";

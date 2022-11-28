@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import backDecor from "../../assets/backDecor.svg";
 import alexanderMcQueen from "../../assets/videoBg.png";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";

@@ -1,4 +1,3 @@
-import React from "react";
 import QualityCard, { QualityCProps } from "./QualityCard";
 import { TriangleProps } from "./Triangle";
 

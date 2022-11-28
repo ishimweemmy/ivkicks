@@ -1,4 +1,3 @@
-import React from "react";
 import type { FC } from "react";
 import football from "../../assets/football 1.png";
 import fback from "../../assets/fback.png";

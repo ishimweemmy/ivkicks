@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FeaturedProInterface } from "./FeaturedPro";
 import FeaturedPro from "./FeaturedPro";
 import chevronLeft from "../../assets/chevron-right.png";

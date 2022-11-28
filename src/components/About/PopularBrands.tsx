@@ -1,4 +1,3 @@
-import React from "react";
 import Brand, { BrandProps } from "../Landing/Brand";
 
 const PopularBrands = () => {
