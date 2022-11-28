@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Description from "../components/About/Description";
 import { descriptionsData } from "../data/descriptionsData";
 import mcQueenWear from "../assets/mcQueenWear.jpeg";
@@ -16,18 +15,16 @@ import OurProducts from "../components/About/OurProducts";
 import PopularBrands from "../components/About/PopularBrands";
 
 const About = () => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <div className="w-screen h-fit flex flex-wrap">
-      <div className="h-fit w-full grid grid-cols-1 grid-rows-aboutTop place-items-center gap-5 mb-[2rem]">
-        <div className="w-full h-full flex flex-col items-center justify-center">
+      <div className="h-fit w-full grid grid-cols-1 grid-rows-aboutTop lssm:grid-rows-aboutTopResponsive place-items-center gap-5 mb-[2rem] md:grid-cols-3 md:">
+        <div className="w-full h-full flex flex-col items-center justify-center md:col-span-2">
           <span className="text-white text-3xl text-center font-bold px-[rem]">
             Best Sneakers delivered to you.
           </span>
         </div>
         <div
-          className="w-[90%] h-full flex flex-col items-center justify-center rounded-md bg-no-repeat bg-cover "
+          className="w-[90%] h-full flex flex-col items-center justify-center rounded-md bg-no-repeat bg-cover md:row-span-2 md:w-full "
           style={{
             backgroundImage: `url(${mcQueenWear})`,
             backgroundPosition: "center",
@@ -55,7 +52,7 @@ const About = () => {
           </div>
         </div>
         <div
-          className="w-[90%] h-full flex flex-col items-center justify-end rounded-md bg-no-repeat bg-cover gap-4 overflow-hidden"
+          className="w-[90%] h-full flex flex-col items-center justify-end rounded-md bg-no-repeat bg-cover gap-4 overflow-hidden md:w-full"
           style={{
             backgroundImage: `url(${nikeShoesWear})`,
             backgroundPosition: "center",
@@ -70,16 +67,16 @@ const About = () => {
           >
             <div className="w-2 h-2 rounded-full bg-white"></div>
           </div>
-            <Trending
-              imgSrc={nikeShoesWear}
-              name="Nike Air 780c"
-              price={890}
-              size={8}
-              category="male"
-            />
+          <Trending
+            imgSrc={nikeShoesWear}
+            name="Nike Air 780c"
+            price={890}
+            size={8}
+            category="male"
+          />
         </div>
         <div
-          className="w-[90%] h-full flex flex-col items-center justify-end bg-[white] rounded-md bg-no-repeat bg-contain gap-2"
+          className="w-[90%] h-full flex flex-col items-center justify-end bg-[white] rounded-md bg-no-repeat bg-contain gap-2 md:w-full"
           style={{
             backgroundImage: `url(${yeezyShoesWear})`,
             backgroundPosition: "center",

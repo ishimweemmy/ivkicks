@@ -59,7 +59,7 @@ module.exports = {
         "footer": "20% 70%" 
       },
       gridTemplateRows: {
-      "footer": "65% 30%", "aboutTop": "5rem 10rem 13rem 20rem"},
+      "footer": "65% 30%", "aboutTop": "5rem 10rem 13rem 20rem", "aboutTopResponsive": "5rem 13rem 18rem 20rem"},
       animation: {
         "nav-hide": "navHide .2s ease-in",
         "nav-display": "navDisplay .2s ease-in",

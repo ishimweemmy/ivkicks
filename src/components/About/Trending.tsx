@@ -14,7 +14,7 @@ const Trending: FC<TrendingProps> = (props) => {
 
   return (
     <div className="w-[90%] h-[45%] bg-white rounded-md flex p-4 mb-4 shadow-xl shadow-slate-400">
-      <img src={imgSrc} alt="" className="rounded-md h-full w-[30%]" />
+      <img src={imgSrc} alt="" className="rounded-md h-full w-[30%] md:h-[80%]" />
       <div className="w-[70%] flex flex-col items-start justify-center pl-4 ">
         <div className="flex flex-col items-start">
           <span className="text-base font-semibold text-[rgb(10,8,58)]">
