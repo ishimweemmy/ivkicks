@@ -63,7 +63,7 @@ const Dedication = () => {
   ];
 
   return (
-    <div className="w-full h-fit flex flex-col items-center justify-center relative bg-[#f5f5f5] px-[5rem] sm:px-[1rem] lg:pt-[3rem] lg:flex-row ">
+    <div className="w-full h-fit flex flex-col items-center justify-center relative bg-[#f5f5f5] px-[5rem] sm:px-[1rem] lg:pt-[3rem] lg:flex-row lg:pl-[10rem] ">
       <div
         className="w-[3.5rem] h-[7rem] rounded-l-full absolute right-0 top-0 md:rotate-[270deg] md:right-7 md:top-[-1.7rem]"
         style={{
@@ -103,7 +103,7 @@ const Dedication = () => {
         />
         <Swiper
           modules={[Pagination]}
-          slidesPerView={smallMobile ? 1 : mobile ? 2 : miniLaptop ? 3 : 4}
+          slidesPerView={smallMobile ? 1 : mobile ? 2 : 3}
           className="w-full h-[70%]"
           spaceBetween={10}
         >

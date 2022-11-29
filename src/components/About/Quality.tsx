@@ -1,10 +1,9 @@
 import QualityCard, { QualityCProps } from "./QualityCard";
-import { TriangleProps } from "./Triangle";
 
 const Quality = () => {
   const qualityCards: QualityCProps[] = [
     {
-      imgSrc: "/server-assets/women.jpeg",
+      imgSrc: "/server-assets/women.jpg",
       heading: "Our solution",
       id: 0,
       description:
@@ -83,7 +82,7 @@ const Quality = () => {
   ];
 
   return (
-    <div className="w-full h-fit flex flex-col bg-white py-[3rem]">
+    <div className="w-full h-fit flex flex-col bg-white py-[3rem] items-center">
       <div className="flex flex-wrap gap-6 px-6 md:flex-col md:items-center md:px-0 mb-8">
         <span className="text-3xl font-black pr-[2rem] md:pr-0 md:text-4xl lg:text-5xl ">
           Making high quality products
@@ -94,7 +93,7 @@ const Quality = () => {
           resistance from the atmosphere.
         </p>
       </div>
-      <div className="flex flex-col gap-[.5rem] items-center justify-center">
+      <div className="flex flex-col gap-[.5rem] items-center justify-center lg:w-[80%]">
         {qualityCards.map((qualityCard) => {
           const { imgSrc, heading, description, triangles, id } = qualityCard;
           return (

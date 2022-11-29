@@ -30,9 +30,11 @@ module.exports = {
       xlarge: "1240px",
       xl: "1280px",
 
+      miniLarge: "1227px",
+
       lXl: "1281px",
 
-      miniLarge: "1227px",
+      "mini2xl": "1300",
 
       "2xl": "1536px",
     },
