@@ -32,7 +32,7 @@ const OurProducts = () => {
       <span className="text-start font-bold text-3xl text-[#0A083A] pl-[2rem]">
         Our Products
       </span>
-      <div className="w-full flex flex-col items-center justify-center gap-[4rem]">
+      <div className="w-full flex flex-col items-center justify-center gap-[4rem] miniTablet:flex-row">
         {products.map((product) => {
           const { imgSrc, id, summary, description, productUrl } = product;
           return (

@@ -23,16 +23,17 @@ const OurProduct: FC<OurProductProps> = (props) => {
   const styles = {
     background: `linear-gradient(270deg, ${colors[id].firstColor} 0%, ${colors[id].secondColor} 100%)`,
   };
+  
   return (
     <div className="w-[85%] h-fit flex flex-col items-start justify-center gap-[1.5rem] pl-4">
-      <div className="w-[80%] h-[12rem] relative flex items-center justify-start">
+      <div className="w-[70%] h-[12rem] relative flex items-center justify-start">
         <div
-          className="w-[70%] h-[75%] rounded-full"
+          className="w-[10rem] h-[10rem] rounded-full"
           style={{ ...styles }}
         ></div>
         <img
           src={imgSrc}
-          className="w-full absolute left-[-1rem] scale-[1.3] rotate-[-30deg]"
+          className="w-full absolute left-[-1rem] scale-[1.3] rotate-[-30deg] xl:scale-[1"
           alt=""
         />
       </div>
