@@ -58,6 +58,8 @@ const Subscriptions = () => {
             name="email"
             value={email}
             className="w-full text-[#6C6B6B] text-base text-center h-1/2 bg-white  outline-none"
+            autoCorrect="true"
+            autoComplete="false"
           />
           <span className="bg-[#ff4444d0] text-white text-sm px-2 rounded-md absolute top-[-2re] left-[1rem]">
             {emailValid || email == "" ? "" : "Please input valid email"}

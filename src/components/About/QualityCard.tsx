@@ -12,9 +12,10 @@ export interface QualityCProps {
 const QualityCard: FC<QualityCProps> = (props) => {
   const { imgSrc, heading, description, triangles, id } = props;
   const textColors: string[] = ["#315BFF", "#FE7831", "#02BE83"];
+  console.log(id)
 
   return (
-    <div className={`w-full h-fit py-[.5rem] flex flex-col items-center justify-center gap-[3rem] xLgMd:w-[90%] lsm:flex-${id == 1? 'row-reverse' : 'row'} lsm:gap-0`}>
+    <div className={`w-full h-fit py-[.5rem] flex flex-col items-center justify-center gap-[3rem] xLgMd:w-[90%] ${id ==1 ?"lsm": "normal"} lsm:gap-0`}>
       <div className="w-full h-[50%] relative grid place-items-center">
         <div
           className="h-[12rem] w-[85%] minSm:h-[15rem] bg-cover rounded-md z-10 bg-no-repeat xLgMd:h-[16rem]"

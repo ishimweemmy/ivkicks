@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -24,4 +24,13 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+@media (min-width: 600px) {
+  .lsm {
+    flex-direction: row-reverse;
+  }
+  .normal {
+    flex-direction: row;
+  }
 }
