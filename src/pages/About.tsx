@@ -17,14 +17,15 @@ import PopularBrands from "../components/About/PopularBrands";
 const About = () => {
   return (
     <div className="w-screen h-fit flex flex-wrap">
-      <div className="h-fit w-full grid grid-cols-1 grid-rows-aboutTop lssm:grid-rows-aboutTopResponsive place-items-center gap-5 mb-[2rem] md:grid-cols-3 md:px-2">
-        <div className="w-full h-full flex flex-col items-center justify-center md:col-span-2">
-          <span className="text-white text-3xl text-center font-bold px-[rem]">
-            Best Sneakers delivered to you.
+      <div className="h-fit w-full grid grid-cols-1 grid-rows-aboutTop lssm:grid-rows-aboutTopResponsive place-items-center gap-5 mb-[2rem] md:grid-cols-3 md:px-2 md:grid-rows-aboutTopMd">
+        <div className="w-full h-full flex flex-col items-center justify-center md:col-span-2 md:items-start md:gap-4">
+          <span className="text-[#ff3c76d9] text-sm font-semibold pl-[2.5rem] hidden md:block  ">About Us</span>
+          <span className="text-white text-3xl text-center font-bold md:text-4xl md:text-start px-[2.5rem] ">
+            The Best Sneakers delivered to you.
           </span>
         </div>
         <div
-          className="w-[90%] h-full flex flex-col items-center justify-center rounded-md bg-no-repeat bg-cover md:row-span-2 md:w-full "
+          className="w-[90%] h-full flex flex-col items-center justify-center rounded-md bg-no-repeat bg-cover md:row-span-2 md:w-full md:h-[95%] md:self-end "
           style={{
             backgroundImage: `url(${mcQueenWear})`,
             backgroundPosition: "center",
@@ -39,7 +40,7 @@ const About = () => {
             <div className="w-2 h-2 rounded-full bg-white"></div>
           </div>
           <div
-            className="w-[15rem] h-fit px-3 py-2 flex items-center justify-center rounded-[.5rem] relative bottom-[-.5rem] bg-white gap-2 tracking-tight md:w-[] "
+            className="w-[15rem] h-fit px-3 py-2 flex items-center justify-center rounded-[.5rem] relative bottom-[-.5rem] bg-white gap-2 tracking-tight md:w-[85%] "
             style={{ boxShadow: "0px 20px 30px rgba(64, 103, 254, 0.15)" }}
           >
             <div className="w-[2rem] h-[2rem] bg-white grid place-items-center rounded-full shadow-slate-400 shadow-xl absolute right-5 top-[-1rem]">
@@ -52,7 +53,7 @@ const About = () => {
           </div>
         </div>
         <div
-          className="w-[90%] h-full flex flex-col items-center justify-end rounded-md bg-no-repeat bg-cover gap-4 overflow-hidden md:w-full md:h-[80%] md:self-end"
+          className="w-[90%] h-full flex flex-col items-center justify-end rounded-md bg-no-repeat bg-cover gap-4 overflow-hidden md:w-full md:h-[75%] md:self-end"
           style={{
             backgroundImage: `url(${nikeShoesWear})`,
             backgroundPosition: "center",
@@ -76,7 +77,7 @@ const About = () => {
           />
         </div>
         <div
-          className="w-[90%] h-full flex flex-col items-center justify-end bg-[white] rounded-md bg-no-repeat bg-contain gap-2 md:w-full md:h-[90%] md:self-start "
+          className="w-[90%] h-full flex flex-col items-center justify-end bg-[white] rounded-md bg-no-repeat bg-contain gap-2 md:w-full md:h-[85%] md:self-start "
           style={{
             backgroundImage: `url(${yeezyShoesWear})`,
             backgroundPosition: "center",
@@ -110,7 +111,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-fit flex flex-col items-center justify-center gap-[2rem] mb-10">
+      <div className="w-full h-fit flex flex-col items-center justify-center gap-[2rem] mb-10 lsm:flex-row lsm:gap-0 lg:gap-10">
         {descriptionsData.map((descriptionData) => {
           const { imgSrc, degree, description } = descriptionData;
           return (
