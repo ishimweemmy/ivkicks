@@ -34,8 +34,8 @@ const PopularBrands = () => {
           const { id, imgSrc } = brand;
 
           return (
-            <div className="w-[60%] h-[10rem] lsm:w-full xLgMd:w-[10rem] lsm:h-[8rem]" key={id}>
-              <Brand id={id} imgSrc={imgSrc} />
+            <div className="w-[60%] h-[10rem] lsm:w-full xLgMd:w-[10rem] lsm:h-[6rem]" key={id}>
+              <Brand id={id} imgSrc={imgSrc} from="pop-about" />
             </div>
           );
         })}
