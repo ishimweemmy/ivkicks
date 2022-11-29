@@ -9,7 +9,7 @@ const PopularBrands = () => {
   ];
 
   return (
-    <div className="w-full h-fit flex flex-col items-center justify-center py-[3rem] gap-[2rem] lsm:flex-row lsm:gap-[2rem] lsm:pr-[2rem] lsm:relative lg:px-[5rem] ">
+    <div className="w-full h-fit flex flex-col items-center justify-center py-[3rem] gap-[2rem] lsm:flex-row lsm:gap-[2rem] lsm:pr-[2rem] lsm:relative lg:px-[5rem] xlarge:gap-[10rem] ">
       <div className="flex flex-col items-center justify-center gap-8 lsm:items-start xLgMd:w-[30rem] xl:w-[35rem]">
         <span className="text-center text-[#02BE83] text-sm font-semibold uppercase lsm:pl-[2rem]">
           popular brands

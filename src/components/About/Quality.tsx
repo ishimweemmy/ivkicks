@@ -3,7 +3,7 @@ import QualityCard, { QualityCProps } from "./QualityCard";
 const Quality = () => {
   const qualityCards: QualityCProps[] = [
     {
-      imgSrc: "/server-assets/women.jpg",
+      imgSrc: "/server-assets/women3.jpg",
       heading: "Our solution",
       id: 0,
       description:
@@ -27,7 +27,7 @@ const Quality = () => {
       ],
     },
     {
-      imgSrc: "/server-assets/women3.jpeg",
+      imgSrc: "/server-assets/women.jpg",
       heading: "Process",
       id: 1,
       description:
@@ -56,7 +56,7 @@ const Quality = () => {
       ],
     },
     {
-      imgSrc: "/server-assets/women2.jpeg",
+      imgSrc: "/server-assets/women1.jpg",
       heading: "Results",
       id: 2,
       description:

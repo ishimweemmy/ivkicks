@@ -75,15 +75,15 @@ const Dedication = () => {
         <span className="text-3xl font-black text-[#0A083A] text-center md:text-4xl mt-[4rem] lg:mt-0 lg:text-start">
           Dedicated to our customers
         </span>
-        <p className="text-center px-2 lg:p-0 lg:text-start">
+        <p className="text-center px-2 lg:pl-[1.5rem] lg:text-start">
           So it really behaves like neither. Now we have given up. We say "it is
           like neither"
         </p>
-        <div className="w-full hidden items-start justify-start gap-4 mt-[1rem] lg:flex">
+        <div className="w-full hidden items-start justify-start gap-4 mt-[1rem] lg:flex lg:pl-[1.5rem]">
           <img
             src={leftIcon}
             alt="leftIcon"
-            className="w-8 cursor-pointer"
+            className="w-8"
             onClick={() => swipingButtonRef.current?.click()}
           />
           <img
