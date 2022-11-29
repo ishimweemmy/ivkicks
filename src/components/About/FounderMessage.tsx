@@ -25,26 +25,26 @@ const FounderMessage = () => {
   ];
 
   return (
-    <div className="w-full h-fit flex flex-col items-center justify-center gap-[2rem] bg-[#f5f5f5] py-10">
+    <div className="w-full h-fit flex flex-col items-center justify-center gap-[2rem] bg-[#f5f5f5] py-10 lsm:flex-row">
       <div className="flex flex-col items-center justify-center gap-8">
-        <span className="text-center text-[#02BE83] text-base font-semibold uppercase">
+        <span className="w-full text-center text-[#02BE83] text-base font-semibold uppercase lsm:text-start pl-[2rem]">
           Founder Message
         </span>
-        <p className="text-center text-xl font-black text-[rgb(10,8,58)]">
+        <p className="text-center text-xl font-black text-[rgb(10,8,58)] lsm:text-start pl-[2rem] ">
           I strongly believe that this Sneaker store will improve your daily
           vibes
         </p>
-        <div className="w-full flex flex-col items-start justify-center gap-6 px-[.75rem]">
-          <p className="text-sm text-[rgb(37,37,37)] text-center tracking-wider">
+        <div className="w-full flex flex-col items-start justify-center gap-6 px-[.75rem] lsm:pl-[2rem]">
+          <p className="text-sm text-[rgb(37,37,37)] text-center tracking-wider lsm:text-start">
             For atheletes, high altitude produces two contradictory effects on
             performance.
           </p>
-          <p className="text-sm text-[rgb(37,37,37)] text-center tracking-wider">
+          <p className="text-sm text-[rgb(37,37,37)] text-center tracking-wider lsm:text-start">
             For explosive events (sprints up to 400 metres, long jump, tripple
             jump) the reduction in atmospheric pressure means there is less
             resistance from the atmosphere.
           </p>
-          <p className="text-sm text-[rgb(37,37,37)] text-center tracking-wider">
+          <p className="text-sm text-[rgb(37,37,37)] text-center tracking-wider lsm:text-start">
             For parties, the sneakers are good depending on your favourite, you
             can find the on that fits you.
           </p>
