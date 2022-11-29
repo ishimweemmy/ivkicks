@@ -94,7 +94,7 @@ const Quality = () => {
           resistance from the atmosphere.
         </p>
       </div>
-      <div className="flex flex-col gap-[.5rem]">
+      <div className="flex flex-col gap-[.5rem] items-center justify-center">
         {qualityCards.map((qualityCard) => {
           const { imgSrc, heading, description, triangles, id } = qualityCard;
           return (
