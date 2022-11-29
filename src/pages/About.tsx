@@ -17,15 +17,15 @@ import PopularBrands from "../components/About/PopularBrands";
 const About = () => {
   return (
     <div className="w-screen h-fit flex flex-wrap">
-      <div className="h-fit w-full grid grid-cols-1 grid-rows-aboutTop lssm:grid-rows-aboutTopResponsive place-items-center gap-5 mb-[2rem] md:grid-cols-3 md:px-2 md:grid-rows-aboutTopMd">
-        <div className="w-full h-full flex flex-col items-center justify-center md:col-span-2 md:items-start md:gap-4">
+      <div className="h-fit w-full grid grid-cols-1 grid-rows-aboutTop lssm:grid-rows-aboutTopResponsive place-items-center gap-5 mb-[2rem] md:grid-cols-3 md:px-2 md:grid-rows-aboutTopMd xl:grid-rows-aboutTopLarge xlarge:mt-[5rem]">
+        <div className="w-full h-full flex flex-col items-center justify-center md:col-span-2 md:items-start md:gap-4 ">
           <span className="text-[#ff3c76d9] text-sm font-semibold pl-[2.5rem] hidden md:block  ">About Us</span>
-          <span className="text-white text-3xl text-center font-bold md:text-4xl md:text-start px-[2.5rem] ">
+          <span className="text-white text-3xl text-center font-bold md:text-4xl md:text-start px-[2.5rem] xlarge:text-6xl ">
             The Best Sneakers delivered to you.
           </span>
         </div>
         <div
-          className="w-[90%] h-full flex flex-col items-center justify-center rounded-md bg-no-repeat bg-cover md:row-span-2 md:w-full md:h-[95%] md:self-end "
+          className="w-[90%] h-full flex flex-col items-center justify-center rounded-md bg-no-repeat bg-cover md:row-span-2 md:w-full md:h-[95%] md:self-end  "
           style={{
             backgroundImage: `url(${mcQueenWear})`,
             backgroundPosition: "center",
@@ -53,7 +53,7 @@ const About = () => {
           </div>
         </div>
         <div
-          className="w-[90%] h-full flex flex-col items-center justify-end rounded-md bg-no-repeat bg-cover gap-4 overflow-hidden md:w-full md:h-[75%] md:self-end"
+          className="w-[90%] h-full flex flex-col items-center justify-end rounded-md bg-no-repeat bg-cover gap-4 overflow-hidden md:w-full md:h-[75%] md:self-end xl:flex-col-reverse"
           style={{
             backgroundImage: `url(${nikeShoesWear})`,
             backgroundPosition: "center",
@@ -77,13 +77,13 @@ const About = () => {
           />
         </div>
         <div
-          className="w-[90%] h-full flex flex-col items-center justify-end bg-[white] rounded-md bg-no-repeat bg-contain gap-2 md:w-full md:h-[85%] md:self-start "
+          className="w-[90%] h-full flex flex-col items-center justify-end bg-[white] rounded-md bg-no-repeat bg-contain gap-2 md:w-full md:h-[85%] md:self-start xl:justify-start xl:pt-[2rem] "
           style={{
             backgroundImage: `url(${yeezyShoesWear})`,
             backgroundPosition: "center",
           }}
         >
-          <div className="h-[4rem] w-[95%] rounded-xl justify-between flex bg-white shadow-xl shadow-slate-400">
+          <div className="h-[4rem] w-[95%] rounded-xl justify-between flex bg-white shadow-xl shadow-slate-400 lg:w-[80%] ">
             <div className="w-8/12 flex items-center gap-2 pl-2">
               <div className="w-[3rem] h-[3rem] grid place-items-center bg-[#adbdff] rounded-full row-span-2 md:h-[1.5rem] md:w-[1.5rem]">
                 <FiGift className="text-xl text-white md:text-sm" />
@@ -95,7 +95,7 @@ const About = () => {
                 </span>
               </div>
             </div>
-            <div className="h-full w-3/12 grid place-items-center relative">
+            <div className="h-full w-3/12 grid place-items-center relative border-l-1 border-dashed border-l-gray-500">
               <button className="w-[3rem] h-fit text-[#315bff] text-xs font-bold uppercase">share a gift</button>
               <div className="h-[1rem] w-[1rem] rounded-full bg-[#d4d4d4] absolute top-[-.5rem] left-[-.5rem] "></div>
               <div className="h-[1rem] w-[1rem] rounded-full bg-[#d4d4d4] absolute bottom-[-.5rem] left-[-.5rem]"></div>
