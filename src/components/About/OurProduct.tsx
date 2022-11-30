@@ -33,7 +33,7 @@ const OurProduct: FC<OurProductProps> = (props) => {
         ></div>
         <img
           src={imgSrc}
-          className="absolute translate-x-4 rotate-[-30deg] scale-100 miniTablet:scale-[2] xLgMd:scale-150 xlarge:scale-100 "
+          className="absolute translate-x-4 rotate-[-30deg] scale-100 miniTablet:scale-[2] xLgMd:scale-150 xlarge:scale-100"
           alt=""
         />
       </div>
