@@ -20,7 +20,7 @@ const About = () => {
       <div className="h-fit w-full grid grid-cols-1 grid-rows-aboutTop lssm:grid-rows-aboutTopResponsive place-items-center gap-5 mb-[2rem] md:grid-cols-3 md:px-2 md:grid-rows-aboutTopMd xl:grid-rows-aboutTopLarge xlarge:mt-[5rem]">
         <div className="w-full h-full flex flex-col items-center justify-center md:col-span-2 md:items-start md:gap-4 ">
           <span className="text-[#ff3c76d9] text-sm font-semibold pl-[2.5rem] hidden md:block  ">About Us</span>
-          <span className="text-white text-3xl text-center font-bold md:text-4xl md:text-start px-[2.5rem] xlarge:text-6xl ">
+          <span className="text-white text-3xl text-center font-bold sm:text-2xl md:text-4xl md:text-start px-[2.5rem] xlarge:text-6xl ">
             The Best Sneakers delivered to you.
           </span>
         </div>
