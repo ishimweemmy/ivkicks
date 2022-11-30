@@ -63,7 +63,7 @@ const Dedication = () => {
   ];
 
   return (
-    <div className="w-full h-fit flex flex-col items-center justify-center relative bg-[#f5f5f5] px-[5rem] sm:px-[1rem] lg:pt-[3rem] lg:flex-row ">
+    <div className="w-full h-fit flex flex-col items-center justify-center relative bg-[#f5f5f5] px-[5rem] sm:px-[1rem] lg:pt-[3rem] lg:flex-row lg:pl-[10rem] ">
       <div
         className="w-[3.5rem] h-[7rem] rounded-l-full absolute right-0 top-0 md:rotate-[270deg] md:right-7 md:top-[-1.7rem]"
         style={{
@@ -75,15 +75,15 @@ const Dedication = () => {
         <span className="text-3xl font-black text-[#0A083A] text-center md:text-4xl mt-[4rem] lg:mt-0 lg:text-start">
           Dedicated to our customers
         </span>
-        <p className="text-center px-2 lg:p-0 lg:text-start">
+        <p className="text-center px-2 lg:pl-[1.5rem] lg:text-start">
           So it really behaves like neither. Now we have given up. We say "it is
           like neither"
         </p>
-        <div className="w-full hidden items-start justify-start gap-4 mt-[1rem] lg:flex">
+        <div className="w-full hidden items-start justify-start gap-4 mt-[1rem] lg:flex lg:pl-[1.5rem]">
           <img
             src={leftIcon}
             alt="leftIcon"
-            className="w-8 cursor-pointer"
+            className="w-8"
             onClick={() => swipingButtonRef.current?.click()}
           />
           <img
@@ -103,7 +103,7 @@ const Dedication = () => {
         />
         <Swiper
           modules={[Pagination]}
-          slidesPerView={smallMobile ? 1 : mobile ? 2 : miniLaptop ? 3 : 4}
+          slidesPerView={smallMobile ? 1 : mobile ? 2 : 3}
           className="w-full h-[70%]"
           spaceBetween={10}
         >

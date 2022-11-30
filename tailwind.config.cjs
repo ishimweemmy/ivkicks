@@ -30,9 +30,11 @@ module.exports = {
       xlarge: "1240px",
       xl: "1280px",
 
+      miniLarge: "1227px",
+
       lXl: "1281px",
 
-      miniLarge: "1227px",
+      "mini2xl": "1300",
 
       "2xl": "1536px",
     },
@@ -60,7 +62,8 @@ module.exports = {
         "footer": "20% 70%",
       },
       gridTemplateRows: {
-      "footer": "65% 30%", "aboutTop": "5rem 10rem 13rem 20rem", "aboutTopResponsive": "5rem 13rem 18rem 20rem", "aboutTopMd": "8rem 18rem"},
+        "footer": "65% 30%", "aboutTop": "5rem 10rem 13rem 20rem", "aboutTopResponsive": "5rem 13rem 18rem 20rem", "aboutTopMd": "8rem 18rem", "aboutTopLarge": "8rem 30rem"
+      },
       animation: {
         "nav-hide": "navHide .2s ease-in",
         "nav-display": "navDisplay .2s ease-in",
@@ -70,7 +73,8 @@ module.exports = {
     },
     cursor: "/assets",
     backgroundPosition: {
-    "right-bottom": "3.5rem 7rem"}
+      "right-bottom": "3.5rem 7rem"
+    }
   },
   plugins: [],
 };

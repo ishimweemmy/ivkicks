@@ -15,10 +15,11 @@ const QualityCard: FC<QualityCProps> = (props) => {
   console.log(id)
 
   return (
-    <div className={`w-full h-fit py-[.5rem] flex flex-col items-center justify-center gap-[3rem] xLgMd:w-[90%] ${id ==1 ?"lsm": "normal"} lsm:gap-0`}>
+    <div className={`w-full h-fit py-[.5rem] flex flex-col items-center justify-center gap-[3rem] xLgMd:w-full ${id ==1 ?"lsm": "normal"} lsm:gap-0`}>
       <div className="w-full h-[50%] relative grid place-items-center">
+        {/* <img src={imgSrc} alt="" className="w-[85%] h-[20rem] rounded-md" /> */}
         <div
-          className="h-[12rem] w-[85%] minSm:h-[15rem] bg-cover rounded-md z-10 bg-no-repeat xLgMd:h-[16rem]"
+          className="h-[12rem] w-[85%] minSm:h-[15rem] bg-cover rounded-md z-10 bg-no-repeat xLgMd:h-[16rem] lg:h-[20rem]"
           style={{
             backgroundImage: `url(${imgSrc})`,
             backgroundPosition: "center",

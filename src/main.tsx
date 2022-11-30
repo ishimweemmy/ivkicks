@@ -10,6 +10,7 @@ import Checkout from './pages/Checkout'
 import Home from './pages/Home'
 import { Notfound } from './pages/NotFound'
 import Products from './pages/Products'
+import Promo from './pages/Promo'
 import Sale from './pages/Sale'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -18,7 +19,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <Route path='/' element={<App />}>
         <Route path='/' element={<Home />} />
         <Route path='about' element={<About />} />
-        <Route path='products' element={<Products />} />
+        <Route path='products' element={<Products />}>
+          <Route path='promoProducts' element={<Promo />} />
+        </Route>
         <Route path="sale" element={<Sale />} />
         <Route path="cart" element={<Cart />} />
         <Route path="checkout" element={<Checkout />} />
