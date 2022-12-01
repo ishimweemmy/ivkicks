@@ -1,15 +1,18 @@
-import { useSwiper } from 'swiper/react';
-import type { FC } from 'react';
+import { useSwiper } from "swiper/react";
+import type { FC } from "react";
 
 interface ButtonProps {
-    swipingButtonRef: any,
+  swipingButtonRefPrev: any;
 }
 
-const SlidePrevButton:FC<ButtonProps> = (props) => {
+const SlidePrevButton: FC<ButtonProps> = (props) => {
   const swiper = useSwiper();
-  
-  return (<button onClick={() => swiper.slideNext()} ref={props.swipingButtonRef} >Slide to the next slide</button>
+
+  return (
+    <button onClick={() => swiper.slidePrev()} ref={props.swipingButtonRefPrev}>
+      Slide to the previous slide
+    </button>
   );
-}
+};
 
 export default SlidePrevButton;

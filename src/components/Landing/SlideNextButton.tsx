@@ -9,7 +9,7 @@ const SlideNextButton: FC<ButtonProps> = (props) => {
   const swiper = useSwiper();
 
   return (
-    <button onClick={() => swiper.slidePrev()} ref={props.swipingButtonRef}>
+    <button onClick={() => swiper.slideNext()} ref={props.swipingButtonRef}>
       Slide to the next slide
     </button>
   );

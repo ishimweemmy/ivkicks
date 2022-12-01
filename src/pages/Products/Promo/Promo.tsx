@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SlideNextButton from "../../../components/Landing/SlideNextButton";
-import SlidePrevButton from "../../../components/Landing/SlideNextButton";
+import SlidePrevButton from "../../../components/Landing/SlidePrev";
 import PromoProduct, {
   PromoProductProps,
 } from "../../../components/promo-products/PromoProduct";
@@ -13,8 +13,8 @@ import { Autoplay } from "swiper";
 const Promo = () => {
   const [hover, setHovered] = useState(false);
 
-  const swipingButtonRef = useRef<HTMLDivElement | null>(null);
-  const swipingButtonRefPrev = useRef<HTMLDivElement | null>(null);
+  const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
+  const swipingButtonRefPrev = useRef<HTMLButtonElement | null>(null);
 
   const promoProducts: PromoProductProps[] = [
     {
@@ -30,7 +30,7 @@ const Promo = () => {
       sneakerName: "Alexander mcQueen",
       madeOf: "wool",
       durabilityType: "durable",
-      imgSrc: "/server-assets/image 1.png",
+      imgSrc: "/server-assets/alexander.png",
       userImage: "/server-assets/user.jpg",
       userTestimonial: "These mcQueens are awesome",
       rating: 5,
@@ -40,6 +40,24 @@ const Promo = () => {
       madeOf: "cotton",
       durabilityType: "durable",
       imgSrc: "/server-assets/image 1.png",
+      userImage: "/server-assets/user.jpg",
+      userTestimonial: "These yeezy are awesome",
+      rating: 5,
+    },
+    {
+      sneakerName: "Nike Yeezy",
+      madeOf: "cotton",
+      durabilityType: "durable",
+      imgSrc: "/server-assets/yeezy.png",
+      userImage: "/server-assets/user.jpg",
+      userTestimonial: "These yeezy are awesome",
+      rating: 5,
+    },
+    {
+      sneakerName: "Nike Yeezy",
+      madeOf: "cotton",
+      durabilityType: "durable",
+      imgSrc: "/server-assets/yeezy1.png",
       userImage: "/server-assets/user.jpg",
       userTestimonial: "These yeezy are awesome",
       rating: 5,
@@ -132,7 +150,7 @@ const Promo = () => {
           </div>
           <div className="w-[100%] h-[15rem] absolute bottom-[-8rem] translate-x-[0%] z-10">
             <Swiper
-            modules={[Autoplay]}
+              modules={[Autoplay]}
               slidesPerView={1}
               className="w-full h-full"
               spaceBetween={2}
@@ -164,7 +182,7 @@ const Promo = () => {
                 );
               })}
               <SlideNextButton swipingButtonRef={swipingButtonRef} />
-              <SlidePrevButton swipingButtonRef={swipingButtonRefPrev} />
+              <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
             </Swiper>
           </div>
           <div className="w-full h-[12rem] pt-4 bg-[#34325A] absolute bottom-[-13rem] flex flex-col items-center justify-between">
