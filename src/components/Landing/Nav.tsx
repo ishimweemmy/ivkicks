@@ -47,13 +47,12 @@ const Nav: FC<NavProps> = (props) => {
   const [isDisplayed, setIsDisplayed] = useState<Boolean>(false);
   const location = useLocation();
   useEffect(() => {}, [location]);
-
+console.log(location.pathname)
   return (
     <nav
-      className={`w-auto h-[6rem] sm:px-4 bg-[${
-        location.pathname == "/about" ? "rgb(10,8,58)" : "#F5F5F5"
-      }] flex items-center justify-around px-[7rem] gap-[12rem] lg:gap-[4rem] lg:px-[2rem] xl:px-[2rem] md:justify-between md:px-8 lsm:gap-[25rem] xMiniTablet:gap-[30rem] miniTablet:px-4 transition-all overflow-hidden z-30 lssm:justify-between lssm:px-4 sm:gap-0 xl:ml-[5rem] xs:gap-2 xs:p-0 xs:pl-4 xs:justify-between duration-700`}
+      className={`w-auto h-[6rem] sm:px-4 flex items-center justify-around px-[7rem] gap-[12rem] lg:gap-[4rem] lg:px-[2rem] xl:px-[2rem] md:justify-between md:px-8 lsm:gap-[25rem] xMiniTablet:gap-[30rem] miniTablet:px-4 transition-all overflow-hidden z-30 lssm:justify-between lssm:px-4 sm:gap-0 xl:pl-[5rem] xs:gap-2 xs:p-0 xs:pl-4 xs:justify-between duration-700`}
       id="top"
+      style={{background: `${location.pathname == "/about" || location.pathname == "/products/promoProducts" ? "rgb(10,8,58)" : "#F5F5F5"}`}}
     >
       <img
         src={logo}
@@ -70,8 +69,9 @@ const Nav: FC<NavProps> = (props) => {
               className={({ isActive }) =>
                 isActive
                   ? `text-lg font-medium text-[#FF3C78] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full after:bg-[#FF3C78] transition-all duration-700 after:animate-ping `
-                  : `text-lg font-medium text-${location.pathname == "/about" ? "white" : "[#0A083A]"} grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] transition-all duration-1000`
+                  : `text-lg font-medium grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] transition-all duration-1000`
               }
+              style={{color: `${location.pathname == "/about" || location.pathname == "/products/promoProducts" ? "white" : "[#0A083A]"}`}}
               ref={link.to === "/" ? homeLinkRef : null}
               key={link.to}
             >
@@ -83,22 +83,22 @@ const Nav: FC<NavProps> = (props) => {
       <div className="min-w-[10rem] lg:w-[20rem] h-[4rem] sm:min-w-[8rem] xs:gap-6 bg-[bue] bg-blue] flex items-center justify-center gap-8 lg:gap-[3rem] sm:gap-8 transition-all">
         <FiSearch
           className={`w-[1.3rem] xs:w-[1rem] lg:w-[2rem] miniTablet:w-[3rem] miniTablet:h-[1.5rem] lg:h-[1.5rem] h-[1.3rem] sm:w-[1rem] block md:hidden lg:block font-black text-${
-            location.pathname == "/about" && "white"
+            location.pathname == "/about" || location.pathname == "/products/promoProducts" && "white"
           }`}
         />
-        <FiUser className={`w-[1.5rem] h-[1.5rem] hidden lg:block text-${location.pathname == "/about" && "white"}`} />
+        <FiUser className={`w-[1.5rem] h-[1.5rem] hidden lg:block text-${location.pathname == "/about" || location.pathname =="/products/promoProducts" && "white"}`} />
 
         <Link to="/cart" className="w-fit h-fit relative md:hidden lg:block">
           <FiShoppingBag
             className={`w-[1.5rem] xs:w-[1rem] sm:w-[1rem] miniTablet:w-[1.75rem] lg:w-[2rem] h-[1.5rem] font-bold text-${
-              location.pathname == "/about" && "white"
+              location.pathname == "/about" || location.pathname == "/products/promoProducts" && "white"
             }`}
           />
           <span className="absolute bg-[#FF3C78] w-[1.2rem] xs:w-[1rem] xs:h-[1rem] xs:text-xs xs:font-semibold sm:w-[.9rem] sm:h-[.9rem] lg:w-[1rem] lg:h-[1rem] h-[1.2rem] sm:text-xs rounded-full grid place-content-center text-white right-[-.5rem] miniTablet:right-[-.3rem]  lg:right-[-.3rem] top-[.75rem]">
             3
           </span>
         </Link>
-        {location.pathname != "/about" ? (
+        {location.pathname != "/about" && location.pathname != "/products/promoProducts" ? (
           <img
             src={menu}
             alt=""
