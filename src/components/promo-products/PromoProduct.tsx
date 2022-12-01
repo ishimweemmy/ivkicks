@@ -4,7 +4,7 @@ import AutoModeIcon from "@mui/icons-material/AutoMode";
 import filledStar from "../../assets/Star 4.svg";
 import unFilledStar from "../../assets/Star 5.svg";
 
-interface PromoProduct {
+export interface PromoProductProps {
   sneakerName: string;
   madeOf: string;
   durabilityType: string;
@@ -14,7 +14,7 @@ interface PromoProduct {
   userTestimonial: string;
 }
 
-const PromoProduct: FC<PromoProduct> = (props) => {
+const PromoProduct: FC<PromoProductProps> = (props) => {
   const {
     sneakerName,
     madeOf,
@@ -42,7 +42,7 @@ const PromoProduct: FC<PromoProduct> = (props) => {
         )
       : [];
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center relative">
+    <div className="w-full h-fit flex flex-col items-center justify-center relative z-40">
       <div className="flex flex-col items-center justify-center">
         <span className="text-md text-white font-bold">{sneakerName}</span>
         <span className="text-xs text-white flex items-center gap-2">
@@ -59,7 +59,7 @@ const PromoProduct: FC<PromoProduct> = (props) => {
         alt=""
         className="relative max-w-none w-[20rem] top-[-1rem] right-[-1rem]"
       />
-      <div className="w-[20rem] h-fit flex items-center justify-center gap-[2rem] absolute bottom-[2rem]">
+      <div className="w-[20rem] h-fit flex items-center justify-center gap-[2rem] absolute bottom-[2rem] z-40">
         <div className="w-[12rem] h-[4rem] border py-2 bottom-0 rounded-2xl filter  flex flex-col items-center justify-center gap-2 backdrop-blur-lg">
           <div className="h-fit w-fit flex items-center gap-2">
             {theRatingStars}

@@ -1,9 +1,51 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
-import PromoProduct from "../../../components/promo-products/PromoProduct";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SlideNextButton from "../../../components/Landing/SlideNextButton";
+import SlidePrevButton from "../../../components/Landing/SlideNextButton";
+import PromoProduct, {
+  PromoProductProps,
+} from "../../../components/promo-products/PromoProduct";
+import "swiper/css";
+import "swiper/css/autoplay";
+import { Autoplay } from "swiper";
 
 const Promo = () => {
   const [hover, setHovered] = useState(false);
+
+  const swipingButtonRef = useRef<HTMLDivElement | null>(null);
+  const swipingButtonRefPrev = useRef<HTMLDivElement | null>(null);
+
+  const promoProducts: PromoProductProps[] = [
+    {
+      sneakerName: "Nike Speed",
+      madeOf: "Rubber Sole",
+      durabilityType: "durable",
+      imgSrc: "/server-assets/image 1.png",
+      userImage: "/server-assets/user.jpg",
+      userTestimonial: "Nike speed are amazing!",
+      rating: 5,
+    },
+    {
+      sneakerName: "Alexander mcQueen",
+      madeOf: "wool",
+      durabilityType: "durable",
+      imgSrc: "/server-assets/image 1.png",
+      userImage: "/server-assets/user.jpg",
+      userTestimonial: "These mcQueens are awesome",
+      rating: 5,
+    },
+    {
+      sneakerName: "Nike Yeezy",
+      madeOf: "cotton",
+      durabilityType: "durable",
+      imgSrc: "/server-assets/image 1.png",
+      userImage: "/server-assets/user.jpg",
+      userTestimonial: "These yeezy are awesome",
+      rating: 5,
+    },
+  ];
+
   return (
     <div className="w-full h-fit">
       <div className="w-screen h-fit bg-[#0A083A] py-[1rem] flex flex-col items-center justify-center">
@@ -89,28 +131,64 @@ const Promo = () => {
             </div>
           </div>
           <div className="w-[100%] h-[15rem] absolute bottom-[-8rem] translate-x-[0%] z-10">
-            <PromoProduct
-              sneakerName="Nike Speed"
-              madeOf="Rubber Sole"
-              durabilityType="durable"
-              imgSrc="/server-assets/image 4.png"
-              userImage="/server-assets/user.jpg"
-              userTestimonial="Nike speed are amazing!"
-              rating={5}
-            />
+            <Swiper
+            modules={[Autoplay]}
+              slidesPerView={1}
+              className="w-full h-full"
+              spaceBetween={2}
+              autoplay={true}
+            >
+              {promoProducts.map((promoProduct) => {
+                const {
+                  sneakerName,
+                  madeOf,
+                  durabilityType,
+                  userImage,
+                  userTestimonial,
+                  rating,
+                  imgSrc,
+                } = promoProduct;
+
+                return (
+                  <SwiperSlide className="w-full h-full z-40" key={sneakerName}>
+                    <PromoProduct
+                      sneakerName={sneakerName}
+                      madeOf={madeOf}
+                      durabilityType={durabilityType}
+                      imgSrc={imgSrc}
+                      userImage={userImage}
+                      userTestimonial={userTestimonial}
+                      rating={rating}
+                    />
+                  </SwiperSlide>
+                );
+              })}
+              <SlideNextButton swipingButtonRef={swipingButtonRef} />
+              <SlidePrevButton swipingButtonRef={swipingButtonRefPrev} />
+            </Swiper>
           </div>
-          <div className="w-full h-[12rem] pt-4 bg-[#34325A] absolute bottom-[-13rem] z-0 flex flex-col items-center justify-between">
-            <div className="w-full h-4 flex justify-between mt-[2.5rem] px-3">
-              <FiArrowLeft className="text-white text-lg" />
-              <FiArrowRight className="text-white text-lg" />
+          <div className="w-full h-[12rem] pt-4 bg-[#34325A] absolute bottom-[-13rem] flex flex-col items-center justify-between">
+            <div className="w-full h-4 flex justify-between mt-[2.5rem] px-3 relative z-20">
+              <FiArrowLeft
+                className="text-white text-lg"
+                onClick={() => swipingButtonRefPrev.current?.click()}
+                style={{ cursor: `pointer` }}
+              />
+              <FiArrowRight
+                className="text-white text-lg"
+                onClick={() => swipingButtonRef.current?.click()}
+              />
             </div>
-            <div className="w-full h-[5rem] flex items-end justify-center gap-3 relative bottom-0">
-                <span className="text-center text-white text-lg font-bold border-b-4 border-b-[#ff3c78] mx-[1.2rem] ">Nike Speed shoes</span>
-                <span className="text-center text-white text-lg font-bold border-b-4 border-b-[#ff3c78] mx-[1.2rem] ">Nike Sonic shoes</span>
+            <div className="w-full h-[5rem] flex items-end justify-center gap-3 relative bottom-0 bg-transparent z-0">
+              <span className="text-center text-white text-lg font-bold border-b-4 border-b-[#ff3c78] mx-[1.2rem] ">
+                Nike Speed shoes
+              </span>
+              <span className="text-center text-white text-lg font-bold border-b-4 border-b-[#ff3c78] mx-[1.2rem] ">
+                Nike Sonic shoes
+              </span>
             </div>
           </div>
         </div>
-        {/* <div className="w-full py-16"></div> */}
       </div>
     </div>
   );
