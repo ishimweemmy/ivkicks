@@ -48,7 +48,9 @@ const FeaturedPro: FC<FeaturedProInterface> = (props) => {
       : [];
 
   return (
-    <div className={`w-full h-full flex flex-col items-center justify-center gap-[1rem] sm:gap-[1rem]`}>
+    <div
+      className={`w-full h-full flex flex-col items-center justify-center gap-[1rem] sm:gap-[1rem]`}
+    >
       <div className="w-full h-auto relative flex items-center justify-center">
         <div
           className="w-[7rem] h-[7rem] rounded-full absolute top-[-1rem] right-[9rem] sm:right-[30%] lsm:right-[40%] lssm:right-[40%]"
