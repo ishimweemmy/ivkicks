@@ -43,21 +43,21 @@ const PromoProduct: FC<PromoProductProps> = (props) => {
       : [];
   return (
     <div className="w-full h-fit flex flex-col items-center justify-center relative z-40">
-      <div className="flex flex-col items-center justify-center">
-        <span className="text-md text-white font-bold">{sneakerName}</span>
-        <span className="text-xs text-white flex items-center gap-2">
-          <StackedLineChartIcon className="p-1 text-[#fa9358]" fontSize="medium" />
+      <div className="flex flex-col items-center justify-center lsm:grid lsm:grid-cols-1 lsm:place-items-center lsm:gap-x-8">
+        <span className="text-md text-white font-bold lsm:col-span-2 lsm:text-xl">{sneakerName}</span>
+        <span className="text-xs text-white flex items-center gap-2 lsm:text-base">
+          <StackedLineChartIcon className="p-1 text-[#fa9358] lsm:p-0" fontSize="medium" />
           {madeOf}
         </span>
-        <span className="text-xs text-white flex items-center gap-2">
-          <AutoModeIcon className="p-1 text-[#fa9358]" fontSize="medium" />
+        <span className="text-xs text-white flex items-center gap-2 lsm:text-base">
+          <AutoModeIcon className="p-1 text-[#fa9358] lsm:p-0" fontSize="medium" />
           {durabilityType} materials
         </span>
       </div>
       <img
         src={imgSrc}
         alt=""
-        className="relative max-w-none w-[20rem] top-[-1rem] right-[-1rem]"
+        className="relative max-w-none w-[20rem] top-[-1rem] right-[-1rem] lsm:w-[30rem]"
       />
       <div className="w-[20rem] h-fit flex items-center justify-center gap-[2rem] absolute bottom-[2rem] z-40">
         <div className="w-[12rem] h-[4rem] border py-2 bottom-0 rounded-2xl filter  flex flex-col items-center justify-center gap-2 backdrop-blur-lg">

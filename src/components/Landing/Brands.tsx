@@ -64,7 +64,7 @@ const Brands = () => {
             );
           })}
           <SlideNextButton swipingButtonRef={swipingButtonRef} />
-          <SlidePrevButton swipingButtonRef={swipingButtonRefPrev} />
+          <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
         </Swiper>
         <img
           src={rightIcon}

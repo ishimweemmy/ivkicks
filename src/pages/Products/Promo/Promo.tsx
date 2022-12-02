@@ -16,7 +16,9 @@ const Promo = () => {
   const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
   const swipingButtonRefPrev = useRef<HTMLButtonElement | null>(null);
 
-  const [controlledSwiper, setControlledSwiper] = useState<Swiper | undefined>(undefined);
+  const [controlledSwiper, setControlledSwiper] = useState<Swiper | undefined>(
+    undefined
+  );
 
   const promoProducts: PromoProductProps[] = [
     {
@@ -91,7 +93,7 @@ const Promo = () => {
               <div className="h-2 w-2 rounded-full border absolute left-[2rem] top-[2.5rem] bg-[#0A083A] lsm:top-[41%] lsm:left-[6%]"></div>
               <div className="h-2 w-2 rounded-full border absolute translate-x-[50%] top-[-.4rem] bg-[#0A083A]"></div>
               <div
-                className="h-2 w-2 rounded-full border absolute right-[2rem] top-[2.5rem] bg-[#0A083A] hover:border-none hover:bg-[#FF3C78]"
+                className="h-2 w-2 rounded-full border absolute right-[2rem] top-[2.5rem] bg-[#0A083A] hover:border-none hover:bg-[#FF3C78] lsm:h-3 lsm:w-3 lsm:right-[18%] lsm:top-[16%]"
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
                 style={{ cursor: `pointer` }}
@@ -100,34 +102,46 @@ const Promo = () => {
               {/* dots on the left part of the circle */}
 
               <div
-                className={`h-1 w-1 rounded-full ${!hover && "border"
-                  } absolute right-[1.7rem] top-[3.1rem] bg-[${hover ? "#FF3C78" : "#0A083A"
-                  }] `}
+                className={`h-1 w-1 rounded-full ${
+                  !hover && "border"
+                } absolute right-[1.7rem] top-[3.1rem] bg-[${
+                  hover ? "#FF3C78" : "#0A083A"
+                }] lsm:h-2 lsm:w-2 lsm:right-[16.5%] `}
               ></div>
               <div
-                className={`h-1 w-1 rounded-full ${!hover && "border"
-                  } absolute right-[1.4rem] top-[3.5rem] bg-[${hover ? "#FF3C78" : "#0A083A"
-                  }]`}
+                className={`h-1 w-1 rounded-full ${
+                  !hover && "border"
+                } absolute right-[1.4rem] top-[3.5rem] bg-[${
+                  hover ? "#FF3C78" : "#0A083A"
+                }] lsm:h-2 lsm:w-2 lsm:right-[15%]`}
               ></div>
               <div
-                className={`h-1 w-1 rounded-full ${!hover && "border"
-                  } absolute right-[1.1rem] top-[3.9rem] bg-[${hover ? "#FF3C78" : "#0A083A"
-                  }]`}
+                className={`h-1 w-1 rounded-full ${
+                  !hover && "border"
+                } absolute right-[1.1rem] top-[3.9rem] bg-[${
+                  hover ? "#FF3C78" : "#0A083A"
+                }] lsm:h-2 lsm:w-2 lsm:right-[13.5%]`}
               ></div>
               <div
-                className={`h-1 w-1 rounded-full ${!hover && "border"
-                  } absolute right-[2.7rem] top-[2rem] bg-[${hover ? "#FF3C78" : "#0A083A"
-                  }]`}
+                className={`h-1 w-1 rounded-full ${
+                  !hover && "border"
+                } absolute right-[2.7rem] top-[2rem] bg-[${
+                  hover ? "#FF3C78" : "#0A083A"
+                }] lsm:h-2 lsm:w-2 lsm:right-[22%]`}
               ></div>
               <div
-                className={`h-1 w-1 rounded-full ${!hover && "border"
-                  } absolute right-[3rem] top-[1.7rem] bg-[${hover ? "#FF3C78" : "#0A083A"
-                  }]`}
+                className={`h-1 w-1 rounded-full ${
+                  !hover && "border"
+                } absolute right-[3rem] top-[1.7rem] bg-[${
+                  hover ? "#FF3C78" : "#0A083A"
+                }] lsm:h-2 lsm:w-2 lsm:right-[24%]`}
               ></div>
               <div
-                className={`h-1 w-1 rounded-full ${!hover && "border"
-                  } absolute right-[3.4rem] top-[1.4rem] bg-[${hover ? "#FF3C78" : "#0A083A"
-                  }]`}
+                className={`h-1 w-1 rounded-full ${
+                  !hover && "border"
+                } absolute right-[3.4rem] top-[1.4rem] bg-[${
+                  hover ? "#FF3C78" : "#0A083A"
+                }] lsm:h-2 lsm:w-2 lsm:right-[20%] lsm:top-[15%]`}
               ></div>
 
               {/* inner circleShoe */}
@@ -138,7 +152,7 @@ const Promo = () => {
               <div className="h-2 w-2 rounded-full border absolute left-[-.3rem] bottom-[-.4rem]"></div>
             </div>
           </div>
-          <div className="w-[100%] h-[15rem] absolute bottom-[-8rem] translate-x-[0%] z-10">
+          <div className="w-[100%] h-[15rem] absolute bottom-[-8rem] translate-x-[0%] z-10 lsm:bottom-[-1rem]">
             <SwiperEl
               modules={[Controller, Autoplay]}
               slidesPerView={1}
@@ -177,7 +191,7 @@ const Promo = () => {
               <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
             </SwiperEl>
           </div>
-          <div className="w-full h-[12rem] pt-4 bg-[#12104d] absolute bottom-[-13rem] flex flex-col items-center justify-between">
+          <div className="w-full h-[12rem] pt-4 bg-[#12104d] absolute bottom-[-13rem] flex flex-col items-center justify-between lsm:h-[10rem]">
             <div className="w-full h-4 flex justify-center mt-[2.5rem] px-3 relative z-20 gap-[80%]">
               <FiArrowLeft
                 className="text-white text-lg"
@@ -204,9 +218,15 @@ const Promo = () => {
                   const { sneakerName, ...otherProps } = promoProduct;
 
                   return (
-                    <SwiperSlide className="flex items-center justify-centerz-40" key={sneakerName}>
+                    <SwiperSlide
+                      className="flex items-center justify-centerz-40"
+                      key={sneakerName}
+                    >
                       <p className="w-full text-center text-white text-base font-bold border-b-4 border-b-[#ff3c78]">
-                        <span className="whitespace-nowrap block">{sneakerName}</span><span>sneakers</span>
+                        <span className="whitespace-nowrap block">
+                          {sneakerName}
+                        </span>
+                        <span>sneakers</span>
                       </p>
                     </SwiperSlide>
                   );
