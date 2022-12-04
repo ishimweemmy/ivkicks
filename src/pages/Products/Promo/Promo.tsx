@@ -85,7 +85,7 @@ const Promo = () => {
         <div></div>
         <div className="w-full h-full flex flex-col items-center justify-center lsm:col-span-2">
           <Circle />
-          <div className="w-full h-[22rem] bg-[#0000ff22] relative bottom-[7rem]">
+          <div className="w-full h-[22rem] bg-[#0000ff22] relative bottom-[7rem] flex items-center justify-center">
             {/* <SwiperEl
               modules={[Controller, Autoplay]}
               slidesPerView={1}
@@ -122,7 +122,7 @@ const Promo = () => {
               <SlideNextButton swipingButtonRef={swipingButtonRef} />
               <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
             </SwiperEl> */}
-            <PromoProduct sneakerName={'Alexander mcQueen'} madeOf={'Rubber Sole'} durabilityType={'durable'} imgSrc={'/server-assets/yeezy.png'} userImage={'/server-assets/user.jpg'} userTestimonial={'These Sneakers make confortable'} rating={4} />
+            <PromoProduct sneakerName={'Alexander mcQueen'} madeOf={'Rubber Sole'} durabilityType={'durable'} imgSrc={'/server-assets/alexander.png'} userImage={'/server-assets/user.jpg'} userTestimonial={'These Sneakers make confortable'} rating={4} />
           </div>
         </div>
       </div>

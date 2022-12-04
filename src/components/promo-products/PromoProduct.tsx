@@ -42,8 +42,8 @@ const PromoProduct: FC<PromoProductProps> = (props) => {
       )
       : [];
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center relative z-40 ">
-      <div className="w-full h-[40%] bg-[#ff00007e] flex flex-col items-center justify-start gap-0 lsm:grid lsm:place-items-center">
+    <div className="w-[20rem] h-full flex flex-col items-center justify-center relative z-40 ">
+      <div className="w-full h-[40%] flex flex-col items-center justify-start gap-0 lsm:grid lsm:place-items-center">
         <span className="text-sm text-white font-bold  lsm:col-span-2 lsm:text-xl">{sneakerName}</span>
         <span className="text-xs text-white flex items-center gap-2 lsm:text-base font-medium">
           <StackedLineChartIcon className="p-1 text-[#fa9358] lsm:p-0" fontSize="medium" />
@@ -54,13 +54,16 @@ const PromoProduct: FC<PromoProductProps> = (props) => {
           {durabilityType} materials
         </span>
       </div>
-      <div className="w-full h-[60%] bg-[#171766d1] flex flex-col items-center justify-center gap-[2rem]">
-        <div className="w-full relative">
-          <img src={imgSrc} alt="" />
-          <div className="w- h- flex flex-col items-center justify-center">
-            <span>{theRatingStars}{}</span>
+      <div className="w-full h-[60%] bg-[#171766d1] flex flex-col items-center justify-center gap-[0rem]">
+        <div className="w-full  relative top-[-6rem] flex flex-col items-center justify-center bg-[blue]">
+          <img src={imgSrc} alt="" className="max-w-none scale-[1.1]" />
+          <div className="w-[70%] h-fit px-2 py-3 flex flex-col items-center justify-center relative bg-[red] rounded-xl gap-[.5rem] bottom-[2rem] ">
+            <span className="flex gap-2">{theRatingStars}{theUnfilledStars}</span>
+            <span className="text-sm text-white whitespace-nowrap ">{userTestimonial}</span>
+            <img src={userImage} alt="testimonialImage" className="w-10 h-10 rounded-full border-white absolute right-[-1rem] top-[-1rem]" />
           </div>
         </div>
+        <span>{sneakerName}</span>
       </div>
     </div>
   );
