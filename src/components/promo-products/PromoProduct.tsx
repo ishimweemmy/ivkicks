@@ -34,36 +34,53 @@ const PromoProduct: FC<PromoProductProps> = (props) => {
   const theUnfilledStars: JSX.Element[] =
     rating < 5
       ? [...Array(5 - Math.floor(rating))].map(
-        (el: undefined, index: number) => {
-          return (
-            <img src={unFilledStar} alt="" key={index} className="w-3" />
-          );
-        }
-      )
+          (el: undefined, index: number) => {
+            return (
+              <img src={unFilledStar} alt="" key={index} className="w-3" />
+            );
+          }
+        )
       : [];
   return (
     <div className="w-[20rem] h-full flex flex-col items-center justify-center relative z-40 ">
       <div className="w-full h-[40%] flex flex-col items-center justify-start gap-0 lsm:grid lsm:place-items-center">
-        <span className="text-sm text-white font-bold  lsm:col-span-2 lsm:text-xl">{sneakerName}</span>
+        <span className="text-sm text-white font-bold  lsm:col-span-2 lsm:text-xl">
+          {sneakerName}
+        </span>
         <span className="text-xs text-white flex items-center gap-2 lsm:text-base font-medium">
-          <StackedLineChartIcon className="p-1 text-[#fa9358] lsm:p-0" fontSize="medium" />
+          <StackedLineChartIcon
+            className="p-1 text-[#fa9358] lsm:p-0"
+            fontSize="medium"
+          />
           {madeOf}
         </span>
         <span className="text-xs text-white flex items-center gap-2 lsm:text-base font-medium">
-          <AutoModeIcon className="p-1 text-[#fa9358] lsm:p-0" fontSize="medium" />
+          <AutoModeIcon
+            className="p-1 text-[#fa9358] lsm:p-0"
+            fontSize="medium"
+          />
           {durabilityType} materials
         </span>
       </div>
-      <div className="w-full h-[60%] bg-[#171766d1] flex flex-col items-center justify-center gap-[0rem]">
-        <div className="w-full  relative top-[-6rem] flex flex-col items-center justify-center bg-[blue]">
-          <img src={imgSrc} alt="" className="max-w-none scale-[1.1]" />
-          <div className="w-[70%] h-fit px-2 py-3 flex flex-col items-center justify-center relative bg-[red] rounded-xl gap-[.5rem] bottom-[2rem] ">
-            <span className="flex gap-2">{theRatingStars}{theUnfilledStars}</span>
-            <span className="text-sm text-white whitespace-nowrap ">{userTestimonial}</span>
-            <img src={userImage} alt="testimonialImage" className="w-10 h-10 rounded-full border-white absolute right-[-1rem] top-[-1rem]" />
+      <div className="w-full h-[54%] bg-[#171766d1] flex flex-col items-center justify-center">
+        <div className="w-full relative top-[-4rem] flex flex-col items-center justify-center ">
+          <img src={imgSrc} alt="" className="scale-[1.1]" />
+          <div className="w-[70%] h-fit px-2 py-3 flex flex-col items-center justify-center relative rounded-xl gap-[.5rem] bottom-[2rem] backdrop-blur-xl border ">
+            <span className="flex gap-2">
+              {theRatingStars}
+              {theUnfilledStars}
+            </span>
+            <span className="text-sm text-white whitespace-nowrap ">
+              {userTestimonial}
+            </span>
+            <img
+              src={userImage}
+              alt="testimonialImage"
+              className="w-10 h-10 rounded-full border border-white absolute right-[-1rem] top-[-1rem]"
+            />
           </div>
         </div>
-        <span>{sneakerName}</span>
+        <span className="text-white relative bottom-[2.5rem] text-xl font-bold border-b-4 border-b-[#FF3C78]">{sneakerName}</span>
       </div>
     </div>
   );
