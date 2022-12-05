@@ -12,6 +12,7 @@ export interface PromoProductProps {
   userImage: string;
   rating: number;
   userTestimonial: string;
+  id: number
 }
 
 const PromoProduct: FC<PromoProductProps> = (props) => {
@@ -62,10 +63,10 @@ const PromoProduct: FC<PromoProductProps> = (props) => {
           {durabilityType} materials
         </span>
       </div>
-      <div className="w-full h-[54%] bg-[#171766d1] flex flex-col items-center justify-center">
-        <div className="w-full relative top-[-4rem] flex flex-col items-center justify-center ">
-          <img src={imgSrc} alt="" className="scale-[1.1]" />
-          <div className="w-[70%] h-fit px-2 py-3 flex flex-col items-center justify-center relative rounded-xl gap-[.5rem] bottom-[2rem] backdrop-blur-xl border ">
+      <div className="w-full h-[54%] flex flex-col items-center justify-center">
+        <div className="w-full h-[15rem] relative top-[-3rem] flex flex-col items-center justify-center">
+          <img src={imgSrc} alt="" className="max-w-none w-[22rem]" />
+          <div className="w-[70%] h-fit px-2 py-3 flex flex-col items-center justify-center relative rounded-xl gap-[.5rem] bottom-[4rem] backdrop-blur-xl border ">
             <span className="flex gap-2">
               {theRatingStars}
               {theUnfilledStars}

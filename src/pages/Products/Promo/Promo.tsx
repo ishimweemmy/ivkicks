@@ -12,7 +12,6 @@ import Swiper, { Autoplay, Controller } from "swiper";
 import Circle from "../../../components/promo-products/Circle";
 
 const Promo = () => {
-
   const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
   const swipingButtonRefPrev = useRef<HTMLButtonElement | null>(null);
 
@@ -21,10 +20,11 @@ const Promo = () => {
       sneakerName: "Nike Speed",
       madeOf: "Rubber Sole",
       durabilityType: "durable",
-      imgSrc: "/server-assets/image 1.png",
+      imgSrc: "/server-assets/yeezy1.png",
       userImage: "/server-assets/user.jpg",
       userTestimonial: "Nike speed are amazing!",
       rating: 5,
+      id: 1
     },
     {
       sneakerName: "Alexander mcQueen",
@@ -34,15 +34,7 @@ const Promo = () => {
       userImage: "/server-assets/user.jpg",
       userTestimonial: "These mcQueens are awesome",
       rating: 5,
-    },
-    {
-      sneakerName: "Nike Yeezy",
-      madeOf: "cotton",
-      durabilityType: "durable",
-      imgSrc: "/server-assets/image 1.png",
-      userImage: "/server-assets/user.jpg",
-      userTestimonial: "These yeezy are awesome",
-      rating: 5,
+      id: 2
     },
     {
       sneakerName: "Nike Yeezy",
@@ -52,6 +44,17 @@ const Promo = () => {
       userImage: "/server-assets/user.jpg",
       userTestimonial: "These yeezy are awesome",
       rating: 5,
+      id: 3
+    },
+    {
+      sneakerName: "Nike Yeezy",
+      madeOf: "cotton",
+      durabilityType: "durable",
+      imgSrc: "/server-assets/yeezy.png",
+      userImage: "/server-assets/user.jpg",
+      userTestimonial: "These yeezy are awesome",
+      rating: 5,
+      id: 4
     },
     {
       sneakerName: "Nike Yeezy",
@@ -61,13 +64,14 @@ const Promo = () => {
       userImage: "/server-assets/user.jpg",
       userTestimonial: "These yeezy are awesome",
       rating: 5,
+      id: 5
     },
   ];
 
   return (
     <div className="w-full h-fit">
-      <div className="w-screen h-full bg-[#0A083A] py-[1rem] grid lsm:grid-cols-2 lsm:grid-rows-promoTopLsm place-items-center gap-[1rem]">
-        <div className="w-full h-full flex flex-col items-center justify-center gap-[2rem] lsm:items-start lsm:ml-[1rem]">
+      <div className="w-full h-full bg-[#0A083A] py-[1rem] flex flex-col gap-[1rem] lsm:grid lsm:grid-cols-2 grid-rows-promoTopLsm lsm:gap-y-[5rem]">
+        <div className="w-full h-full flex flex-col items-center justify-center gap-[2rem] lsm:items-start lsm:pl-[1rem]">
           <span className="text-3xl text-center text-[#FF3C78] font-black lsm:text-start">
             Built for speed.
           </span>
@@ -86,7 +90,7 @@ const Promo = () => {
         <div className="w-full h-full flex flex-col items-center justify-center lsm:col-span-2">
           <Circle />
           <div className="w-full h-[22rem] bg-[#0000ff22 relative bottom-[6rem] flex items-center justify-center">
-            {/* <SwiperEl
+            <SwiperEl
               modules={[Controller, Autoplay]}
               slidesPerView={1}
               className="w-full h-full"
@@ -103,11 +107,14 @@ const Promo = () => {
                   userTestimonial,
                   rating,
                   imgSrc,
+                  id,
                 } = promoProduct;
 
                 return (
-                  <SwiperSlide className="w-full h-full z-40" key={sneakerName}>
+                  <SwiperSlide className="w-full h-fit z-40 flex justify-center" key={sneakerName}>
                     <PromoProduct
+                      key={id}
+                      id={id}
                       sneakerName={sneakerName}
                       madeOf={madeOf}
                       durabilityType={durabilityType}
@@ -121,8 +128,8 @@ const Promo = () => {
               })}
               <SlideNextButton swipingButtonRef={swipingButtonRef} />
               <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
-            </SwiperEl> */}
-            <PromoProduct sneakerName={'Alexander mcQueen'} madeOf={'Rubber Sole'} durabilityType={'durable'} imgSrc={'/server-assets/alexander.png'} userImage={'/server-assets/user.jpg'} userTestimonial={'These Sneakers make confortable'} rating={4} />
+            </SwiperEl>
+            {/* <PromoProduct sneakerName={'Alexander mcQueen'} madeOf={'Rubber Sole'} durabilityType={'durable'} imgSrc={'/server-assets/alexander.png'} userImage={'/server-assets/user.jpg'} userTestimonial={'These Sneakers make confortable'} rating={4} /> */}
           </div>
         </div>
       </div>
