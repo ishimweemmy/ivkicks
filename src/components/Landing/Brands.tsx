@@ -40,7 +40,9 @@ const Brands = () => {
             "linear-gradient(270deg, rgba(254, 120, 49, 0.7) 0%, rgba(255, 222, 190, 0.7) 100%)",
         }}
       ></div>
-      <span className="text-4xl font-bold text-[#0A083A] md:text-5xl">Popular brands</span>
+      <span className="text-4xl font-bold text-[#0A083A] md:text-5xl">
+        Popular brands
+      </span>
       <div className="w-full h-[70%] flex flex-col items-center justify-center gap-4 p-2 lg:flex-row lg:gap-2 md:w-[90%]">
         <img
           src={leftIcon}
@@ -58,7 +60,10 @@ const Brands = () => {
             const { id, imgSrc } = brand;
 
             return (
-              <SwiperSlide className="w-[20rem] h-[20rem] md:h-[10rem]" key={id}>
+              <SwiperSlide
+                className="w-[20rem] h-[20rem] md:h-[10rem]"
+                key={id}
+              >
                 <Brand id={id} imgSrc={imgSrc} />
               </SwiperSlide>
             );
@@ -77,13 +82,13 @@ const Brands = () => {
             src={leftIcon}
             alt="leftIcon"
             className="w-2 cursor-pointer"
-            onClick={() => swipingButtonRef.current?.click()}
+            onClick={() => swipingButtonRefPrev.current?.click()}
           />
           <img
             src={rightIcon}
             alt="leftIcon"
             className="w-2 cursor-pointer"
-            onClick={() => swipingButtonRefPrev.current?.click()}
+            onClick={() => swipingButtonRef.current?.click()}
           />
         </div>
       </div>

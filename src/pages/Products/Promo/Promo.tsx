@@ -2,14 +2,14 @@ import { useRef, useState } from "react";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { IoFootsteps } from "react-icons/io5";
 import { Swiper as SwiperEl, SwiperSlide } from "swiper/react";
+import { Autoplay, Controller } from "swiper";
+import "swiper/css";
+import "swiper/css/autoplay";
 import SlideNextButton from "../../../components/Landing/SlideNextButton";
 import SlidePrevButton from "../../../components/Landing/SlidePrev";
 import PromoProduct, {
   PromoProductProps,
 } from "../../../components/promo-products/PromoProduct";
-import "swiper/css";
-import "swiper/css/autoplay";
-import Swiper, { Autoplay, Controller } from "swiper";
 import Circle from "../../../components/promo-products/Circle";
 
 const Promo = () => {
@@ -91,7 +91,7 @@ const Promo = () => {
           <div className="grid place-items-end">
             <div className="w-[85%] h-[60%] rounded-lg grid place-items-center bg-[#e9e9fb]">
               <div className="w-[85%] h-[85%] rounded-lg bg-white flex flex-col items-center justify-center gap-[rem]">
-                <IoFootsteps className="text-4xl text-[blue]"/>
+                <IoFootsteps className="text-4xl text-[blue]" />
                 <span className="text-xl font-bold text-[#0A083A]">2500</span>
                 <span className="text-base text-[#0A083A]">steps</span>
               </div>
@@ -151,7 +151,6 @@ const Promo = () => {
               <SlideNextButton swipingButtonRef={swipingButtonRef} />
               <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
             </SwiperEl>
-            {/* <PromoProduct sneakerName={'Alexander mcQueen'} madeOf={'Rubber Sole'} durabilityType={'durable'} imgSrc={'/server-assets/alexander.png'} userImage={'/server-assets/user.jpg'} userTestimonial={'These Sneakers make confortable'} rating={4} /> */}
           </div>
         </div>
       </div>

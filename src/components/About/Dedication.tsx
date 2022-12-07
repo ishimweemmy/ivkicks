@@ -117,7 +117,7 @@ const Dedication = () => {
             );
           })}
           <SlideNextButton swipingButtonRef={swipingButtonRef} />
-          <SlidePrevButton swipingButtonRef={swipingButtonRefPrev} />
+          <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
         </Swiper>
         <img
           src={rightIcon}
@@ -130,13 +130,13 @@ const Dedication = () => {
             src={leftIcon}
             alt="leftIcon"
             className="w-8 cursor-pointer"
-            onClick={() => swipingButtonRef.current?.click()}
+            onClick={() => swipingButtonRefPrev.current?.click()}
           />
           <img
             src={rightIcon}
             alt="leftIcon"
             className="w-8 cursor-pointer"
-            onClick={() => swipingButtonRefPrev.current?.click()}
+            onClick={() => swipingButtonRef.current?.click()}
           />
         </div>
       </div>
