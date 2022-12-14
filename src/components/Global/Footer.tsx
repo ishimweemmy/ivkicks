@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Socials from "./Socials";
 import { KeyboardArrowUp } from "@mui/icons-material";
-import Accordion, { AccordionProps } from "./Accordion";
+import Accordion, { AccordionProps } from "../Landing/Accordion";
 import logo from "../../assets/Logo.svg";
 import { Link } from "react-router-dom";
 

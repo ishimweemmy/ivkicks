@@ -6,8 +6,8 @@ import Brand, { BrandProps } from "./Brand";
 import { Pagination } from "swiper";
 import leftIcon from "../../assets/leftIcon.png";
 import rightIcon from "../../assets/rightIcon.png";
-import SlideNextButton from "./SlideNextButton";
-import SlidePrevButton from "./SlidePrev";
+import SlideNextButton from "../Global/SlideNextButton";
+import SlidePrevButton from "../Global/SlidePrev";
 
 const Brands = () => {
   const [mobile, setMobile] = useState<boolean>(

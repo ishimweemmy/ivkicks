@@ -7,6 +7,7 @@ import menu from "../../assets/hamburger icon.png";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import type { FC } from "react";
 import { FiMenu } from "react-icons/fi";
+import { links } from "../../data";
 
 interface Link {
   to: string;
@@ -19,28 +20,6 @@ interface NavProps {
 }
 
 const Nav: FC<NavProps> = (props) => {
-  const links: Link[] = [
-    {
-      to: "/",
-      end: true,
-      displayName: "Footwear",
-    },
-    {
-      to: "/about",
-      end: false,
-      displayName: "About us",
-    },
-    {
-      to: "/products",
-      end: true,
-      displayName: "Products",
-    },
-    {
-      to: "/sale",
-      end: true,
-      displayName: "Sale",
-    },
-  ];
 
   const homeLinkRef = useRef<HTMLAnchorElement>(null);
 

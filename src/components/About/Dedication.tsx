@@ -5,10 +5,11 @@ import "swiper/css/navigation";
 import { Pagination } from "swiper";
 import leftIcon from "../../assets/arrow-left-circle.png";
 import rightIcon from "../../assets/arrow-left-circle-1.png";
-import SlideNextButton from "../Landing/SlideNextButton";
-import SlidePrevButton from "../Landing/SlidePrev";
+import SlideNextButton from "../Global/SlideNextButton";
+import SlidePrevButton from "../Global/SlidePrev";
 import Brand, { BrandProps } from "../Landing/Brand";
 import DedCard, { DedCardProps } from "./DedCard";
+import { brandsData } from "../../data";
 
 const Dedication = () => {
   const [mobile, setMobile] = useState<boolean>(
@@ -33,34 +34,6 @@ const Dedication = () => {
 
   const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
   const swipingButtonRefPrev = useRef<HTMLButtonElement | null>(null);
-
-  const brands: DedCardProps[] = [
-    {
-      id: 0,
-      heading: "Products",
-      description: "Things on a very small scale behave like nothing",
-    },
-    {
-      id: 1,
-      heading: "Experience",
-      description: "Things on a very small scale behave like nothing",
-    },
-    {
-      id: 2,
-      heading: "Personal Touch",
-      description: "Things on a very small scale behave like nothing",
-    },
-    {
-      id: 0,
-      heading: "Products",
-      description: "Things on a very small scale behave like nothing",
-    },
-    {
-      id: 1,
-      heading: "Experience",
-      description: "Things on a very small scale behave like nothing",
-    },
-  ];
 
   return (
     <div className="w-full h-fit flex flex-col items-center justify-center relative bg-[#f5f5f5] px-[5rem] sm:px-[1rem] lg:pt-[3rem] lg:flex-row lg:pl-[10rem] ">
@@ -88,7 +61,7 @@ const Dedication = () => {
           />
           <img
             src={rightIcon}
-            alt="leftIcon"
+            alt="rightIcon"
             className="w-8 cursor-pointer"
             onClick={() => swipingButtonRefPrev.current?.click()}
           />
@@ -107,7 +80,7 @@ const Dedication = () => {
           className="w-full h-[70%]"
           spaceBetween={10}
         >
-          {brands.map((brand) => {
+          {brandsData.map((brand) => {
             const { id, heading, description } = brand;
 
             return (

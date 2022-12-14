@@ -12,7 +12,7 @@ export interface PromoProductProps {
   userImage: string;
   rating: number;
   userTestimonial: string;
-  id: number
+  id: number;
 }
 
 const PromoProduct: FC<PromoProductProps> = (props) => {
@@ -65,8 +65,11 @@ const PromoProduct: FC<PromoProductProps> = (props) => {
       </div>
       <div className="w-full h-[54%] flex flex-col items-center justify-center lsm:h-[80%] ">
         <div className="w-full h-[15rem] relative top-[-3rem] flex flex-col items-center justify-center lsm:top-0">
-          <img src={imgSrc} alt="" className="max-w-none w-[22rem] lsm:scale-[1.7] md:scale-[2] z-20" />
-          {/* <div className="w-[15rem] h-[15rem] rounded-full hidden lsm:block absolute bg-[blue] z-10 top-[-2rem] left-[6rem]"></div> */}
+          <img
+            src={imgSrc}
+            alt=""
+            className="max-w-none w-[22rem] lsm:scale-[1.7] md:scale-[2] z-20"
+          />
           <div className="w-[70%] h-fit px-2 py-3 flex flex-col items-center justify-center relative rounded-xl gap-[.5rem] bottom-[4rem] backdrop-blur-xl border z-30 ">
             <span className="flex gap-2">
               {theRatingStars}
@@ -82,7 +85,9 @@ const PromoProduct: FC<PromoProductProps> = (props) => {
             />
           </div>
         </div>
-        <span className="text-white relative bottom-[2rem] text-xl font-bold border-b-4 border-b-[#FF3C78] lsm:-bottom-6 md:-bottom-[4rem]">{sneakerName}</span>
+        <span className="text-white relative bottom-[2rem] text-xl font-bold border-b-4 border-b-[#FF3C78] lsm:-bottom-6 md:-bottom-[4rem]">
+          {sneakerName}
+        </span>
       </div>
     </div>
   );

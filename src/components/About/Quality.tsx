@@ -1,86 +1,7 @@
+import { qualityCardsData } from "../../data";
 import QualityCard, { QualityCProps } from "./QualityCard";
 
 const Quality = () => {
-  const qualityCards: QualityCProps[] = [
-    {
-      imgSrc: "/server-assets/women3.jpg",
-      heading: "Our solution",
-      id: 0,
-      description:
-        "Wearing proper walking shoes is a fundamental element in maintaining the correct walking technique, as well as preventing injury. ",
-      triangles: [
-        {
-          position: { bottom: -1, left: 0 },
-          id: 0,
-          rotation: "228",
-        },
-        {
-          position: { bottom: -1, right: 16.5 },
-          id: 3,
-          rotation: "228",
-        },
-        {
-          position: { bottom: 0, right: 17.5 },
-          id: 3,
-          rotation: "228",
-        },
-      ],
-    },
-    {
-      imgSrc: "/server-assets/women.jpg",
-      heading: "Process",
-      id: 1,
-      description:
-        "Wearing proper walking shoes is a fundamental element in maintaining the correct walking technique, as well as preventing injury. ",
-      triangles: [
-        {
-          position: { bottom: -2, right: 1 },
-          id: 0,
-          rotation: "45",
-        },
-        {
-          position: { bottom: -2, right: 3 },
-          id: 1,
-          rotation: "45",
-        },
-        {
-          position: { bottom: -0.75, right: 0 },
-          id: 3,
-          rotation: "45",
-        },
-        {
-          position: { bottom: 0.75, right: 0.75 },
-          id: 2,
-          rotation: "45",
-        },
-      ],
-    },
-    {
-      imgSrc: "/server-assets/women1.jpg",
-      heading: "Results",
-      id: 2,
-      description:
-        "Wearing proper walking shoes is a fundamental element in maintaining the correct walking technique, as well as preventing injury. ",
-      triangles: [
-        {
-          position: { bottom: -1, left: 0 },
-          id: 0,
-          rotation: "228",
-        },
-        {
-          position: { bottom: -1, right: 16.5 },
-          id: 3,
-          rotation: "228",
-        },
-        {
-          position: { bottom: 0, right: 17.5 },
-          id: 3,
-          rotation: "228",
-        },
-      ],
-    },
-  ];
-
   return (
     <div className="w-full h-fit flex flex-col bg-white py-[3rem] items-center">
       <div className="flex flex-wrap gap-6 px-6 md:flex-col md:items-center md:px-0 mb-8">
@@ -94,7 +15,7 @@ const Quality = () => {
         </p>
       </div>
       <div className="flex flex-col gap-[.5rem] items-center justify-center lg:w-[80%]">
-        {qualityCards.map((qualityCard) => {
+        {qualityCardsData.map((qualityCard) => {
           const { imgSrc, heading, description, triangles, id } = qualityCard;
           return (
             <QualityCard

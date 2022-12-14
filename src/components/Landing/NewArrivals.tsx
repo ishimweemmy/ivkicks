@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-import NewArrival from "./NewArrival";
+import NewArrival from "../Global/NewArrival";
 import { FeaturedProInterface } from "./FeaturedPro";
 import "swiper/css/autoplay";
 

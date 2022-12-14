@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Socials from "./Socials";
+import Socials from "../Global/Socials";
 import subscriptionSneaker from "../../assets/subscription.png";
 
 const Subscriptions = () => {

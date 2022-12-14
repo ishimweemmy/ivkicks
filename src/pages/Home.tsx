@@ -7,7 +7,7 @@ import rightArrow from "../assets/arrow-left-circle.png";
 import personImage from "../assets/Ellipse 6.png";
 import FeaturedPros from "../components/Landing/FeaturedPros";
 import lock from "../assets/lock.png";
-import Accessories from "../components/Landing/Accessories";
+import Accessories from "../components/Global/Accessories";
 import BestSeller from "../components/Landing/BestSeller";
 import NewArrivals from "../components/Landing/NewArrivals";
 import WhyUs from "../components/Landing/WhyUs";

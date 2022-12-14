@@ -5,8 +5,8 @@ import { Swiper as SwiperEl, SwiperSlide } from "swiper/react";
 import { Autoplay, Controller } from "swiper";
 import "swiper/css";
 import "swiper/css/autoplay";
-import SlideNextButton from "../../../components/Landing/SlideNextButton";
-import SlidePrevButton from "../../../components/Landing/SlidePrev";
+import SlideNextButton from "../../../components/Global/SlideNextButton";
+import SlidePrevButton from "../../../components/Global/SlidePrev";
 import PromoProduct, {
   PromoProductProps,
 } from "../../../components/promo-products/PromoProduct";

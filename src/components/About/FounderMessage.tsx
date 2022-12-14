@@ -1,29 +1,7 @@
-import Triangle, { TriangleProps } from "./Triangle";
+import Triangle from "./Triangle";
+import { trianglesData } from "../../data";
 
 const FounderMessage = () => {
-  const triangles:TriangleProps[] = [
-    {
-      position: { bottom: 1, right: 0 },
-      id: 0,
-      rotation: "45",
-    },
-    {
-      position: { bottom: 1, right: 2 },
-      id: 1,
-      rotation: "45",
-    },
-    {
-      position: { bottom: 2.4, right: 0.5 },
-      id: 2,
-      rotation: "45",
-    },
-    {
-      position: { bottom: 3.5, right: 0.75 },
-      id: 3,
-      rotation: "45",
-    },
-  ];
-
   return (
     <div className="w-full h-fit flex flex-col items-center justify-center gap-[2rem] bg-[#f5f5f5] py-10 lsm:flex-row lg:px-[5rem]">
       <div className="flex flex-col items-center justify-center gap-8">
@@ -58,9 +36,16 @@ const FounderMessage = () => {
             backgroundPosition: `center`,
           }}
         ></div>
-        {triangles.map((triangle) => {
-        const {position, id, rotation} = triangle
-          return <Triangle key={id} position={position} id={id} rotation={rotation} />
+        {trianglesData.map((triangle) => {
+          const { position, id, rotation } = triangle;
+          return (
+            <Triangle
+              key={id}
+              position={position}
+              id={id}
+              rotation={rotation}
+            />
+          );
         })}
       </div>
     </div>

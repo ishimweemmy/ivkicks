@@ -10,7 +10,7 @@ import { FiGift } from "react-icons/fi";
 import FounderMessage from "../components/About/FounderMessage";
 import Quality from "../components/About/Quality";
 import Dedication from "../components/About/Dedication";
-import Accessories from "../components/Landing/Accessories";
+import Accessories from "../components/Global/Accessories";
 import OurProducts from "../components/About/OurProducts";
 import PopularBrands from "../components/About/PopularBrands";
 

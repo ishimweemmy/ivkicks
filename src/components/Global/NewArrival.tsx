@@ -1,20 +1,13 @@
 import type { FC } from "react";
 import arrivalShoe from '../../assets/image 7.png';
-import { color, FeaturedProInterface } from "./FeaturedPro";
+import { color, FeaturedProInterface } from "../Landing/FeaturedPro";
 import filledStar from "../../assets/Star 4.svg";
 import unFilledStar from "../../assets/Star 5.svg";
+import { colors } from "../../data";
 
 
 const NewArrival:FC<FeaturedProInterface> = (props) => {
   const { rating, description, price, imgSource, id, indexId } = props;
-
-
-  const colors: color[] = [
-    { firstColor: "#FE7831", secondColor: "#FFDEBE" },
-    { firstColor: "#02BE83", secondColor: "#B3F6DC" },
-    { firstColor: "#FF3C78", secondColor: "#FFB2B2" },
-    { firstColor: "#8AA8F8", secondColor: "#315BFF" },
-  ];
 
   const styles = {
     background: `linear-gradient(270deg, ${colors[indexId].firstColor} 0%, ${colors[indexId].secondColor} 100%)`,
