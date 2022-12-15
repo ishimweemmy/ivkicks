@@ -5,6 +5,7 @@ import productsData from "./productsData.json";
 import qualityCardsData from "./qualityCards.json";
 import colors from "./colors.json";
 import links from "./links.json";
+import promoProducts from "./promoProducts.json";
 
 // import brands from "./triangles.json";
 // import trianglesData from "./triangles.json";
@@ -20,5 +21,6 @@ export {
   productsData,
   qualityCardsData,
   colors,
-  links
+  links,
+  promoProducts
 };

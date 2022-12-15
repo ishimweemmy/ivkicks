@@ -11,63 +11,11 @@ import PromoProduct, {
   PromoProductProps,
 } from "../../../components/promo-products/PromoProduct";
 import Circle from "../../../components/promo-products/Circle";
+import { promoProducts } from "../../../data";
 
 const Promo = () => {
   const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
   const swipingButtonRefPrev = useRef<HTMLButtonElement | null>(null);
-
-  const promoProducts: PromoProductProps[] = [
-    {
-      sneakerName: "Nike Speed",
-      madeOf: "Rubber Sole",
-      durabilityType: "durable",
-      imgSrc: "/server-assets/yeezy1.png",
-      userImage: "/server-assets/user.jpg",
-      userTestimonial: "Nike speed are amazing!",
-      rating: 5,
-      id: 1,
-    },
-    {
-      sneakerName: "Alexander mcQueen",
-      madeOf: "wool",
-      durabilityType: "durable",
-      imgSrc: "/server-assets/alexander.png",
-      userImage: "/server-assets/user.jpg",
-      userTestimonial: "These mcQueens are awesome",
-      rating: 5,
-      id: 2,
-    },
-    {
-      sneakerName: "Nike Yeezy",
-      madeOf: "cotton",
-      durabilityType: "durable",
-      imgSrc: "/server-assets/yeezy.png",
-      userImage: "/server-assets/user.jpg",
-      userTestimonial: "These yeezy are awesome",
-      rating: 5,
-      id: 3,
-    },
-    {
-      sneakerName: "Nike Yeezy",
-      madeOf: "cotton",
-      durabilityType: "durable",
-      imgSrc: "/server-assets/yeezy.png",
-      userImage: "/server-assets/user.jpg",
-      userTestimonial: "These yeezy are awesome",
-      rating: 5,
-      id: 4,
-    },
-    {
-      sneakerName: "Nike Yeezy",
-      madeOf: "cotton",
-      durabilityType: "durable",
-      imgSrc: "/server-assets/yeezy1.png",
-      userImage: "/server-assets/user.jpg",
-      userTestimonial: "These yeezy are awesome",
-      rating: 5,
-      id: 5,
-    },
-  ];
 
   return (
     <div className="w-full h-fit">
