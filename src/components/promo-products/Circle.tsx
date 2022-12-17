@@ -3,7 +3,7 @@ import { useState } from "react";
 const Circle = () => {
     const [hover, setHovered] = useState(false);
 
-    return (<div className="w-[18rem] h-[10rem] rounded-t-full border-4 border-[#ffffff94] border-dotted border-b-0 flex items-end justify-center pb-[1rem] relative lsm:scale-[2] md:scale-[2.4] lgMd:scale-[2.6] xLgMd:scale-[2.8] circleLg:scale-[3] ">
+    return (<div className="w-[18rem] h-[10rem] rounded-t-full border-4 border-[#ffffff94] border-dotted border-b-0 flex items-end justify-center pb-[1rem] relative minSm:scale-[1.4] lsm:scale-[2] md:scale-[2.4] lgMd:scale-[2.6] xLgMd:scale-[2.8] circleLg:scale-[3] ">
         {/* dots around the circleShoe  */}
         <div className="h-2 w-2 rounded-full border absolute left-[2rem] top-[2.5rem] bg-[#0A083A]"></div>
         <div className="h-2 w-2 rounded-full border absolute translate-x-[50%] top-[-.4rem] bg-[#0A083A]"></div>

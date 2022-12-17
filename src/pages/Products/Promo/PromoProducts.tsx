@@ -7,11 +7,10 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import SlideNextButton from "../../../components/Global/SlideNextButton";
 import SlidePrevButton from "../../../components/Global/SlidePrev";
-import PromoProduct, {
-  PromoProductProps,
-} from "../../../components/promo-products/PromoProduct";
+import PromoProduct from "../../../components/promo-products/PromoProduct";
 import Circle from "../../../components/promo-products/Circle";
 import { promoProducts } from "../../../data";
+import WorkOut from "../../../components/promo-products/charts/WorkOut";
 
 const Promo = () => {
   const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -19,7 +18,7 @@ const Promo = () => {
 
   return (
     <div className="w-full h-fit">
-      <div className="w-full h-full bg-[#0A083A] py-[1rem] flex flex-col gap-[1rem] items-center justify-center lsm:grid lsm:grid-cols-1 miniTablet:grid-cols-2 grid-rows-promoTopLsm lsm:gap-y-[8rem] md:grid-rows-promoTopMd">
+      <div className="w-full h-full bg-[#0A083A] py-[1rem] flex flex-col gap-[1rem] items-center justify-center minSm:gap-[4rem] lsm:grid lsm:grid-cols-1 miniTablet:grid-cols-2 grid-rows-promoTopLsm lsm:gap-y-[8rem] md:grid-rows-promoTopMd">
         <div className="w-full h-full flex flex-col items-center justify-center gap-[2rem] miniTablet:items-start lsm:pl-[1rem] md:pl-[2rem] xl:pl-[5rem]">
           <span className="text-3xl text-center text-[#FF3C78] font-black lsm:text-start lsm:text-4xl">
             Built for speed.
@@ -35,7 +34,7 @@ const Promo = () => {
             Shop now
           </button>
         </div>
-        <div className="w-full h-full relative hidden miniTablet:grid grid-cols-promoBadges gap-[1rem] ">
+        <div className="w-full h-full relative hidden miniTablet:grid grid-cols-promoBadges gap-[1rem] bg-[">
           <div className="grid place-items-end">
             <div className="w-[85%] h-[60%] rounded-lg grid place-items-center bg-[#e9e9fb]">
               <div className="w-[85%] h-[85%] rounded-lg bg-white flex flex-col items-center justify-center gap-[rem]">
@@ -47,7 +46,9 @@ const Promo = () => {
           </div>
           <div className="flex flex-col relative pt-8 ">
             <div className="w-full h-[6rem] bg-[#e9e9fb] rounded-lg grid place-items-center">
-              <div className="w-[90%] h-[85%] rounded-lg bg-white"></div>
+              <div className="w-[90%] h-[85%] rounded-lg bg-white">
+                <WorkOut />
+              </div>
             </div>
             <div className="w-[80%] h-[12rem] bg-[#e9e9fb] grid place-items-center absolute bottom-[-7rem] rounded-lg self-end">
               <div className="w-[85%] h-[85%] rounded-lg bg-white"></div>
@@ -56,7 +57,7 @@ const Promo = () => {
         </div>
         <div className="w-full h-full flex flex-col items-center justify-center lsm:justify-start lsm:col-span-2">
           <Circle />
-          <div className="w-full h-[22rem] bg-[#0000ff22 absolute bottom-[15rem] flex items-center justify-center lsm:h-[30rem] lsm:bottom-[2rem]">
+          <div className="w-full h-[22rem] bg-[#0000ff22 absolute top-[25rem] flex items-center justify-center lsm:h-[30rem] minSm:top-[26rem] lsm:top-[30rem] md:top-[35rem]">
             <SwiperEl
               modules={[Controller, Autoplay]}
               slidesPerView={1}
@@ -102,7 +103,7 @@ const Promo = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-[18rem] bg-[#0A083A] lsm:hidden"></div>
+      <div className="w-full h-[15rem] bg-[#0A083A] lsm:hidden"></div>
     </div>
   );
 };

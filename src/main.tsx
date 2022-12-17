@@ -11,7 +11,7 @@ import Home from './pages/Home'
 import { Notfound } from './pages/NotFound'
 import Allproducts from './pages/Products/AllProducts/Allproducts'
 import Products from './pages/Products/NonProducts/Products'
-import Promo from './pages/Products/Promo/Promo'
+import Promo from './pages/Products/Promo/PromoProducts'
 import Sale from './pages/Sale'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

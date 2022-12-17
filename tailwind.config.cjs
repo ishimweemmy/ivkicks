@@ -36,7 +36,7 @@ module.exports = {
 
       lXl: "1281px",
 
-      "mini2xl": "1300",
+      mini2xl: "1300",
 
       "2xl": "1536px",
     },
