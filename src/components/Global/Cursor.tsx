@@ -25,7 +25,7 @@ const Cursor = () => {
         })
     }, [mouseVisible])
     return (
-        <img src="/server-assets/customPointer2.png" alt="" className={`fixed w-12 h-10 z-50 ${mouseVisible ? 'fixed' : 'hidden'} pointer-events-none`} style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }} />
+        <img src="/server-assets/customPointer2.png" alt="" className={`w-12 h-10 z-50 ${mouseVisible ? 'fixed' : 'hidden'} pointer-events-none`} style={{ left: `${mousePosition.x - 18}px`, top: `${mousePosition.y - 12}px` }} />
     )
 }
 
