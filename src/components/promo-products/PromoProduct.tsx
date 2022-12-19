@@ -35,12 +35,12 @@ const PromoProduct: FC<PromoProductProps> = (props) => {
   const theUnfilledStars: JSX.Element[] =
     rating < 5
       ? [...Array(5 - Math.floor(rating))].map(
-          (el: undefined, index: number) => {
-            return (
-              <img src={unFilledStar} alt="" key={index} className="w-3" />
-            );
-          }
-        )
+        (el: undefined, index: number) => {
+          return (
+            <img src={unFilledStar} alt="" key={index} className="w-3" />
+          );
+        }
+      )
       : [];
   return (
     <div className="w-[20rem] h-full flex flex-col items-center justify-center relative z-40 lsm:w-[30rem] lsm:h-[30rem] ">
