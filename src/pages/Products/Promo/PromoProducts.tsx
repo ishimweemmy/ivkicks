@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { IoFootsteps } from "react-icons/io5";
 import { Swiper as SwiperEl, SwiperSlide } from "swiper/react";
@@ -13,14 +13,16 @@ import { promoProducts } from "../../../data";
 import WorkOut from "../../../components/promo-products/charts/WorkOut";
 import Steps from "../../../components/promo-products/charts/Steps";
 import TrackerCard from "../../../components/promo-products/TrackerCard";
+import Cursor from "../../../components/Global/Cursor";
 
 const Promo = () => {
   const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
   const swipingButtonRefPrev = useRef<HTMLButtonElement | null>(null);
 
   return (
-    <div className="w-full h-fit">
-      <div className="w-full h-full bg-[#0A083A] py-[1rem] flex flex-col gap-[1rem] items-center justify-center minSm:gap-[4rem] lsm:grid lsm:grid-cols-1 miniTablet:grid-cols-2 grid-rows-promoTopLsm lsm:gap-y-[8rem] lgMd:gap-y-[12rem] md:grid-rows-promoTopMd">
+    <div className="w-full h-fit relative" style={{ cursor: 'none' }}>
+      <Cursor />
+      <div className="w-full h-full bg-[#0A083A] py-[1rem] flex flex-col gap-[1rem] items-center justify-center minSm:gap-[4rem] lsm:grid lsm:grid-cols-1 miniTablet:grid-cols-2 grid-rows-promoTopLsm lsm:gap-y-[8rem] lgMd:gap-y-[12rem] md:grid-rows-promoTopMd ">
         <div className="w-full h-full flex flex-col items-center justify-center gap-[2rem] miniTablet:items-start lsm:pl-[1rem] md:pl-[2rem] xl:pl-[5rem]">
           <span className="text-3xl text-center text-[#FF3C78] font-black lsm:text-start lsm:text-4xl">
             Built for speed.
@@ -31,7 +33,7 @@ const Promo = () => {
           </p>
           <button
             className="w-[8rem] h-[2.7rem] px-4 rounded-[.3rem] bg-[#FF3C78] text-white text-sm text-center xl:w-[15rem] xl:h-[3rem]"
-            style={{ boxShadow: "hwb(0deg 0% 0% / 41%) 0px 25px 50px -10px" }}
+            style={{ boxShadow: "hwb(0deg 0% 0% / 41%) 0px 25px 50px -10px", cursor: 'none' }}
           >
             Shop now
           </button>
@@ -46,7 +48,7 @@ const Promo = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col relative pt-8 md:pt-[5rem] lgMd:pt-[4rem] lg:pr-[10rem] ">
+          <div className="flex flex-col relative pt-8 md:pt-[5rem] lgMd:pt-[4rem] lg:pr-[1rem] xlarge:pr-[25%] 2xl:pr-[40%] ">
             <div className="w-full h-[6rem] bg-[#e9e9fb] rounded-lg grid place-items-center lgMd:h-[7rem]">
               <div className="w-[90%] h-[85%] rounded-lg bg-white grid grid-cols-[40%_60%] md:grid-cols-promoBadge1 place-items-center">
                 <WorkOut />
@@ -73,7 +75,7 @@ const Promo = () => {
         </div>
         <div className="w-full h-full flex flex-col items-center justify-center lsm:justify-start lsm:col-span-2">
           <Circle />
-          <div className="w-full h-[22rem] bg-[#0000ff22 absolute top-[25rem] flex items-center justify-center lsm:h-[30rem] minSm:top-[26rem] lsm:top-[30rem] md:top-[35rem] lgMd:top-[40rem]">
+          <div className="w-full h-[22rem] bg-[#0000ff22 absolute top-[25rem] flex items-center justify-center lsm:h-[30rem] minSm:top-[26rem] lsm:top-[30rem] md:top-[35rem] lgMd:top-[rem]">
             <SwiperEl
               modules={[Controller, Autoplay]}
               slidesPerView={1}

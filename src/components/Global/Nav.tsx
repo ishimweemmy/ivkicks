@@ -31,7 +31,7 @@ console.log(location.pathname)
     <nav
       className={`w-auto h-[6rem] sm:px-4 flex items-center justify-around px-[7rem] gap-[12rem] lg:gap-[4rem] lg:px-[2rem] xl:px-[2rem] md:justify-between md:px-8 lsm:gap-[25rem] xMiniTablet:gap-[30rem] miniTablet:px-4 transition-all overflow-hidden z-30 lssm:justify-between lssm:px-4 sm:gap-0 xl:pl-[5rem] xs:gap-2 xs:p-0 xs:pl-4 xs:justify-between duration-700`}
       id="top"
-      style={{background: `${location.pathname == "/about" || location.pathname == "/products/promoProducts" ? "rgb(10,8,58)" : "#F5F5F5"}`}}
+      style={{background: `${location.pathname == "/about" || location.pathname == "/products/promoProducts" ? "rgb(10,8,58)" : "#F5F5F5"}`, cursor: `${location.pathname == '/about' || location.pathname == '/products/promoProducts' ? 'none' : ''}`}}
     >
       <img
         src={logo}
