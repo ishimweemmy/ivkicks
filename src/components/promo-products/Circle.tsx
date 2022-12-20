@@ -8,7 +8,7 @@ const Circle = () => {
       <div className="h-2 w-2 rounded-full border absolute left-[2rem] top-[2.5rem] bg-[#0A083A]"></div>
       <div className="h-2 w-2 rounded-full border absolute translate-x-[50%] top-[-.4rem] bg-[#0A083A]"></div>
       <div
-        className="h-2 w-2 rounded-full border absolute right-[2rem] top-[2.5rem] bg-[#0A083A] z-50 hover:border-none hover:bg-[#FF3C78] transition-all duration-1000"
+        className="h-2 w-2 rounded-full border absolute right-[2rem] top-[2.5rem] bg-[#0A083A] z-50 hover:border-none hover:bg-[#FF3C78] transition-all duration-200"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       ></div>

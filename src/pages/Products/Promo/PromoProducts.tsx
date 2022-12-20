@@ -119,9 +119,9 @@ const Promo = () => {
               <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
             </SwiperEl>
           </div>
-          <div className="w-[90%] h-fit flex justify-between mt-[6rem] px-2 lsm:w-full lsm:mt-[10rem] md:mt-[12rem] lg:px-[4rem] mini2xl:w-[80%] ">
-            <FiArrowLeft className="text-white lsm:text-xl" />
-            <FiArrowRight className="text-white lsm:text-xl" />
+          <div className="w-[90%] h-fit flex justify-between mt-[6rem] px-2 lsm:w-full lsm:mt-[10rem] md:mt-[12rem] lg:px-[4rem] mini2xl:w-[80%] z-50 ">
+            <FiArrowLeft className="text-white lsm:text-xl" onClick={() => swipingButtonRefPrev.current?.click()} />
+            <FiArrowRight className="text-white lsm:text-xl" onClick={() => swipingButtonRef.current?.click()} />
           </div>
         </div>
       </div>
