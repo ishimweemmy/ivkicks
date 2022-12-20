@@ -34,3 +34,9 @@ html {
     flex-direction: row;
   }
 }
+
+
+.group:hover {
+  box-shadow: 1px 20px 46px -10px rgba(0,71,255,0.89);
+  border: none;
+}
