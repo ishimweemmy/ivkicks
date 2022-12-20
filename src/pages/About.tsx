@@ -1,5 +1,4 @@
 import Description from "../components/About/Description";
-import { descriptionsData } from "../data/descriptionsData";
 import mcQueenWear from "../assets/mcQueenWear.jpeg";
 import nikeShoesWear from "../assets/nikeShoes.jpg";
 import yeezyShoesWear from "../assets/yeezyBoost.jpg";
@@ -13,6 +12,7 @@ import Dedication from "../components/About/Dedication";
 import Accessories from "../components/Global/Accessories";
 import OurProducts from "../components/About/OurProducts";
 import PopularBrands from "../components/About/PopularBrands";
+import { descriptionsData } from "../data";
 
 const About = () => {
   return (

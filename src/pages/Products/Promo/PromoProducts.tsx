@@ -14,6 +14,7 @@ import WorkOut from "../../../components/promo-products/charts/WorkOut";
 import Steps from "../../../components/promo-products/charts/Steps";
 import TrackerCard from "../../../components/promo-products/TrackerCard";
 import Cursor from "../../../components/Global/Cursor";
+import Difference from "../../../components/promo-products/Difference";
 
 const Promo = () => {
   const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -98,7 +99,7 @@ const Promo = () => {
 
                 return (
                   <SwiperSlide
-                    className="w-fit h-full z-40 flex justify-center"
+                    className="w-fit h-full z-40 flex justify-center "
                     key={sneakerName}
                   >
                     <PromoProduct
@@ -115,6 +116,9 @@ const Promo = () => {
                   </SwiperSlide>
                 );
               })}
+              {/* fa9358 */}
+              {/* <div className="w-[20rem] h-[16rem] absolute bg-[#FF3C78] rounded-full bottom-[4rem] left-[26rem] -z-10 filter blur-3xl" ></div> */}
+
               <SlideNextButton swipingButtonRef={swipingButtonRef} />
               <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
             </SwiperEl>
@@ -126,6 +130,7 @@ const Promo = () => {
         </div>
       </div>
       <div className="w-full h-[15rem] bg-[#0A083A] lsm:hidden"></div>
+      <Difference />
     </div>
   );
 };
