@@ -68,8 +68,9 @@ const PromoProduct: FC<PromoProductProps> = (props) => {
           <img
             src={imgSrc}
             alt=""
-            className="max-w-none w-[22rem] lsm:scale-[1.7] md:scale-[2] z-20"
+            className="max-w-none w-[22rem] relative lsm:scale-[1.7] md:scale-[2] z-20"
           />
+
           <div className="w-[70%] h-fit px-2 py-3 flex flex-col items-center justify-center relative rounded-xl gap-[.5rem] bottom-[4rem] backdrop-blur-xl border z-30 ">
             <span className="flex gap-2">
               {theRatingStars}

@@ -1,5 +1,4 @@
 import Description from "../components/About/Description";
-import { descriptionsData } from "../data/descriptionsData";
 import mcQueenWear from "../assets/mcQueenWear.jpeg";
 import nikeShoesWear from "../assets/nikeShoes.jpg";
 import yeezyShoesWear from "../assets/yeezyBoost.jpg";
@@ -13,6 +12,7 @@ import Dedication from "../components/About/Dedication";
 import Accessories from "../components/Global/Accessories";
 import OurProducts from "../components/About/OurProducts";
 import PopularBrands from "../components/About/PopularBrands";
+import { descriptionsData } from "../data";
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -20,7 +20,9 @@ const About = () => {
     <div className="w-screen h-fit flex flex-wrap">
       <div className="h-fit w-full grid grid-cols-1 grid-rows-aboutTop lssm:grid-rows-aboutTopResponsive place-items-center gap-5 mb-[2rem] md:grid-cols-3 md:px-2 md:grid-rows-aboutTopMd xl:grid-rows-aboutTopLarge xlarge:mt-[5rem]">
         <div className="w-full h-full flex flex-col items-center justify-center md:col-span-2 md:items-start md:gap-4 ">
-          <span className="text-[#ff3c76d9] text-sm font-semibold pl-[2.5rem] hidden md:block  ">About Us</span>
+          <span className="text-[#ff3c76d9] text-sm font-semibold pl-[2.5rem] hidden md:block  ">
+            About Us
+          </span>
           <span className="text-white text-3xl text-center font-bold sm:text-2xl md:text-4xl md:text-start px-[2.5rem] xlarge:text-6xl ">
             The Best Sneakers delivered to you.
           </span>
@@ -90,14 +92,18 @@ const About = () => {
                 <FiGift className="text-xl text-white md:text-sm" />
               </div>
               <div className="w-fit h-full flex flex-col items-start justify-center">
-                <span className="text-[#315bff] text-xl font-bold md:text-sm">10%</span>
+                <span className="text-[#315bff] text-xl font-bold md:text-sm">
+                  10%
+                </span>
                 <span className="text-xs text-[rgb(10,8,58)] font-semibold whitespace-nowrap md:font-medium">
                   This week's discount
                 </span>
               </div>
             </div>
             <div className="h-full w-3/12 grid place-items-center relative border-l-1 border-dashed border-l-gray-500">
-              <button className="w-[3rem] h-fit text-[#315bff] text-xs font-bold uppercase"><Link to='/products/promoProducts'>share a gift</Link></button>
+              <button className="w-[3rem] h-fit text-[#315bff] text-xs font-bold uppercase">
+                <Link to="/products/promoProducts">share a gift</Link>
+              </button>
               <div className="h-[1rem] w-[1rem] rounded-full bg-[#d4d4d4] absolute top-[-.5rem] left-[-.5rem] "></div>
               <div className="h-[1rem] w-[1rem] rounded-full bg-[#d4d4d4] absolute bottom-[-.5rem] left-[-.5rem]"></div>
             </div>
