@@ -13,6 +13,7 @@ import Dedication from "../components/About/Dedication";
 import Accessories from "../components/Global/Accessories";
 import OurProducts from "../components/About/OurProducts";
 import PopularBrands from "../components/About/PopularBrands";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -96,7 +97,7 @@ const About = () => {
               </div>
             </div>
             <div className="h-full w-3/12 grid place-items-center relative border-l-1 border-dashed border-l-gray-500">
-              <button className="w-[3rem] h-fit text-[#315bff] text-xs font-bold uppercase">share a gift</button>
+              <button className="w-[3rem] h-fit text-[#315bff] text-xs font-bold uppercase"><Link to='/products/promoProducts'>share a gift</Link></button>
               <div className="h-[1rem] w-[1rem] rounded-full bg-[#d4d4d4] absolute top-[-.5rem] left-[-.5rem] "></div>
               <div className="h-[1rem] w-[1rem] rounded-full bg-[#d4d4d4] absolute bottom-[-.5rem] left-[-.5rem]"></div>
             </div>
