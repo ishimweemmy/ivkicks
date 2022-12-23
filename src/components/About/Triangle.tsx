@@ -12,6 +12,11 @@ const Triangle: FC<TriangleProps> = (props) => {
 
   const styles = {
     background: `linear-gradient(270deg, ${colors[id].firstColor} 0%, ${colors[id].secondColor} 100%)`,
+    transform: `rotateZ(${rotation}deg)`,
+    left: `${position.left}`,
+    right: `${position.right}rem`,
+    bottom: `${position.bottom}rem`,
+    top: `${position.top}rem`,
   };
 
   return (
@@ -19,11 +24,6 @@ const Triangle: FC<TriangleProps> = (props) => {
       className={`w-[1.5rem] h-[1.5rem] absolute rounded-br-full z-0`}
       style={{
         ...styles,
-        transform: `rotateZ(${rotation}deg)`,
-        left: `${position.left}`,
-        right: `${position.right}rem`,
-        bottom: `${position.bottom}rem`,
-        top: `${position.top}rem`,
       }}
     ></div>
   );

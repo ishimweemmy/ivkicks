@@ -8,6 +8,28 @@ const UniqueProducts = () => {
           Unique products
         </h1>
       </div>
+      <div className="w-full h-fit-relative flex items-center justify-center">
+        <div className="w-full h-fit flex flex-col items-center justify-between gap-8">
+          {/* banner 1 */}
+
+          <div className="triangle"></div>
+
+          {/* banner 2 */}
+        </div>
+        <div className="w-full h-fit flex-col items-center justify-center gap-8">
+          {/* card 1 */}
+
+
+          {/* card 2 */}
+
+
+          {/* card 3 */}
+
+
+          {/* card 4 */}
+
+        </div>
+      </div>
   </div>;
 };
 

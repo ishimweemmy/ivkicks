@@ -11,7 +11,6 @@
   display: none;
 }
 
-
 @media screen and (max-width: 1024px) {
   .decoration {
     background: linear-gradient(97.49deg, #8aa8f8 -0.43%, #315bff 144.53%);
@@ -36,8 +35,7 @@ html {
   }
 }
 
-
 .group:hover {
-  box-shadow: 1px 20px 46px -10px rgba(0,71,255,0.89);
+  box-shadow: 1px 20px 46px -10px rgba(0, 71, 255, 0.89);
   border: none;
 }

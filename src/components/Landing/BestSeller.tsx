@@ -31,10 +31,10 @@ const BestSeller: FC<BestSeller> = (props) => {
           <span className="text-lg font-medium text-[#0A083A]">women</span>
         </div>
       </div>
-      <div className="w-full h-fit flex flex-col items-center justify-center gap-16 lsm:flex-row lgMd:gap-0">
+      <div className="w-full h-fit flex flex-col items-center justify-center gap-16 lsm:flex-row lgMd:gap-0 py-[5rem]">
         <div className="w-full h-[12rem] relative flex items-center ">
           <div
-            className="w-[60%] h-[12rem] lsm:h-full  rounded-r-2xl flex items-center"
+            className="w-[60%] h-[12rem] lsm:h-full  rounded-r-2xl flex items-center lg:h-[15rem] xlarge:h-[20rem]"
             style={{
               background: "linear-gradient(270deg, #FF3C78 2.8%, #FFB2B2 100%)",
             }}
@@ -42,7 +42,7 @@ const BestSeller: FC<BestSeller> = (props) => {
             <img
               src="/server-assets/alexander1.png"
               alt=""
-              className="max-w-none w-[20rem] minSm:w-[28rem] lsm:w-[30rem] absolute bottom-[-5rem] minSm:bottom-[-8rem] lsm:bottom-[-1rem] lgMd:w-[35rem] lgMd:bottom-[-5rem] lgMd:left-[-4rem]"
+              className="max-w-none w-[20rem] minSm:w-[28rem] lsm:w-[20rem] absolute bottom-[-5rem] minSm:bottom-[-8rem] lsm:bottom-[-5rem] md:w-[23rem] lgMd:w-[26rem] lgMd:bottom-[-7rem] lg:w-[30rem] lg:bottom-[-10rem] lg:left-16 mini2xl:left-[5rem]"
             />
           </div>
         </div>

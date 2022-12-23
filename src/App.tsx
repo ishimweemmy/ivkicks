@@ -8,7 +8,14 @@ function App() {
 
   useEffect(() => {}, [location]);
   return (
-    <div className={`flex flex-col w-screen h-fit overflow-x-hidden transition-all duration-700`} style={{background: `${location.pathname != "/about" ? "#f5f5f5" : "rgb(10,8,58)"}`}}>
+    <div
+      className={`flex flex-col w-screen h-fit overflow-x-hidden transition-all duration-700`}
+      style={{
+        background: `${
+          location.pathname != "/about" ? "#f5f5f5" : "rgb(10,8,58)"
+        }`,
+      }}
+    >
       <Nav />
       <Outlet />
       <Footer />
