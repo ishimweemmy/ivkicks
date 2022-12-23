@@ -15,14 +15,15 @@ import Steps from "../../../components/promo-products/charts/Steps";
 import TrackerCard from "../../../components/promo-products/TrackerCard";
 import Cursor from "../../../components/Global/Cursor";
 import Difference from "../../../components/promo-products/Difference";
+import { lazy } from "react";
+import UniqueProducts from "../../../components/promo-products/UniqueProducts";
 
 const Promo = () => {
   const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
   const swipingButtonRefPrev = useRef<HTMLButtonElement | null>(null);
 
   return (
-    <div className="w-full h-fit relative" style={{ cursor: 'none' }}>
-      <Cursor />
+    <div className="w-full h-fit relative">
       <div className="w-full h-full bg-[#0A083A] py-[1rem] flex flex-col gap-[1rem] items-center justify-center minSm:gap-[4rem] lsm:grid lsm:grid-cols-1 miniTablet:grid-cols-2 grid-rows-promoTopLsm lsm:gap-y-[8rem] lgMd:gap-y-[12rem] md:grid-rows-promoTopMd 2xl:pl-[1rem] ">
         <div className="w-full h-full flex flex-col items-center justify-center gap-[2rem] miniTablet:items-start lsm:pl-[1rem] md:pl-[2rem] xl:pl-[5rem]">
           <span className="text-3xl text-center text-[#FF3C78] font-black lsm:text-start lsm:text-4xl mini2xl:text-6xl">
@@ -34,7 +35,10 @@ const Promo = () => {
           </p>
           <button
             className="w-[8rem] h-[2.7rem] px-4 rounded-[.3rem] bg-[#FF3C78] text-white text-sm text-center xl:w-[15rem] xl:h-[3rem] mini2xl:min-h-[3.5rem] mini2xl:max-h-[3.5rem] mini2xl:text-base mini2xl:rounded-lg"
-            style={{ boxShadow: "hwb(0deg 0% 0% / 41%) 0px 25px 50px -10px", cursor: 'none' }}
+            style={{
+              boxShadow: "hwb(0deg 0% 0% / 41%) 0px 25px 50px -10px",
+              cursor: "none",
+            }}
           >
             Shop now
           </button>
@@ -54,8 +58,12 @@ const Promo = () => {
               <div className="w-[90%] h-[85%] rounded-lg bg-white grid grid-cols-[40%_60%] md:grid-cols-promoBadge1 place-items-center">
                 <WorkOut />
                 <div className="h-full w-full flex items-center justify-center gap-[.5rem]">
-                  <span className="text-xs font-medium text-gray-500 whitespace-nowrap">Daily Work out</span>
-                  <span className="text-xs text-green-500 font-bold whitespace-nowrap hidden md:block">+30%</span>
+                  <span className="text-xs font-medium text-gray-500 whitespace-nowrap">
+                    Daily Work out
+                  </span>
+                  <span className="text-xs text-green-500 font-bold whitespace-nowrap hidden md:block">
+                    +30%
+                  </span>
                 </div>
               </div>
             </div>
@@ -65,9 +73,26 @@ const Promo = () => {
                 <span className="text-xs text-gray-500 ">Today</span>
                 <Steps />
                 <div className="flex justify-between items-center gap-[2rem] mb-[1rem]">
-                  {[{ id: 0, measurement: '300Kcal', imgSrc: '/server-assets/calories.png' }, { id: 1, measurement: '20km', imgSrc: '/server-assets/distance.png' }].map(trackerData => {
-                    const { id, measurement, imgSrc } = trackerData
-                    return <TrackerCard id={id} measurement={measurement} imgSrc={imgSrc} />
+                  {[
+                    {
+                      id: 0,
+                      measurement: "300Kcal",
+                      imgSrc: "/server-assets/calories.png",
+                    },
+                    {
+                      id: 1,
+                      measurement: "20km",
+                      imgSrc: "/server-assets/distance.png",
+                    },
+                  ].map((trackerData) => {
+                    const { id, measurement, imgSrc } = trackerData;
+                    return (
+                      <TrackerCard
+                        id={id}
+                        measurement={measurement}
+                        imgSrc={imgSrc}
+                      />
+                    );
                   })}
                 </div>
               </div>
@@ -124,13 +149,20 @@ const Promo = () => {
             </SwiperEl>
           </div>
           <div className="w-[90%] h-fit flex justify-between mt-[6rem] px-2 lsm:w-full lsm:mt-[10rem] md:mt-[12rem] lg:px-[4rem] mini2xl:w-[80%] z-50 ">
-            <FiArrowLeft className="text-white lsm:text-xl" onClick={() => swipingButtonRefPrev.current?.click()} />
-            <FiArrowRight className="text-white lsm:text-xl" onClick={() => swipingButtonRef.current?.click()} />
+            <FiArrowLeft
+              className="text-white lsm:text-xl"
+              onClick={() => swipingButtonRefPrev.current?.click()}
+            />
+            <FiArrowRight
+              className="text-white lsm:text-xl"
+              onClick={() => swipingButtonRef.current?.click()}
+            />
           </div>
         </div>
       </div>
       <div className="w-full h-[15rem] bg-[#0A083A] lsm:hidden"></div>
       <Difference />
+      <UniqueProducts />
     </div>
   );
 };

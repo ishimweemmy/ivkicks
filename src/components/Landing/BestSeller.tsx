@@ -40,9 +40,9 @@ const BestSeller: FC<BestSeller> = (props) => {
             }}
           >
             <img
-              src="/server-assets/image6.png"
+              src="/server-assets/alexander1.png"
               alt=""
-              className="max-w-none max-h-none w-[22rem] minSm:w-[30rem] lsm:w-[20rem] absolute bottom-[-2rem] minSm:bottom-[-5rem] lsm:bottom-[-1rem] lgMd:w-[35rem] lgMd:bottom-[-5rem] lgMd:left-[-4rem]"
+              className="max-w-none w-[20rem] minSm:w-[28rem] lsm:w-[30rem] absolute bottom-[-5rem] minSm:bottom-[-8rem] lsm:bottom-[-1rem] lgMd:w-[35rem] lgMd:bottom-[-5rem] lgMd:left-[-4rem]"
             />
           </div>
         </div>
