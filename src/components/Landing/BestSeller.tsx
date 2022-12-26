@@ -15,7 +15,9 @@ const BestSeller: FC<BestSeller> = (props) => {
 
   const ratings = [...Array(Math.floor(rating))].map(
     (rate: undefined, index: number) => {
-      return <img src={filledStar} className="w-5 lsm:w-4" alt="" key={index} />;
+      return (
+        <img src={filledStar} className="w-5 lsm:w-4" alt="" key={index} />
+      );
     }
   );
 
@@ -50,8 +52,12 @@ const BestSeller: FC<BestSeller> = (props) => {
           <div className="w-full h-fit flex items-center justify-center lsm:justify-start gap-[.2rem]">
             {ratings}
           </div>
-          <span className="w-full text-center font-bold text-xl sm:px-4 minSm:px-[5rem] lsm:px-0 lsm:text-start md:pr-16 lg:pr-[18rem] xl:pr-[20rem]">{description}</span>
-          <span className="w-full text-center font-bold text-xl lsm:text-start">${price}</span>
+          <span className="w-full text-center font-bold text-xl sm:px-4 minSm:px-[5rem] lsm:px-0 lsm:text-start md:pr-16 lg:pr-[18rem] xl:pr-[20rem]">
+            {description}
+          </span>
+          <span className="w-full text-center font-bold text-xl lsm:text-start">
+            ${price}
+          </span>
           <div className="flex flex-col items-center justify-center relative after:w-[8rem] after:h-[2rem] after:bg-[#315affbf] after:blur-[24px] after:absolute after:bottom-[-.5rem] ">
             <button className="px-10 py-3 bg-[#315BFF] text-white text-sm rounded-md tracking-wider font-medium z-10 2xl:px-20">
               Shop Now

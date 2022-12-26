@@ -1,3 +1,5 @@
+import Triangle1 from '../../../public/server-assets/triangle1.svg'
+
 const UniqueProducts = () => {
   return <div className="w-full h-fit bg-[#f5f5f5] flex flex-col items-center justify-center gap-8">
      <div className="w-full h-fit flex flex-col gap-[1rem] p-[3rem] minSm:w-fit minSm:items-center">
@@ -12,7 +14,8 @@ const UniqueProducts = () => {
         <div className="w-full h-fit flex flex-col items-center justify-between gap-8">
           {/* banner 1 */}
 
-          <div className="triangle"></div>
+          <div className="">
+          </div>
 
           {/* banner 2 */}
         </div>

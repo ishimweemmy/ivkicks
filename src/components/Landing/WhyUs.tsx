@@ -47,11 +47,11 @@ const WhyUs = () => {
         </div>
       </div>
       <div className="w-full h-[16rem] grid place-items-center relative md:h-[20rem]">
-        <div className="w-[90%] h-[85%] z-20 rounded-[1rem] grid place-items-center relative md:rounded-[1rem] miniTablet:w-[80%]">
+        <div className="w-[90%] h-[85%] z-20 rounded-[1rem] grid place-items-center relative md:rounded-[1rem] miniTablet:w-[70%] ">
           <img
             src={alexanderMcQueen}
             alt=""
-            className="w-full h-full absolute"
+            className="h-full absolute"
           />
 
           <div className="w-12 h-12 rounded-full border border-white grid place-items-center cursor-pointer filter z-10 ishimwe absolute">
