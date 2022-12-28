@@ -4,6 +4,7 @@ import { FacebookRounded } from "@mui/icons-material";
 import { Instagram } from "@mui/icons-material";
 import Social, { SocialProps } from "./Social";
 import type { FC } from "react";
+import { Bounce } from "react-reveal";
 
 const Socials: FC<{ section?: string }> = (props) => {
   const { section } = props;
@@ -69,24 +70,28 @@ const Socials: FC<{ section?: string }> = (props) => {
     );
   });
   return (
-    <div
-      className="w-full h-[20%] flex items-center justify-center gap-3"
-      style={{
-        justifyContent: `${
-          section == "subscriptions" && tablet
-            ? "flex-end"
-            : section == "footer" && !mobile
-            ? "flex-start"
-            : "center"
-        }`,
-        paddingRight: `${section == "subscriptions" && tablet ? "2rem" : "0"}`,
-        alignItems: `${
-          section == "subscriptions" && tablet ? "flex-end" : "center"
-        }`,
-      }}
-    >
-      {socials}
-    </div>
+    <Bounce left duration={1000}>
+      <div
+        className="w-full h-[20%] flex items-center justify-center gap-3"
+        style={{
+          justifyContent: `${
+            section == "subscriptions" && tablet
+              ? "flex-end"
+              : section == "footer" && !mobile
+              ? "flex-start"
+              : "center"
+          }`,
+          paddingRight: `${
+            section == "subscriptions" && tablet ? "2rem" : "0"
+          }`,
+          alignItems: `${
+            section == "subscriptions" && tablet ? "flex-end" : "center"
+          }`,
+        }}
+      >
+        {socials}
+      </div>
+    </Bounce>
   );
 };
 

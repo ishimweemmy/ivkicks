@@ -59,14 +59,29 @@ module.exports = {
           to: { height: "8rem" },
         },
         navDisplayAnimate: { from: { height: "10rem" }, to: { height: 0 } },
+        spinBlur: {
+          from: {
+            transform: "rotateZ(0deg) scale(1)",
+          },
+          to: {
+            transform: "rotateZ(45deg) scale(2)",
+          },
+        },
       },
       gridTemplateColumns: {
-        "footer": "20% 70%",
-        "promoBadges": "40% 60%",
-        "promoBadge1": "35% 65%"
+        footer: "20% 70%",
+        promoBadges: "40% 60%",
+        promoBadge1: "35% 65%",
       },
       gridTemplateRows: {
-        "footer": "65% 30%", "aboutTop": "5rem 10rem 13rem 20rem", "aboutTopResponsive": "5rem 13rem 18rem 20rem", "aboutTopMd": "8rem 18rem", "aboutTopLarge": "8rem 30rem", "promoTopMd": "20rem 35rem", "promoTopLsm": "14rem 35rem", "promoTop": "14rem 30rem"
+        footer: "65% 30%",
+        aboutTop: "5rem 10rem 13rem 20rem",
+        aboutTopResponsive: "5rem 13rem 18rem 20rem",
+        aboutTopMd: "8rem 18rem",
+        aboutTopLarge: "8rem 30rem",
+        promoTopMd: "20rem 35rem",
+        promoTopLsm: "14rem 35rem",
+        promoTop: "14rem 30rem",
       },
       animation: {
         "nav-hide": "navHide .2s ease-in",
@@ -77,8 +92,8 @@ module.exports = {
     },
     cursor: "/assets",
     backgroundPosition: {
-      "right-bottom": "3.5rem 7rem"
-    }
+      "right-bottom": "3.5rem 7rem",
+    },
   },
   plugins: [],
 };

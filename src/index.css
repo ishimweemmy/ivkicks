@@ -39,3 +39,25 @@ html {
   box-shadow: 1px 20px 46px -10px rgba(0, 71, 255, 0.89);
   border: none;
 }
+
+.spinBlur {
+  animation: spinBlur 5s linear alternate infinite;
+}
+
+@keyframes spinBlur {
+  0% {
+    transform: translateX(-50rem);
+  }
+  25% {
+    transform: translateY(10rem);
+  }
+  50% {
+    transform: translateX(-50rem);
+  }
+  75% {
+    transform: translateY(10rem);
+  }
+  100% {
+    transform: translateX(-50rem);
+  }
+}

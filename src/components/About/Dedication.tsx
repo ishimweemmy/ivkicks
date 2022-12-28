@@ -57,13 +57,13 @@ const Dedication = () => {
             src={leftIcon}
             alt="leftIcon"
             className="w-8"
-            onClick={() => swipingButtonRef.current?.click()}
+            onClick={() => swipingButtonRefPrev.current?.click()}
           />
           <img
             src={rightIcon}
             alt="rightIcon"
             className="w-8 cursor-pointer"
-            onClick={() => swipingButtonRefPrev.current?.click()}
+            onClick={() => swipingButtonRef.current?.click()}
           />
         </div>
       </div>

@@ -3,7 +3,7 @@ import Socials from "./Socials";
 import { KeyboardArrowUp } from "@mui/icons-material";
 import Accordion, { AccordionProps } from "../Landing/Accordion";
 import logo from "../../assets/Logo.svg";
-import { Link } from "react-router-dom";
+import { Fade, Flip } from "react-reveal";
 
 const Footer = () => {
   const [accordionData, setAccordionData] = useState([
@@ -76,22 +76,24 @@ const Footer = () => {
 
   return (
     <footer className="w-full h-[100vh] bg-white flex flex-col md:grid md:grid-cols-footer md:grid-rows-footer md:place-content-center md:place-items-center md:h-[60vh] md:self-center">
-      <div className="w-full h-[20%] flex items-end justify-center pb-6 border md:border-none md:w-fit md:h-[80%] md:flex md:flex-col md:items-start md:gap-4 md:p-0 ">
-        {!mobile && (
-          <img
-            src={logo}
-            alt="logo"
-            className="w-[2rem] lg:w-[3rem] transition-all cursor-pointer xs:w-[1.5rem]"
-          />
-        )}
-        <span className="text-lg text-gray-800 text-center px-14 md:px-0 md:text-start">
-          Our shop is the best choice for buying footwear.
-        </span>
-        {!mobile && <Socials section="footer" />}
-      </div>
-      <div className="h-fit w-full border md:border-none flex flex-col items-center justify-center py-8 gap-8 md:w-[90%] md:h-[80%] md:flex-row md:gap-0 ">
+      <Fade left>
+        <div className="w-full h-[20%] flex items-end justify-center pb-6 border md:border-none md:w-fit md:h-[80%] md:flex md:flex-col md:items-start md:gap-4 md:p-0 ">
+          {!mobile && (
+            <img
+              src={logo}
+              alt="logo"
+              className="w-[2rem] lg:w-[3rem] transition-all cursor-pointer xs:w-[1.5rem]"
+            />
+          )}
+          <span className="text-lg text-gray-800 text-center px-14 md:px-0 md:text-start">
+            Our shop is the best choice for buying footwear.
+          </span>
+          {!mobile && <Socials section="footer" />}
+        </div>
+      </Fade>
+      <Flip top><div className="h-fit w-full border md:border-none flex flex-col items-center justify-center py-8 gap-8 md:w-[90%] md:h-[80%] md:flex-row md:gap-0 ">
         {accordions}
-      </div>
+      </div></Flip>
       <div className="w-full h-[30%] flex flex-col items-center justify-center gap-6 md:h-full md:col-span-2 md:border-t-2 md:flex-row md:items-center md:justify-between ">
         {mobile && <Socials section="footer" />}
         <p className="text-center text-md text-gray-700 px-4 md:p-0 md:text-base">
@@ -100,7 +102,7 @@ const Footer = () => {
         <a href="#top">
           <KeyboardArrowUp
             fontSize="large"
-            className="text-white rounded-full p-1 bg-[#A4A4A3] cursor-pointer animate-bounce "
+            className="text-white rounded-full p-1 bg-[#A4A4A3] cursor-pointer animate-Flip "
           />
         </a>
       </div>

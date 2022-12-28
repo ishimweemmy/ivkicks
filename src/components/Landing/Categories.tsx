@@ -2,9 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Collection, { CollectionProps } from "./Collection";
-import { Pagination, Scrollbar, Zoom } from "swiper";
+import { Pagination, Scrollbar } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
+import { collectionsData } from "../../data";
+import { Fade, Zoom, Flip } from "react-reveal";
 
 const Categories = () => {
   const categoriesRef = useRef<HTMLDivElement | null>(null);
@@ -28,37 +30,6 @@ const Categories = () => {
       setSmallMobile(window.innerWidth <= 500 ? true : false);
     });
   }, [mobile, miniLaptop, smallMobile]);
-
-  const collectionsData: CollectionProps[] = [
-    {
-      collectionName: "Sneakers",
-      nbrOfProducts: 89,
-      imgSource: "/server-assets/arrival3.png",
-      indexId: 0,
-      collectionPath: `/2`,
-    },
-    {
-      collectionName: "football",
-      nbrOfProducts: 120,
-      imgSource: "/server-assets/football1.png",
-      indexId: 1,
-      collectionPath: `/2`,
-    },
-    {
-      collectionName: "Volleyball",
-      nbrOfProducts: 200,
-      imgSource: "/server-assets/volley1.png",
-      indexId: 2,
-      collectionPath: `/2`,
-    },
-    {
-      collectionName: "Basketball",
-      nbrOfProducts: 72,
-      imgSource: "/server-assets/football1.png",
-      indexId: 3,
-      collectionPath: `/2`,
-    },
-  ];
 
   const collections = collectionsData.map((collection) => {
     const {
@@ -86,40 +57,46 @@ const Categories = () => {
 
   return (
     <div className="w-full h-[110vh] flex flex-col items-start justify-start bg-white">
-      <div className="flex flex-wrap gap-6 px-6 md:flex-col md:items-center md:px-0">
-        <span className="text-2xl font-bold pr-[8rem] md:pr-0 md:text-4xl lg:text-5xl ">
-          Choose categories
-        </span>
-        <p className="text-gray-700 text-sm md:text-center md:text-lg md:px-[4rem] lg:px-[10rem] miniLarge:px-[15rem] xl:px-[20rem] 2xl:px-[30rem] ">
-          For explosive events (sprints up to 400 metres, long jump, triple
-          jump) the reduction in atmospheric pressure means there is less
-          resistance from the atmosphere.
-        </p>
-      </div>
-      <div className="w-full h-[60%] grid place-items-center self-center 2xl:w-[70%] lg:gap-[10rem]">
-        <Swiper
-          className="w-full h-full"
-          slidesPerView={smallMobile ? 1 : miniLaptop || mobile ? 2 : 3}
-          spaceBetween={smallMobile ? 10 : mobile ? 15 : miniLaptop ? 20 : 30}
-          onSlideChange={(swiper) => {
-            if (categoriesRef.current) {
-              categoriesRef.current.style.transform = `translateX(${
-                mobile
-                  ? swiper.activeIndex * 35
-                  : (swiper.activeIndex * 200) / collectionsData.length
-              }%)`;
-            }
-          }}
-        >
-          {collections}
-        </Swiper>
-      </div>
-      <div className="rounded-full w-[50%] h-[0.5rem] bg-[#f5f5f5] self-center overflow-hidden  ">
-        <div
-          className={`w-[75%] lg:w-[50%] h-full rounded-full bg-[#02BE83] transition-all duration-500 md:w-[60%] xl:w-[67%]`}
-          ref={categoriesRef}
-        ></div>
-      </div>
+      <Zoom>
+        <div className="flex flex-wrap gap-6 px-6 md:flex-col md:items-center md:px-0">
+          <span className="text-2xl font-bold pr-[8rem] md:pr-0 md:text-4xl lg:text-5xl ">
+            Choose categories
+          </span>
+          <p className="text-gray-700 text-sm md:text-center md:text-lg md:px-[4rem] lg:px-[10rem] miniLarge:px-[15rem] xl:px-[20rem] 2xl:px-[30rem] ">
+            For explosive events (sprints up to 400 metres, long jump, triple
+            jump) the reduction in atmospheric pressure means there is less
+            resistance from the atmosphere.
+          </p>
+        </div>
+      </Zoom>
+      <Flip bottom>
+        <div className="w-full h-[60%] grid place-items-center self-center 2xl:w-[70%] lg:gap-[10rem]">
+          <Swiper
+            className="w-full h-full"
+            slidesPerView={smallMobile ? 1 : miniLaptop || mobile ? 2 : 3}
+            spaceBetween={smallMobile ? 10 : mobile ? 15 : miniLaptop ? 20 : 30}
+            onSlideChange={(swiper) => {
+              if (categoriesRef.current) {
+                categoriesRef.current.style.transform = `translateX(${
+                  mobile
+                    ? swiper.activeIndex * 35
+                    : (swiper.activeIndex * 200) / collectionsData.length
+                }%)`;
+              }
+            }}
+          >
+            {collections}
+          </Swiper>
+        </div>
+      </Flip>
+      <Zoom>
+        <div className="rounded-full w-[50%] h-[0.5rem] bg-[#f5f5f5] self-center overflow-hidden  ">
+          <div
+            className={`w-[75%] lg:w-[50%] h-full rounded-full bg-[#02BE83] transition-all duration-500 md:w-[60%] xl:w-[67%]`}
+            ref={categoriesRef}
+          ></div>
+        </div>
+      </Zoom>
     </div>
   );
 };

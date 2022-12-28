@@ -14,7 +14,7 @@ import WhyUs from "../components/Landing/WhyUs";
 import Categories from "../components/Landing/Categories";
 import Brands from "../components/Landing/Brands";
 import Subscriptions from "../components/Landing/Subscriptions";
-import { Fade, Zoom, Flip, Bounce } from "react-reveal";
+import { Fade, Zoom, Flip, Bounce, Rotate } from "react-reveal";
 
 const Home = () => {
   return (
@@ -22,7 +22,15 @@ const Home = () => {
       <div className="w-full pb-[4rem] mt-[4rem] h-fit flex flex-col md:flex-row md:items-center xs:mt-0 overflow-hidden lg:pl-[5rem]">
         <div className="w-full flex flex-col gap-5 md:pl-[2rem] md:gap-[3rem]">
           <Flip top duration={1000}>
-            <h1 className="text-3xl font-bold text-center text-[#0A083A] md:text-start lg:text-5xl xl:text-6xl 2xl:text-7xl xl:tracking-tighter">
+            <h1
+              className="text-3xl font-bold text-center text-[#0A083A] md:text-start lg:text-5xl xl:text-6xl 2xl:text-7xl xl:tracking-tighter"
+              style={{
+                color: "transparent",
+                background:
+                  "linear-gradient(-270deg, #FE7831 0%, #FFB2B2 100%)",
+                WebkitBackgroundClip: "text",
+              }}
+            >
               <span className="whitespace-nowrap">Get your awesome</span>{" "}
               sneakers.
             </h1>
@@ -67,7 +75,9 @@ const Home = () => {
             })}
           </div>
         </div>
-        <div className="w-64 h-64 bg-[#FF3C78] filter absolute "></div>
+        <div className="w-fit h-fit translate-x-[180%] translate-y-[40%] absolute">
+          <div className="spinBlur w-72 h-72 bg-[#ff3c7663]  blur-[105px]"></div>
+        </div>
         <div className="w-full h-fit flex flex-col items-center justify-center ">
           <div className="relative w-full flex items-center justify-center">
             <Zoom className="" delay={500}>

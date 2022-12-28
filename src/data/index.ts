@@ -7,7 +7,10 @@ import colors from "./colors.json";
 import links from "./links.json";
 import promoProducts from "./promoProducts.json";
 import descriptionsData from "./descriptionsData.json";
-import differenceData from './differenceData.json'
+import differenceData from "./differenceData.json";
+import featuredProsData from "./featuredPros.json";
+import newArrivalsData from "./newArrivals.json";
+import collectionsData from "./categories.json";
 
 // import brands from "./triangles.json";
 // import trianglesData from "./triangles.json";
@@ -26,5 +29,8 @@ export {
   links,
   promoProducts,
   descriptionsData,
-  differenceData
+  differenceData,
+  featuredProsData,
+  newArrivalsData,
+  collectionsData,
 };
