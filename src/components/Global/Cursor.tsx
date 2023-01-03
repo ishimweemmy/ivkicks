@@ -14,6 +14,10 @@ const Cursor: FC<{ pageOver?: string }> = (props) => {
     document.addEventListener("mousemove", (e: MouseEvent) => {
       setMouseVisible(true);
       setMousePosition({ x: e.clientX, y: e.clientY });
+      const elementStyles = document
+        .elementFromPoint(e.clientX, e.clientY)
+        ?.attributes.getNamedItem("class")
+        ?.textContent?.split(" ");
     });
 
     document.addEventListener("mouseleave", () => {

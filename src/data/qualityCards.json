@@ -29,7 +29,8 @@
                 "id": 3,
                 "rotation": "228"
             }
-        ]
+        ],
+        "delay": 1000
     },
     {
         "imgSrc": "/server-assets/women.jpg",
@@ -69,7 +70,8 @@
                 "id": 2,
                 "rotation": "45"
             }
-        ]
+        ],
+        "delay": 1500
     },
     {
         "imgSrc": "/server-assets/women1.jpg",
@@ -101,6 +103,7 @@
                 "id": 3,
                 "rotation": "228"
             }
-        ]
+        ],
+        "delay": 2000
     }
 ]

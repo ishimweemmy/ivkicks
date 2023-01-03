@@ -1,5 +1,6 @@
 import heroImg from "../assets/image 3.png";
 import heartIcon from "../assets/Vector.png";
+import heartIcon2 from "/server-assets/heartIcon2.svg";
 import checkIcon from "../assets/Group 4.png";
 import mainHeroImg from "../assets/Group 267.svg";
 import leftArrow from "../assets/arrow-left-circle-1.png";
@@ -14,11 +15,26 @@ import WhyUs from "../components/Landing/WhyUs";
 import Categories from "../components/Landing/Categories";
 import Brands from "../components/Landing/Brands";
 import Subscriptions from "../components/Landing/Subscriptions";
-import { Fade, Zoom, Flip, Bounce, Rotate } from "react-reveal";
+import { Fade, Zoom, Flip, Bounce } from "react-reveal";
+import "swiper/css";
+import "swiper/css/autoplay";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
+import SlideNextButton from "../components/Global/SlideNextButton";
+import SlidePrevButton from "../components/Global/SlidePrev";
+import { useEffect, useRef, useState } from "react";
+import alexander from "/server-assets/alexander.png";
+import { Link } from "react-router-dom";
+import Cursor from "../components/Global/Cursor";
 
 const Home = () => {
+  const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
+  const swipingButtonRefPrev = useRef<HTMLButtonElement | null>(null);
+
+  const [isLiked, setIsLiked] = useState(false);
   return (
     <div className="w-screen h-fit flex sm:flex-col xs:flex-col relative overflow-hidden">
+      <Cursor />
       <div className="w-full pb-[4rem] mt-[4rem] h-fit flex flex-col md:flex-row md:items-center xs:mt-0 overflow-hidden lg:pl-[5rem]">
         <div className="w-full flex flex-col gap-5 md:pl-[2rem] md:gap-[3rem]">
           <Flip top duration={1000}>
@@ -52,13 +68,48 @@ const Home = () => {
                 Shop now
               </button>
             </Flip>
-            <Fade left delay={2000} duration={500}>
-              <img
-                src={heartIcon}
-                alt=""
-                className="w-4 h-4 cursor-pointer xl:w-6 xl:h-6"
-              />
+            <Fade left duration={500} delay={2000}>
+              <div
+                className="w-fit h-fit"
+                onClick={() => setIsLiked((prev) => !prev)}
+              >
+                <img
+                  src={heartIcon}
+                  alt=""
+                  style={{ cursor: "pointer" }}
+                  className={``}
+                />
+              </div>
             </Fade>
+            <div
+              className={`w-screen h-screen fixed bg-[#ffffffbe] top-0 left-0 grid place-items-center z-[199] ${
+                !isLiked && "hidden"
+              } `}
+            >
+              <Zoom duration={1000}>
+                <img
+                  src={heartIcon2}
+                  alt=""
+                  style={{ cursor: "pointer" }}
+                  className={`w-[50rem] relative`}
+                />
+              </Zoom>
+              <Flip right>
+                <div className="absolute grid gap-2 text-white place-items-center">
+                  <span className="text-6xl font-bold">Shop then !!!</span>
+                  <Link to="/about">
+                    <button
+                      className="w-[8rem] h-[2.7rem] px-4 rounded-[.3rem] bg-[#f2b1c4] text-white text-sm text-center xl:w-[15rem] xl:h-[3rem]"
+                      style={{
+                        boxShadow: "hwb(0deg 0% 0% / 41%) 0px 25px 50px -10px",
+                      }}
+                    >
+                      Shop now
+                    </button>
+                  </Link>
+                </div>
+              </Flip>
+            </div>
           </div>
           <div className="flex flex-col items-start justify-center gap-[1rem] pl-24 mt-[1rem] md:justify-start md:p-0 md:flex-row md:gap-[4rem] xMiniTablet:items-center xMiniTablet:mr-[25%] lsm:ml-[0%] md:pt-4 lssm:items-center lssm:mr-[50%]">
             {["Free shipping", "Free returns"].map((item) => {
@@ -80,18 +131,35 @@ const Home = () => {
         </div>
         <div className="w-full h-fit flex flex-col items-center justify-center ">
           <div className="relative w-full flex items-center justify-center">
-            <Zoom className="" delay={500}>
-              <img
-                src={heroImg}
-                alt=""
-                className="absolute w-[18rem] md:w-auto md:max-w-sm xl:max-w-none xl:scale-[2] z-10"
-              />
+            <Zoom delay={500}>
+              <div className="w-[18rem] h-[18rem] md:w-[22rem] md:h-[22rem] xLgMd:w-[25rem] xLgMd:h-[25rem] lg:w-[35rem] lg:h-[31rem] absolute z-10 lg:-left-[4rem] xl:left-0 mini2xl:left-[3rem]">
+                <Swiper
+                  modules={[Autoplay]}
+                  slidesPerView={1}
+                  className="w-full h-full"
+                  spaceBetween={2}
+                  autoplay={true}
+                  loop={true}
+                >
+                  <SwiperSlide className="flex items-start justify-end lg:mt-[2rem] xl:mt-0">
+                    <img
+                      src={alexander}
+                      alt=""
+                      className="w-full h-full scale-[1.1] md:max-w-lg md:scale-[1.2] lg:max-w-lg xl:max-w-none xl:h-[35rem] lg:scale-[1.1] -rotate-[35deg]"
+                    />
+                  </SwiperSlide>
+                  <SlideNextButton swipingButtonRef={swipingButtonRef} />
+                  <SlidePrevButton
+                    swipingButtonRefPrev={swipingButtonRefPrev}
+                  />
+                </Swiper>
+              </div>
             </Zoom>
             <Flip delay={20} left>
               <img
                 src={mainHeroImg}
                 alt=""
-                className="md:w-[100rem] md:max-w-md xl:max-w-2xl xl:relative xl:z-0 xl:bottom-[-2rem] "
+                className="md:w-[100rem] md:max-w-md lg:max-w-lg xl:max-w-2xl xl:relative xl:z-0 xl:bottom-[-2rem] "
               />
             </Flip>
             <Flip delay={1000}>
@@ -105,7 +173,7 @@ const Home = () => {
             </Flip>
             <Zoom right delay={1000}>
               <div
-                className="w-[15rem] z-20 md:w-[15rem] xl:w-[20rem] h-fit p-3 flex items-center justify-center rounded-[2rem] absolute bottom-[7rem] bg-white gap-2 md:h-[4rem] tracking-tight xl:z-10 xl:self-center xl:left-[-7rem] lg:left-[-4rem] lg:bottom-[8rem] lg:self-center xl:bottom-[13rem] sm:h-[15%] 2xl:left-0 "
+                className="w-[15rem] md:w-[15rem] xl:w-[20rem] h-fit p-3 flex items-center justify-center rounded-[2rem] absolute bottom-[7rem] bg-white gap-2 md:h-[4rem] tracking-tight xl:z-10 xl:self-center xl:left-[-7rem] lg:left-[-4rem] lg:bottom-[8rem] lg:self-center xl:bottom-[13rem] sm:h-[15%] 2xl:left-0 z-50 "
                 style={{
                   boxShadow: "0px 20px 30px rgba(64, 103, 254, 0.15)",
                 }}
@@ -120,10 +188,22 @@ const Home = () => {
               </div>
             </Zoom>
           </div>
-          <div className="flex gap-4">
-            {[rightArrow, leftArrow].map((item) => {
-              return <img src={item} alt="" className="cursor-pointer" />;
-            })}
+          <div className="flex gap-4 z-50">
+            {/* {[rightArrow, leftArrow].map((item) => {
+              return <img src={item} alt="" style={{ cursor: "pointer" }} />;
+            })} */}
+            <img
+              src={rightArrow}
+              alt=""
+              style={{ cursor: "pointer" }}
+              onClick={() => swipingButtonRefPrev.current?.click()}
+            />
+            <img
+              src={leftArrow}
+              alt=""
+              style={{ cursor: "pointer" }}
+              onClick={() => swipingButtonRef.current?.click()}
+            />
           </div>
         </div>
       </div>

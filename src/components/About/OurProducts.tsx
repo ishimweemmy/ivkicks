@@ -1,5 +1,6 @@
 import { productsData } from "../../data";
 import OurProduct, { OurProductProps } from "./OurProduct";
+import { Fade, Zoom } from "react-reveal";
 
 const OurProducts = () => {
   return (
@@ -7,21 +8,23 @@ const OurProducts = () => {
       <span className="w-full text-start font-bold text-4xl text-[#0A083A] pl-[2rem] lsm:text-center lg:text-5xl">
         Our Products
       </span>
-      <div className="w-full flex flex-col items-center justify-center gap-[4rem] miniTablet:flex-row xl:w-[80%]">
-        {productsData.map((product) => {
-          const { imgSrc, id, summary, description, productUrl } = product;
-          return (
-            <OurProduct
-              key={id}
-              id={id}
-              imgSrc={imgSrc}
-              summary={summary}
-              description={description}
-              productUrl={productUrl}
-            />
-          );
-        })}
-      </div>
+      <Zoom>
+        <div className="w-full flex flex-col items-center justify-center gap-[4rem] miniTablet:flex-row xl:w-[80%]">
+          {productsData.map((product) => {
+            const { imgSrc, id, summary, description, productUrl } = product;
+            return (
+              <OurProduct
+                key={id}
+                id={id}
+                imgSrc={imgSrc}
+                summary={summary}
+                description={description}
+                productUrl={productUrl}
+              />
+            );
+          })}
+        </div>
+      </Zoom>
     </div>
   );
 };

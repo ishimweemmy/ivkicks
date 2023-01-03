@@ -114,7 +114,7 @@ const About = () => {
                     </span>
                   </div>
                 </div>
-                <div className="h-full w-3/12 grid place-items-center relative border-l-1 border-dashed border-l-gray-500">
+                <div className="h-full w-3/12 grid place-items-center relative border-l-2 border-dashed border-l-gray-300">
                   <button className="w-[3rem] h-fit text-[#315bff] text-xs font-bold uppercase">
                     <Link to="/products/promoProducts">share a gift</Link>
                   </button>
@@ -134,18 +134,20 @@ const About = () => {
           </div>
         </Zoom>
       </div>
-      <Flip top delay={4000}><div className="w-full h-fit flex flex-col items-center justify-center gap-[2rem] mb-10 lsm:flex-row lsm:gap-0 lg:gap-10">
-        {descriptionsData.map((descriptionData) => {
-          const { imgSrc, degree, description } = descriptionData;
-          return (
-            <Description
-              imgSrc={imgSrc}
-              degree={degree}
-              description={description}
-            />
-          );
-        })}
-      </div></Flip>
+      <Flip top delay={4000}>
+        <div className="w-full h-fit flex flex-col items-center justify-center gap-[2rem] mb-10 lsm:flex-row lsm:gap-0 lg:gap-10">
+          {descriptionsData.map((descriptionData) => {
+            const { imgSrc, degree, description } = descriptionData;
+            return (
+              <Description
+                imgSrc={imgSrc}
+                degree={degree}
+                description={description}
+              />
+            );
+          })}
+        </div>
+      </Flip>
       <FounderMessage />
       <Quality />
       <Dedication />

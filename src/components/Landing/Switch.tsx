@@ -6,10 +6,11 @@ const Switch = () => {
 
   return (
     <div
-      className="w-[4rem] h-[2rem] rounded-full relative flex items-center transition-all duration-1000 cursor-pointer "
+      className="w-[4rem] h-[2rem] rounded-full relative flex items-center transition-all duration-1000"
       style={{
         background:
           "linear-gradient(97.49deg, #8AA8F8 -0.43%, #315BFF 144.53%)",
+        cursor: "pointer",
       }}
       onClick={() => setMenOn((prev) => !prev)}
     >

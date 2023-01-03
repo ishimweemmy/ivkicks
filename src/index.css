@@ -61,3 +61,18 @@ html {
     transform: translateX(-50rem);
   }
 }
+
+.heart {
+  animation: animateHeart 2s ease;
+}
+
+@keyframes animateHeart {
+  0% {
+    width: auto;
+    height: auto;
+  }
+  100% {
+    width: 50rem;
+    height: 50rem;
+  }
+}

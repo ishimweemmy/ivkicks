@@ -91,9 +91,11 @@ const Footer = () => {
           {!mobile && <Socials section="footer" />}
         </div>
       </Fade>
-      <Flip top><div className="h-fit w-full border md:border-none flex flex-col items-center justify-center py-8 gap-8 md:w-[90%] md:h-[80%] md:flex-row md:gap-0 ">
-        {accordions}
-      </div></Flip>
+      <Flip top>
+        <div className="h-fit w-full border md:border-none flex flex-col items-center justify-center py-8 gap-8 md:w-[90%] md:h-[80%] md:flex-row md:gap-0 ">
+          {accordions}
+        </div>
+      </Flip>
       <div className="w-full h-[30%] flex flex-col items-center justify-center gap-6 md:h-full md:col-span-2 md:border-t-2 md:flex-row md:items-center md:justify-between ">
         {mobile && <Socials section="footer" />}
         <p className="text-center text-md text-gray-700 px-4 md:p-0 md:text-base">

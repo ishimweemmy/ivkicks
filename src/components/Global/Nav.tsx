@@ -30,7 +30,7 @@ const Nav: FC<NavProps> = (props) => {
   return (
     <Fade delay={300}>
       <nav
-        className={`w-auto h-[6rem] sticky top-0 sm:px-4 flex items-center justify-around px-[7rem] gap-[12rem] lg:gap-[4rem] lg:px-[2rem] xl:px-[2rem] md:justify-between md:px-8 lsm:gap-[25rem] xMiniTablet:gap-[30rem] miniTablet:px-4 transition-all overflow-hidden z-30 lssm:justify-between lssm:px-4 sm:gap-0 xl:pl-[5rem] xs:gap-2 xs:p-0 xs:pl-4 xs:justify-between 2xl:pl-[6rem] duration-700`}
+        className={`w-auto h-[6rem] flex items-center justify-around px-[7rem] gap-[12rem] lg:gap-[4rem] lg:px-[2rem] md:justify-between md:px-8 lsm:gap-[25rem] xMiniTablet:gap-[30rem] transition-all overflow-hidden z-30 lssm:justify-between lssm:px-4 xl:pl-[5rem] xs:gap-2 xs:p-0 xs:pl-4 xs:justify-between 2xl:pl-[6rem] duration-700`}
         id="top"
         style={{
           background: `${

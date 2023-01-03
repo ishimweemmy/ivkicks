@@ -9,9 +9,10 @@ const SlidePrevButton: FC<ButtonProps> = (props) => {
   const swiper = useSwiper();
 
   return (
-    <button onClick={() => swiper.slidePrev()} ref={props.swipingButtonRefPrev}>
-      Slide to the previous slide
-    </button>
+    <button
+      onClick={() => swiper.slidePrev()}
+      ref={props.swipingButtonRefPrev}
+    ></button>
   );
 };
 

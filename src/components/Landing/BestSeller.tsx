@@ -2,6 +2,7 @@ import { FC } from "react";
 import Switch from "./Switch";
 import filledStar from "../../assets/Star 4.svg";
 import { Zoom, Fade, Bounce } from "react-reveal";
+import Bubble from "./Bubble";
 
 interface BestSeller {
   rating: number;
@@ -39,23 +40,24 @@ const BestSeller: FC<BestSeller> = (props) => {
         <div className="w-full h-[12rem] relative flex items-center ">
           <Bounce left>
             <div
-              className="w-[60%] h-[12rem] lsm:h-full  rounded-r-2xl flex items-center lg:h-[15rem] xlarge:h-[20rem]"
+              className="w-[60%] h-[12rem] lsm:h-full  rounded-r-2xl flex items-center lg:h-[15rem] xlarge:h-[20rem] relative"
               style={{
                 background:
                   "linear-gradient(270deg, #FF3C78 2.8%, #FFB2B2 100%)",
               }}
             >
-              <Zoom delay={1000}>
+              <Zoom delay={500}>
                 <img
                   src="/server-assets/alexander1.png"
                   alt=""
-                  className="max-w-none w-[20rem] minSm:w-[28rem] lsm:w-[20rem] absolute bottom-[-5rem] minSm:bottom-[-8rem] lsm:bottom-[-5rem] md:w-[23rem] lgMd:w-[26rem] lgMd:bottom-[-7rem] lg:w-[30rem] lg:bottom-[-8rem] lg:left-16 mini2xl:left-[5rem] 2xl:w-[40rem] 2xl:bottom-[-12rem] 2xl:left-[10rem]"
+                  className="max-w-none w-[20rem] minSm:w-[28rem] lsm:w-[20rem] absolute bottom-[-5rem] minSm:bottom-[-8rem] lsm:bottom-[-5rem] md:w-[23rem] lgMd:w-[26rem] lgMd:bottom-[-7rem] lg:w-[30rem] lg:bottom-[-8rem] lg:left-16 mini2xl:left-[5rem] 2xl:w-[40rem] 2xl:bottom-[-12rem] 2xl:left-[10rem] after:content-[''] after:w-96 after:h-96 after:absolute after:z-50 after:bg-[blue]"
                 />
+                <Bubble />
               </Zoom>
             </div>
           </Bounce>
         </div>
-        <Fade right delay={1000}>
+        <Fade right delay={500}>
           <div className="w-full h-[13rem] flex flex-col items-center lsm:items-start justify-center gap-[1rem] lgMd:w-[80%]">
             <div className="w-full h-fit flex items-center justify-center lsm:justify-start gap-[.2rem]">
               {ratings}

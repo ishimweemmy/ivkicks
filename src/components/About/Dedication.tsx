@@ -7,9 +7,9 @@ import leftIcon from "../../assets/arrow-left-circle.png";
 import rightIcon from "../../assets/arrow-left-circle-1.png";
 import SlideNextButton from "../Global/SlideNextButton";
 import SlidePrevButton from "../Global/SlidePrev";
-import Brand, { BrandProps } from "../Landing/Brand";
-import DedCard, { DedCardProps } from "./DedCard";
+import DedCard from "./DedCard";
 import { brandsData } from "../../data";
+import { Zoom, Bounce, Fade } from "react-reveal";
 
 const Dedication = () => {
   const [mobile, setMobile] = useState<boolean>(
@@ -45,74 +45,84 @@ const Dedication = () => {
         }}
       ></div>
       <div className="w-full h-fit flex flex-col items-center justify-center gap-6 lg:self-start">
-        <span className="text-3xl font-black text-[#0A083A] text-center md:text-4xl mt-[4rem] lg:mt-0 lg:text-start">
-          Dedicated to our customers
-        </span>
-        <p className="text-center px-2 lg:pl-[1.5rem] lg:text-start">
-          So it really behaves like neither. Now we have given up. We say "it is
-          like neither"
-        </p>
-        <div className="w-full hidden items-start justify-start gap-4 mt-[1rem] lg:flex lg:pl-[1.5rem]">
+        <Bounce>
+          <span className="text-3xl font-black text-[#0A083A] text-center md:text-4xl mt-[4rem] lg:mt-0 lg:text-start">
+            Dedicated to our customers
+          </span>
+          <p className="text-center px-2 lg:pl-[1.5rem] lg:text-start">
+            So it really behaves like neither. Now we have given up. We say "it
+            is like neither"
+          </p>
+        </Bounce>
+        <Fade right delay={1000}>
+          <div className="w-full hidden items-start justify-start gap-4 mt-[1rem] lg:flex lg:pl-[1.5rem]">
+            <img
+              src={leftIcon}
+              alt="leftIcon"
+              className="w-8"
+              onClick={() => swipingButtonRefPrev.current?.click()}
+            />
+            <img
+              src={rightIcon}
+              alt="rightIcon"
+              className="w-8 cursor-pointer"
+              onClick={() => swipingButtonRef.current?.click()}
+            />
+          </div>
+        </Fade>
+      </div>
+      <Zoom>
+        <div className="w-full h-[28rem] flex flex-col items-center justify-center gap-4 p-2 md:flex-row md:h-[28rem] lg:w-[70%] lg:h-[20rem] lg:gap-2 md:w-[90%]">
           <img
             src={leftIcon}
             alt="leftIcon"
-            className="w-8"
+            className="w-8 cursor-pointer hidden md:block lg:hidden"
             onClick={() => swipingButtonRefPrev.current?.click()}
           />
-          <img
-            src={rightIcon}
-            alt="rightIcon"
-            className="w-8 cursor-pointer"
-            onClick={() => swipingButtonRef.current?.click()}
-          />
-        </div>
-      </div>
-      <div className="w-full h-[28rem] flex flex-col items-center justify-center gap-4 p-2 md:flex-row md:h-[28rem] lg:w-[70%] lg:h-[20rem] lg:gap-2 md:w-[90%]">
-        <img
-          src={leftIcon}
-          alt="leftIcon"
-          className="w-8 cursor-pointer hidden md:block lg:hidden"
-          onClick={() => swipingButtonRef.current?.click()}
-        />
-        <Swiper
-          modules={[Pagination]}
-          slidesPerView={smallMobile ? 1 : mobile ? 2 : 3}
-          className="w-full h-[70%]"
-          spaceBetween={10}
-        >
-          {brandsData.map((brand) => {
-            const { id, heading, description } = brand;
+          <Swiper
+            modules={[Pagination]}
+            slidesPerView={smallMobile ? 1 : mobile ? 2 : 3}
+            className="w-full h-[70%]"
+            spaceBetween={10}
+          >
+            {brandsData.map((brand) => {
+              const { id, heading, description } = brand;
 
-            return (
-              <SwiperSlide className="w-full h-full" key={id}>
-                <DedCard id={id} heading={heading} description={description} />
-              </SwiperSlide>
-            );
-          })}
-          <SlideNextButton swipingButtonRef={swipingButtonRef} />
-          <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
-        </Swiper>
-        <img
-          src={rightIcon}
-          alt="leftIcon"
-          className="w-8 cursor-pointer hidden md:block lg:hidden"
-          onClick={() => swipingButtonRefPrev.current?.click()}
-        />
-        <div className="w-full h-8 flex self-center gap-4 items-center justify-center md:hidden">
-          <img
-            src={leftIcon}
-            alt="leftIcon"
-            className="w-8 cursor-pointer"
-            onClick={() => swipingButtonRefPrev.current?.click()}
-          />
+              return (
+                <SwiperSlide className="w-full h-full" key={id}>
+                  <DedCard
+                    id={id}
+                    heading={heading}
+                    description={description}
+                  />
+                </SwiperSlide>
+              );
+            })}
+            <SlideNextButton swipingButtonRef={swipingButtonRef} />
+            <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
+          </Swiper>
           <img
             src={rightIcon}
             alt="leftIcon"
-            className="w-8 cursor-pointer"
+            className="w-8 cursor-pointer hidden md:block lg:hidden"
             onClick={() => swipingButtonRef.current?.click()}
           />
+          <div className="w-full h-8 flex self-center gap-4 items-center justify-center md:hidden">
+            <img
+              src={leftIcon}
+              alt="leftIcon"
+              className="w-8 cursor-pointer"
+              onClick={() => swipingButtonRefPrev.current?.click()}
+            />
+            <img
+              src={rightIcon}
+              alt="leftIcon"
+              className="w-8 cursor-pointer"
+              onClick={() => swipingButtonRef.current?.click()}
+            />
+          </div>
         </div>
-      </div>
+      </Zoom>
     </div>
   );
 };
