@@ -54,7 +54,7 @@ const WhyUs = () => {
           <div className="w-[90%] h-[85%] z-20 rounded-[1rem] grid place-items-center relative md:rounded-[1rem] miniTablet:w-[70%] ">
             <img src={alexanderMcQueen} alt="" className="h-full absolute" />
 
-            <div className="w-12 h-12 rounded-full border border-white grid place-items-center cursor-pointer filter z-10 ishimwe absolute">
+            <div className="w-12 h-12 rounded-full border border-white grid place-items-center  filter z-10 ishimwe absolute">
               <PlayArrowIcon className="text-white backdrop-filter backdrop-blur-md" />
             </div>
           </div>

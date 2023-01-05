@@ -37,9 +37,9 @@ const Cursor: FC<{ pageOver?: string }> = (props) => {
 
   return (
     <img
-      src="/server-assets/customPointer2.png"
+      src="/server-assets/custompointer.png"
       alt=""
-      className={`w-12 h-10 z-50 ${
+      className={`w-14 h-12 z-[19999]  ${
         mouseVisible ? "fixed" : "hidden"
       } pointer-events-none`}
       style={{

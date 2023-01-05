@@ -39,18 +39,12 @@ const Nav: FC<NavProps> = (props) => {
               ? "rgb(10,8,58)"
               : "#F5F5F5"
           }`,
-          cursor: `${
-            location.pathname == "/about" ||
-            location.pathname == "/products/promoProducts"
-              ? "none"
-              : ""
-          }`,
         }}
       >
         <img
           src={logo}
           alt="logo"
-          className="w-[2rem] lg:w-[3rem] transition-all cursor-pointer xs:w-[1.5rem]"
+          className="w-[2rem] lg:w-[3rem] transition-all  xs:w-[1.5rem]"
           onClick={() => homeLinkRef.current?.click()}
         />
         <div className="hidden lg:flex lg:h-[5rem] flex-grow items-center justify-center gap-[5rem] transition-all self-end">
@@ -116,7 +110,7 @@ const Nav: FC<NavProps> = (props) => {
             <img
               src={menu}
               alt="menu"
-              className="sm:w-[1rem] xs:w-[.75rem] lg:hidden miniTablet:w-[2rem] cursor-pointer"
+              className="sm:w-[1rem] xs:w-[.75rem] lg:hidden miniTablet:w-[2rem] "
               onClick={() => setIsDisplayed((prev) => !prev)}
             />
           ) : (

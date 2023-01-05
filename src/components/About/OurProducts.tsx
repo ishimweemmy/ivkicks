@@ -1,6 +1,6 @@
 import { productsData } from "../../data";
-import OurProduct, { OurProductProps } from "./OurProduct";
-import { Fade, Zoom } from "react-reveal";
+import OurProduct from "./OurProduct";
+import { Zoom } from "react-reveal";
 
 const OurProducts = () => {
   return (

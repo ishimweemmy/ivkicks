@@ -25,9 +25,7 @@ const Socials: FC<{ section?: string }> = (props) => {
       icon: (
         <Twitter
           fontSize={section == "footer" ? `medium` : "small"}
-          className={`text-[${
-            section == "footer" ? "#FF3C78" : "#315BFF"
-          }] cursor-pointer`}
+          className={`text-[${section == "footer" ? "#FF3C78" : "#315BFF"}] `}
         />
       ),
     },
@@ -37,9 +35,7 @@ const Socials: FC<{ section?: string }> = (props) => {
       icon: (
         <FacebookRounded
           fontSize={section == "footer" ? `medium` : "small"}
-          className={`text-[${
-            section == "footer" ? "#FF3C78" : "#315BFF"
-          }] cursor-pointer`}
+          className={`text-[${section == "footer" ? "#FF3C78" : "#315BFF"}] `}
         />
       ),
     },
@@ -49,9 +45,7 @@ const Socials: FC<{ section?: string }> = (props) => {
       icon: (
         <Instagram
           fontSize={section == "footer" ? `medium` : "small"}
-          className={`text-[${
-            section == "footer" ? "#FF3C78" : "#315BFF"
-          }] cursor-pointer`}
+          className={`text-[${section == "footer" ? "#FF3C78" : "#315BFF"}] `}
         />
       ),
     },

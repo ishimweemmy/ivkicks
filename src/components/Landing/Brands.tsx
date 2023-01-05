@@ -51,7 +51,7 @@ const Brands = () => {
           <img
             src={leftIcon}
             alt="leftIcon"
-            className="w-2 cursor-pointer hidden lg:block"
+            className="w-2  hidden lg:block"
             onClick={() => swipingButtonRef.current?.click()}
           />
           <Swiper
@@ -78,20 +78,20 @@ const Brands = () => {
           <img
             src={rightIcon}
             alt="leftIcon"
-            className="w-2 cursor-pointer hidden lg:block"
+            className="w-2  hidden lg:block"
             onClick={() => swipingButtonRefPrev.current?.click()}
           />
           <div className="w-full h-8 flex self-center gap-4 items-center justify-center lg:hidden">
             <img
               src={leftIcon}
               alt="leftIcon"
-              className="w-2 cursor-pointer"
+              className="w-2 "
               onClick={() => swipingButtonRefPrev.current?.click()}
             />
             <img
               src={rightIcon}
               alt="leftIcon"
-              className="w-2 cursor-pointer"
+              className="w-2"
               onClick={() => swipingButtonRef.current?.click()}
             />
           </div>

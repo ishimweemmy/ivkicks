@@ -82,7 +82,7 @@ const Footer = () => {
             <img
               src={logo}
               alt="logo"
-              className="w-[2rem] lg:w-[3rem] transition-all cursor-pointer xs:w-[1.5rem]"
+              className="w-[2rem] lg:w-[3rem] transition-all  xs:w-[1.5rem]"
             />
           )}
           <span className="text-lg text-gray-800 text-center px-14 md:px-0 md:text-start">
@@ -104,7 +104,7 @@ const Footer = () => {
         <a href="#top">
           <KeyboardArrowUp
             fontSize="large"
-            className="text-white rounded-full p-1 bg-[#A4A4A3] cursor-pointer animate-Flip "
+            className="text-white rounded-full p-1 bg-[#A4A4A3] animate-Flip "
           />
         </a>
       </div>

@@ -58,7 +58,7 @@ const FeaturedPro: FC<FeaturedProInterface> = (props) => {
         ></div>
         <img src={imgSource} alt="" className="h-[10rem] z-0" />
         <div
-          className="w-[2rem] h-[2rem] rounded-full grid place-items-center absolute bottom-10 cursor-pointer z-10 "
+          className="w-[2rem] h-[2rem] rounded-full grid place-items-center absolute bottom-10 z-10 "
           style={{
             background:
               "linear-gradient(97.49deg, rgba(138, 168, 248, 0.6) -0.43%, rgba(49, 91, 255, 0.6) 144.53%)",

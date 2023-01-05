@@ -65,7 +65,7 @@ const Dedication = () => {
             <img
               src={rightIcon}
               alt="rightIcon"
-              className="w-8 cursor-pointer"
+              className="w-8"
               onClick={() => swipingButtonRef.current?.click()}
             />
           </div>
@@ -76,7 +76,7 @@ const Dedication = () => {
           <img
             src={leftIcon}
             alt="leftIcon"
-            className="w-8 cursor-pointer hidden md:block lg:hidden"
+            className="w-8  hidden md:block lg:hidden"
             onClick={() => swipingButtonRefPrev.current?.click()}
           />
           <Swiper
@@ -104,20 +104,20 @@ const Dedication = () => {
           <img
             src={rightIcon}
             alt="leftIcon"
-            className="w-8 cursor-pointer hidden md:block lg:hidden"
+            className="w-8  hidden md:block lg:hidden"
             onClick={() => swipingButtonRef.current?.click()}
           />
           <div className="w-full h-8 flex self-center gap-4 items-center justify-center md:hidden">
             <img
               src={leftIcon}
               alt="leftIcon"
-              className="w-8 cursor-pointer"
+              className="w-8 "
               onClick={() => swipingButtonRefPrev.current?.click()}
             />
             <img
               src={rightIcon}
               alt="leftIcon"
-              className="w-8 cursor-pointer"
+              className="w-8 "
               onClick={() => swipingButtonRef.current?.click()}
             />
           </div>

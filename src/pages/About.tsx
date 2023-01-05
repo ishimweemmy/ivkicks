@@ -70,11 +70,10 @@ const About = () => {
             style={{
               backgroundImage: `url(${nikeShoesWear})`,
               backgroundPosition: "center",
-              cursor: "none",
             }}
           >
             <div
-              className="w-6 h-6 rounded-full grid place-items-center z-10 transition cursor-6"
+              className="w-6 h-6 rounded-full grid place-items-center z-10 transition"
               style={{
                 background: "linear-gradient(270deg, #02BE83 0%, #B3F6DC 100%)",
               }}

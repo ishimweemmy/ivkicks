@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router";
 import Footer from "./components/Global/Footer";
 import Nav from "./components/Global/Nav";
+import Cursor from "./components/Global/Cursor";
 
 function App() {
   const location = useLocation();
@@ -16,6 +17,7 @@ function App() {
         }`,
       }}
     >
+      {/* <Cursor /> */}
       <Nav />
       <Outlet />
       <Footer />

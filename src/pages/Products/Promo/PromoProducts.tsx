@@ -13,9 +13,7 @@ import { promoProducts } from "../../../data";
 import WorkOut from "../../../components/promo-products/charts/WorkOut";
 import Steps from "../../../components/promo-products/charts/Steps";
 import TrackerCard from "../../../components/promo-products/TrackerCard";
-import Cursor from "../../../components/Global/Cursor";
 import Difference from "../../../components/promo-products/Difference";
-import { lazy } from "react";
 import UniqueProducts from "../../../components/promo-products/UniqueProducts";
 
 const Promo = () => {
@@ -37,7 +35,6 @@ const Promo = () => {
             className="w-[8rem] h-[2.7rem] px-4 rounded-[.3rem] bg-[#FF3C78] text-white text-sm text-center xl:w-[15rem] xl:h-[3rem] mini2xl:min-h-[3.5rem] mini2xl:max-h-[3.5rem] mini2xl:text-base mini2xl:rounded-lg"
             style={{
               boxShadow: "hwb(0deg 0% 0% / 41%) 0px 25px 50px -10px",
-              cursor: "none",
             }}
           >
             Shop now

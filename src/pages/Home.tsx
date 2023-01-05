@@ -1,4 +1,3 @@
-import heroImg from "../assets/image 3.png";
 import heartIcon from "../assets/Vector.png";
 import heartIcon2 from "/server-assets/heartIcon2.svg";
 import checkIcon from "../assets/Group 4.png";
@@ -22,10 +21,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import SlideNextButton from "../components/Global/SlideNextButton";
 import SlidePrevButton from "../components/Global/SlidePrev";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import alexander from "/server-assets/alexander.png";
 import { Link } from "react-router-dom";
-import Cursor from "../components/Global/Cursor";
 
 const Home = () => {
   const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -34,7 +32,6 @@ const Home = () => {
   const [isLiked, setIsLiked] = useState(false);
   return (
     <div className="w-screen h-fit flex sm:flex-col xs:flex-col relative overflow-hidden">
-      <Cursor />
       <div className="w-full pb-[4rem] mt-[4rem] h-fit flex flex-col md:flex-row md:items-center xs:mt-0 overflow-hidden lg:pl-[5rem]">
         <div className="w-full flex flex-col gap-5 md:pl-[2rem] md:gap-[3rem]">
           <Flip top duration={1000}>
@@ -73,12 +70,7 @@ const Home = () => {
                 className="w-fit h-fit"
                 onClick={() => setIsLiked((prev) => !prev)}
               >
-                <img
-                  src={heartIcon}
-                  alt=""
-                  style={{ cursor: "pointer" }}
-                  className={``}
-                />
+                <img src={heartIcon} alt="" className={`relative z-20 `} />
               </div>
             </Fade>
             <div
@@ -87,12 +79,7 @@ const Home = () => {
               } `}
             >
               <Zoom duration={1000}>
-                <img
-                  src={heartIcon2}
-                  alt=""
-                  style={{ cursor: "pointer" }}
-                  className={`w-[50rem] relative`}
-                />
+                <img src={heartIcon2} alt="" className={`w-[50rem] relative`} />
               </Zoom>
               <Flip right>
                 <div className="absolute grid gap-2 text-white place-items-center">
@@ -126,7 +113,7 @@ const Home = () => {
             })}
           </div>
         </div>
-        <div className="w-fit h-fit translate-x-[180%] translate-y-[40%] absolute">
+        <div className="w-fit h-fit translate-x-[180%] translate-y-[40%] absolute z-10">
           <div className="spinBlur w-72 h-72 bg-[#ff3c7663]  blur-[105px]"></div>
         </div>
         <div className="w-full h-fit flex flex-col items-center justify-center ">
@@ -189,21 +176,15 @@ const Home = () => {
             </Zoom>
           </div>
           <div className="flex gap-4 z-50">
-            {/* {[rightArrow, leftArrow].map((item) => {
-              return <img src={item} alt="" style={{ cursor: "pointer" }} />;
-            })} */}
-            <img
-              src={rightArrow}
-              alt=""
-              style={{ cursor: "pointer" }}
-              onClick={() => swipingButtonRefPrev.current?.click()}
-            />
-            <img
-              src={leftArrow}
-              alt=""
-              style={{ cursor: "pointer" }}
-              onClick={() => swipingButtonRef.current?.click()}
-            />
+            {[
+              { imgUrl: rightArrow, ref: swipingButtonRefPrev },
+              { imgUrl: leftArrow, ref: swipingButtonRef },
+            ].map((item) => {
+              const { imgUrl, ref } = item;
+              return (
+                <img src={imgUrl} alt="" onClick={() => ref.current?.click()} />
+              );
+            })}
           </div>
         </div>
       </div>

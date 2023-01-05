@@ -61,7 +61,7 @@ const NewArrivals: FC<FeaturedProInterface> = () => {
               <span>Select what you like, enjoy & return.</span>
             </p>
           </div>
-          <span className="text-sm text-[#FF3C78] text-center cursor-pointer flex gap-2">
+          <span className="text-sm text-[#FF3C78] text-center  flex gap-2">
             View all <img src={chevronLeft} alt="" className="h-5" />{" "}
           </span>
         </div>

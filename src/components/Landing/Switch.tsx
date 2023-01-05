@@ -10,7 +10,6 @@ const Switch = () => {
       style={{
         background:
           "linear-gradient(97.49deg, #8AA8F8 -0.43%, #315BFF 144.53%)",
-        cursor: "pointer",
       }}
       onClick={() => setMenOn((prev) => !prev)}
     >

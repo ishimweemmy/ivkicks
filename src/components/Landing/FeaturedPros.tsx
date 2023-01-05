@@ -34,7 +34,7 @@ const FeaturedPros = () => {
           <h1 className="text-3xl font-bold text-[#0A083A] lg:text-4xl xl:text-5xl whitespace-nowrap">
             Featured Products
           </h1>
-          <span className="text-sm text-[#FF3C78] cursor-pointer hidden lg:flex md:flex lgMd:flex xl:flex 2xl:flex lg:text-base md:items-center md:justify-center">
+          <span className="text-sm text-[#FF3C78]  hidden lg:flex md:flex lgMd:flex xl:flex 2xl:flex lg:text-base md:items-center md:justify-center">
             <span className="font-semibold text-lg">View all</span>{" "}
             <img src={chevronLeft} alt="" className="h-5 lg:h-5 lg:w-5" />{" "}
           </span>
@@ -107,7 +107,7 @@ const FeaturedPros = () => {
           </Zoom>
         </>
       )}
-      <span className="text-sm text-[#FF3C78] cursor-pointer flex gap-2 md:hidden lg:hidden xl:hidden 2xl:hidden">
+      <span className="text-sm text-[#FF3C78] flex gap-2 md:hidden lg:hidden xl:hidden 2xl:hidden">
         view all <img src={chevronLeft} alt="" className="h-5" />{" "}
       </span>
     </div>

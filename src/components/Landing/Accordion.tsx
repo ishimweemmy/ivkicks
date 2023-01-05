@@ -35,7 +35,7 @@ const Accordion: FC<AccordionProps> = (props) => {
   return (
     <div className="w-full h-full flex flex-col items-start justify-center pl-[30%] gap-4 transition-all duration-1000 md:pl-0 md:justify-start md:pt-[2rem]">
       <span
-        className="text-lg font-medium text-[#0A083A] cursor-pointer transition-all duration-700 lg:text-2xl md:font-semibold whitespace-nowrap"
+        className="text-lg font-medium text-[#0A083A]  transition-all duration-700 lg:text-2xl md:font-semibold whitespace-nowrap"
         onClick={() => handleChange(summary)}
       >
         {summary}
