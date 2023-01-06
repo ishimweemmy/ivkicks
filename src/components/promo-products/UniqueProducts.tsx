@@ -202,7 +202,7 @@ const UniqueProducts = () => {
                 boxShadow: "hwb(0deg 0% 0% / 41%) 0px 25px 50px -10px",
               }}
             >
-              Add new items
+              Add new item
             </button>
           </div>
 
@@ -217,18 +217,38 @@ const UniqueProducts = () => {
               />
             </div>
             <div className="flex flex-col items-start justify-center">
-              <span className="text-[.6rem] whitespace-nowrap text-white">Air max Motion</span>
+              <span className="text-[.6rem] whitespace-nowrap text-white">
+                Air max Motion
+              </span>
               <span className="text-xs text-[#426eff] font-bold">$320.00</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-sm bg-white w-4 h-4 rounded-full text-center">+</span>
+              <span className="text-sm bg-white w-4 h-4 rounded-full text-center">
+                +
+              </span>
               <span className="text-sm text-center">1</span>
-              <span className="text-sm bg-[#426eff] w-4 h-4 rounded-full text-center">-</span>
+              <span className="text-sm text-white bg-[#426eff] w-4 h-4 rounded-full text-center">
+                -
+              </span>
             </div>
           </div>
 
           {/* card 4 */}
-          <div className="w-[11rem] h-[4rem] backdrop-blur-3xl rounded-md before:content-[''] before:absolute before:w-full before:h-full before:bg-[#fcd0af51] before:blur-3xl"></div>
+          <div className="w-[11rem] h-[4rem] backdrop-blur-3xl rounded-md before:content-[''] before:absolute before:w-full before:h-full before:bg-[#fcd0af51] before:blur-3xl flex gap-2 items-center justify-center">
+            <img
+              src={mcQueenWear}
+              alt=""
+              className="w-[40%] h-[90%] rounded-lg"
+            />
+            <div className="flex flex-col items-start justify-center gap-2">
+              <span className="text-[.6rem] whitespace-nowrap text-white">
+                Nike Speed x234
+              </span>
+              <span className="text-[.6rem] whitespace-nowrap text-white">
+                category: performance 
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
