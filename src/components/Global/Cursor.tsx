@@ -43,8 +43,8 @@ const Cursor: FC<{ pageOver?: string }> = (props) => {
         mouseVisible ? "fixed" : "hidden"
       } pointer-events-none`}
       style={{
-        left: `${mousePosition.x - 18}px`,
-        top: `${mousePosition.y - 12}px`,
+        left: `${mousePosition.x - 25}px`,
+        top: `${mousePosition.y - 14}px`,
       }}
     />
   );

@@ -99,7 +99,7 @@ const Footer = () => {
       <div className="w-full h-[30%] flex flex-col items-center justify-center gap-6 md:h-full md:col-span-2 md:border-t-2 md:flex-row md:items-center md:justify-between ">
         {mobile && <Socials section="footer" />}
         <p className="text-center text-md text-gray-700 px-4 md:p-0 md:text-base">
-          © 2021 Shop. Made with love for Brightscout{" "}
+          © 2021 Shop. Made with love for thray{" "}
         </p>
         <a href="#top">
           <KeyboardArrowUp
