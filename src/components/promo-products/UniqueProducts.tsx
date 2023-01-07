@@ -234,19 +234,37 @@ const UniqueProducts = () => {
           </div>
 
           {/* card 4 */}
-          <div className="w-[11rem] h-[4rem] backdrop-blur-3xl rounded-md before:content-[''] before:absolute before:w-full before:h-full before:bg-[#fcd0af51] before:blur-3xl flex gap-2 items-center justify-center">
+          <div className="w-[11rem] h-[5rem] backdrop-blur-3xl rounded-md before:content-[''] before:absolute before:w-full before:h-full before:bg-[#fcd0af51] before:blur-3xl flex gap-2 items-center justify-center">
             <img
               src={mcQueenWear}
               alt=""
-              className="w-[40%] h-[90%] rounded-lg"
+              className="w-[35%] h-[70%] rounded-lg"
             />
-            <div className="flex flex-col items-start justify-center gap-2">
-              <span className="text-[.6rem] whitespace-nowrap text-white">
+            <div className="flex flex-col items-start justify-center gap-">
+              <span className="text-[.6rem] whitespace-nowrap text-[rgb(10,8,58)]">
                 Nike Speed x234
               </span>
-              <span className="text-[.6rem] whitespace-nowrap text-white">
-                category: performance 
+              <span className="text-[.5rem] whitespace-nowrap text-white">
+                category: performance
               </span>
+              <p className="flex flex-col">
+                <span className="text-[.4rem] whitespace-nowrap text-[rgb(10,8,58)]">
+                  Best for ergonomy & stability
+                </span>
+                <span className="text-[.4rem] whitespace-nowrap text-[rgb(10,8,58)]">
+                  Preferred by atheletes
+                </span>
+              </p>
+              <div className="flex w-full h-full items-center justify-between">
+                <span className="text-[.4rem] text-[#426eff] font-bold">
+                  $320.00
+                </span>
+                <div className="flex flex-col items-center justify-center after:w-[2rem] after:h-[1rem] after:bg-[#02be82c7] after:blur-[24px] after:absolute after:bottom-[-.2rem]">
+                  <button className="px-4 py-[.2rem] mt-1 bg-[#02BE83] text-white text-[.4rem] rounded-md font-medium">
+                    Buy
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
