@@ -28,7 +28,7 @@ const UniqueProducts = () => {
         </h1>
       </div>
       <div className="w-full h-fit relative flex flex-col items-center justify-center">
-        <div className="w-full h-fit flex flex-col items-center justify-center gap-24 ">
+        <div className="w-full h-fit flex flex-col items-center justify-center gap-24 lssm:flex-row ">
           {/* banner 1 */}
 
           <div className="w-full h-fit flex items-center relative">
@@ -46,7 +46,7 @@ const UniqueProducts = () => {
               <img
                 src={uniqueShoe}
                 alt=""
-                className="w-[55%] absolute rotate-[20deg] right-14 bottom-2"
+                className="w-[55%] absolute rotate-[20deg] right-14 bottom-2 minSm:right-24 minSm:-bottom-4"
               />
             </div>
             <img
@@ -72,7 +72,7 @@ const UniqueProducts = () => {
             <img
               src={uniqueShoe1}
               alt=""
-              className="w-[55%] absolute rotate-[20deg] right-20 bottom-6"
+              className="w-[55%] absolute rotate-[20deg] right-20 bottom-6 minSm:-bottom-4"
             />
             <img
               src={uniquesArrow}

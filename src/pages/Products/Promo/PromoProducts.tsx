@@ -139,7 +139,7 @@ const Promo = () => {
                 );
               })}
               {/* fa9358 */}
-              <div className="spinBlur1 w-[20rem] h-[16rem] absolute bg-[#FF3C78] rounded-full bottom-[4rem] left-[26rem] -z-10 filter blur-3xl"></div>
+              {/* <div className="spinBlur1 w-[20rem] h-[16rem] absolute bg-[#FF3C78] rounded-full bottom-[4rem] left-[26rem] -z-10 filter blur-3xl"></div> */}
 
               <SlideNextButton swipingButtonRef={swipingButtonRef} />
               <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
