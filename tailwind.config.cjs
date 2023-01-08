@@ -7,11 +7,15 @@ module.exports = {
 
       sm: "300px",
 
+      miniSm: "400px",
+
       minSm: "450px",
 
       lsm: "600px",
 
       lssm: "500px",
+
+      xlssm: "550px",
 
       xMiniTablet: "650px",
 

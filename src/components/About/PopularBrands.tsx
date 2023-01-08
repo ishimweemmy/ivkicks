@@ -1,4 +1,4 @@
-import { popularBrandsData } from "../../data";
+import { popularBrandsData } from "../../data"; 
 import Brand from "../Landing/Brand";
 import { Fade, Zoom, Flip } from "react-reveal";
 

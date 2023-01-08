@@ -74,9 +74,8 @@ const Home = () => {
               </div>
             </Fade>
             <div
-              className={`w-screen h-screen fixed bg-[#ffffffbe] top-0 left-0 grid place-items-center z-[199] ${
-                !isLiked && "hidden"
-              } `}
+              className={`w-screen h-screen fixed bg-[#ffffffbe] top-0 left-0 grid place-items-center z-[199] ${!isLiked && "hidden"
+                } `}
             >
               <Zoom duration={1000}>
                 <img src={heartIcon2} alt="" className={`w-[50rem] relative`} />

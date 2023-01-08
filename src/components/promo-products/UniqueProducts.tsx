@@ -27,8 +27,8 @@ const UniqueProducts = () => {
           Unique products
         </h1>
       </div>
-      <div className="w-full h-fit relative flex flex-col items-center justify-center">
-        <div className="w-full h-fit flex flex-col items-center justify-center gap-24 lssm:flex-row ">
+      <div className="w-full h-fit relative flex flex-col items-center justify-center lssm: lssm:w-[90%] xlssm:w-[80%]">
+        <div className="w-full h-fit flex flex-col items-center justify-center gap-24 miniTablet:flex-row ">
           {/* banner 1 */}
 
           <div className="w-full h-fit flex items-center relative">
@@ -81,19 +81,22 @@ const UniqueProducts = () => {
             />
           </div>
         </div>
-        <div className="w-full h-fit flex-col items-center justify-center gap-2 absolute grid grid-cols-1 place-items-center md:grid-cols-2 ">
+
+        {/* ḅanners overlay */}
+        
+        <div className="w-full h-fit flex-col items-center justify-center gap-2 absolute grid grid-cols-1 place-items-center xlssm:w-[80%]  ">
           {/* card 1 */}
 
-          <div className="w-[9rem] h-[8rem] backdrop-blur-3xl rounded-md before:content-[''] before:absolute before:w-full before:h-full before:bg-[#fcd0af51] before:blur-3xl flex flex-col items-center justify-center p-3">
+          <div className="w-[9rem] h-[8rem] backdrop-blur-3xl rounded-md before:content-[''] before:absolute before:w-full before:h-full before:bg-[#fcd0af51] before:blur-3xl flex flex-col items-center justify-center p-3 miniSm:w-[50%] ">
             <div className="w-full flex justify-between items-start mb-2">
               <span className="text-[.6rem] font-bold text-white bg-[#FF3C78] px-[.2rem] py-[.1rem] rounded-lg">
                 -10%
               </span>
               <div className="w-[70%] relative flex items-center justify-center ">
-                <div className="w-[3rem] h-[3rem] rounded-full grid place-items-center bg-[#b700ff] before:w-[80%] before:h-[80%] before:rounded-full before:bg-[#ee82ee6f] before:border before:border-white"></div>
+                <div className="w-[3rem] h-[3rem] rounded-full grid place-items-center bg-[#b700ff] before:w-[80%] before:h-[80%] before:rounded-full before:bg-[#ee82ee6f] before:border before:border-white miniSm:w-[4rem] miniSm:h-[4rem]"></div>
                 <img
                   src="/server-assets/image 1.png"
-                  className="absolute rotate-[-20deg] scale-[1.1] right-[-.5rem]"
+                  className="absolute rotate-[-20deg] scale-[1.1] right-[-.5rem] miniSm:scale-[1]" 
                   alt=""
                 />
               </div>
@@ -109,7 +112,7 @@ const UniqueProducts = () => {
           </div>
 
           {/* card 2 */}
-          <div className="w-[12rem] h-[14rem] backdrop-blur-3xl rounded-md before:content-[''] before:absolute before:w-full before:h-full before:bg-[#fcd0af51] before:blur-3xl flex flex-col items-start justify-center gap-2 pl-3">
+          <div className="w-[12rem] h-[14rem] backdrop-blur-3xl rounded-md before:content-[''] before:absolute before:w-full before:h-full before:bg-[#fcd0af51] before:blur-3xl flex flex-col items-start justify-center gap-2 pl-3 miniSm:w-[50%]">
             <span className="text-sm font-bold text-[#0A083A]">
               Manage items
             </span>
@@ -207,7 +210,7 @@ const UniqueProducts = () => {
           </div>
 
           {/* card 3 */}
-          <div className="w-[11rem] h-[4rem] backdrop-blur-xl rounded-md before:content-[''] before:absolute before:w-full before:h-full before:bg-[#fcd0af51] before:blur-3xl flex items-center justify-center gap-2 px-2">
+          <div className="w-[11rem] h-[4rem] backdrop-blur-xl rounded-md before:content-[''] before:absolute before:w-full before:h-full before:bg-[#fcd0af51] before:blur-3xl flex items-center justify-center gap-2 px-2 miniSm:w-[50%]">
             <div className="w-[70%] relative flex items-center justify-center ">
               <div className="w-[2rem] h-[2rem] rounded-full grid place-items-center bg-[#b700ff] before:w-[80%] before:h-[80%] before:rounded-full before:bg-[#ee82ee6f] before:border before:border-white"></div>
               <img
@@ -234,7 +237,7 @@ const UniqueProducts = () => {
           </div>
 
           {/* card 4 */}
-          <div className="w-[11rem] h-[5rem] backdrop-blur-3xl rounded-md before:content-[''] before:absolute before:w-full before:h-full before:bg-[#fcd0af51] before:blur-3xl flex gap-2 items-center justify-center">
+          <div className="w-[11rem] h-[5rem] backdrop-blur-3xl rounded-md before:content-[''] before:absolute before:w-full before:h-full before:bg-[#fcd0af51] before:blur-3xl flex items-center justify-between px-2 miniSm:w-[50%]">
             <img
               src={mcQueenWear}
               alt=""
@@ -255,12 +258,12 @@ const UniqueProducts = () => {
                   Preferred by atheletes
                 </span>
               </p>
-              <div className="flex w-full h-full items-center justify-between">
+              <div className="flex w-full h-fit items-center justify-between">
                 <span className="text-[.4rem] text-[#426eff] font-bold">
                   $320.00
                 </span>
                 <div className="flex flex-col items-center justify-center after:w-[2rem] after:h-[1rem] after:bg-[#02be82c7] after:blur-[24px] after:absolute after:bottom-[-.2rem]">
-                  <button className="px-4 py-[.2rem] mt-1 bg-[#02BE83] text-white text-[.4rem] rounded-md font-medium">
+                  <button className="px-4 py-[.2rem] mt-1 bg-[#02BE83] text-white text-[.4rem] rounded-md font-medium miniSm:mt-0">
                     Buy
                   </button>
                 </div>
