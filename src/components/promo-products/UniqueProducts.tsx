@@ -35,7 +35,7 @@ const UniqueProducts = () => {
             <img
               src={uniquesArrow}
               alt=""
-              className="w-14 h-14 absolute left-8 top-10 rotate-[-45deg] miniTablet:top-20 miniTablet:left-0 miniTablet:h-16 miniTablet:w-16 z-50 lg:w-24  lg:left-[2.5rem] lg:top-[12rem]"
+              className="w-14 h-14 absolute left-8 top-10 rotate-[-45deg] miniTablet:top-20 miniTablet:left-0 miniTablet:h-16 miniTablet:w-16 z-50 lg:w-24  lg:left-[2.5rem] lg:top-[12rem] mini2xl:left-[20%] mini2xl:w-40"
             />
             <div className="w-full h-56 flex items-center justify-center relative">
               <img
@@ -52,7 +52,7 @@ const UniqueProducts = () => {
             <img
               src={uniquesArrow}
               alt=""
-              className="w-12 h-12 absolute right-8 top-12 rotate-[45deg] miniTablet:top-20 miniTablet:-right-4 miniTablet:h-16 miniTablet:w-16 lg:w-24 lg:top-[12rem] lg:right-[1rem]"
+              className="w-12 h-12 absolute right-8 top-12 rotate-[45deg] miniTablet:top-20 miniTablet:-right-4 miniTablet:h-16 miniTablet:w-16 lg:w-24 lg:top-[12rem] lg:right-[1rem] mini2xl:right-[20%] mini2xl:w-40"
             />
           </div>
 
@@ -62,7 +62,7 @@ const UniqueProducts = () => {
             <img
               src={uniquesArrow}
               alt=""
-              className="w-14 h-14 absolute left-8 bottom-6 rotate-[-130deg] miniTablet:top-20 miniTablet:left-0 miniTablet:h-16 miniTablet:w-16 lg:w-24 lg:rotate-[-150deg] lg:top-0 lg:left-[3rem]"
+              className="w-14 h-14 absolute left-8 bottom-6 rotate-[-130deg] miniTablet:top-20 miniTablet:left-0 miniTablet:h-16 miniTablet:w-16 lg:w-24 lg:rotate-[-150deg] lg:top-0 lg:left-[3rem] mini2xl:left-[20%] mini2xl:w-[20%]"
             />
             <img
               src={Triangle1}
@@ -77,7 +77,7 @@ const UniqueProducts = () => {
             <img
               src={uniquesArrow}
               alt=""
-              className="w-12 h-12 absolute right-8 bottom-6 rotate-[130deg] miniTablet:top-20 miniTablet:-right-8 miniTablet:h-16 miniTablet:w-16 lg:w-24 lg:right-[1rem] lg:top-[-1rem]"
+              className="w-12 h-12 absolute right-8 bottom-6 rotate-[130deg] miniTablet:top-20 miniTablet:-right-8 miniTablet:h-16 miniTablet:w-16 lg:w-24 lg:right-[1rem] lg:top-[-1rem] mini2xl:right-[20%] mini2xl:w-[20%]"
             />
           </div>
         </div>
