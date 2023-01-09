@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import Collection, { CollectionProps } from "./Collection";
-import { Pagination, Scrollbar } from "swiper";
+import Collection from "./Collection";
 import "swiper/css";
 import "swiper/css/pagination";
 import { collectionsData } from "../../data";
-import { Fade, Zoom, Flip } from "react-reveal";
+import { Zoom, Flip } from "react-reveal";
 
 const Categories = () => {
   const categoriesRef = useRef<HTMLDivElement | null>(null);

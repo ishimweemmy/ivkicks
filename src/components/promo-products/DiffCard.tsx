@@ -1,4 +1,6 @@
 import type { FC } from "react";
+import { memo } from "react";
+
 
 interface DiffProps {
   heading: string;
@@ -22,4 +24,4 @@ const DiffCard: FC<DiffProps> = (props) => {
   );
 };
 
-export default DiffCard;
+export default memo(DiffCard);

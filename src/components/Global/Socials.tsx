@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { Tablet, Twitter } from "@mui/icons-material";
 import { FacebookRounded } from "@mui/icons-material";
 import { Instagram } from "@mui/icons-material";
@@ -89,4 +89,4 @@ const Socials: FC<{ section?: string }> = (props) => {
   );
 };
 
-export default Socials;
+export default memo(Socials);

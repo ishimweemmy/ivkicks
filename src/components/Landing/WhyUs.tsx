@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import backDecor from "../../assets/backDecor.svg";
 import alexanderMcQueen from "../../assets/videoBg.png";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
@@ -6,7 +6,7 @@ import Car from "../../assets/Car.png";
 import Group from "../../assets/Group.png";
 import Group1 from "../../assets/Group-1.png";
 import Wallet from "../../assets/Wallet.png";
-import { Fade, Flip, Zoom } from "react-reveal";
+import { Fade, Zoom } from "react-reveal";
 const WhyUs = () => {
   const [mobile, setMobile] = useState(window.innerWidth <= 768 ? true : false);
 

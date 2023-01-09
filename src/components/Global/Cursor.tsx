@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import type { FC } from "react";
 
 const Cursor: FC<{ pageOver?: string }> = (props) => {
@@ -50,4 +50,4 @@ const Cursor: FC<{ pageOver?: string }> = (props) => {
   );
 };
 
-export default Cursor;
+export default memo(Cursor);

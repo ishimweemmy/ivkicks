@@ -2,7 +2,7 @@ import type { FC } from "react";
 import football from "../../assets/football 1.png";
 import fback from "../../assets/fback.png";
 import volleyShirt from "../../assets/volley 1.png";
-import { Fade, Zoom, Bounce, Rotate, Flip } from "react-reveal";
+import { Fade, Zoom } from "react-reveal";
 
 const Accessories: FC = () => {
   return (

@@ -8,7 +8,7 @@ import NewArrival from "../Global/NewArrival";
 import { FeaturedProInterface } from "./FeaturedPro";
 import "swiper/css/autoplay";
 import { newArrivalsData } from "../../data";
-import { Zoom, Bounce, Fade, Flip } from "react-reveal";
+import { Zoom, Flip } from "react-reveal";
 
 const NewArrivals: FC<FeaturedProInterface> = () => {
   const [mobile, setMobile] = useState<boolean>(

@@ -1,8 +1,8 @@
-import shoe1 from "../../assets/image 1.png";
 import addToCartIcon from "../../assets/Group.svg";
 import filledStar from "../../assets/Star 4.svg";
 import unFilledStar from "../../assets/Star 5.svg";
 import type { FC } from "react";
+import { memo } from "react";
 
 export interface FeaturedProInterface {
   rating: number;
@@ -76,4 +76,4 @@ const FeaturedPro: FC<FeaturedProInterface> = (props) => {
   );
 };
 
-export default FeaturedPro;
+export default memo(FeaturedPro);

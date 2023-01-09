@@ -16,11 +16,7 @@ interface Link {
   displayName: string;
 }
 
-interface NavProps {
-  page?: string;
-}
-
-const Nav: FC<NavProps> = (props) => {
+const Nav: FC = () => {
   const homeLinkRef = useRef<HTMLAnchorElement>(null);
 
   const [isDisplayed, setIsDisplayed] = useState<Boolean>(false);

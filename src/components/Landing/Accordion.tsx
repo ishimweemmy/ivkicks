@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import type { FC } from "react";
 import { Link } from "react-router-dom";
 
@@ -50,4 +50,4 @@ const Accordion: FC<AccordionProps> = (props) => {
   );
 };
 
-export default Accordion;
+export default memo(Accordion);

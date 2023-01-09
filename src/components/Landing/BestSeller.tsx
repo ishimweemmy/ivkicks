@@ -1,4 +1,5 @@
-import { FC } from "react";
+import type { FC } from "react";
+import { memo } from "react";
 import Switch from "./Switch";
 import filledStar from "../../assets/Star 4.svg";
 import { Zoom, Fade, Bounce } from "react-reveal";
@@ -80,4 +81,4 @@ const BestSeller: FC<BestSeller> = (props) => {
   );
 };
 
-export default BestSeller;
+export default memo(BestSeller);

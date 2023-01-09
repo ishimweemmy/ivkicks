@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import { memo } from "react";
 
 export interface SocialProps {
   name: string;
@@ -22,4 +23,4 @@ const Social: FC<SocialProps> = (props) => {
   );
 };
 
-export default Social;
+export default memo(Social);

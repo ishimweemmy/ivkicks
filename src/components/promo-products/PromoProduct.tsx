@@ -3,6 +3,7 @@ import StackedLineChartIcon from "@mui/icons-material/StackedLineChart";
 import AutoModeIcon from "@mui/icons-material/AutoMode";
 import filledStar from "../../assets/Star 4.svg";
 import unFilledStar from "../../assets/Star 5.svg";
+import { memo } from "react";
 
 export interface PromoProductProps {
   sneakerName: string;
@@ -94,4 +95,4 @@ const PromoProduct: FC<PromoProductProps> = (props) => {
   );
 };
 
-export default PromoProduct;
+export default memo(PromoProduct);

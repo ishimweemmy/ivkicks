@@ -1,5 +1,6 @@
 import { useSwiper } from "swiper/react";
 import type { FC } from "react";
+import { memo } from "react";
 
 interface ButtonProps {
   swipingButtonRef: any;
@@ -18,4 +19,4 @@ const SlideNextButton: FC<ButtonProps> = (props) => {
   );
 };
 
-export default SlideNextButton;
+export default memo(SlideNextButton);

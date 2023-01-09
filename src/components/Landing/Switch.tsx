@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { ButtonGroup } from "@material-ui/core";
 
 const Switch = () => {
   const [menOn, setMenOn] = useState(true);

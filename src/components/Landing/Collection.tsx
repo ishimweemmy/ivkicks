@@ -1,7 +1,6 @@
-import { SwiperSlide } from "swiper/react";
-import collectionSneaker from "/server-assets/arrival3.png";
 import type { FC } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { memo } from "react";
+import { Link } from "react-router-dom";
 import { color } from "./FeaturedPro";
 
 export interface CollectionProps {
@@ -32,13 +31,20 @@ const Collection: FC<CollectionProps> = (props) => {
   return (
     <div className="w-[85%] h-[65%] bg-[#F5F5f5] rounded-xl flex flex-col items-center justify-center relative top-[-2rem] md:items-start lg:w-[70%] miniLarge:w-[85%]">
       <div className="grid place-items-center gap-2 md:place-items-start md:ml-[2rem]">
-        <p className="text-xl font-bold md:text-3xl md:flex md:flex-col" style={{color: textColors[indexId]}}>
+        <p
+          className="text-xl font-bold md:text-3xl md:flex md:flex-col"
+          style={{ color: textColors[indexId] }}
+        >
           <span>{collectionName}</span> <span>Collection</span>
         </p>
         <span className="text-base text-gray-700 md:text-lg">
           {nbrOfProducts} products
         </span>
-        <Link to="" className={` text-lg underline font-semibold`} style={{color: textColors[indexId]}}>
+        <Link
+          to=""
+          className={` text-lg underline font-semibold`}
+          style={{ color: textColors[indexId] }}
+        >
           See collection
         </Link>
       </div>
@@ -62,4 +68,4 @@ const Collection: FC<CollectionProps> = (props) => {
   );
 };
 
-export default Collection;
+export default memo(Collection);

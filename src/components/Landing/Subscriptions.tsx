@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Socials from "../Global/Socials";
 import subscriptionSneaker from "../../assets/subscription.png";
-import { Flip, Fade, Zoom, Bounce } from "react-reveal";
+import { Flip, Zoom, Bounce } from "react-reveal";
 
 const Subscriptions = () => {
   const [email, setEmail] = useState("");

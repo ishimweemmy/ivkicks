@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import { FeaturedProInterface } from "./FeaturedPro";
 import FeaturedPro from "./FeaturedPro";
 import chevronLeft from "../../assets/chevron-right.png";
@@ -114,4 +114,4 @@ const FeaturedPros = () => {
   );
 };
 
-export default FeaturedPros;
+export default memo(FeaturedPros);
