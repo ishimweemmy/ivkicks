@@ -87,7 +87,7 @@ const UniqueProducts = () => {
         <div className="w-full h-fit gap-2 absolute grid grid-cols-1 place-items-center xlssm:w-[80%] z-50 miniTablet:grid-cols-2 miniTablet:top-[-5rem] lgMd:top-[-10rem] xLgMd:w-[70%] ">
           {/* card 1 */}
 
-          <div className="w-[9rem] h-[8rem] backdrop-blur-3xl rounded-md flex flex-col items-center justify-center p-3 miniSm:w-[50%] miniTablet:col-span-2 miniTablet:w-[30%] miniTablet:rounded-xl miniTablet:h-[10rem] " style={{background: `linear-gradient(90deg, rgba(249,235,222,1) 0%, rgba(245,222,207,1) 39%, rgba(246,204,181,1) 75%, rgba(244,198,170,1) 100%)`}}>
+          <div className="w-[9rem] h-[8rem] backdrop-blur-3xl rounded-md flex flex-col items-center justify-center p-3 miniSm:w-[50%] miniTablet:col-span-2 miniTablet:w-[30%] miniTablet:rounded-xl miniTablet:h-[10rem] mini2xl:w-[20%] " style={{background: `linear-gradient(90deg, rgba(249,235,222,1) 0%, rgba(245,222,207,1) 39%, rgba(246,204,181,1) 75%, rgba(244,198,170,1) 100%)`}}>
             <div className="w-full flex justify-between items-start mb-2">
               <span className="text-[.6rem] font-bold text-white bg-[#FF3C78] px-[.2rem] py-[.1rem] rounded-lg">
                 -10%
@@ -112,7 +112,7 @@ const UniqueProducts = () => {
           </div>
 
           {/* card 2 */}
-          <div className="w-[12rem] h-[14rem] backdrop-blur-3xl relative rounded-md flex flex-col items-start justify-center gap-2 pl-3 miniSm:w-[50%] miniTablet:w-[40%] miniTablet:col-span-2 lg:w-[35%] lg:top-[-5rem] lg:right-[-1.5rem] xLgMd:h-[16rem] xLgMd:gap-3 lg:gap-4" style={{background: `linear-gradient(90deg, rgba(249,235,222,1) 0%, rgba(245,222,207,1) 39%, rgba(246,204,181,1) 75%, rgba(244,198,170,1) 100%)`}}>
+          <div className="w-[12rem] h-[14rem] backdrop-blur-3xl relative rounded-md flex flex-col items-start justify-center gap-2 pl-3 miniSm:w-[50%] miniTablet:w-[40%] miniTablet:col-span-2 lg:w-[35%] lg:top-[-5rem] lg:right-[-1.5rem] xLgMd:h-[16rem] xLgMd:gap-3 lg:gap-4 mini2xl:h-[120%] mini2xl:w-[30%] " style={{background: `linear-gradient(90deg, rgba(249,235,222,1) 0%, rgba(245,222,207,1) 39%, rgba(246,204,181,1) 75%, rgba(244,198,170,1) 100%)`}}>
             <span className="text-sm font-bold text-[#0A083A] xLgMd:text-base">
               Manage items
             </span>
@@ -137,7 +137,7 @@ const UniqueProducts = () => {
               <img
                 src={nikeShoesWear}
                 alt=""
-                className="w-[30%] h-[2rem] rounded-md xLgMd:h-[3rem]"
+                className="w-[30%] h-[2rem] rounded-md xLgMd:h-[3rem] 2xl:min-h-[4rem]"
               />
               <div className="flex flex-col items-start justify-center xLgMd:gap-1">
                 <span className="text-[.6rem] font-bold text-[#FF3C78] xLgMd:text-xs">
@@ -170,7 +170,7 @@ const UniqueProducts = () => {
               <img
                 src={yeezyShoesWear}
                 alt=""
-                className="w-[30%] h-[2rem] rounded-md xLgMd:h-[3rem]"
+                className="w-[30%] h-[2rem] rounded-md xLgMd:h-[3rem] 2xl:min-h-[4rem] 2xl:max-h-[4rem]"
               />
               <div className="flex flex-col items-start justify-center xLgMd:gap-1">
                 <span className="text-[.6rem] font-bold text-[#FF3C78] xLgMd:text-xs">
