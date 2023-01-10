@@ -9,6 +9,7 @@ import mcQueenWear from "../../assets/mcQueenWear.jpeg";
 import nikeShoesWear from "../../assets/nikeShoes.jpg";
 import yeezyShoesWear from "../../assets/yeezyBoost.jpg";
 import { FiEdit3 } from "react-icons/fi";
+import { Zoom } from "react-reveal";
 
 const UniqueProducts = () => {
   const theRatingStars: JSX.Element[] = [...Array(Math.floor(5))].map(
@@ -26,7 +27,7 @@ const UniqueProducts = () => {
           Unique products
         </h1>
       </div>
-      <div className="w-full h-fit relative flex flex-col items-center justify-center lssm: lssm:w-[90%] xlssm:w-[80%] miniTablet:w-full miniTablet:justify-between miniTablet:h-[60vh] xlarge:w-[95%] ">
+      <div className="w-full h-fit relative flex flex-col items-center justify-center lssm: lssm:w-[90%] xlssm:w-[80%] miniTablet:w-full miniTablet:justify-between miniTablet:h-[60vh] xlarge:w-[95%] 2xl:max-w-[90%] ">
         {/* banners */}
         <div className="w-full h-fit flex flex-col items-center justify-center gap-24 miniTablet:flex-row ">
           {/* banner 1 */}
@@ -41,12 +42,12 @@ const UniqueProducts = () => {
               <img
                 src={Triangle2}
                 alt=""
-                className="w-[65%] absolute rotate-[-20deg] left-8 miniTablet:rotate-[80deg] max-w-none miniTablet:w-[120%] miniTablet:bottom-[6rem] miniTablet:left-0 lg:bottom-0"
+                className="w-[65%] absolute rotate-[-20deg] left-8 miniTablet:rotate-[80deg] max-w-none miniTablet:w-[120%] miniTablet:bottom-[6rem] miniTablet:left-0 lg:bottom-0 xlarge:w-[110%] xlarge:bottom-[5rem]"
               />
               <img
                 src={uniqueShoe}
                 alt=""
-                className="w-[55%] max-w-none absolute rotate-[20deg] right-14 bottom-2 minSm:right-24 minSm:-bottom-4 miniTablet:rotate-[120deg] miniTablet:w-[90%] miniTablet:left-12 miniTablet:-top-4 lg:w-[100%] lg:left-[3rem] lg:-top-[9rem]"
+                className="w-[55%] max-w-none absolute rotate-[20deg] right-14 bottom-2 minSm:right-24 minSm:-bottom-4 miniTablet:rotate-[120deg] miniTablet:w-[90%] miniTablet:left-12 miniTablet:-top-4 lg:w-[100%] lg:left-[3rem] lg:-top-[9rem] xlarge:-top-[12rem] 2xl:-top-[18rem] 2xl:left-[0rem]"
               />
             </div>
             <img
@@ -87,7 +88,12 @@ const UniqueProducts = () => {
         <div className="w-full h-fit gap-2 absolute grid grid-cols-1 place-items-center xlssm:w-[80%] z-50 miniTablet:grid-cols-2 miniTablet:top-[-5rem] lgMd:top-[-10rem] xLgMd:w-[70%] ">
           {/* card 1 */}
 
-          <div className="w-[9rem] h-[8rem] backdrop-blur-3xl rounded-md flex flex-col items-center justify-center p-3 miniSm:w-[50%] miniTablet:col-span-2 miniTablet:w-[30%] miniTablet:rounded-xl miniTablet:h-[10rem] mini2xl:w-[20%] " style={{background: `linear-gradient(90deg, rgba(249,235,222,1) 0%, rgba(245,222,207,1) 39%, rgba(246,204,181,1) 75%, rgba(244,198,170,1) 100%)`}}>
+          <div
+            className="w-[9rem] h-[8rem] backdrop-blur-3xl rounded-md flex flex-col items-center justify-center p-3 miniSm:w-[50%] miniTablet:col-span-2 miniTablet:w-[30%] miniTablet:rounded-xl miniTablet:h-[10rem] mini2xl:w-[20%] "
+            style={{
+              background: `linear-gradient(90deg, rgba(249,235,222,1) 0%, rgba(245,222,207,1) 39%, rgba(246,204,181,1) 75%, rgba(244,198,170,1) 100%)`,
+            }}
+          >
             <div className="w-full flex justify-between items-start mb-2">
               <span className="text-[.6rem] font-bold text-white bg-[#FF3C78] px-[.2rem] py-[.1rem] rounded-lg">
                 -10%
@@ -96,7 +102,7 @@ const UniqueProducts = () => {
                 <div className="w-[3rem] h-[3rem] rounded-full grid place-items-center bg-[#b700ff] before:w-[80%] before:h-[80%] before:rounded-full before:bg-[#ee82ee6f] before:border before:border-white miniSm:w-[4rem] miniSm:h-[4rem]"></div>
                 <img
                   src="/server-assets/image 1.png"
-                  className="absolute rotate-[-20deg] scale-[1.1] right-[-.5rem] miniSm:scale-[1]" 
+                  className="absolute rotate-[-20deg] scale-[1.1] right-[-.5rem] miniSm:scale-[1]"
                   alt=""
                 />
               </div>
@@ -112,7 +118,12 @@ const UniqueProducts = () => {
           </div>
 
           {/* card 2 */}
-          <div className="w-[12rem] h-[14rem] backdrop-blur-3xl relative rounded-md flex flex-col items-start justify-center gap-2 pl-3 miniSm:w-[50%] miniTablet:w-[40%] miniTablet:col-span-2 lg:w-[35%] lg:top-[-5rem] lg:right-[-1.5rem] xLgMd:h-[16rem] xLgMd:gap-3 lg:gap-4 mini2xl:h-[120%] mini2xl:w-[30%] " style={{background: `linear-gradient(90deg, rgba(249,235,222,1) 0%, rgba(245,222,207,1) 39%, rgba(246,204,181,1) 75%, rgba(244,198,170,1) 100%)`}}>
+          <div
+            className="w-[12rem] h-[14rem] backdrop-blur-3xl relative rounded-md flex flex-col items-start justify-center gap-2 pl-3 miniSm:w-[50%] miniTablet:w-[40%] miniTablet:col-span-2 lg:w-[35%] lg:top-[-5rem] lg:right-[-1.5rem] xLgMd:h-[16rem] xLgMd:gap-3 lg:gap-4 mini2xl:h-[120%] mini2xl:w-[30%] "
+            style={{
+              background: `linear-gradient(90deg, rgba(249,235,222,1) 0%, rgba(245,222,207,1) 39%, rgba(246,204,181,1) 75%, rgba(244,198,170,1) 100%)`,
+            }}
+          >
             <span className="text-sm font-bold text-[#0A083A] xLgMd:text-base">
               Manage items
             </span>
@@ -223,7 +234,9 @@ const UniqueProducts = () => {
               <span className="text-[.6rem] font-bold whitespace-nowrap text-white miniTablet:text-xs">
                 Air max Motion
               </span>
-              <span className="text-xs text-[#426eff] font-bold miniTablet:text-base">$320.00</span>
+              <span className="text-xs text-[#426eff] font-bold miniTablet:text-base">
+                $320.00
+              </span>
             </div>
             <div className="flex flex-col">
               <span className="text-sm bg-white w-4 h-4 rounded-full text-center flex items-center justify-center miniTablet:w-5 miniTablet:h-5 ">
@@ -271,7 +284,6 @@ const UniqueProducts = () => {
             </div>
           </div>
         </div>
-        
       </div>
     </div>
   );
