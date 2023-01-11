@@ -23,7 +23,7 @@ const Testimonials = () => {
             modules={[Controller, Autoplay]}
             slidesPerView={1}
             className="w-[90%] h-full"
-            spaceBetween={1}
+            spaceBetween={10}
             autoplay={true}
             loop={true}
           >
