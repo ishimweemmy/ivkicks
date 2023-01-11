@@ -16,6 +16,7 @@ import TrackerCard from "../../../components/promo-products/TrackerCard";
 import Difference from "../../../components/promo-products/Difference";
 import UniqueProducts from "../../../components/promo-products/UniqueProducts";
 import Benefits from "../../../components/promo-products/Benefits";
+import Testimonials from "../../../components/promo-products/Testimonials";
 
 const Promo = () => {
   const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -162,6 +163,7 @@ const Promo = () => {
       <Difference />
       <UniqueProducts />
       <Benefits />
+      <Testimonials />
     </div>
   );
 };
