@@ -29,59 +29,61 @@ const UniqueProducts = () => {
       </div>
       <div className="w-full h-fit relative flex flex-col items-center justify-center lssm: lssm:w-[90%] xlssm:w-[80%] miniTablet:w-full miniTablet:justify-between miniTablet:h-[60vh] xlarge:w-[95%] 2xl:max-w-[90%] ">
         {/* banners */}
-        <div className="w-full h-fit flex flex-col items-center justify-center gap-24 miniTablet:flex-row ">
-          {/* banner 1 */}
+        <Zoom>
+          <div className="w-full h-fit flex flex-col items-center justify-center gap-24 miniTablet:flex-row ">
+            {/* banner 1 */}
 
-          <div className="w-full h-fit flex items-center relative miniTablet:rotate-[-90deg]">
-            <img
-              src={uniquesArrow}
-              alt=""
-              className="w-14 h-14 absolute left-8 top-10 rotate-[-45deg] miniTablet:top-20 miniTablet:left-0 miniTablet:h-16 miniTablet:w-16 z-50 lg:w-24  lg:left-[2.5rem] lg:top-[12rem] mini2xl:left-[20%] mini2xl:w-40"
-            />
-            <div className="w-full h-56 flex items-center justify-center relative">
+            <div className="w-full h-fit flex items-center relative miniTablet:rotate-[-90deg]">
               <img
-                src={Triangle2}
+                src={uniquesArrow}
                 alt=""
-                className="w-[65%] absolute rotate-[-20deg] left-8 miniTablet:rotate-[80deg] max-w-none miniTablet:w-[120%] miniTablet:bottom-[6rem] miniTablet:left-0 lg:bottom-0 xlarge:w-[110%] xlarge:bottom-[5rem]"
+                className="w-14 h-14 absolute left-8 top-10 rotate-[-45deg] miniTablet:top-20 miniTablet:left-0 miniTablet:h-16 miniTablet:w-16 z-50 lg:w-24  lg:left-[2.5rem] lg:top-[12rem] mini2xl:left-[20%] mini2xl:w-40"
               />
+              <div className="w-full h-56 flex items-center justify-center relative">
+                <img
+                  src={Triangle2}
+                  alt=""
+                  className="w-[65%] absolute rotate-[-20deg] left-8 miniTablet:rotate-[80deg] max-w-none miniTablet:w-[120%] miniTablet:bottom-[6rem] miniTablet:left-0 lg:bottom-0 xlarge:w-[110%] xlarge:bottom-[5rem]"
+                />
+                <img
+                  src={uniqueShoe}
+                  alt=""
+                  className="w-[55%] max-w-none absolute rotate-[20deg] right-14 bottom-2 minSm:right-24 minSm:-bottom-4 miniTablet:rotate-[120deg] miniTablet:w-[90%] miniTablet:left-12 miniTablet:-top-4 lg:w-[100%] lg:left-[3rem] lg:-top-[9rem] xlarge:-top-[12rem] 2xl:-top-[18rem] 2xl:left-[0rem]"
+                />
+              </div>
               <img
-                src={uniqueShoe}
+                src={uniquesArrow}
                 alt=""
-                className="w-[55%] max-w-none absolute rotate-[20deg] right-14 bottom-2 minSm:right-24 minSm:-bottom-4 miniTablet:rotate-[120deg] miniTablet:w-[90%] miniTablet:left-12 miniTablet:-top-4 lg:w-[100%] lg:left-[3rem] lg:-top-[9rem] xlarge:-top-[12rem] 2xl:-top-[18rem] 2xl:left-[0rem]"
+                className="w-12 h-12 absolute right-8 top-12 rotate-[45deg] miniTablet:top-20 miniTablet:-right-4 miniTablet:h-16 miniTablet:w-16 lg:w-24 lg:top-[12rem] lg:right-[1rem] mini2xl:right-[20%] mini2xl:w-40"
               />
             </div>
-            <img
-              src={uniquesArrow}
-              alt=""
-              className="w-12 h-12 absolute right-8 top-12 rotate-[45deg] miniTablet:top-20 miniTablet:-right-4 miniTablet:h-16 miniTablet:w-16 lg:w-24 lg:top-[12rem] lg:right-[1rem] mini2xl:right-[20%] mini2xl:w-40"
-            />
-          </div>
 
-          {/* banner 2 */}
+            {/* banner 2 */}
 
-          <div className="w-full h-56 flex items-center justify-start  relative miniTablet:rotate-[-90deg] ">
-            <img
-              src={uniquesArrow}
-              alt=""
-              className="w-14 h-14 absolute left-8 bottom-6 rotate-[-130deg] miniTablet:top-20 miniTablet:left-0 miniTablet:h-16 miniTablet:w-16 lg:w-24 lg:rotate-[-150deg] lg:top-0 lg:left-[3rem] mini2xl:left-[20%] mini2xl:w-[20%]"
-            />
-            <img
-              src={Triangle1}
-              alt=""
-              className="w-[55%] max-w-none absolute rotate-[15deg] right-16 miniTablet:w-[120%] miniTablet:rotate-[110deg] miniTablet:top-[11rem] miniTablet:left-0 lg:w-[80%] lg:left-[12rem] lg:top-[5rem]"
-            />
-            <img
-              src={uniqueShoe1}
-              alt=""
-              className="w-[55%] absolute rotate-[20deg] right-20 bottom-6 minSm:-bottom-4 miniTablet:rotate-[130deg] miniTablet:w-[90%] miniTablet:left-10 miniTablet:top-16 lg:w-[70%] lg:left-[15rem] lg:rotate-[125deg] lg:top-[2rem] "
-            />
-            <img
-              src={uniquesArrow}
-              alt=""
-              className="w-12 h-12 absolute right-8 bottom-6 rotate-[130deg] miniTablet:top-20 miniTablet:-right-8 miniTablet:h-16 miniTablet:w-16 lg:w-24 lg:right-[1rem] lg:top-[-1rem] mini2xl:right-[20%] mini2xl:w-[20%]"
-            />
+            <div className="w-full h-56 flex items-center justify-start  relative miniTablet:rotate-[-90deg] ">
+              <img
+                src={uniquesArrow}
+                alt=""
+                className="w-14 h-14 absolute left-8 bottom-6 rotate-[-130deg] miniTablet:top-20 miniTablet:left-0 miniTablet:h-16 miniTablet:w-16 lg:w-24 lg:rotate-[-150deg] lg:top-0 lg:left-[3rem] mini2xl:left-[20%] mini2xl:w-[20%]"
+              />
+              <img
+                src={Triangle1}
+                alt=""
+                className="w-[55%] max-w-none absolute rotate-[15deg] right-16 miniTablet:w-[120%] miniTablet:rotate-[110deg] miniTablet:top-[11rem] miniTablet:left-0 lg:w-[80%] lg:left-[12rem] lg:top-[5rem]"
+              />
+              <img
+                src={uniqueShoe1}
+                alt=""
+                className="w-[55%] absolute rotate-[20deg] right-20 bottom-6 minSm:-bottom-4 miniTablet:rotate-[130deg] miniTablet:w-[90%] miniTablet:left-10 miniTablet:top-16 lg:w-[70%] lg:left-[15rem] lg:rotate-[125deg] lg:top-[2rem] "
+              />
+              <img
+                src={uniquesArrow}
+                alt=""
+                className="w-12 h-12 absolute right-8 bottom-6 rotate-[130deg] miniTablet:top-20 miniTablet:-right-8 miniTablet:h-16 miniTablet:w-16 lg:w-24 lg:right-[1rem] lg:top-[-1rem] mini2xl:right-[20%] mini2xl:w-[20%]"
+              />
+            </div>
           </div>
-        </div>
+        </Zoom>
 
         {/* ḅanners overlay */}
 

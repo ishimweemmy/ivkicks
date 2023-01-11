@@ -15,6 +15,7 @@ import Steps from "../../../components/promo-products/charts/Steps";
 import TrackerCard from "../../../components/promo-products/TrackerCard";
 import Difference from "../../../components/promo-products/Difference";
 import UniqueProducts from "../../../components/promo-products/UniqueProducts";
+import Benefits from "../../../components/promo-products/Benefits";
 
 const Promo = () => {
   const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -160,6 +161,7 @@ const Promo = () => {
       <div className="w-full h-[15rem] bg-[#0A083A] lsm:hidden"></div>
       <Difference />
       <UniqueProducts />
+      <Benefits />
     </div>
   );
 };
