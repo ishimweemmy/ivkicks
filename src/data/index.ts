@@ -13,6 +13,7 @@ import newArrivalsData from "./newArrivals.json";
 import collectionsData from "./categories.json";
 import tastesData from "./tastesData.json";
 import testimonialsData from "./testimonialsData.json";
+import designerTalksData from "./designerTalks.json";
 
 // import brands from "./triangles.json";
 // import trianglesData from "./triangles.json";
@@ -36,5 +37,6 @@ export {
   newArrivalsData,
   collectionsData,
   tastesData,
-  testimonialsData
+  testimonialsData,
+  designerTalksData,
 };
