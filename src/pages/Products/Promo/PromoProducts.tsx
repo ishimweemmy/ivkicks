@@ -17,6 +17,7 @@ import Difference from "../../../components/promo-products/Difference";
 import UniqueProducts from "../../../components/promo-products/UniqueProducts";
 import Benefits from "../../../components/promo-products/Benefits";
 import Testimonials from "../../../components/promo-products/Testimonials";
+import Catalogue from "../../../components/promo-products/Catalogue";
 
 const Promo = () => {
   const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -164,6 +165,7 @@ const Promo = () => {
       <UniqueProducts />
       <Benefits />
       <Testimonials />
+      <Catalogue />
     </div>
   );
 };

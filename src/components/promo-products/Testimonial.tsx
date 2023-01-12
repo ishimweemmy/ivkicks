@@ -34,7 +34,7 @@ const Testimonial: FC<CustomerTestProps> = (props) => {
         {theFilledStars}
         {theUnfilledStars}
       </span>
-      <p className="text-white text-sm text-center font-bold z-10 text-start">{testimonial}</p>
+      <p className="text-white text-sm text-center font-bold z-10 mini2xl:text-start">{testimonial}</p>
       <span className="text-[#2e1fff] text-sm">{customerName}</span>
     </div>
   );

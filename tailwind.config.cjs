@@ -86,6 +86,9 @@ module.exports = {
         promoTopMd: "20rem 35rem",
         promoTopLsm: "14rem 35rem",
         promoTop: "14rem 30rem",
+        catalogue: "10rem 20rem 20rem 10rem",
+        catalogueXlsm: "15rem 25rem 25rem 15rem",
+        catalogueMd: "15rem 15rem"
       },
       animation: {
         "nav-hide": "navHide .2s ease-in",

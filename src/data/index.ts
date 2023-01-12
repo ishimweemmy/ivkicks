@@ -14,6 +14,7 @@ import collectionsData from "./categories.json";
 import tastesData from "./tastesData.json";
 import testimonialsData from "./testimonialsData.json";
 import designerTalksData from "./designerTalks.json";
+import catalogueData from "./catalogueData.json";
 
 // import brands from "./triangles.json";
 // import trianglesData from "./triangles.json";
@@ -39,4 +40,5 @@ export {
   tastesData,
   testimonialsData,
   designerTalksData,
+  catalogueData,
 };
