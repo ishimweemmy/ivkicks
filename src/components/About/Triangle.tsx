@@ -3,7 +3,13 @@ import { colors } from "../../data";
 import { Bounce } from "react-reveal";
 
 export interface TriangleProps {
-  position: { left?: number; bottom?: number; top?: number; right?: number };
+  position: {
+    left?: number;
+    bottom?: number;
+    top?: number;
+    right?: number;
+    floatOr?: string;
+  };
   id: number;
   rotation: string;
   delay?: number;
@@ -24,7 +30,7 @@ const Triangle: FC<TriangleProps> = (props) => {
   return (
     <Bounce duration={1000} delay={delay} right>
       <div
-        className={`w-[1.5rem] h-[1.5rem] absolute rounded-br-full z-0`}
+        className={`w-[1.5rem] h-[1.5rem] absolute rounded-br-full z-0 ${position.floatOr}`}
         style={{
           ...styles,
         }}

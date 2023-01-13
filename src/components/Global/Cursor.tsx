@@ -1,9 +1,7 @@
 import { memo, useEffect, useState } from "react";
 import type { FC } from "react";
 
-const Cursor: FC<{ pageOver?: string }> = (props) => {
-  const { pageOver } = props;
-
+const Cursor: FC<{ pageOver?: string }> = () => {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
     x: 0,
     y: 0,
@@ -11,29 +9,23 @@ const Cursor: FC<{ pageOver?: string }> = (props) => {
   const [mouseVisible, setMouseVisible] = useState(true);
 
   useEffect(() => {
-    document.addEventListener("mousemove", (e: MouseEvent) => {
+    const mouseMoveHandler = (e: MouseEvent) => {
       setMouseVisible(true);
       setMousePosition({ x: e.clientX, y: e.clientY });
-      const elementStyles = document
-        .elementFromPoint(e.clientX, e.clientY)
-        ?.attributes.getNamedItem("class")
-        ?.textContent?.split(" ");
-    });
+    };
 
-    document.addEventListener("mouseleave", () => {
+    const mouseLeaveHandler = () => {
       setMouseVisible(false);
-    });
+    };
+    document.addEventListener("mouseleave", mouseLeaveHandler);
+
+    document.addEventListener("mousemove", mouseMoveHandler);
 
     return () => {
-      document.removeEventListener("mousemove", (e: MouseEvent) => {
-        setMouseVisible(true);
-        setMousePosition({ x: e.clientX, y: e.clientY });
-      });
-      document.removeEventListener("mouseleave", () => {
-        setMouseVisible(false);
-      });
+      window.removeEventListener("mousemove", mouseMoveHandler);
+      document.removeEventListener("mouseleave", mouseLeaveHandler);
     };
-  }, [mousePosition, mouseVisible]);
+  }, []);
 
   return (
     <img

@@ -1,4 +1,7 @@
+import { MdFlight } from "react-icons/md";
+import { AiFillFilePdf } from "react-icons/ai";
 import { catalogueData } from "../../data";
+import Triangle from "../About/Triangle";
 import Category from "./Category";
 
 const Catalogue = () => {
@@ -21,6 +24,27 @@ const Catalogue = () => {
           const { url, img, name, id } = data;
           return <Category key={id} url={url} img={img} name={name} id={id} />;
         })}
+        <div className="w-fit h-fit absolute rotate-[220deg] z-0 left-8 bottom-[20rem] md:bottom-[18rem] md:left-10 grid grid-cols-2">
+          <Triangle
+            position={{ floatOr: "relative" }}
+            id={1}
+            rotation="100deg"
+          />
+          <Triangle
+            position={{ left: 0, bottom: 0, floatOr: "relative" }}
+            id={2}
+            rotation="90deg"
+          />
+          <Triangle
+            position={{ left: 0, bottom: 0, floatOr: "relative" }}
+            id={3}
+            rotation="90deg"
+          />
+        </div>
+      </div>
+      <div className="w-[80%] h-fit pt-20 mt-20 flex flex-col items-center justify-center gap-2 border-t border-t-gray-300 miniTablet:w-[85%] miniTablet:flex-row miniTablet:gap-8">
+        <div className="w-[80%] text-[#FF3C78] p-4 text-sm rounded-lg whitespace-nowrap flex bg-[#f5f5f5] gap-2 minSm:w-[15rem]"><MdFlight className="rotate-45 text-2xl" /> <p>Want a discount ?<span className="underline font-bold whitespace-normal">Sign in or become a member</span></p></div>
+        <div className="w-[80%] text-[#FF3C78] p-6 text-sm rounded-lg whitespace-nowrap flex bg-[#f5f5f5] gap-2 minSm:w-[15rem]"><AiFillFilePdf className="text-2xl" /> <span className="underline font-bold whitespace-normal">Download catalogue</span></div>
       </div>
     </div>
   );
