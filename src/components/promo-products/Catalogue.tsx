@@ -24,7 +24,7 @@ const Catalogue = () => {
         </Bounce>
       </div>
 
-      <Flip top>
+      <Zoom>
         <div className="w-[85%] h-fit py-4 relative grid place-items-center gap-3 grid-rows-catalogue xlssm:grid-rows-catalogueXlsm md:grid-cols-3 md:grid-rows-catalogueMd lg:grid-rows-catalogueLarge mini2xl:grid-rows-catalogueMLarge 2xl:grid-rows-catalogue2Xl">
           {catalogueData.map((data) => {
             const { url, img, name, id } = data;
@@ -50,7 +50,7 @@ const Catalogue = () => {
             />
           </div>
         </div>
-      </Flip>
+      </Zoom>
       <Bounce top>
         <div className="w-[80%] h-fit pt-20 mt-20 flex flex-col items-center justify-center gap-2 border-t border-t-gray-300 miniTablet:w-[85%] miniTablet:flex-row miniTablet:gap-8">
           <div className="w-[80%] text-[#FF3C78] p-4 text-sm rounded-lg whitespace-nowrap flex bg-[#f5f5f5] gap-2 minSm:w-[15rem]">
