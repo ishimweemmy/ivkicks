@@ -19,12 +19,12 @@ const Catalogue = () => {
         </span>
       </div>
 
-      <div className="w-[85%] h-fit py-4 grid place-items-center gap-3 grid-rows-catalogue xlssm:grid-rows-catalogueXlsm md:grid-cols-3 md:grid-rows-catalogueMd lg:grid-rows-catalogueLarge mini2xl:grid-rows-catalogueMLarge 2xl:grid-rows-catalogue2Xl">
+      <div className="w-[85%] h-fit py-4 relative grid place-items-center gap-3 grid-rows-catalogue xlssm:grid-rows-catalogueXlsm md:grid-cols-3 md:grid-rows-catalogueMd lg:grid-rows-catalogueLarge mini2xl:grid-rows-catalogueMLarge 2xl:grid-rows-catalogue2Xl">
         {catalogueData.map((data) => {
           const { url, img, name, id } = data;
           return <Category key={id} url={url} img={img} name={name} id={id} />;
         })}
-        <div className="w-fit h-fit absolute rotate-[220deg] z-0 left-8 bottom-[20rem] md:bottom-[18rem] md:left-10 grid grid-cols-2">
+        <div className="w-fit h-fit absolute rotate-[220deg] z-0 left-0 bottom-0 md:bottom-[18rem] md:left-10 grid grid-cols-2">
           <Triangle
             position={{ floatOr: "relative" }}
             id={1}

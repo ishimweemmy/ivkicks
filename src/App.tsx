@@ -5,7 +5,7 @@ import Nav from "./components/Global/Nav";
 import Cursor from "./components/Global/Cursor";
 import { Suspense } from "react";
 import { Zoom } from "react-reveal";
-import './index.css'
+import "./index.css";
 
 function App() {
   const location = useLocation();

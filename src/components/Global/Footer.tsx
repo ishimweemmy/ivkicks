@@ -75,7 +75,7 @@ const Footer = () => {
   });
 
   return (
-    <footer className="w-full h-[100vh] bg-white flex flex-col md:grid md:grid-cols-footer md:grid-rows-footer md:place-content-center md:place-items-center md:h-[60vh] md:self-center">
+    <footer className="w-full h-[100vh] bg-white flex flex-col md:grid md:grid-cols-footer md:grid-rows-footer md:place-content-center md:place-items-center md:h-[60vh] md:self-center z-[1999]">
       <Fade left>
         <div className="w-full h-[20%] flex items-end justify-center pb-6 border md:border-none md:w-fit md:h-[80%] md:flex md:flex-col md:items-start md:gap-4 md:p-0 ">
           {!mobile && (
