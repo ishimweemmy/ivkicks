@@ -71,6 +71,16 @@ module.exports = {
             transform: "rotateZ(45deg) scale(2)",
           },
         },
+        pulse: {
+          "40%": {
+            opacity: 0.2,
+          },
+          "75%": {
+            opacity: 1,
+            borderTop: "4px dotted #FF3C78",
+            borderRight: "4px dotted #FF3C78",
+          },
+        },
       },
       gridTemplateColumns: {
         footer: "20% 70%",
@@ -91,7 +101,7 @@ module.exports = {
         catalogueMd: "repeat(2, 15rem)",
         catalogueLarge: "repeat(2, 20rem)",
         catalogueMLarge: "repeat(2, 22rem)",
-        catalogue2Xl: "repeat(2, minmax(0, 24rem))"
+        catalogue2Xl: "repeat(2, minmax(0, 24rem))",
       },
       animation: {
         "nav-hide": "navHide .2s ease-in",

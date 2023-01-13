@@ -18,6 +18,12 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  * {
+    cursor: auto;
+  }
+}
+
 ::selection {
   background-color: #ff3c76d9;
   color: white;

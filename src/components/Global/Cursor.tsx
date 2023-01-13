@@ -3,10 +3,16 @@ import type { FC } from "react";
 
 const Cursor: FC<{ pageOver?: string }> = () => {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
-    x: 0,
-    y: 0,
+    x: -100,
+    y: -100,
   });
   const [mouseVisible, setMouseVisible] = useState(true);
+
+  const [mobile, setMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    setMobile(window.innerWidth <= 768);
+  }, [window.innerWidth]);
 
   useEffect(() => {
     const mouseMoveHandler = (e: MouseEvent) => {
@@ -22,7 +28,7 @@ const Cursor: FC<{ pageOver?: string }> = () => {
     document.addEventListener("mousemove", mouseMoveHandler);
 
     return () => {
-      window.removeEventListener("mousemove", mouseMoveHandler);
+      document.removeEventListener("mousemove", mouseMoveHandler);
       document.removeEventListener("mouseleave", mouseLeaveHandler);
     };
   }, []);
@@ -32,7 +38,7 @@ const Cursor: FC<{ pageOver?: string }> = () => {
       src="/server-assets/custompointer.png"
       alt=""
       className={`w-14 h-12 z-[19999]  ${
-        mouseVisible ? "fixed" : "hidden"
+        mouseVisible && !mobile ? "fixed" : "hidden"
       } pointer-events-none`}
       style={{
         left: `${mousePosition.x - 25}px`,

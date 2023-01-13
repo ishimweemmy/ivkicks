@@ -1,22 +1,27 @@
 import { tastesData } from "../../data";
 import Taste from "./Taste";
 import mcQueenWear from "../../assets/mcQueenWear.jpeg";
+import { Flip, Fade, Zoom, Bounce } from "react-reveal";
 
 const Benefits = () => {
   return (
     <div className="w-full h-fit bg-white py-8 grid place-items-center md:grid-cols-2 lg:p-[5rem] mini2xl:px-[10rem] 2xl:px-[20rem] 2xl:py-[10rem] ">
-      <div className="w-full h-fit flex flex-col gap-2 items-center lsm:items-start lsm:pl-[2.5rem]">
-        <span className="text-center text-xs text-[#FF3C78] uppercase font-bold block lsm:text-start lg:text-base xlarge:text-lg">
-          Benefits
-        </span>
-        <h1 className="text-2xl text-[#0A083A] font-bold text-center pr-14 lsm:text-start  md:text-4xl ">
-          Sports Shoes for all tastes
-        </h1>
-      </div>
-      <p className="text-sm text-[rgb(37,37,37)] text-center tracking-wider px-[3rem] md:text-base lg:col-start-1 md:mt-[1rem] md:text-start">
+      <Flip top duration={1000}>
+        <div className="w-full h-fit flex flex-col gap-2 items-center lsm:items-start lsm:pl-[2.5rem]">
+          <span className="text-center text-xs text-[#FF3C78] uppercase font-bold block lsm:text-start lg:text-base xlarge:text-lg">
+            Benefits
+          </span>
+          <h1 className="text-2xl text-[#0A083A] font-bold text-center pr-14 lsm:text-start  md:text-4xl ">
+            Sports Shoes for all tastes
+          </h1>
+        </div>
+      </Flip>
+      <Bounce right  duration={1000}><p className="text-sm text-[rgb(37,37,37)] text-center tracking-wider px-[3rem] md:text-base lg:col-start-1 md:mt-[1rem] md:text-start">
         I am sure you won't regret having joined us. Your hapiness and
         satisfaction is our priority
-      </p>
+      </p></Bounce>
+
+      
       <div className="w-fit h-fit flex flex-col items-center justify-center minSm:w-[70%] miniTablet:w-[60%] md:w-full lg:col-start-1">
         {tastesData.map((tasteData) => {
           const { imgUrl, heading, content, id } = tasteData;
@@ -30,7 +35,7 @@ const Benefits = () => {
           );
         })}
       </div>
-      <div
+      <Zoom delay={500}><div
         className="w-full h-[30rem] relative bg-no-repeat bg-cover flex items-end justify-center rounded-md minSm:w-[90%] xlssm:w-[80%] xLgMd:w-[90%] transition group md:w-full lg:h-full lg:row-start-1 lg:col-start-2 lg:row-span-3"
         style={{
           backgroundImage: `url(${mcQueenWear})`,
@@ -63,7 +68,7 @@ const Benefits = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div></Zoom>
     </div>
   );
 };

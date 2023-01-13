@@ -1,12 +1,7 @@
 import { useState } from "react";
 import FacAccordion from "./FacAccordion";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { IoIosRemove, IoMdAdd } from "react-icons/io";
 import Triangle from "../About/Triangle";
+import { Fade, Bounce, Flip, Zoom } from "react-reveal";
 
 const Faqs = () => {
   const [accordionData, setAccordionData] = useState([
@@ -39,15 +34,20 @@ const Faqs = () => {
   return (
     <div className="w-full h-fit py-16 flex flex-col gap-[2rem] items-center relative">
       <div className="w-full h-fit flex flex-col items-start justify-center gap-4 pl-6 miniSm:pl-8 xMiniTablet:pl-12 md:items-center">
-        <span className="text-start text-[#FF3C78] text-sm uppercase font-bold md:text-center md:text-base">
-          faq
-        </span>
-        <span className="text-start text-[#0A083A] text-3xl font-bold xMiniTablet:text-4xl md:text-center">
-          Customers ask, we answer
-        </span>
-        <span className="text-start text-xs text-gray-600 font-semibold pr-14  lssm:text-sm md:text-center md:pr-0">
-          Don't worry if you have questions, we are here to help you solve them
-        </span>
+        <Zoom>
+          <span className="text-start text-[#FF3C78] text-sm uppercase font-bold md:text-center md:text-base">
+            faq
+          </span>
+          <span className="text-start text-[#0A083A] text-3xl font-bold xMiniTablet:text-4xl md:text-center">
+            Customers ask, we answer
+          </span>
+        </Zoom>
+        <Bounce top>
+          <span className="text-start text-xs text-gray-600 font-semibold pr-14  lssm:text-sm md:text-center md:pr-0">
+            Don't worry if you have questions, we are here to help you solve
+            them
+          </span>
+        </Bounce>
       </div>
       <div className="w-full h-fit flex flex-col items-start justify-center pl-2 md:items-center ">
         {accordionData.map((data) => {
