@@ -88,7 +88,10 @@ module.exports = {
         promoTop: "14rem 30rem",
         catalogue: "10rem 20rem 20rem 10rem",
         catalogueXlsm: "15rem 25rem 25rem 15rem",
-        catalogueMd: "15rem 15rem"
+        catalogueMd: "repeat(2, 15rem)",
+        catalogueLarge: "repeat(2, 20rem)",
+        catalogueMLarge: "repeat(2, 22rem)",
+        catalogue2Xl: "repeat(2, minmax(0, 24rem))"
       },
       animation: {
         "nav-hide": "navHide .2s ease-in",
