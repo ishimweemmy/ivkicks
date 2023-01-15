@@ -30,6 +30,7 @@ const Home = () => {
   const swipingButtonRefPrev = useRef<HTMLButtonElement | null>(null);
 
   const [isLiked, setIsLiked] = useState(false);
+
   return (
     <div className="w-screen h-fit flex sm:flex-col xs:flex-col relative overflow-hidden">
       <div className="w-full pb-[4rem] mt-[4rem] h-fit flex flex-col md:flex-row md:items-center xs:mt-0 overflow-hidden lg:pl-[5rem]">
@@ -74,8 +75,9 @@ const Home = () => {
               </div>
             </Fade>
             <div
-              className={`w-screen h-screen fixed bg-[#ffffffbe] top-0 left-0 grid place-items-center z-[199] ${!isLiked && "hidden"
-                } `}
+              className={`w-screen h-screen fixed bg-[#ffffffbe] top-0 left-0 grid place-items-center z-[199] ${
+                !isLiked && "hidden"
+              } `}
             >
               <Zoom duration={1000}>
                 <img src={heartIcon2} alt="" className={`w-[50rem] relative`} />

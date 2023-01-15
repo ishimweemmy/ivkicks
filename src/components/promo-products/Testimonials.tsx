@@ -9,7 +9,9 @@ import leftArrow from "../../assets/arrow-left-circle-1.png";
 import rightArrow from "../../assets/arrow-left-circle.png";
 import mcQueenWear from "../../assets/mcQueenWear.jpeg";
 import DesignerTalk from "./DesignerTalk";
-import { Fade, Zoom, Bounce, Roll, LightSpeed, Flip } from "react-reveal";
+import { Fade, Bounce} from "react-reveal";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const Testimonials = () => {
   const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -62,15 +64,6 @@ const Testimonials = () => {
           </div>
         </Fade>
         <div className="flex gap-4 xMiniTablet:w-[80%] xMiniTablet:justify-end xMiniTablet:self-end xMiniTablet:mr-[5%]">
-          {/* {[
-          //   { imgUrl: rightArrow, ref: swipingButtonRefPrev },
-          //   { imgUrl: leftArrow, ref: swipingButtonRef },
-          // ].map((item) => {
-          //   const { imgUrl, ref } = item;
-          //   return (
-          //     <img src={imgUrl} alt="" onClick={() => ref.current?.click()} />
-          //   );
-          // })} */}
           <img
             src={reachEnd ? leftArrow : rightArrow}
             alt=""

@@ -22,7 +22,6 @@ const Nav: FC = () => {
   const [isDisplayed, setIsDisplayed] = useState<Boolean>(false);
   const location = useLocation();
   useEffect(() => {}, [location]);
-  console.log(location.pathname);
   return (
     <Fade delay={300}>
       <nav
@@ -33,7 +32,9 @@ const Nav: FC = () => {
             location.pathname == "/about" ||
             location.pathname == "/products/promoProducts"
               ? "rgb(10,8,58)"
-              : "#F5F5F5"
+              : location.pathname == "/"
+              ? "#F5F5F5"
+              : "white"
           }`,
         }}
       >

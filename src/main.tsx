@@ -3,6 +3,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 import { lazy } from "react";
 import { lazyLoad } from "./functions/lazyLoad";
+import Men from "./pages/Products/NonProducts/Men";
+import Product from "./components/Products/Product";
+import Women from "./pages/Products/NonProducts/Women";
 const App = lazy(() => import("./App"));
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -25,7 +28,14 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="products" element={<Allproducts />}>
-          <Route path="" element={<Products />} />
+          <Route path="" element={<Products />}>
+            <Route path="men" element={<Men />}>
+              <Route path=":productId" element={<Product />} />
+            </Route>
+            <Route path="women" element={<Women />}>
+              <Route path=":productId" element={<Product />} />
+            </Route>
+          </Route>
           <Route path="promoProducts" element={<Promo />} />
         </Route>
         <Route path="sale" element={<Sale />} />
