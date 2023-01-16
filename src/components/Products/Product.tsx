@@ -1,12 +1,12 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import filledStar from "../../assets/Star 4.svg";
 import unFilledStar from "../../assets/Star 5.svg";
-import mcQueenWear from "../../assets/mcQueenWear.jpeg";
-import { testimonialsData } from "../../data";
-import Testimonial from "../promo-products/Testimonial";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Controller } from "swiper";
 import "swiper/css";
+import "swiper/css/navigation";
+import { Pagination } from "swiper";
+import { Add } from "@mui/icons-material";
+import Size from "./Size";
 
 const Product = () => {
   const colors = ["red", "black", "orange"];
@@ -29,17 +29,50 @@ const Product = () => {
   const imgSources = [
     "/server-assets/image 6.png",
     "/server-assets/image 4.png",
+    "/server-assets/image 6.png",
+    "/server-assets/image 4.png",
+    "/server-assets/image 6.png",
   ];
 
+  const [availableSizes, setAvailableSizes] = useState([
+    { isActive: false, isAvailable: true, size: 6 },
+    { isActive: false, isAvailable: false, size: 6.8 },
+    { isActive: false, isAvailable: false, size: 7 },
+    { isActive: false, isAvailable: true, size: 8 },
+    { isActive: false, isAvailable: true, size: 8.5 },
+    { isActive: false, isAvailable: true, size: 9 },
+    { isActive: false, isAvailable: true, size: 10 },
+    { isActive: false, isAvailable: false, size: 10.5 },
+  ]);
+
+  const toggleIsActive = (size: number) => {
+    setAvailableSizes((prevSizes) => {
+      return prevSizes.map((prevSize) => {
+        if (prevSize.size === size) {
+          if (prevSize.isAvailable) {
+            prevSizes.forEach((size) => {
+              if (size.isActive) size.isActive = false;
+            });
+            return { ...prevSize, isActive: !prevSize.isActive };
+          } else {
+            return prevSize;
+          }
+        } else {
+          return prevSize;
+        }
+      });
+    });
+  };
+
   return (
-    <div className="w-full h-fit flex flex-col items-center justify-center gap-2">
-      <div className="w-full h-fit py-[2rem] flex justify-start items-center pl-[1rem] gap-2 bg-white">
+    <div className="w-full h-full flex flex-col items-center justify-center gap-2">
+      <div className="w-full h-full py-[2rem] flex justify-start items-center pl-[1rem] gap-2 bg-white">
         <span className="text-base font-[550] text-[rgb(10,8,58)]">Men</span>
         <div className="w-2 h-2 rounded-full bg-slate-500"></div>
         <span className="text-base font-medium text-slate-500">Sneakers</span>
       </div>
-      <div className="w-full h-fit py-8 grid place-items-center gap-2">
-        <div className="w-full h-fit flex flex-col items-start justify-center gap-4 pl-[1rem]">
+      <div className="w-full h-full py-8 grid place-items-center gap-2">
+        <div className="w-full h-full flex flex-col items-start justify-center gap-4 pl-[1rem]">
           <span className="text-3xl font-bold text-[rgb(10,8,58)]">
             Nike Air Max 270
           </span>
@@ -68,29 +101,75 @@ const Product = () => {
             </span>
           </div>
         </div>
-        <div className="w-full h-[20rem] bg-[purple]">
+        <div className="w-[20rem] h-[15rem] flex flex-col items-center justify-center gap-4">
           <Swiper
-            modules={[Controller, Autoplay]}
+            modules={[Pagination]}
             slidesPerView={1}
             className="w-full h-full"
-            spaceBetween={100}
-            autoplay={true}
-            loop={true}
+            spaceBetween={10}
+            onSlideChange={(swiper) => {
+              if (categoriesRef.current) {
+                categoriesRef.current.style.transform = `translateX(${
+                  swiper.activeIndex * 38
+                }%)`;
+              }
+            }}
           >
-            {testimonialsData.map((testimony) => {
-              const { customerName, rating, testimonial } = testimony;
-
+            {imgSources.map((img, index) => {
               return (
-                <SwiperSlide className="w-full h-full" key={customerName}>
-                  <Testimonial
-                    customerName={customerName}
-                    rating={rating}
-                    testimonial={testimonial}
-                  />
+                <SwiperSlide key={index}>
+                  <div className="w-full h-full flex items-center justify-center">
+                    <img
+                      src={img}
+                      alt=""
+                      className="max-w-none w-full h-full"
+                    />
+                    <div className="w-11 h-11 rounded-full backdrop-blur-md absolute top-11 left-32 grid place-items-center border border-gray-400">
+                      <Add />
+                    </div>
+                  </div>
                 </SwiperSlide>
               );
             })}
           </Swiper>
+        </div>
+        <div className="w-full h-[3rem] bg-white grid place-items-center">
+          <div className="rounded-full w-[80%] h-[.3rem] bg-[#f5f5f5] self-center overflow-clip ">
+            <div
+              className={`w-[40%] lg:w-[56%] h-full rounded-full bg-[#02BE83] transition-all duration-500`}
+              ref={categoriesRef}
+            ></div>
+          </div>
+        </div>
+        <div className="w-full h-full bg-white flex flex-col items-start justify-center gap-5 px-[1rem]">
+          <span className="text-lg font-semibold text-[rgb(10,8,58)]">
+            Details
+          </span>
+          <p className="text-gray-500 text-sm font-medium">
+            They agree with reality to a high degree of accuracy as tested in
+            the experiment after experiment
+          </p>
+          <div className="w-full h-fit flex justify-between">
+            <span className="text-lg font-semibold text-[rgb(10,8,58)]">
+              Select size
+            </span>
+            <span className="text-lg font-semibold text-gray-500 underline hidden ">
+              Size guide
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {availableSizes.map((availableSize) => {
+              const { isActive, isAvailable, size } = availableSize;
+              return (
+                <Size
+                  isActive={isActive}
+                  isAvailable={isAvailable}
+                  size={size}
+                  toggleIsActive={toggleIsActive}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
