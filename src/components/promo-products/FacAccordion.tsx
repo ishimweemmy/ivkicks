@@ -11,10 +11,11 @@ export interface AccordionProps {
   expanded: boolean;
   panel: string;
   handleChange: (question: string) => any;
+  page?: string;
 }
 
 const FacAccordion: FC<AccordionProps> = (props) => {
-  const { question, answer, handleChange, panel, expanded } = props;
+  const { question, answer, handleChange, panel, expanded, page } = props;
 
   return (
     <Fade bottom>
@@ -25,10 +26,12 @@ const FacAccordion: FC<AccordionProps> = (props) => {
           style={{
             cursor: `none`,
             boxShadow: `none`,
-            background: `#f5f5f5`,
+            background: `${page == "product" ? "white" : "#f5f5f5"}`,
             borderRadius: 0,
           }}
-          className=" w-full pb-1 shadow-none border-b border-gray-300 rounded-none miniTablet:pb-[2rem] miniTablet:pt-[2rem]"
+          className={`w-full pb-1 shadow-none border-b border-gray-300 rounded-none miniTablet:pb-[2rem] miniTablet:pt-[2rem] ${
+            page == "product" && "pb-[1.2rem] pt-[1.2rem]"
+          } ${panel == "panel1" && "border-t"}`}
         >
           <AccordionSummary
             expandIcon={
@@ -46,7 +49,7 @@ const FacAccordion: FC<AccordionProps> = (props) => {
             </span>
           </AccordionSummary>
           <AccordionDetails>
-            <span className="text-xs lg:text-sm mini2xl:text-base md:pr-[65%]">
+            <span className="text-xs font-semibold lg:text-sm mini2xl:text-base md:pr-[65%] text-gray-600">
               {answer}
             </span>
           </AccordionDetails>

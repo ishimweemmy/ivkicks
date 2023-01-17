@@ -7,6 +7,13 @@ import "swiper/css/navigation";
 import { Pagination } from "swiper";
 import { Add } from "@mui/icons-material";
 import Size from "./Size";
+import {
+  FormControl,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+} from "@mui/material";
+import FacAccordion from "../promo-products/FacAccordion";
 
 const Product = () => {
   const colors = ["red", "black", "orange"];
@@ -45,6 +52,33 @@ const Product = () => {
     { isActive: false, isAvailable: false, size: 10.5 },
   ]);
 
+  const accordionData = [
+    {
+      question: "Material",
+      answer:
+        "yes it is possible that you can change the shipping address anytime before 3 days but notice that if you do so it will the delay in the arrival of your order",
+      panel: "panel1",
+    },
+    {
+      question: "Delivery & Returns",
+      answer:
+        "Yeah, the discounts are available as well as the promo codes, but not on all the products",
+      panel: "panel2",
+    },
+    {
+      question: "Description",
+      answer:
+        "Yeah, that is very simple after you have added the product or you didn't that's also possible, click on the basket icon in the right corner and you're good to go",
+      panel: "panel3",
+    },
+    {
+      question: "Reviews",
+      answer:
+        "Yeah, that is very simple after you have added the product or you didn't that's also possible, click on the basket icon in the right corner and you're good to go",
+      panel: "panel4",
+    },
+  ];
+
   const toggleIsActive = (size: number) => {
     setAvailableSizes((prevSizes) => {
       return prevSizes.map((prevSize) => {
@@ -63,6 +97,20 @@ const Product = () => {
       });
     });
   };
+
+  const [nbrOfShoes, setNbrOfShoes] = useState("");
+
+  const handleSelectionChange = (event: SelectChangeEvent) => {
+    console.log(event.target.value);
+    setNbrOfShoes(event.target.value as string);
+  };
+
+  const [expanded, setExpanded] = useState<string | false>(false);
+
+  const handleChange =
+    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+      setExpanded(isExpanded ? panel : false);
+    };
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center gap-2">
@@ -166,6 +214,45 @@ const Product = () => {
                   isAvailable={isAvailable}
                   size={size}
                   toggleIsActive={toggleIsActive}
+                />
+              );
+            })}
+          </div>
+          <span className="text-lg font-semibold text-gray-500 underline">
+            Size guide
+          </span>
+          <div className="w-full flex gap-3">
+            <FormControl className="w-[30%]">
+              <Select
+                value={nbrOfShoes}
+                label="size"
+                onChange={handleSelectionChange}
+              >
+                {[...Array(10)].map((item, index) => {
+                  return (
+                    <MenuItem value={index + 1}>
+                      <span className="text-[rgb(10,8,58)] font-bold">
+                        {index + 1}
+                      </span>
+                    </MenuItem>
+                  );
+                })}
+              </Select>
+            </FormControl>
+            <button className="w-full h-full bg-[rgb(10,8,58)] text-white text-sm font-bold">
+              Add to cart
+            </button>
+          </div>
+          <div className="w-full h-fit flex flex-col my-12">
+            {accordionData.map((data) => {
+              return (
+                <FacAccordion
+                  expanded={expanded === data.panel}
+                  handleChange={handleChange}
+                  question={data.question}
+                  panel={data.panel}
+                  answer={data.answer}
+                  page="product"
                 />
               );
             })}
