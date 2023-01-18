@@ -4,7 +4,7 @@ import unFilledStar from "../../assets/Star 5.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Pagination } from "swiper";
+import { Autoplay, Controller, Pagination } from "swiper";
 import { Add } from "@mui/icons-material";
 import Size from "./Size";
 import {
@@ -14,6 +14,8 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import FacAccordion from "../promo-products/FacAccordion";
+import { theLookData } from "../../data";
+import TheLook from "./TheLook";
 
 const Product = () => {
   const colors = ["red", "black", "orange"];
@@ -34,8 +36,6 @@ const Product = () => {
   const categoriesRef = useRef<HTMLDivElement | null>(null);
 
   const imgSources = [
-    "/server-assets/image 6.png",
-    "/server-assets/image 4.png",
     "/server-assets/image 6.png",
     "/server-assets/image 4.png",
     "/server-assets/image 6.png",
@@ -113,14 +113,14 @@ const Product = () => {
     };
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center gap-2">
-      <div className="w-full h-full py-[2rem] flex justify-start items-center pl-[1rem] gap-2 bg-white">
+    <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-white">
+      <div className="w-full h-full pt-[1rem] flex justify-start items-center pl-[1rem] gap-2 bg-white">
         <span className="text-base font-[550] text-[rgb(10,8,58)]">Men</span>
         <div className="w-2 h-2 rounded-full bg-slate-500"></div>
         <span className="text-base font-medium text-slate-500">Sneakers</span>
       </div>
-      <div className="w-full h-full py-8 grid place-items-center gap-2">
-        <div className="w-full h-full flex flex-col items-start justify-center gap-4 pl-[1rem]">
+      <div className="w-full h-full py-8 grid place-items-center">
+        <div className="w-full h-full flex flex-col items-start justify-center gap-4 pl-[1rem] bg-[#f5f5f5] pt-[2rem]">
           <span className="text-3xl font-bold text-[rgb(10,8,58)]">
             Nike Air Max 270
           </span>
@@ -149,7 +149,7 @@ const Product = () => {
             </span>
           </div>
         </div>
-        <div className="w-[20rem] h-[15rem] flex flex-col items-center justify-center gap-4">
+        <div className="w-[20rem] h-[15rem] flex flex-col items-center justify-center gap-4 bg-[#f5f5f5]">
           <Swiper
             modules={[Pagination]}
             slidesPerView={1}
@@ -243,7 +243,7 @@ const Product = () => {
               Add to cart
             </button>
           </div>
-          <div className="w-full h-fit flex flex-col my-12">
+          <div className="w-full h-fit flex flex-col mt-12 mb-2">
             {accordionData.map((data) => {
               return (
                 <FacAccordion
@@ -256,6 +256,42 @@ const Product = () => {
                 />
               );
             })}
+          </div>
+        </div>
+      </div>
+      <div className="w-[90%] h-fit flex flex-col items-start justify-center gap-3 pl-[2re] bg-white">
+        <span className="text-start text-xl text-[rgb(10,8,58)] font-bold">
+          complete the look
+        </span>
+        <span className="text-start text-sm text-gray-500 font-bold">
+          3 items
+        </span>
+        <div className="w-full h-[28rem] grid grid-rows-[95%_5%] place-items-center ">
+          <Swiper
+            modules={[Controller, Autoplay]}
+            slidesPerView={1}
+            className="w-full h-full bg-white"
+            spaceBetween={20}
+            autoplay={true}
+            loop={true}
+          >
+            {theLookData.map((data) => {
+              const { name, type, price, id, imgSrc } = data;
+              return (
+                <SwiperSlide key={id} className="h-full">
+                  <TheLook
+                    name={name}
+                    type={type}
+                    price={price}
+                    id={id}
+                    imgSrc={imgSrc}
+                  />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+          <div className="w-full h-[.5rem] flex items-center justify-center gap-2">
+            {theLookData.length}
           </div>
         </div>
       </div>

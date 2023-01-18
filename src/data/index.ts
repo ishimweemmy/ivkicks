@@ -15,13 +15,7 @@ import tastesData from "./tastesData.json";
 import testimonialsData from "./testimonialsData.json";
 import designerTalksData from "./designerTalks.json";
 import catalogueData from "./catalogueData.json";
-
-// import brands from "./triangles.json";
-// import trianglesData from "./triangles.json";
-// import brandsData from "./brands.json";
-// import brandsData from "./brands.json";
-// import brandsData from "./brands.json";
-// import brandsData from "./brands.json";
+import theLookData from "./theLookData.json";
 
 export {
   brandsData,
@@ -41,4 +35,6 @@ export {
   testimonialsData,
   designerTalksData,
   catalogueData,
+  theLookData,
+  
 };

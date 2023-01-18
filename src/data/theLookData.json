@@ -1,0 +1,23 @@
+[
+    {
+        "type": "30% off",
+        "name": "Woman nike socks ",
+        "imgSrc": "/server-assets/thelook2.jpeg",
+        "price": 120.5,
+        "id": 1
+    },
+    {
+        "type": "sale",
+        "name": "Adidas man T-shirt",
+        "imgSrc": "/server-assets/thelook1.jpeg",
+        "price": 42,
+        "id": 2
+    },
+    {
+        "type": "sale",
+        "name": "Man nike white hoodie",
+        "imgSrc": "/server-assets/thelook3.jpeg",
+        "price": 68,
+        "id": 3
+    }
+]
