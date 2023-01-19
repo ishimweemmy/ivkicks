@@ -16,6 +16,7 @@ import testimonialsData from "./testimonialsData.json";
 import designerTalksData from "./designerTalks.json";
 import catalogueData from "./catalogueData.json";
 import theLookData from "./theLookData.json";
+import youMayLike from "./youmayLike.json";
 
 export {
   brandsData,
@@ -36,5 +37,5 @@ export {
   designerTalksData,
   catalogueData,
   theLookData,
-  
+  youMayLike,
 };

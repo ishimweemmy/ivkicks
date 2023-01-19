@@ -16,6 +16,7 @@ import {
 import FacAccordion from "../promo-products/FacAccordion";
 import { theLookData } from "../../data";
 import TheLook from "./TheLook";
+import YoumayLike from "../Global/YoumayLikes";
 
 const Product = () => {
   const colors = ["red", "black", "orange"];
@@ -111,6 +112,8 @@ const Product = () => {
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
     };
+
+  const [activeSlide, setActiveSlide] = useState(1);
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-white">
@@ -266,14 +269,21 @@ const Product = () => {
         <span className="text-start text-sm text-gray-500 font-bold">
           3 items
         </span>
-        <div className="w-full h-[28rem] grid grid-rows-[95%_5%] place-items-center ">
+        <div className="w-full h-[28rem] grid grid-rows-[90%_5%] place-items-center ">
           <Swiper
             modules={[Controller, Autoplay]}
             slidesPerView={1}
-            className="w-full h-full bg-white"
+            className="w-full h-[90%] bg-white"
             spaceBetween={20}
             autoplay={true}
             loop={true}
+            onSlideChange={(swiper) => {
+              if (swiper.activeIndex > theLookData.length) {
+                setActiveSlide(1);
+              } else {
+                setActiveSlide(swiper.activeIndex);
+              }
+            }}
           >
             {theLookData.map((data) => {
               const { name, type, price, id, imgSrc } = data;
@@ -290,11 +300,21 @@ const Product = () => {
               );
             })}
           </Swiper>
-          <div className="w-full h-[.5rem] flex items-center justify-center gap-2">
-            {theLookData.length}
+          <div className="w-[80%] h-[.2rem] flex items-between justify-center gap-4">
+            {theLookData.map((look, index) => {
+              return (
+                <div
+                  className={`w-full h-full ${
+                    activeSlide === index + 1 ? "bg-[#315BFF]" : "bg-[#f5f5f5]"
+                  } transition duration-700 `}
+                  key={index}
+                ></div>
+              );
+            })}
           </div>
         </div>
       </div>
+      <YoumayLike />
     </div>
   );
 };
