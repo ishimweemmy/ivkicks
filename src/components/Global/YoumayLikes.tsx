@@ -47,7 +47,7 @@ const YoumayLike = () => {
           />
         </div>
       </div>
-      <div className="w-full h-[30rem] px-[1rem]">
+      <div className="w-full h-[30rem] px-[1rem] miniSm:h-[45rem]">
         <Swiper
           modules={[Controller, Autoplay, Navigation]}
           slidesPerView={1}

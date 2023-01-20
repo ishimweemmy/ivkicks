@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import filledStar from "../../assets/Star 4.svg";
 import unFilledStar from "../../assets/Star 5.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,26 +17,38 @@ import FacAccordion from "../promo-products/FacAccordion";
 import { theLookData } from "../../data";
 import TheLook from "./TheLook";
 import YoumayLike from "../Global/YoumayLikes";
+import JoinOthers from "../Global/JoinOthers";
 
 const Product = () => {
   const colors = ["red", "black", "orange"];
 
   const theRatingStars: JSX.Element[] = [...Array(Math.floor(4))].map(
     (el: undefined, index: number) => {
-      return <img src={filledStar} alt="" key={index} />;
+      return (
+        <img src={filledStar} alt="" key={index} className="miniTablet:w-3 2xl:max-w-4" />
+      );
     }
   );
 
   const theUnfilledStars: JSX.Element[] =
     4 < 5
       ? [...Array(5 - Math.floor(4))].map((el: undefined, index: number) => {
-          return <img src={unFilledStar} alt="" key={index} />;
+          return (
+            <img
+              src={unFilledStar}
+              alt=""
+              key={index}
+              className="miniTablet:w-3 2xl:max-w-4"
+            />
+          );
         })
       : [];
 
   const categoriesRef = useRef<HTMLDivElement | null>(null);
 
   const imgSources = [
+    "/server-assets/image 6.png",
+    "/server-assets/image 4.png",
     "/server-assets/image 6.png",
     "/server-assets/image 4.png",
     "/server-assets/image 6.png",
@@ -115,27 +127,48 @@ const Product = () => {
 
   const [activeSlide, setActiveSlide] = useState(1);
 
+  const [tablet, setTablet] = useState(window.innerWidth >= 550);
+  const [largeTablet, setLargeTablet] = useState(window.innerWidth <= 699);
+  const [nbrOfProducts, setNbrOfProducts] = useState(1);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setTablet(window.innerWidth >= 550);
+      setLargeTablet(window.innerWidth <= 699);
+    });
+  }, [tablet, largeTablet]);
+
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-white">
+    <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-white lsm:px-8 xl:px-16 2xl:px-20">
       <div className="w-full h-full pt-[1rem] flex justify-start items-center pl-[1rem] gap-2 bg-white">
-        <span className="text-base font-[550] text-[rgb(10,8,58)]">Men</span>
+        <span className="text-base font-[550] text-[rgb(10,8,58)] 2xl:text-lg">Men</span>
         <div className="w-2 h-2 rounded-full bg-slate-500"></div>
-        <span className="text-base font-medium text-slate-500">Sneakers</span>
+        <span className="text-base font-medium text-slate-500 2xl:text-lg">Sneakers</span>
       </div>
-      <div className="w-full h-full py-8 grid place-items-center">
-        <div className="w-full h-full flex flex-col items-start justify-center gap-4 pl-[1rem] bg-[#f5f5f5] pt-[2rem]">
-          <span className="text-3xl font-bold text-[rgb(10,8,58)]">
+      <div className="w-full h-full py-8 grid place-items-center miniTablet:grid-cols-2 xLgMd:gap-4 xlarge:gap-16 xl:px-4 mini2xl:grid-cols-[40%_60%] 2xl:grid-cols-[30%_70%]">
+        <div className="w-full h-full flex flex-col items-start justify-center gap-4 pl-[1rem] pt-[2rem] miniTablet:col-start-2 mini2xl:pr-[10%] 2xl:gap-6">
+          <div className="w-full h-fit flex justify-between">
+            <span className="text-base font-medium text-slate-500 2xl:text-lg">
+              Men's Sneakers
+            </span>
+            <span className="gap-2 hidden miniTablet:flex">
+              {theRatingStars}
+              {theUnfilledStars}
+            </span>
+          </div>
+          <span className="text-3xl font-bold text-[rgb(10,8,58)] 2xl:text-4xl">
             Nike Air Max 270
           </span>
-          <div className="w-full flex items-center justify-start gap-8">
-            <span className="whitespace-nowrap text-gray-600 font-[550]">
+
+          <div className="w-full flex items-center justify-start gap-8 2xl:gap-10">
+            <span className="whitespace-nowrap text-gray-600 font-[550] 2xl:font-bold 2xl:text-lg">
               Available in
             </span>
             <div className="flex gap-3">
               {colors.map((color) => {
                 return (
                   <div
-                    className={`w-5 h-5 rounded-full`}
+                    className={`w-5 h-5 rounded-full 2xl:max-w-6 2xl:max-h-6`}
                     style={{ background: `${color}` }}
                   ></div>
                 );
@@ -143,72 +176,104 @@ const Product = () => {
             </div>
           </div>
           <div className="w-full flex items-center justify-start gap-8">
-            <span className="text-[rgb(10,8,58)] text-2xl font-bold">
+            <span className="text-[rgb(10,8,58)] text-2xl font-bold 2xl:text-3xl">
               $250.99
             </span>
-            <span className="flex gap-2">
+            <span className="flex gap-2 miniTablet:hidden">
               {theRatingStars}
               {theUnfilledStars}
             </span>
           </div>
         </div>
-        <div className="w-[20rem] h-[15rem] flex flex-col items-center justify-center gap-4 bg-[#f5f5f5]">
-          <Swiper
-            modules={[Pagination]}
-            slidesPerView={1}
-            className="w-full h-full"
-            spaceBetween={10}
-            onSlideChange={(swiper) => {
-              if (categoriesRef.current) {
-                categoriesRef.current.style.transform = `translateX(${
-                  swiper.activeIndex * 38
-                }%)`;
-              }
-            }}
-          >
-            {imgSources.map((img, index) => {
-              return (
-                <SwiperSlide key={index}>
-                  <div className="w-full h-full flex items-center justify-center">
+        <div className="w-[20rem] h-[15rem] grid place-items-center xlssm:w-[32rem] miniTablet:w-full miniTablet:h-full miniTablet:row-span-2 miniTablet:row-start-1">
+          {largeTablet ? (
+            <Swiper
+              modules={[Pagination]}
+              slidesPerView={tablet ? 2 : 1}
+              className="w-full h-full"
+              spaceBetween={10}
+              onSlideChange={(swiper) => {
+                if (categoriesRef.current) {
+                  categoriesRef.current.style.transform = `translateX(${
+                    swiper.activeIndex * 38
+                  }%)`;
+                }
+              }}
+            >
+              {imgSources.map((img, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <div className="w-full h-full flex items-center justify-center">
+                      <img
+                        src={img}
+                        alt=""
+                        className="max-w-none w-full h-full"
+                      />
+                      <div
+                        className={`w-11 h-11 rounded-full backdrop-blur-md absolute top-11 left-32 grid place-items-center border border-gray-400 ${
+                          index != 0 && "hidden"
+                        }`}
+                      >
+                        <Add />
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          ) : (
+            <div className="w-full h-[90%] grid grid-cols-2 self-start gap-2 pt-[2rem]">
+              {imgSources.map((img, index) => {
+                return (
+                  <div
+                    style={{
+                      backgroundImage: `url(${img})`,
+                      backgroundPosition: `center`,
+                    }}
+                    className={`w-full h-full grid place-items-center bg-[#f5f5f5] bg-contain bg-no-repeat ${
+                      index == 0 ? "col-span-2" : ""
+                    }`}
+                  >
                     <img
                       src={img}
-                      alt=""
-                      className="max-w-none w-full h-full"
+                      key={index}
+                      className={`w-full h-[60%] lg:h-[75%] 2xl:max-w-full 2xl:max-h-full ${
+                        index == 0 ? "col-span-2 lgMd:h-[80%] " : ""
+                      }`}
                     />
-                    <div className="w-11 h-11 rounded-full backdrop-blur-md absolute top-11 left-32 grid place-items-center border border-gray-400">
-                      <Add />
-                    </div>
                   </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
+                );
+              })}
+            </div>
+          )}
         </div>
-        <div className="w-full h-[3rem] bg-white grid place-items-center">
-          <div className="rounded-full w-[80%] h-[.3rem] bg-[#f5f5f5] self-center overflow-clip ">
-            <div
-              className={`w-[40%] lg:w-[56%] h-full rounded-full bg-[#02BE83] transition-all duration-500`}
-              ref={categoriesRef}
-            ></div>
+        {largeTablet && (
+          <div className="w-full h-[3rem] bg-white grid place-items-center">
+            <div className="rounded-full w-[80%] h-[.3rem] bg-[#f5f5f5] self-center overflow-clip ">
+              <div
+                className={`w-[40%] lg:w-[56%] h-full rounded-full bg-[#02BE83] transition-all duration-500`}
+                ref={categoriesRef}
+              ></div>
+            </div>
           </div>
-        </div>
-        <div className="w-full h-full bg-white flex flex-col items-start justify-center gap-5 px-[1rem]">
-          <span className="text-lg font-semibold text-[rgb(10,8,58)]">
+        )}
+        <div className="w-full h-full bg-white flex flex-col items-start justify-center gap-5 px-[1rem] miniTablet:pr-0 mini2xl:pr-[10%]">
+          <span className="text-lg font-semibold text-[rgb(10,8,58)] 2xl:text-xl">
             Details
           </span>
-          <p className="text-gray-500 text-sm font-medium">
+          <p className="text-gray-500 text-sm font-medium 2xl:text-base">
             They agree with reality to a high degree of accuracy as tested in
             the experiment after experiment
           </p>
           <div className="w-full h-fit flex justify-between">
-            <span className="text-lg font-semibold text-[rgb(10,8,58)]">
+            <span className="text-lg font-semibold text-[rgb(10,8,58)] 2xl:text-xl">
               Select size
             </span>
-            <span className="text-lg font-semibold text-gray-500 underline hidden ">
+            <span className="text-lg font-semibold text-gray-500 underline hidden miniTablet:block ">
               Size guide
             </span>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="w-full h-fit grid grid-cols-4 gap-2 2xl:gap-3">
             {availableSizes.map((availableSize) => {
               const { isActive, isAvailable, size } = availableSize;
               return (
@@ -221,28 +286,53 @@ const Product = () => {
               );
             })}
           </div>
-          <span className="text-lg font-semibold text-gray-500 underline">
+          <span className="text-lg font-semibold text-gray-500 underline miniTablet:hidden">
             Size guide
           </span>
-          <div className="w-full flex gap-3">
-            <FormControl className="w-[30%]">
-              <Select
-                value={nbrOfShoes}
-                label="size"
-                onChange={handleSelectionChange}
-              >
-                {[...Array(10)].map((item, index) => {
-                  return (
-                    <MenuItem value={index + 1}>
-                      <span className="text-[rgb(10,8,58)] font-bold">
-                        {index + 1}
-                      </span>
-                    </MenuItem>
-                  );
-                })}
-              </Select>
-            </FormControl>
-            <button className="w-full h-full bg-[rgb(10,8,58)] text-white text-sm font-bold">
+          <div className="w-full h-[3rem] flex gap-3">
+            {largeTablet ? (
+              <FormControl className="w-[30%]">
+                <Select
+                  value={nbrOfShoes}
+                  label="size"
+                  onChange={handleSelectionChange}
+                >
+                  {[...Array(10)].map((item, index) => {
+                    return (
+                      <MenuItem value={index + 1}>
+                        <span className="text-[rgb(10,8,58)] font-bold">
+                          {index + 1}
+                        </span>
+                      </MenuItem>
+                    );
+                  })}
+                </Select>
+              </FormControl>
+            ) : (
+              <div className="w-[30%] h-full grid grid-cols-3 border">
+                <div
+                  className="w-full h-full grid place-items-center text-[rgb(10,8,58)] font-bold text-2xl bg-[#f5f5f5]"
+                  onClick={() =>
+                    setNbrOfProducts((prev) => {
+                      if (prev == 1) return prev;
+                      return prev - 1;
+                    })
+                  }
+                >
+                  -
+                </div>
+                <div className="w-full h-full grid place-items-center text-[rgb(10,8,58)] font-bold  bg-white">
+                  {nbrOfProducts}
+                </div>
+                <div
+                  className="w-full h-full grid place-items-center text-[rgb(10,8,58)] font-bold text-2xl bg-[#f5f5f5]"
+                  onClick={() => setNbrOfProducts((prev) => prev + 1)}
+                >
+                  +
+                </div>
+              </div>
+            )}
+            <button className="w-[70%] h-full bg-[rgb(10,8,58)] text-white text-sm font-bold">
               Add to cart
             </button>
           </div>
@@ -269,7 +359,7 @@ const Product = () => {
         <span className="text-start text-sm text-gray-500 font-bold">
           3 items
         </span>
-        <div className="w-full h-[28rem] grid grid-rows-[90%_5%] place-items-center ">
+        <div className="w-full h-[28rem] grid grid-rows-[90%_5%] place-items-center miniSm:h-[45rem]">
           <Swiper
             modules={[Controller, Autoplay]}
             slidesPerView={1}
@@ -315,6 +405,7 @@ const Product = () => {
         </div>
       </div>
       <YoumayLike />
+      <JoinOthers />
     </div>
   );
 };

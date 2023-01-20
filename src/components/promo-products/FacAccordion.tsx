@@ -19,7 +19,7 @@ const FacAccordion: FC<AccordionProps> = (props) => {
 
   return (
     <Fade bottom>
-      <div className="w-full h-full flex flex-col items-start justify-center gap-4 transition-all duration-1000 miniTablet:max-w-[90%] miniTablet:pl-[2rem] md:pl-0">
+      <div className="w-full h-full flex flex-col items-start justify-center gap-4 transition-all duration-1000 miniTablet:w-full">
         <Accordion
           expanded={expanded}
           onChange={handleChange(panel)}

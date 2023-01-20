@@ -11,10 +11,9 @@ const Size: FC<SizeProps> = (props) => {
   const { isActive, isAvailable, size, toggleIsActive } = props;
   return (
     <div
-      className={`w-[4rem] h-[2.5rem] border border-gray-200 ${
+      className={`w-full h-[2.5rem] border border-gray-200 ${
         isActive && isAvailable ? `border-none bg-[rgb(10,8,58)] ` : ""
-      } relative transition flex items-center justify-center overflow-hidden`}
-      style={{ cursor: `pointer` }}
+      } relative transition flex items-center justify-center overflow-hidden 2xl:h-[3rem]`}
       onClick={() => toggleIsActive(size)}
     >
       {!isAvailable && (
