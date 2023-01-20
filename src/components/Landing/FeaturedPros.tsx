@@ -5,6 +5,9 @@ import chevronLeft from "../../assets/chevron-right.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { featuredProsData } from "../../data";
 import { Flip, Zoom } from "react-reveal";
+import { Autoplay, Pagination } from "swiper";
+import "swiper/css/autoplay";
+
 const FeaturedPros = () => {
   const [mobile, setMobile] = useState<boolean>(
     window.innerWidth <= 765 ? true : false
@@ -66,7 +69,9 @@ const FeaturedPros = () => {
           <Flip left>
             <div className="w-full h-[50vh] flex items-center justify-center xLgMd:h-[40vh] lgMd:z-30 lg:h-[50vh] lgMd:h-[50vh] lg:w-[80vw] ">
               <Swiper
+                modules={[Autoplay, Pagination]}
                 slidesPerView={desktop ? 2 : 4}
+                loop
                 autoplay
                 spaceBetween={50}
                 className="w-full h-full"
@@ -77,6 +82,7 @@ const FeaturedPros = () => {
                     }%)`;
                   }
                 }}
+                pagination
               >
                 {featuredProsData.map((product: FeaturedProInterface) => {
                   const { rating, description, price, imgSource, id, indexId } =

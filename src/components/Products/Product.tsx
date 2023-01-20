@@ -4,6 +4,7 @@ import unFilledStar from "../../assets/Star 5.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { Autoplay, Controller, Pagination } from "swiper";
 import { Add } from "@mui/icons-material";
 import Size from "./Size";
@@ -25,7 +26,12 @@ const Product = () => {
   const theRatingStars: JSX.Element[] = [...Array(Math.floor(4))].map(
     (el: undefined, index: number) => {
       return (
-        <img src={filledStar} alt="" key={index} className="miniTablet:w-3 2xl:max-w-4" />
+        <img
+          src={filledStar}
+          alt=""
+          key={index}
+          className="miniTablet:w-3 2xl:max-w-4"
+        />
       );
     }
   );
@@ -141,9 +147,13 @@ const Product = () => {
   return (
     <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-white lsm:px-8 xl:px-16 2xl:px-20">
       <div className="w-full h-full pt-[1rem] flex justify-start items-center pl-[1rem] gap-2 bg-white">
-        <span className="text-base font-[550] text-[rgb(10,8,58)] 2xl:text-lg">Men</span>
+        <span className="text-base font-[550] text-[rgb(10,8,58)] 2xl:text-lg">
+          Men
+        </span>
         <div className="w-2 h-2 rounded-full bg-slate-500"></div>
-        <span className="text-base font-medium text-slate-500 2xl:text-lg">Sneakers</span>
+        <span className="text-base font-medium text-slate-500 2xl:text-lg">
+          Sneakers
+        </span>
       </div>
       <div className="w-full h-full py-8 grid place-items-center miniTablet:grid-cols-2 xLgMd:gap-4 xlarge:gap-16 xl:px-4 mini2xl:grid-cols-[40%_60%] 2xl:grid-cols-[30%_70%]">
         <div className="w-full h-full flex flex-col items-start justify-center gap-4 pl-[1rem] pt-[2rem] miniTablet:col-start-2 mini2xl:pr-[10%] 2xl:gap-6">
@@ -352,19 +362,19 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <div className="w-[90%] h-fit flex flex-col items-start justify-center gap-3 pl-[2re] bg-white">
+      <div className="w-[90%] h-fit flex flex-col items-start justify-center gap-3 bg-white miniTablet:w-full">
         <span className="text-start text-xl text-[rgb(10,8,58)] font-bold">
           complete the look
         </span>
         <span className="text-start text-sm text-gray-500 font-bold">
           3 items
         </span>
-        <div className="w-full h-[28rem] grid grid-rows-[90%_5%] place-items-center miniSm:h-[45rem]">
+        <div className="productSwiper w-full h-[28rem] place-items-center miniSm:h-[40rem]">
           <Swiper
-            modules={[Controller, Autoplay]}
-            slidesPerView={1}
-            className="w-full h-[90%] bg-white"
-            spaceBetween={20}
+            modules={[Controller, Autoplay, Pagination]}
+            slidesPerView={tablet ? 2 : 1}
+            className="w-full h-full bg-white"
+            spaceBetween={tablet ? 1 : 20}
             autoplay={true}
             loop={true}
             onSlideChange={(swiper) => {
@@ -374,6 +384,7 @@ const Product = () => {
                 setActiveSlide(swiper.activeIndex);
               }
             }}
+            pagination
           >
             {theLookData.map((data) => {
               const { name, type, price, id, imgSrc } = data;
@@ -390,18 +401,6 @@ const Product = () => {
               );
             })}
           </Swiper>
-          <div className="w-[80%] h-[.2rem] flex items-between justify-center gap-4">
-            {theLookData.map((look, index) => {
-              return (
-                <div
-                  className={`w-full h-full ${
-                    activeSlide === index + 1 ? "bg-[#315BFF]" : "bg-[#f5f5f5]"
-                  } transition duration-700 `}
-                  key={index}
-                ></div>
-              );
-            })}
-          </div>
         </div>
       </div>
       <YoumayLike />

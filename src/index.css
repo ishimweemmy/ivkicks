@@ -83,3 +83,35 @@ html {
     height: 50rem;
   }
 }
+
+.productSwiper .swiper {
+  height: 100% !important;
+  width: 100% !important;
+  display: grid !important;
+  grid-template-rows: 15fr 1fr;
+  justify-items: center;
+}
+
+.productSwiper .swiper-pagination-bullets,
+.productSwiper .swiper-pagination-horizontal {
+  width: 100% !important;
+  height: 0.2rem !important;
+  display: flex;
+  justify-content: space-between;
+  background: white !important;
+}
+
+.productSwiper .swiper-pagination-bullet {
+  background-color: rgba(128, 128, 128, 0.488) !important;
+}
+.productSwiper .swiper-pagination-bullet,
+.productSwiper .swiper-pagination-bullet-active {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0% !important;
+  transition: 0.75s ease !important;
+}
+
+.productSwiper .swiper-pagination-bullet-active {
+  background-color: #315bff !important;
+}

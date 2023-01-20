@@ -3,7 +3,7 @@ import { Autoplay, Controller, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { youMayLike } from "../../data";
 import YouMayLike from "../Products/YouMayLike";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SlideNextButton from "./SlideNextButton";
 import SlidePrev from "./SlidePrev";
 
@@ -18,6 +18,14 @@ const YoumayLike = () => {
       return !prev;
     });
   };
+
+  const [tablet, setTablet] = useState(window.innerWidth >= 550);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setTablet(window.innerWidth >= 550);
+    });
+  }, [tablet]);
 
   return (
     <div className="w-full bg-white flex flex-col items-center">
@@ -50,7 +58,7 @@ const YoumayLike = () => {
       <div className="w-full h-[30rem] px-[1rem] miniSm:h-[45rem]">
         <Swiper
           modules={[Controller, Autoplay, Navigation]}
-          slidesPerView={1}
+          slidesPerView={tablet ? 2 : 1}
           className="w-full h-[90%] bg-white"
           spaceBetween={20}
           autoplay={true}
