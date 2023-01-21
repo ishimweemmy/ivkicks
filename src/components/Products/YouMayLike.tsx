@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import { AiOutlineZoomIn } from "react-icons/ai";
 
 interface YouMayLikeProps {
   name: string;
@@ -13,12 +14,12 @@ const YouMayLike: FC<YouMayLikeProps> = (props) => {
   return (
     <div className="w-full h-full flex flex-col gap-4 ">
       <div
-        className="w-full h-[80%] bg-cover bg-no-repeat"
+        className="w-full h-[80%] bg-cover bg-no-repeat flex items-start justify-end"
         style={{
           backgroundImage: `url(${imgSrc}`,
           backgroundPosition: `center`,
         }}
-      ></div>
+      ><AiOutlineZoomIn className="mr-8 mt-8 text-4xl text-white" /></div>
       <div className="w-full h-[20%] grid grid-cols-[60%_40%] place-items-center">
         <div className="w-full h-fit flex flex-col">
           <span className="text-base text-gray-400 font-bold uppercase">

@@ -71,7 +71,6 @@ const FeaturedPros = () => {
               <Swiper
                 modules={[Autoplay, Pagination]}
                 slidesPerView={desktop ? 2 : 4}
-                loop
                 autoplay
                 spaceBetween={50}
                 className="w-full h-full"
@@ -82,7 +81,6 @@ const FeaturedPros = () => {
                     }%)`;
                   }
                 }}
-                pagination
               >
                 {featuredProsData.map((product: FeaturedProInterface) => {
                   const { rating, description, price, imgSource, id, indexId } =

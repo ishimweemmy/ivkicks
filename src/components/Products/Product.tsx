@@ -135,14 +135,16 @@ const Product = () => {
 
   const [tablet, setTablet] = useState(window.innerWidth >= 550);
   const [largeTablet, setLargeTablet] = useState(window.innerWidth <= 699);
+  const [miniLaptop, setMiniLaptop] = useState(window.innerWidth >= 900);
   const [nbrOfProducts, setNbrOfProducts] = useState(1);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
       setTablet(window.innerWidth >= 550);
       setLargeTablet(window.innerWidth <= 699);
+      setMiniLaptop(window.innerWidth >= 900);
     });
-  }, [tablet, largeTablet]);
+  }, [tablet, largeTablet, miniLaptop]);
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-white lsm:px-8 xl:px-16 2xl:px-20">

@@ -20,27 +20,31 @@ const YoumayLike = () => {
   };
 
   const [tablet, setTablet] = useState(window.innerWidth >= 550);
+  const [miniLaptop, setMiniLaptop] = useState(window.innerWidth >= 900);
+  const [laptop, setLaptop] = useState(window.innerWidth >= 1500);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
       setTablet(window.innerWidth >= 550);
+      setMiniLaptop(window.innerWidth >= 900);
+      setLaptop(window.innerWidth >= 1500);
     });
-  }, [tablet]);
+  }, [tablet, miniLaptop, laptop]);
 
   return (
     <div className="w-full bg-white flex flex-col items-center">
       <div className="w-full h-full pt-[1rem] flex justify-between items-center px-4 gap-2 bg-white">
-        <span className="text-start text-xl text-[rgb(10,8,58)] font-bold">
+        <span className="text-start text-xl text-[rgb(10,8,58)] font-bold xlarge:text-3xl">
           You may also like
         </span>
 
-        <div className="w-[5rem] h-[5rem] flex items-center justify-center gap-1">
+        <div className="w-[5rem] h-[5rem] flex items-center justify-center gap-1 xlarge:w-[6rem] xlarge:h-[6rem]">
           <BsFillCaretLeftFill
-            className="text-xs text-gray-400"
+            className="text-xs text-gray-400 xlarge:text-sm"
             onClick={() => prevButtonRef.current?.click()}
           />
           <span
-            className={`w-[2rem] h-[2rem] rounded-full text-[.5rem] font-bold uppercase grid place-items-center transition ${
+            className={`w-[2rem] h-[2rem] rounded-full text-[.5rem] font-bold uppercase grid place-items-center transition xlarge:w-[2.5rem]  xlarge:h-[2.5rem] xlarge:text-[.6rem] ${
               isDraggable
                 ? "bg-[#315affc0] text-white"
                 : "text-[rgb(10,8,58)] border border-gray-400"
@@ -50,7 +54,7 @@ const YoumayLike = () => {
             Drag
           </span>
           <BsFillCaretRightFill
-            className="text-xs text-gray-400"
+            className="text-xs text-gray-400 xlarge:text-sm"
             onClick={() => nextButtonRef.current?.click()}
           />
         </div>
@@ -58,7 +62,7 @@ const YoumayLike = () => {
       <div className="w-full h-[30rem] px-[1rem] miniSm:h-[45rem]">
         <Swiper
           modules={[Controller, Autoplay, Navigation]}
-          slidesPerView={tablet ? 2 : 1}
+          slidesPerView={laptop ? 4 : miniLaptop ? 3 : tablet ? 2 : 1}
           className="w-full h-[90%] bg-white"
           spaceBetween={20}
           autoplay={true}

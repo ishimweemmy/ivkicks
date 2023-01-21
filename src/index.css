@@ -99,6 +99,7 @@ html {
   display: flex;
   justify-content: space-between;
   background: white !important;
+  gap: 1rem !important;
 }
 
 .productSwiper .swiper-pagination-bullet {
@@ -114,4 +115,42 @@ html {
 
 .productSwiper .swiper-pagination-bullet-active {
   background-color: #315bff !important;
+}
+
+.featuredSwiper .swiper {
+  height: 100% !important;
+  width: 100% !important;
+  display: grid !important;
+  grid-template-rows: 15fr 1fr !important;
+}
+
+.featuredSwiper .swiper-pagination-bullets,
+.featuredSwiper .swiper-pagination-horizontal {
+  width: 30rem !important;
+  height: 0.5rem !important;
+  display: flex;
+  justify-content: space-between;
+  background: white !important;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featuredSwiper .swiper-pagination-bullet {
+  background-color: white !important;
+}
+.featuredSwiper .swiper-pagination-bullet,
+.featuredSwiper .swiper-pagination-bullet-active {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0% !important;
+  transition: 0.75s ease !important;
+}
+
+.featuredSwiper .swiper-pagination-bullet-active {
+  background-color: #315bff !important;
+}
+
+button {
+  cursor: none;
 }
