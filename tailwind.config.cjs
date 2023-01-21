@@ -42,6 +42,8 @@ module.exports = {
 
       mini2xl: "1300px",
 
+      max2xl: "1350px",
+
       "2xl": "1536px",
     },
     extend: {

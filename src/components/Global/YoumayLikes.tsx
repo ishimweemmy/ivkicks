@@ -22,17 +22,19 @@ const YoumayLike = () => {
   const [tablet, setTablet] = useState(window.innerWidth >= 550);
   const [miniLaptop, setMiniLaptop] = useState(window.innerWidth >= 900);
   const [laptop, setLaptop] = useState(window.innerWidth >= 1500);
+  const [mdTab, setMdTab] = useState(window.innerWidth >= 768);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
       setTablet(window.innerWidth >= 550);
       setMiniLaptop(window.innerWidth >= 900);
       setLaptop(window.innerWidth >= 1500);
+      setMdTab(window.innerWidth >= 768);
     });
-  }, [tablet, miniLaptop, laptop]);
+  }, [tablet, miniLaptop, laptop, mdTab]);
 
   return (
-    <div className="w-full bg-white flex flex-col items-center">
+    <div className="w-full bg-white flex flex-col items-center 2xl:px-10">
       <div className="w-full h-full pt-[1rem] flex justify-between items-center px-4 gap-2 bg-white">
         <span className="text-start text-xl text-[rgb(10,8,58)] font-bold xlarge:text-3xl">
           You may also like
@@ -59,7 +61,9 @@ const YoumayLike = () => {
           />
         </div>
       </div>
-      <div className="youMayLikeSwiper w-full h-[30rem] px-[1rem] miniSm:h-[45rem]">
+      <div
+        className={`youMayLikeSwiper w-full h-[30rem] px-[1rem] miniSm:h-[40rem]`}
+      >
         <Swiper
           modules={[Controller, Autoplay, Pagination]}
           slidesPerView={laptop ? 4 : miniLaptop ? 3 : tablet ? 2 : 1}
@@ -69,7 +73,7 @@ const YoumayLike = () => {
           loop={true}
           noSwiping={!isDraggable}
           noSwipingClass="swiper-slide"
-          pagination
+          pagination={mdTab}
         >
           {youMayLike.map((data) => {
             const { name, company, price, id, imgSrc } = data;

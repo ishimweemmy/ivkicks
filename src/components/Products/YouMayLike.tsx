@@ -25,7 +25,7 @@ const YouMayLike: FC<YouMayLikeProps> = (props) => {
           <span className="text-base text-gray-400 font-bold uppercase">
             {company}
           </span>
-          <span className="text-base text-[rgb(10,8,58)] font-medium">
+          <span className="text-base text-[rgb(10,8,58)] font-medium md:font-bold">
             {name}
           </span>
         </div>

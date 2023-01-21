@@ -5,7 +5,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Autoplay, Controller, Pagination } from "swiper";
+import {
+  Autoplay,
+  Controller,
+  EffectCards,
+  EffectCoverflow,
+  EffectCube,
+  EffectFlip,
+  Pagination,
+} from "swiper";
 import { Add } from "@mui/icons-material";
 import Size from "./Size";
 import {
@@ -19,6 +27,7 @@ import { theLookData } from "../../data";
 import TheLook from "./TheLook";
 import YoumayLike from "../Global/YoumayLikes";
 import JoinOthers from "../Global/JoinOthers";
+import "swiper/css/bundle";
 
 const Product = () => {
   const colors = ["red", "black", "orange"];
@@ -133,6 +142,8 @@ const Product = () => {
   const [tablet, setTablet] = useState(window.innerWidth >= 550);
   const [largeTablet, setLargeTablet] = useState(window.innerWidth <= 699);
   const [miniLaptop, setMiniLaptop] = useState(window.innerWidth >= 900);
+  const [mdTab, setMdTab] = useState(window.innerWidth >= 768);
+
   const [nbrOfProducts, setNbrOfProducts] = useState(1);
 
   useEffect(() => {
@@ -140,6 +151,7 @@ const Product = () => {
       setTablet(window.innerWidth >= 550);
       setLargeTablet(window.innerWidth <= 699);
       setMiniLaptop(window.innerWidth >= 900);
+      setMdTab(window.innerWidth >= 768);
     });
   }, [tablet, largeTablet, miniLaptop]);
 
@@ -361,38 +373,74 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <div className="w-[90%] h-fit flex flex-col items-start justify-center gap-3 bg-white miniTablet:w-full">
-        <span className="text-start text-xl text-[rgb(10,8,58)] font-bold">
+      <div className="w-[90%] h-fit flex flex-col items-start justify-center gap-3 bg-white miniTablet:w-full max2xl:px-4 2xl:px-10 ">
+        <span className="text-start text-xl text-[rgb(10,8,58)] font-bold xlarge:text-3xl ">
           complete the look
         </span>
-        <span className="text-start text-sm text-gray-500 font-bold">
+        <span className="text-start text-sm text-gray-500 font-bold xlarge:text-lg">
           3 items
         </span>
-        <div className="productSwiper w-full h-[28rem] place-items-center miniSm:h-[40rem]">
-          <Swiper
-            modules={[Controller, Autoplay, Pagination]}
-            slidesPerView={tablet ? 2 : 1}
-            className="w-full h-full bg-white"
-            spaceBetween={20}
-            autoplay={true}
-            loop={true}
-            pagination
-          >
-            {theLookData.map((data) => {
-              const { name, type, price, id, imgSrc } = data;
-              return (
-                <SwiperSlide key={id} className="h-full">
-                  <TheLook
-                    name={name}
-                    type={type}
-                    price={price}
-                    id={id}
-                    imgSrc={imgSrc}
-                  />
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
+        <div className="productSwiper w-full h-[28rem] place-items-center miniSm:h-[40rem] md:h-[30rem] max2xl:px-16 2xl:h-[40rem]">
+          {!mdTab ? (
+            <Swiper
+              modules={[Controller, Autoplay, Pagination]}
+              slidesPerView={tablet ? 2 : 1}
+              className="w-full h-full bg-white"
+              spaceBetween={20}
+              autoplay={true}
+              loop={true}
+              pagination
+            >
+              {theLookData.map((data) => {
+                const { name, type, price, id, imgSrc } = data;
+                return (
+                  <SwiperSlide key={id} className="h-full">
+                    <TheLook
+                      name={name}
+                      type={type}
+                      price={price}
+                      id={id}
+                      imgSrc={imgSrc}
+                    />
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          ) : (
+
+            <Swiper
+            className="w-full h-full"
+              modules={[EffectCoverflow, Autoplay]}
+              autoplay={{ disableOnInteraction: false }}
+              effect="coverflow"
+              grabCursor={true}
+              centeredSlides={true}
+              slidesPerView={miniLaptop ? 3 : 2}
+              coverflowEffect={{
+                rotate: 10,
+                stretch: 0,
+                depth: 50,
+                modifier: miniLaptop ? 3 : 6,
+                slideShadows: false,
+              }}
+              loop
+            >
+              {theLookData.map((data) => {
+                const { name, type, price, id, imgSrc } = data;
+                return (
+                  <SwiperSlide key={id} className="h-full">
+                    <TheLook
+                      name={name}
+                      type={type}
+                      price={price}
+                      id={id}
+                      imgSrc={imgSrc}
+                    />
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          )}
         </div>
       </div>
       <YoumayLike />
