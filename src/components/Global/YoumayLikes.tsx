@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import SlideNextButton from "./SlideNextButton";
 import SlidePrev from "./SlidePrev";
 
-const YoumayLike = () => {
+const YoumayLikes = () => {
   const prevButtonRef = useRef<HTMLDivElement | null>(null);
   const nextButtonRef = useRef<HTMLDivElement | null>(null);
   const [isDraggable, setIsDraggable] = useState(false);
@@ -97,4 +97,4 @@ const YoumayLike = () => {
   );
 };
 
-export default YoumayLike;
+export default YoumayLikes;
