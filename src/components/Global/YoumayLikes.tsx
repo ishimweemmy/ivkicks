@@ -1,5 +1,5 @@
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
-import { Autoplay, Controller, Navigation } from "swiper";
+import { Autoplay, Controller, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { youMayLike } from "../../data";
 import YouMayLike from "../Products/YouMayLike";
@@ -59,16 +59,17 @@ const YoumayLike = () => {
           />
         </div>
       </div>
-      <div className="w-full h-[30rem] px-[1rem] miniSm:h-[45rem]">
+      <div className="youMayLikeSwiper w-full h-[30rem] px-[1rem] miniSm:h-[45rem]">
         <Swiper
-          modules={[Controller, Autoplay, Navigation]}
+          modules={[Controller, Autoplay, Pagination]}
           slidesPerView={laptop ? 4 : miniLaptop ? 3 : tablet ? 2 : 1}
-          className="w-full h-[90%] bg-white"
+          className="w-full h-full bg-white"
           spaceBetween={20}
           autoplay={true}
           loop={true}
           noSwiping={!isDraggable}
           noSwipingClass="swiper-slide"
+          pagination
         >
           {youMayLike.map((data) => {
             const { name, company, price, id, imgSrc } = data;

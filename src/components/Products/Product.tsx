@@ -120,7 +120,6 @@ const Product = () => {
   const [nbrOfShoes, setNbrOfShoes] = useState("");
 
   const handleSelectionChange = (event: SelectChangeEvent) => {
-    console.log(event.target.value);
     setNbrOfShoes(event.target.value as string);
   };
 
@@ -130,8 +129,6 @@ const Product = () => {
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
     };
-
-  const [activeSlide, setActiveSlide] = useState(1);
 
   const [tablet, setTablet] = useState(window.innerWidth >= 550);
   const [largeTablet, setLargeTablet] = useState(window.innerWidth <= 699);
@@ -376,16 +373,9 @@ const Product = () => {
             modules={[Controller, Autoplay, Pagination]}
             slidesPerView={tablet ? 2 : 1}
             className="w-full h-full bg-white"
-            spaceBetween={tablet ? 1 : 20}
+            spaceBetween={20}
             autoplay={true}
             loop={true}
-            onSlideChange={(swiper) => {
-              if (swiper.activeIndex > theLookData.length) {
-                setActiveSlide(1);
-              } else {
-                setActiveSlide(swiper.activeIndex);
-              }
-            }}
             pagination
           >
             {theLookData.map((data) => {

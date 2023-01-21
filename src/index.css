@@ -117,38 +117,41 @@ html {
   background-color: #315bff !important;
 }
 
-.featuredSwiper .swiper {
+
+
+.youMayLikeSwiper .swiper {
   height: 100% !important;
   width: 100% !important;
   display: grid !important;
-  grid-template-rows: 15fr 1fr !important;
+  grid-template-rows: 15fr 1fr;
+  justify-items: center;
 }
 
-.featuredSwiper .swiper-pagination-bullets,
-.featuredSwiper .swiper-pagination-horizontal {
-  width: 30rem !important;
-  height: 0.5rem !important;
+.youMayLikeSwiper .swiper-pagination-bullets,
+.youMayLikeSwiper .swiper-pagination-horizontal {
+  width: 70% !important;
+  height: 0.3rem !important;
   display: flex;
   justify-content: space-between;
-  background: white !important;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
+  background: #f5f5f5 !important;
+  gap: 0rem !important;
+  border-radius: 10% !important;
+  margin-left: 15% !important;
 }
 
-.featuredSwiper .swiper-pagination-bullet {
-  background-color: white !important;
+.youMayLikeSwiper .swiper-pagination-bullet {
+  background-color: transparent !important;
 }
-.featuredSwiper .swiper-pagination-bullet,
-.featuredSwiper .swiper-pagination-bullet-active {
-  width: 100% !important;
+.youMayLikeSwiper .swiper-pagination-bullet,
+.youMayLikeSwiper .swiper-pagination-bullet-active {
+  width: 200% !important;
   height: 100% !important;
-  border-radius: 0% !important;
+  border-radius: 20% !important;
   transition: 0.75s ease !important;
 }
 
-.featuredSwiper .swiper-pagination-bullet-active {
-  background-color: #315bff !important;
+.youMayLikeSwiper .swiper-pagination-bullet-active {
+  background-color: #02be83 !important;
 }
 
 button {
