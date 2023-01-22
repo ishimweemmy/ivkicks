@@ -153,8 +153,8 @@ const Product = () => {
   }, [tablet, largeTablet, miniLaptop]);
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-white xl:px-16 2xl:px-20">
-      <div className="w-full h-full pt-[1rem] flex justify-start items-center pl-[1rem] gap-2 bg-white lsm:px-8">
+    <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-white">
+      <div className="w-full h-full pt-[1rem] flex justify-start items-center pl-[1rem] gap-2 bg-white lsm:px-8 xl:px-20 2xl:px-24">
         <span className="text-base font-[550] text-[rgb(10,8,58)] 2xl:text-lg">
           Men
         </span>
@@ -163,7 +163,7 @@ const Product = () => {
           Sneakers
         </span>
       </div>
-      <div className="w-full h-full py-8 grid place-items-center lsm:px-8 miniTablet:grid-cols-2 xLgMd:gap-4 xlarge:gap-16 xl:px-4 mini2xl:grid-cols-[40%_60%] 2xl:grid-cols-[30%_70%]">
+      <div className="w-full h-full py-8 grid place-items-center lsm:px-8 miniTablet:grid-cols-2 xLgMd:gap-4 xlarge:gap-16 mini2xl:grid-cols-[40%_60%] 2xl:grid-cols-[30%_70%] xl:px-24">
         <div className="w-full h-full flex flex-col items-start justify-center gap-4 pl-[1rem] pt-[2rem] miniTablet:col-start-2 mini2xl:pr-[10%] 2xl:gap-6">
           <div className="w-full h-fit flex justify-between">
             <span className="text-base font-medium text-slate-500 2xl:text-lg">
@@ -370,7 +370,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <div className="w-[90%] h-fit flex flex-col items-start justify-center gap-3 bg-white lsm:px-8 miniTablet:w-full max2xl:px-4 2xl:px-10 ">
+      <div className="w-[90%] h-fit flex flex-col items-start justify-center gap-3 bg-white lsm:px-8 miniTablet:w-full max2xl:px-4 xl:px-16 2xl:px-32 ">
         <span className="text-start text-xl text-[rgb(10,8,58)] font-bold xlarge:text-3xl ">
           complete the look
         </span>

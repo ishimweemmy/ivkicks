@@ -34,7 +34,7 @@ const YoumayLikes = () => {
   }, [tablet, miniLaptop, laptop, mdTab]);
 
   return (
-    <div className="w-full bg-white flex flex-col items-center 2xl:px-10">
+    <div className="w-full bg-white flex flex-col items-center xl:px-16 2xl:px-32">
       <div className="w-full h-full pt-[1rem] flex justify-between items-center px-4 gap-2 bg-white">
         <span className="text-start text-xl text-[rgb(10,8,58)] font-bold xlarge:text-3xl">
           You may also like
