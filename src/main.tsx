@@ -6,6 +6,7 @@ import { lazyLoad } from "./functions/lazyLoad";
 import Men from "./pages/Products/NonProducts/Men";
 import Product from "./components/Products/Product";
 import Women from "./pages/Products/NonProducts/Women";
+import Collections from "./pages/Collections";
 const App = lazy(() => import("./App"));
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -37,6 +38,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
             </Route>
           </Route>
           <Route path="promoProducts" element={<Promo />} />
+          <Route path="collections" element={<Collections />} />
         </Route>
         <Route path="sale" element={<Sale />} />
         <Route path="cart" element={<Cart />} />
