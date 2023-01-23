@@ -19,7 +19,9 @@ const YouMayLike: FC<YouMayLikeProps> = (props) => {
           backgroundImage: `url(${imgSrc}`,
           backgroundPosition: `center`,
         }}
-      ><AiOutlineZoomIn className="mr-8 mt-8 text-2xl text-white" /></div>
+      >
+        <AiOutlineZoomIn className="mr-8 mt-8 text-2xl text-white" />
+      </div>
       <div className="w-full h-[20%] grid grid-cols-[60%_40%] place-items-center">
         <div className="w-full h-fit flex flex-col">
           <span className="text-base text-gray-400 font-bold uppercase">

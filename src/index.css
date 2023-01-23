@@ -117,8 +117,6 @@ html {
   background-color: #315bff !important;
 }
 
-
-
 .youMayLikeSwiper .swiper {
   height: 100% !important;
   width: 100% !important;
@@ -152,6 +150,50 @@ html {
 }
 
 .youMayLikeSwiper .swiper-pagination-bullet-active {
+  background-color: #02be83 !important;
+}
+
+.collectionsSwiper .swiper {
+  height: 100% !important;
+  width: 100% !important;
+  display: grid !important;
+  grid-template-rows: 15fr 1fr;
+  justify-items: center;
+  gap: 2rem;
+}
+
+.collectionsSwiper .swiper-pagination-bullets,
+.collectionsSwiper .swiper-pagination-horizontal {
+  width: 70% !important;
+  height: 0.3rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  background: #ebebea !important;
+  gap: 0rem !important;
+  border-radius: 10% !important;
+  margin-left: 15% !important;
+  pointer-events: none !important;
+}
+
+.collectionsSwiper .swiper-pagination-bullets::after {
+  content: "\203A";
+  position: absolute;
+  right: -1.5rem;
+  top: -0.68rem;
+  cursor: pointer !important;
+}
+.collectionsSwiper .swiper-pagination-bullet {
+  background-color: transparent !important;
+}
+.collectionsSwiper .swiper-pagination-bullet,
+.collectionsSwiper .swiper-pagination-bullet-active {
+  width: 200% !important;
+  height: 100% !important;
+  border-radius: 20% !important;
+  transition: 0.75s ease !important;
+}
+
+.collectionsSwiper .swiper-pagination-bullet-active {
   background-color: #02be83 !important;
 }
 

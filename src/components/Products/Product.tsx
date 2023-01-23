@@ -5,12 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import {
-  Autoplay,
-  Controller,
-  EffectCoverflow,
-  Pagination,
-} from "swiper";
+import { Autoplay, Controller, EffectCoverflow, Pagination } from "swiper";
 import { Add } from "@mui/icons-material";
 import Size from "./Size";
 import {
@@ -404,9 +399,8 @@ const Product = () => {
               })}
             </Swiper>
           ) : (
-
             <Swiper
-            className="w-full h-full"
+              className="w-full h-full"
               modules={[EffectCoverflow, Autoplay]}
               autoplay={{ disableOnInteraction: false }}
               effect="coverflow"

@@ -17,6 +17,7 @@ import designerTalksData from "./designerTalks.json";
 import catalogueData from "./catalogueData.json";
 import theLookData from "./theLookData.json";
 import youMayLike from "./youmayLike.json";
+import collections from "./collections.json";
 
 export {
   brandsData,
@@ -38,4 +39,5 @@ export {
   catalogueData,
   theLookData,
   youMayLike,
+  collections,
 };
