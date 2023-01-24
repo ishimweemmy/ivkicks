@@ -3,10 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 import { lazy } from "react";
 import { lazyLoad } from "./functions/lazyLoad";
-import Men from "./pages/Products/NonProducts/Men";
-import Product from "./components/Products/Product";
-import Women from "./pages/Products/NonProducts/Women";
-import Collections from "./pages/Collections";
 const App = lazy(() => import("./App"));
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -21,6 +17,10 @@ const Allproducts = lazy(
 const Sale = lazy(() => import("./pages/Sale"));
 const Products = lazy(() => import("./pages/Products/NonProducts/Products"));
 const Promo = lazy(() => import("./pages/Products/Promo/PromoProducts"));
+const Men = lazy(() => import("./pages/Products/NonProducts/Men"));
+const Women = lazy(() => import("./pages/Products/NonProducts/Women"));
+const Product = lazy(() => import("./components/Products/Product"));
+const Collections = lazy(() => import("./pages/Collections"));
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <BrowserRouter>
