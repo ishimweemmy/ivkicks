@@ -18,6 +18,7 @@ import catalogueData from "./catalogueData.json";
 import theLookData from "./theLookData.json";
 import youMayLike from "./youmayLike.json";
 import collections from "./collections.json";
+import categoryProData from "./categoryPro.json";
 
 export {
   brandsData,
@@ -40,4 +41,5 @@ export {
   theLookData,
   youMayLike,
   collections,
+  categoryProData,
 };
