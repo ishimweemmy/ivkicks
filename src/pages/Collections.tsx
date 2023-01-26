@@ -4,28 +4,37 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Collection from "../components/Products/Collection";
 import SlideNextButton from "../components/Global/SlideNextButton";
 import { categoryProData, collections } from "../data";
-import {
-  ChangeEvent,
-  SyntheticEvent,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
+  Checkbox,
   FormControl,
+  FormControlLabel,
+  FormGroup,
   InputLabel,
+  ListItemText,
   MenuItem,
+  OutlinedInput,
   Select,
   SelectChangeEvent,
 } from "@mui/material";
 import Pagination from "@mui/material/Pagination";
 import CategoryProduct from "../components/Products/CategoryProduct";
 import Subscriptions from "../components/Landing/Subscriptions";
-import FacAccordion from "../components/promo-products/FacAccordion";
 import { IoIosRemove, IoMdAdd, IoMdCheckmark } from "react-icons/io";
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
 
 const Collections = () => {
   const nextButtonRef = useRef<HTMLDivElement | null>(null);
@@ -36,6 +45,64 @@ const Collections = () => {
     { label: "Most popular", value: "mostPopular", open: false },
     { label: "Lowest price", value: "lowestPrice", open: false },
     { label: "Highest price", value: "highestPrice", open: false },
+  ]);
+
+  const [otherFilters, setOtherFilters] = useState<any[]>([
+    {
+      label: "Category",
+      value: "category",
+      choices: [
+        { choice: "performance", checked: false },
+        { choice: "streetwear", checked: false },
+      ],
+      open: false,
+      panel: "panel1",
+    },
+    {
+      label: "Gender",
+      value: "gender",
+      choices: [
+        { choice: "Female", checked: false },
+        { choice: "Male", checked: false },
+      ],
+      open: false,
+      panel: "panel2",
+    },
+    {
+      label: "Size",
+      value: "size",
+      choices: [
+        { choice: 8.5, checked: false },
+        { choice: 7, checked: false },
+        { choice: 6, checked: false },
+        { choice: 8, checked: false },
+      ],
+      open: false,
+      panel: "panel3",
+    },
+    {
+      label: "Color",
+      value: "color",
+      choices: [
+        { choice: "mixed", checked: false },
+        { choice: "white", checked: false },
+        { choice: "yellow", checked: false },
+        { choice: "black", checked: false },
+      ],
+      open: false,
+      panel: "panel4",
+    },
+    {
+      label: "Material",
+      value: "material",
+      choices: [
+        { choice: "cotton", checked: false },
+        { choice: "wool", checked: false },
+        { choice: "silk", checked: false },
+      ],
+      open: false,
+      panel: "panel5",
+    },
   ]);
 
   const handleChange = (e: SelectChangeEvent) => {
@@ -75,9 +142,51 @@ const Collections = () => {
     }));
   }, [page, baseValue]);
 
-  const handleFiltersMdopen = (e: SyntheticEvent) => {
-    
+  const handleFiltersMdopen = (value: string) => {
+    setFilters((prevFilters) => {
+      return prevFilters.map((filter) => {
+        return filter.value == value
+          ? { ...filter, open: !filter.open }
+          : filter;
+      });
+    });
   };
+
+  const [personName, setPersonName] = useState<any[]>([]);
+
+  const handleChangeMultiSelect = (
+    event: SelectChangeEvent<typeof personName>
+  ) => {
+    const {
+      target: { value },
+    } = event;
+    setPersonName(
+      typeof value === "string" || typeof value === "number"
+        ? value.split(",")
+        : value
+    );
+  };
+
+  const handleChecked = (choiceName: string | number) => {
+    setOtherFilters((prevFilters) => {
+      return prevFilters.map((filter) => {
+        const choices = filter.choices.map((choice: any) => {
+          return choice.choice == choiceName
+            ? { ...choice, checked: !choice.checked }
+            : choice;
+        });
+        console.log({ ...filter, choices: choices });
+        return { ...filter, choices: choices };
+      });
+    });
+  };
+
+  const [expanded, setExpanded] = useState<string | false>(false);
+  const handleExpanded =
+    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+      setExpanded(isExpanded ? panel : false);
+    };
+
   return (
     <div className="w-full h-fit py-16 flex flex-col items-center justify-center gap-4 bg-white">
       <div className="w-full h-full hidden pt-[1rem] md:flex justify-start items-center pl-[1rem] gap-4 bg-white lsm:px-8 xl:px-20 2xl:px-24">
@@ -158,38 +267,128 @@ const Collections = () => {
           </FormControl>
         </div>
         <div className="w-full h-full flex gap-4">
-          <div className="w-full h-full hidden md:flex flex-col gap-4 bg-[blue]">
-            <Accordion
-              style={{
-                cursor: `none`,
-                boxShadow: `none`,
-                background: `#f5f5f5`,
-                borderRadius: 0,
-              }}
-              className={`w-full pb-1 shadow-none border-b border-gray-300 rounded-none miniTablet:pb-[2rem] miniTablet:pt-[2rem]`}
-            >
-              <AccordionSummary
-                // expandIcon={
-                //   expanded ? (
-                //     <IoIosRemove className={`text-gray-600 text-xl`} />
-                //   ) : (
-                //     <IoMdAdd className={`text-gray-600 text-xl`} />
-                //   )
-                // }
-                aria-controls="panel1a-content"
-                id="panel1a-header"
+          <div className="w-full h-full hidden md:flex flex-col gap-4 pl-[1rem]">
+            <div className="w-[80%] h-full bg-white border rounded-md shadow-md">
+              {filters.slice(0, 4).map((filter) => {
+                const { value, label, open } = filter;
+                return (
+                  <Accordion
+                    style={{
+                      cursor: `none`,
+                      boxShadow: `none`,
+                      background: `#ffffff`,
+                    }}
+                    onChange={() => handleFiltersMdopen(value)}
+                  >
+                    <AccordionSummary
+                      expandIcon={
+                        open ? (
+                          <IoIosRemove className={`text-gray-600 text-xl`} />
+                        ) : (
+                          <IoMdAdd className={`text-gray-600 text-xl`} />
+                        )
+                      }
+                      className="hover:bg-[#f5f5f5] border-0"
+                    >
+                      <span
+                        className={`w-full text-base font-bold hover:text-[#0A083A] ${
+                          open ? "text-[#0A083A]" : "text-gray-600"
+                        }  transition-all duration-700 flex justify-between items-center lg:text-xl`}
+                      >
+                        {label}
+                      </span>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <span className="w-full h-full text-base font-semibold text-[#315BFF] flex justify-between">
+                        {label}
+                        <IoMdCheckmark className={`text-xl text-[#315BFF]`} />
+                      </span>
+                    </AccordionDetails>
+                  </Accordion>
+                );
+              })}
+            </div>
+            <FormControl className="w-[80%] h-full shadow-md">
+              <InputLabel id="demo-multiple-checkbox-label">
+                Category
+              </InputLabel>
+              <Select
+                labelId="demo-multiple-checkbox-label"
+                id="demo-multiple-checkbox"
+                multiple
+                value={personName}
+                onChange={handleChangeMultiSelect}
+                input={<OutlinedInput label="Tag" />}
+                renderValue={(selected) => selected.join(", ")}
+                MenuProps={MenuProps}
               >
-                <span className="w-full text-lg font-bold text-[#0A083A]  transition-all duration-700 flex justify-between items-center lg:text-xl">
-                  {/* {question} */}
-                </span>
-              </AccordionSummary>
-              <AccordionDetails>
-                <span className="text-xs font-semibold lg:text-sm mini2xl:text-base md:pr-[65%] text-gray-600">
-                  {/* {answer} */}
-                  <IoMdCheckmark className={`text-gray-600 text-xl`} />
-                </span>
-              </AccordionDetails>
-            </Accordion>
+                {otherFilters.slice(0, 1).map((filter) => {
+                  const { label, value, choices } = filter;
+                  return choices?.map((choice: any) => {
+                    const { choice: name, checked } = choice;
+                    return (
+                      <MenuItem key={name} value={name}>
+                        <Checkbox checked={personName.indexOf(name) > -1} />
+                        <ListItemText primary={name} />
+                      </MenuItem>
+                    );
+                  });
+                })}
+              </Select>
+            </FormControl>
+            <div className="w-[80%] h-full bg-white border rounded-md shadow-md">
+              {otherFilters.slice(1).map((filter) => {
+                const { value, label, open, choices, panel } = filter;
+                return (
+                  <Accordion
+                    style={{
+                      cursor: `none`,
+                      boxShadow: `none`,
+                      background: `#ffffff`,
+                    }}
+                    onChange={handleExpanded(panel)}
+                    expanded={expanded === panel}
+                  >
+                    <AccordionSummary
+                      expandIcon={
+                        open ? (
+                          <IoIosRemove className={`text-gray-600 text-xl`} />
+                        ) : (
+                          <IoMdAdd className={`text-gray-600 text-xl`} />
+                        )
+                      }
+                      className="hover:bg-[#f5f5f5] border-0"
+                    >
+                      <span
+                        className={`w-full text-base font-bold hover:text-[#0A083A] ${
+                          open ? "text-[#0A083A]" : "text-gray-600"
+                        }  transition-all duration-700 flex justify-between items-center lg:text-xl`}
+                      >
+                        {label}
+                      </span>
+                    </AccordionSummary>
+                    <AccordionDetails className="w-full h-full flex flex-col items-start justify-center gap-2">
+                      <FormGroup>
+                        {choices.map((choice: any) => {
+                          const { checked, choice: name } = choice;
+                          return (
+                            <FormControlLabel
+                              control={
+                                <Checkbox
+                                  checked={checked}
+                                  onChange={() => handleChecked(name)}
+                                />
+                              }
+                              label={name}
+                            />
+                          );
+                        })}
+                      </FormGroup>
+                    </AccordionDetails>
+                  </Accordion>
+                );
+              })}
+            </div>
           </div>
           <div className="w-full h-full flex flex-col items-center justify-center gap-8">
             <div className={`w-full h-fit flex gap-2 px-4 md:grid`}>
