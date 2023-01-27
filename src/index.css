@@ -8,6 +8,10 @@
   cursor: none;
 }
 
+.bg-hover {
+  background-size: 120%;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -201,9 +205,8 @@ button {
   cursor: none;
 }
 
-
 .expansion-panel {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }

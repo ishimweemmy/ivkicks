@@ -112,6 +112,7 @@ const Collections = () => {
   const [mobile, setIsMobile] = useState(window.innerWidth < 430);
   const [lsm, setLsm] = useState(window.innerWidth <= 500);
   const [md, setMd] = useState(window.innerWidth >= 768);
+  const [xl2, set2xl] = useState(window.innerWidth >= 1536);
 
   const [baseValue, setBaseValue] = useState(mobile ? 1 : md ? 6 : 2);
 
@@ -121,6 +122,7 @@ const Collections = () => {
       setBaseValue(mobile ? 1 : md ? 6 : 2);
       setLsm(window.innerWidth <= 500);
       setMd(window.innerWidth >= 768);
+      set2xl(window.innerWidth >= 1536);
     });
   }, [mobile, baseValue, lsm, md]);
 
@@ -208,12 +210,12 @@ const Collections = () => {
         <FiChevronLeft />
         Running sneakers
       </span>
-      <div className="w-full h-fit pt-[5rem] pb-[2rem] flex flex-col bg-[#f5f5f5] items-center justify-center gap-4 md:grid md:grid-cols-[40%_60%] md:place-items-start lg:pl-[1rem] xl:pl-[3.5rem]">
+      <div className="w-full h-fit pt-[5rem] pb-[2rem] flex flex-col bg-[#f5f5f5] items-center justify-center gap-4 md:grid md:grid-cols-[40%_60%] md:place-items-start lg:pl-[1rem] xl:pl-[3.5rem] 2xl:pl-[5rem]">
         <div className="w-full h-fit flex flex-col items-center justify-center gap-6 md:items-start md:px-8">
-          <span className="text-[rgb(10,8,58)] text-2xl font-bold 2xl:text-3xl">
+          <span className="text-[rgb(10,8,58)] text-2xl font-bold 2xl:text-4xl">
             Running Sneakers
           </span>
-          <p className="text-sm text-[rgb(37,37,37)] text-center tracking-wider px-8 lsm:text-start md:px-0">
+          <p className="text-sm text-[rgb(37,37,37)] text-center tracking-wider px-8 lsm:text-start md:px-0 2xl:text-base ">
             For parties, the sneakers are good depending on your favourite, you
             can find the one that fits you.
           </p>
@@ -230,7 +232,7 @@ const Collections = () => {
           <Swiper
             modules={[Controller, Autoplay, SwiperPagination]}
             className="w-full h-full"
-            slidesPerView={lsm ? 1 : 2}
+            slidesPerView={lsm ? 1 : xl2 ? 3 : 2}
             spaceBetween={20}
             autoplay={true}
             loop={true}
@@ -253,7 +255,7 @@ const Collections = () => {
           </Swiper>
         </div>
       </div>
-      <div className="w-full h-full flex flex-col items-center justify-center gap-6 bg-white py-8 lg:w-[95%] xl:w-[90%]">
+      <div className="w-full h-full flex flex-col items-center justify-center gap-6 bg-white py-8 lg:w-[95%] xl:w-[90%] 2xl:pr-[5rem]">
         <div className="w-full h-fit flex justify-between items-center px-4">
           <span className="text-[rgb(10,8,58)] text-2xl font-bold 2xl:text-3xl">
             Performance Sneakers
@@ -268,7 +270,7 @@ const Collections = () => {
             </Select>
           </FormControl>
         </div>
-        <div className="w-full h-full flex gap-4 md:grid md:grid-cols-[30%_70%]">
+        <div className="w-full h-full flex gap-4 md:grid md:grid-cols-[30%_70%] max2xl:grid-cols-[25%_75%] max2xl:gap-[5rem]">
           <div className="w-full h-fit hidden md:flex flex-col gap-4 pl-[1rem]">
             <div className="w-[80%] h-full bg-white border rounded-md shadow-md md:w-full">
               {filters.slice(0, 4).map((filter) => {
@@ -394,7 +396,7 @@ const Collections = () => {
           </div>
           <div className="w-full h-full flex flex-col items-center justify-center gap-8 md:justify-start">
             <div
-              className={`w-full h-fit flex gap-2 px-4 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-3`}
+              className={`w-full h-fit flex gap-2 px-4 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-3 max2xl:w-[90%]`}
             >
               {categoryProData
                 .slice(indexes.firstIndex, indexes.secondIndex)
@@ -434,6 +436,7 @@ const Collections = () => {
               page={page}
               onChange={handlePageChange}
               color="primary"
+              className="z-50"
             />
           </div>
         </div>
