@@ -111,16 +111,18 @@ const Collections = () => {
 
   const [mobile, setIsMobile] = useState(window.innerWidth < 430);
   const [lsm, setLsm] = useState(window.innerWidth <= 500);
+  const [md, setMd] = useState(window.innerWidth >= 768);
 
-  const [baseValue, setBaseValue] = useState(mobile ? 1 : 2);
+  const [baseValue, setBaseValue] = useState(mobile ? 1 : md ? 6 : 2);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
       setIsMobile(window.innerWidth < 430);
-      setBaseValue(mobile ? 1 : 2);
+      setBaseValue(mobile ? 1 : md ? 6 : 2);
       setLsm(window.innerWidth <= 500);
+      setMd(window.innerWidth >= 768);
     });
-  }, [mobile, baseValue, lsm]);
+  }, [mobile, baseValue, lsm, md]);
 
   const [page, setPage] = useState(1);
   const [indexes, setIndexes] = useState<{
@@ -206,7 +208,7 @@ const Collections = () => {
         <FiChevronLeft />
         Running sneakers
       </span>
-      <div className="w-full h-fit pt-[5rem] pb-[2rem] flex flex-col bg-[#f5f5f5] items-center justify-center gap-4 md:grid md:grid-cols-[40%_60%] md:place-items-start ">
+      <div className="w-full h-fit pt-[5rem] pb-[2rem] flex flex-col bg-[#f5f5f5] items-center justify-center gap-4 md:grid md:grid-cols-[40%_60%] md:place-items-start lg:pl-[1rem] xl:pl-[3.5rem]">
         <div className="w-full h-fit flex flex-col items-center justify-center gap-6 md:items-start md:px-8">
           <span className="text-[rgb(10,8,58)] text-2xl font-bold 2xl:text-3xl">
             Running Sneakers
@@ -251,7 +253,7 @@ const Collections = () => {
           </Swiper>
         </div>
       </div>
-      <div className="w-full h-full flex flex-col items-center justify-center gap-6 bg-white py-8">
+      <div className="w-full h-full flex flex-col items-center justify-center gap-6 bg-white py-8 lg:w-[95%] xl:w-[90%]">
         <div className="w-full h-fit flex justify-between items-center px-4">
           <span className="text-[rgb(10,8,58)] text-2xl font-bold 2xl:text-3xl">
             Performance Sneakers
@@ -266,9 +268,9 @@ const Collections = () => {
             </Select>
           </FormControl>
         </div>
-        <div className="w-full h-full flex gap-4">
-          <div className="w-full h-full hidden md:flex flex-col gap-4 pl-[1rem]">
-            <div className="w-[80%] h-full bg-white border rounded-md shadow-md">
+        <div className="w-full h-full flex gap-4 md:grid md:grid-cols-[30%_70%]">
+          <div className="w-full h-fit hidden md:flex flex-col gap-4 pl-[1rem]">
+            <div className="w-[80%] h-full bg-white border rounded-md shadow-md md:w-full">
               {filters.slice(0, 4).map((filter) => {
                 const { value, label, open } = filter;
                 return (
@@ -293,7 +295,7 @@ const Collections = () => {
                       <span
                         className={`w-full text-base font-bold hover:text-[#0A083A] ${
                           open ? "text-[#0A083A]" : "text-gray-600"
-                        }  transition-all duration-700 flex justify-between items-center lg:text-xl`}
+                        }  transition-all duration-700 flex justify-between items-center`}
                       >
                         {label}
                       </span>
@@ -308,7 +310,7 @@ const Collections = () => {
                 );
               })}
             </div>
-            <FormControl className="w-[80%] h-full shadow-md">
+            <FormControl className="w-[80%] h-full shadow-md md:w-full">
               <InputLabel id="demo-multiple-checkbox-label">
                 Category
               </InputLabel>
@@ -336,7 +338,7 @@ const Collections = () => {
                 })}
               </Select>
             </FormControl>
-            <div className="w-[80%] h-full bg-white border rounded-md shadow-md">
+            <div className="w-[80%] h-full bg-white border rounded-md shadow-md md:w-full">
               {otherFilters.slice(1).map((filter) => {
                 const { value, label, open, choices, panel } = filter;
                 return (
@@ -362,7 +364,7 @@ const Collections = () => {
                       <span
                         className={`w-full text-base font-bold hover:text-[#0A083A] ${
                           open ? "text-[#0A083A]" : "text-gray-600"
-                        }  transition-all duration-700 flex justify-between items-center lg:text-xl`}
+                        }  transition-all duration-700 flex justify-between items-center`}
                       >
                         {label}
                       </span>
@@ -390,8 +392,10 @@ const Collections = () => {
               })}
             </div>
           </div>
-          <div className="w-full h-full flex flex-col items-center justify-center gap-8">
-            <div className={`w-full h-fit flex gap-2 px-4 md:grid`}>
+          <div className="w-full h-full flex flex-col items-center justify-center gap-8 md:justify-start">
+            <div
+              className={`w-full h-fit flex gap-2 px-4 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-3`}
+            >
               {categoryProData
                 .slice(indexes.firstIndex, indexes.secondIndex)
                 .map((prodData) => {
@@ -419,7 +423,11 @@ const Collections = () => {
             </div>
             <Pagination
               count={
-                mobile ? categoryProData.length : categoryProData.length / 2
+                mobile
+                  ? categoryProData.length
+                  : md
+                  ? Math.floor(categoryProData.length / 3)
+                  : categoryProData.length / 2
               }
               siblingCount={0}
               defaultPage={1}
@@ -430,7 +438,7 @@ const Collections = () => {
           </div>
         </div>
       </div>
-      <Subscriptions />
+      <Subscriptions page="collections" />
     </div>
   );
 };

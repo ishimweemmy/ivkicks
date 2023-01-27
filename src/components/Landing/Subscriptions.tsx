@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import Socials from "../Global/Socials";
 import subscriptionSneaker from "../../assets/subscription.png";
 import { Flip, Zoom, Bounce } from "react-reveal";
+import type { FC } from "react";
 
-const Subscriptions = () => {
+const Subscriptions: FC<{ page: string }> = (props) => {
   const [email, setEmail] = useState("");
   const [emailValid, setEmailValid] = useState(true);
   const [tablet, setTablet] = useState(window.innerWidth > 768 ? true : false);
@@ -30,7 +31,7 @@ const Subscriptions = () => {
   };
   return (
     <div
-      className="w-full h-screen flex flex-col rounded-tr-2xl rounded-br-2xl md:flex-row md:h-[50vh] md:w-screen gMd:w-[90%]"
+      className={`w-full h-screen flex flex-col rounded-tr-2xl rounded-br-2xl md:flex-row md:h-[50vh] md:w-screen gMd:w-[90%] ${props.page === "collections" && "gMd:w-full" }`}
       style={{
         background:
           "linear-gradient(97.49deg, #8AA8F8 -0.43%, #315BFF 144.53%)",
