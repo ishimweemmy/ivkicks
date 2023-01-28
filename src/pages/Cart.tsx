@@ -18,6 +18,7 @@ const Cart = () => {
           <CartItem />
         </div>
       </div>
+      <YoumayLikes />
     </div>
   );
 };
