@@ -255,7 +255,7 @@ const Collections = () => {
           </Swiper>
         </div>
       </div>
-      <div className="w-full h-full flex flex-col items-center justify-center gap-6 bg-white py-8 lg:w-[95%] xl:w-[90%] 2xl:pr-[5rem]">
+      <div className="w-full h-full flex flex-col items-center justify-center gap-6 bg-white py-8 lg:w-[95%] xl:w-[90%] 2xl:prz-[5rem]">
         <div className="w-full h-fit flex justify-between items-center px-4">
           <span className="text-[rgb(10,8,58)] text-2xl font-bold 2xl:text-3xl">
             Performance Sneakers
