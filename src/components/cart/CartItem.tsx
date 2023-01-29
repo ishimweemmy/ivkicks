@@ -37,10 +37,10 @@ const CartItem = () => {
           </span>
           <ImCross className="text-[#FF3C78]  text-xs font-normal" />
         </div>
-        <span className="text-base text-gray-500 font-bold">
+        <span className="text-sm text-gray-500 font-bold poppins">
           Men's Footwear
         </span>
-        <span className="text-base text-gray-500 font-bold">
+        <span className="text-sm text-gray-500 font-bold poppins">
           size: <b className="text-[rgb(10,8,58)]">9</b>
         </span>
         <div className="w-full h-fit flex justify-between items-center">

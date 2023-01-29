@@ -8,6 +8,20 @@
   cursor: none;
 }
 
+.poppins {
+  font-family: poppins;
+}
+
+@layer components {
+  .button {
+    @apply w-full py-5 text-white bg-[rgb(10,8,58)] rounded-sm text-sm font-bold poppins transition duration-300;
+  }
+
+  .buttonOutline {
+    @apply w-full py-5 bg-transparent text-[rgb(10,8,58)] border border-[rgb(10,8,58)] rounded-sm text-sm font-bold poppins transition duration-300;
+  }
+}
+
 .bg-hover {
   background-size: 120%;
 }
