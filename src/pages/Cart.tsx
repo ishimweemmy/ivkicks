@@ -2,6 +2,7 @@ import { TextField } from "@material-ui/core";
 import YoumayLikes from "../components/Global/YoumayLikes";
 import CartItem from "../components/cart/CartItem";
 import SummaryField from "../components/cart/SummaryField";
+import { IoMdArrowDropleft } from "react-icons/io";
 
 const Cart = () => {
   return (
@@ -64,7 +65,9 @@ const Cart = () => {
                   return (
                     <img
                       src={`/server-assets/${src}`}
-                      className={`w-14 h-12 ${index == 0 && "scale-150"} ${index == 1 && "h-5"}`}
+                      className={`w-14 h-12 ${index == 0 && "scale-150"} ${
+                        index == 1 && "h-5"
+                      }`}
                       alt=""
                     />
                   );
@@ -73,9 +76,12 @@ const Cart = () => {
             </div>
           </div>
         </div>
-        <span className=""></span>
+        <span className="w-full flex items-center justify-start poppins font-bold text-sm text-[rgb(10,8,58)] ">
+          <IoMdArrowDropleft />
+          continue shopping
+        </span>
       </div>
-      {/* <YoumayLikes /> */}
+      <YoumayLikes /> 
     </div>
   );
 };
