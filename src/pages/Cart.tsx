@@ -81,7 +81,7 @@ const Cart = () => {
           continue shopping
         </span>
       </div>
-      <YoumayLikes /> 
+      <YoumayLikes />
     </div>
   );
 };
