@@ -21,7 +21,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import SlideNextButton from "../components/Global/SlideNextButton";
 import SlidePrevButton from "../components/Global/SlidePrev";
-import { useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import alexander from "/server-assets/alexander.png";
 import { Link } from "react-router-dom";
 
@@ -30,6 +30,33 @@ const Home = () => {
   const swipingButtonRefPrev = useRef<HTMLButtonElement | null>(null);
 
   const [isLiked, setIsLiked] = useState(false);
+
+  const getChilComponents = useMemo(() => {
+    return (
+      <>
+        <FeaturedPros />
+        <Accessories />
+        <BestSeller
+          rating={5}
+          improvement={"Improved stability, traction control & sole handling"}
+          description={"Adidas Falcon Shoes for women - 2021 Edition"}
+          price={120.5}
+        />
+        <NewArrivals
+          rating={0}
+          description={""}
+          price={90}
+          imgSource={""}
+          id={""}
+          indexId={0}
+        />
+        <WhyUs />
+        <Categories />
+        <Brands />
+        <Subscriptions />
+      </>
+    );
+  }, []);
 
   return (
     <div className="w-screen h-fit flex sm:flex-col xs:flex-col relative overflow-hidden">
@@ -189,26 +216,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <FeaturedPros />
-      <Accessories />
-      <BestSeller
-        rating={5}
-        improvement={"Improved stability, traction control & sole handling"}
-        description={"Adidas Falcon Shoes for women - 2021 Edition"}
-        price={120.5}
-      />
-      <NewArrivals
-        rating={0}
-        description={""}
-        price={90}
-        imgSource={""}
-        id={""}
-        indexId={0}
-      />
-      <WhyUs />
-      <Categories />
-      <Brands />
-      <Subscriptions />
+      {getChilComponents}
     </div>
   );
 };

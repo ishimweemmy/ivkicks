@@ -8,14 +8,6 @@ import Group1 from "../../assets/Group-1.png";
 import Wallet from "../../assets/Wallet.png";
 import { Fade, Zoom } from "react-reveal";
 const WhyUs = () => {
-  const [mobile, setMobile] = useState(window.innerWidth <= 768 ? true : false);
-
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setMobile(window.innerWidth <= 768 ? true : false);
-    });
-  }, [mobile]);
-
   return (
     <div className="w-full h-[150vh] bg-white flex flex-col items-center justify-center gap-[2rem] md:flex-row-reverse md:h-[100vh] md:items-end md:pb-[5rem] ">
       <div className="h-fit w-fit flex flex-col items-center justify-center gap-[2rem] md:h-[35vh] md:w-full md:items-start">

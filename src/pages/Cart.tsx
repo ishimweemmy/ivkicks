@@ -5,6 +5,7 @@ import SummaryField from "../components/cart/SummaryField";
 import { IoMdArrowDropleft } from "react-icons/io";
 
 const Cart = () => {
+  
   return (
     <div className="w-full h-fit py-4 flex flex-col items-center justify-center gap-2 bg-white px-2">
       <div className="w-full h-fit flex flex-col items-center justify-center gap-3">

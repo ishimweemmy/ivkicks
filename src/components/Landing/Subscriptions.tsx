@@ -4,7 +4,7 @@ import subscriptionSneaker from "../../assets/subscription.png";
 import { Flip, Zoom, Bounce } from "react-reveal";
 import type { FC } from "react";
 
-const Subscriptions: FC<{ page: string }> = (props) => {
+const Subscriptions: FC<{ page?: string }> = (props) => {
   const [email, setEmail] = useState("");
   const [emailValid, setEmailValid] = useState(true);
   const [tablet, setTablet] = useState(window.innerWidth > 768 ? true : false);
