@@ -7,25 +7,20 @@ import { featuredProsData } from "../../data";
 import { Flip, Zoom } from "react-reveal";
 import { Autoplay, Pagination } from "swiper";
 import "swiper/css/autoplay";
-import useResponsive from "../../hooks/useResponsive";
 
 const FeaturedPros = () => {
-  const mobile = useResponsive(window.innerWidth <= 765 ? true : false);
-  const [desktop, setDesktop] = useState<boolean>(
-    window.innerWidth <= 1024 ? true : false
-  );
+  const [mobile, setMobile] = useState(window.innerWidth <= 765);
+  const [desktop, setDesktop] = useState<boolean>(window.innerWidth <= 1024);
 
-  const [tablet, setTablet] = useState<boolean>(
-    window.innerWidth <= 769 ? true : false
-  );
+  const [tablet, setTablet] = useState<boolean>(window.innerWidth <= 769);
 
   const categoriesRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
-      // setMobile(window.innerWidth <= 765 ? true : false);
-      setTablet(window.innerWidth <= 769 ? true : false);
-      setDesktop(window.innerWidth <= 1024 ? true : false);
+      setMobile(window.innerWidth <= 765);
+      setTablet(window.innerWidth <= 769);
+      setDesktop(window.innerWidth <= 1024);
     });
   }, [mobile, desktop, tablet]);
 
