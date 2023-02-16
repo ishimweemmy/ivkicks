@@ -104,6 +104,7 @@ module.exports = {
         catalogueLarge: "repeat(2, 20rem)",
         catalogueMLarge: "repeat(2, 22rem)",
         catalogue2Xl: "repeat(2, minmax(0, 24rem))",
+        cart: "5rem",
       },
       animation: {
         "nav-hide": "navHide .2s ease-in",
@@ -119,4 +120,3 @@ module.exports = {
   },
   plugins: [],
 };
-

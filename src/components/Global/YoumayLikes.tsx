@@ -6,8 +6,11 @@ import YouMayLike from "../Products/YouMayLike";
 import { useEffect, useRef, useState } from "react";
 import SlideNextButton from "./SlideNextButton";
 import SlidePrev from "./SlidePrev";
+import type { FC } from "react";
 
-const YoumayLikes = () => {
+
+const YoumayLikes:FC<{page?: string}> = (props) => {
+  
   const prevButtonRef = useRef<HTMLDivElement | null>(null);
   const nextButtonRef = useRef<HTMLDivElement | null>(null);
   const [isDraggable, setIsDraggable] = useState(false);

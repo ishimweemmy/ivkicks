@@ -43,6 +43,9 @@ const Cursor: FC<{ pageOver?: string }> = () => {
       style={{
         left: `${mousePosition.x - 25}px`,
         top: `${mousePosition.y - 14}px`,
+        WebkitUserSelect: "none",
+        msUserSelect: "none",
+        userSelect: "none",
       }}
     />
   );
