@@ -19,7 +19,6 @@ const Products = lazy(() => import("./pages/Products/NonProducts/Products"));
 const Promo = lazy(() => import("./pages/Products/Promo/PromoProducts"));
 const Men = lazy(() => import("./pages/Products/NonProducts/Men"));
 const Women = lazy(() => import("./pages/Products/NonProducts/Women"));
-// const Product = lazy(() => import("./components/Products/Product"));
 import Product from "./components/Products/Product";
 const Collections = lazy(() => import("./pages/Collections"));
 

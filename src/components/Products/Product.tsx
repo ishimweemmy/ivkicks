@@ -20,6 +20,7 @@ import TheLook from "./TheLook";
 import JoinOthers from "../Global/JoinOthers";
 import "swiper/css/bundle";
 import YoumayLikes from "../Global/YoumayLikes";
+import Incrementor from "../Global/Incrementor";
 
 const Product = () => {
   const colors = ["red", "black", "orange"];
@@ -322,28 +323,7 @@ const Product = () => {
                 </Select>
               </FormControl>
             ) : (
-              <div className="w-[30%] h-full grid grid-cols-3 border">
-                <div
-                  className="w-full h-full grid place-items-center text-[rgb(10,8,58)] font-bold text-2xl bg-[#f5f5f5]"
-                  onClick={() =>
-                    setNbrOfProducts((prev) => {
-                      if (prev == 1) return prev;
-                      return prev - 1;
-                    })
-                  }
-                >
-                  -
-                </div>
-                <div className="w-full h-full grid place-items-center text-[rgb(10,8,58)] font-bold  bg-white">
-                  {nbrOfProducts}
-                </div>
-                <div
-                  className="w-full h-full grid place-items-center text-[rgb(10,8,58)] font-bold text-2xl bg-[#f5f5f5]"
-                  onClick={() => setNbrOfProducts((prev) => prev + 1)}
-                >
-                  +
-                </div>
-              </div>
+              <Incrementor />
             )}
             <button className="w-[70%] h-full bg-[rgb(10,8,58)] text-white text-sm font-bold">
               Add to cart

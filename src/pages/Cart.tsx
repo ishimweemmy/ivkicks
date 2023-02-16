@@ -5,15 +5,14 @@ import SummaryField from "../components/cart/SummaryField";
 import { IoMdArrowDropleft } from "react-icons/io";
 
 const Cart = () => {
-  
   return (
     <div className="w-full h-fit py-4 flex flex-col items-center justify-center gap-2 bg-white px-2">
-      <div className="w-full h-fit flex flex-col items-center justify-center gap-3">
+      <div className="w-full h-full flex flex-col items-center justify-center gap-3 xlssm:w-[90%]">
         <div className="w-full h-fit flex flex-col items-center gap-2">
-          <span className="text-[rgb(10,8,58)] text-2xl font-bold 2xl:text-4xl block">
+          <span className="text-[rgb(10,8,58)] text-2xl font-bold md:text-3xl 2xl:text-4xl block">
             Shopping Cart
           </span>
-          <span className="text-sm font-bold text-slate-500 2xl:text-lg">
+          <span className="text-sm font-bold text-slate-500 md:text-base 2xl:text-lg">
             Total: 2 items
           </span>
         </div>
@@ -22,7 +21,7 @@ const Cart = () => {
           <CartItem />
         </div>
       </div>
-      <div className="w-full h-fit flex flex-col items-center justify-center gap-3">
+      <div className="w-full h-fit flex flex-col items-center justify-center gap-3 xlssm:w-[85%] xlssm:self-start xlssm:ml-[2rem]">
         <div className="w-full h-fit grid place-items-center gap-4 border-b pb-6 mb-6">
           <div className="w-full h-full flex">
             <TextField
