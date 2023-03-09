@@ -2,30 +2,53 @@ import { TextField } from "@material-ui/core";
 import YoumayLikes from "../components/Global/YoumayLikes";
 import CartItem from "../components/cart/CartItem";
 import SummaryField from "../components/cart/SummaryField";
-import { IoMdArrowDropleft } from "react-icons/io";
+import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
+import { Outlet, useLocation } from "react-router-dom";
+import { capitalizeLetter1 } from "../functions/capitalizeLetter1";
+import { useEffect, useState } from "react";
 
 const Cart = () => {
+  const location = useLocation()
+
+  const [locationUrls, setLocationUrls] = useState([
+    {
+      name: "Cart",
+      active: false
+    },
+    {
+      name: "Address",
+      active: false
+    },
+    {
+      name: "Shipping",
+      active: false
+    },
+    {
+      name: "Billing",
+      active: false
+    }
+  ])
+
+  useEffect(() => {
+    setLocationUrls(prevUrls => {
+      return prevUrls.map(url => {
+        return url.name == capitalizeLetter1(location.pathname) ? { ...url, active: true } : url
+      })
+    })
+  }, [])
+
   return (
     <div className="w-full h-fit py-4 flex flex-col items-center justify-center gap-2 bg-white px-2 circleLg:border-t">
+      <div className="w-full h-full pt-[1rem] flex justify-start items-center pl-[1rem] gap-2 bg-white lsm:px-8 xl:px-20 2xl:px-24">
+        {locationUrls.map((url, index) => {
+          return <div className={`w-fit text-base font-medium ${url.active ? "text-[rgb(10,8,58)]" : "text-slate-500"} 2xl:text-lg flex items-center justify-center gap-2`}>
+            <span>{url.name}</span>
+            {index != 3 && <IoMdArrowDropright />}
+          </div>
+        })}
+      </div>
       <div className="w-full h-fit grid place-items-center gap-8 circleLg:grid-cols-[60%_40%] circleLg:pt-[3rem] mini2xl:px-[3rem] 2xl:px-[7rem]">
-        <div className="w-full h-full flex flex-col items-center justify-center gap-3 xlssm:w-[90%] circleLg:items-start circleLg:justify-start circleLg:w-full circleLg:pl-[2rem] circleLg:gap-[5rem]">
-          <div className="w-full h-fit flex flex-col items-center gap-2 circleLg:items-start circleLg:pl-2">
-            <span className="text-[rgb(10,8,58)] text-2xl font-bold md:text-3xl 2xl:text-4xl block">
-              Shopping Cart
-            </span>
-            <span className="text-sm font-bold text-slate-500 md:text-base 2xl:text-lg">
-              Total: 2 items
-            </span>
-          </div>
-          <div className="w-full h-fit py-2  flex flex-col items-center justify-center gap-6 mini2xl:items-start">
-            <CartItem />
-            <CartItem />
-          </div>
-          <span className="w-[92%] items-center justify-start poppins font-bold text-lg text-[rgb(10,8,58)] hidden circleLg:flex">
-            <IoMdArrowDropleft />
-            continue shopping
-          </span>
-        </div>
+        <Outlet />
         <div className="w-full h-fit flex flex-col items-center justify-center gap-3 xlssm:w-[90%] self-start md:border border-gray-300 md:py-[2rem] circleLg:justify-self-start ">
           <div className="w-full h-fit grid place-items-center gap-4 border-b border-gray-300 pb-6 mb-6 md:w-[90%] md:grid-cols-2 md:pb-[3rem]">
             <div className="w-full h-full flex md:col-span-2 md:row-start-3">
@@ -71,9 +94,9 @@ const Cart = () => {
                     return (
                       <img
                         src={`/server-assets/${src}`}
-                        className={`w-14 h-12 ${index == 0 && "scale-150"} ${
-                          index == 1 && "h-5"
-                        }`}
+                        key={index}
+                        className={`w-14 h-12 ${index == 0 && "scale-150"} ${index == 1 && "h-5"
+                          }`}
                         alt=""
                       />
                     );
@@ -92,7 +115,7 @@ const Cart = () => {
           continue shopping
         </span>
       </div>
-      <YoumayLikes />
+      {location.pathname == "/cart" || location.pathname == "/cart/" ? <YoumayLikes /> : <></>}
     </div>
   );
 };
