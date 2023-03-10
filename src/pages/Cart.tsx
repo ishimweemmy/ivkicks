@@ -32,10 +32,10 @@ const Cart = () => {
   useEffect(() => {
     setLocationUrls(prevUrls => {
       return prevUrls.map(url => {
-        return url.name == capitalizeLetter1(location.pathname) ? { ...url, active: true } : url
+        return url.name.toLowerCase() == capitalizeLetter1(location.pathname) ? { ...url, active: true } : url
       })
     })
-  }, [])
+  }, [location])
 
   return (
     <div className="w-full h-fit py-4 flex flex-col items-center justify-center gap-2 bg-white px-2 circleLg:border-t">
