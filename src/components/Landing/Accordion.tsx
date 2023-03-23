@@ -19,9 +19,8 @@ const Accordion: FC<AccordionProps> = (props) => {
   const [tablet, setTablet] = useState(window.innerWidth >= 768 ? true : false);
 
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      setTablet(window.innerWidth >= 768 ? true : false);
-    });
+    window.addEventListener("resize", () => setTablet(window.innerWidth >= 768 ? true : false));
+    return () => window.addEventListener("resize", () => setTablet(window.innerWidth >= 768 ? true : false));
   }, [tablet]);
 
   const links = allLinks.map((linkData: Link, index: number) => {

@@ -9,8 +9,8 @@ import SlidePrev from "./SlidePrev";
 import type { FC } from "react";
 
 
-const YoumayLikes:FC<{page?: string}> = (props) => {
-  
+const YoumayLikes: FC<{ page?: string }> = (props) => {
+
   const prevButtonRef = useRef<HTMLDivElement | null>(null);
   const nextButtonRef = useRef<HTMLDivElement | null>(null);
   const [isDraggable, setIsDraggable] = useState(false);
@@ -27,13 +27,17 @@ const YoumayLikes:FC<{page?: string}> = (props) => {
   const [laptop, setLaptop] = useState(window.innerWidth >= 1500);
   const [mdTab, setMdTab] = useState(window.innerWidth >= 768);
 
+  const resizeDetect = () => {
+    setTablet(window.innerWidth >= 550);
+    setMiniLaptop(window.innerWidth >= 900);
+    setLaptop(window.innerWidth >= 1500);
+    setMdTab(window.innerWidth >= 768);
+  }
+
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      setTablet(window.innerWidth >= 550);
-      setMiniLaptop(window.innerWidth >= 900);
-      setLaptop(window.innerWidth >= 1500);
-      setMdTab(window.innerWidth >= 768);
-    });
+    window.addEventListener("resize", resizeDetect);
+    return () => window.removeEventListener("resize", resizeDetect);
+
   }, [tablet, miniLaptop, laptop, mdTab]);
 
   return (
@@ -49,11 +53,10 @@ const YoumayLikes:FC<{page?: string}> = (props) => {
             onClick={() => prevButtonRef.current?.click()}
           />
           <span
-            className={`w-[2rem] h-[2rem] rounded-full text-[.5rem] font-bold uppercase grid place-items-center transition xlarge:w-[2.5rem]  xlarge:h-[2.5rem] xlarge:text-[.6rem] ${
-              isDraggable
-                ? "bg-[#315affc0] text-white"
-                : "text-[rgb(10,8,58)] border border-gray-400"
-            }`}
+            className={`w-[2rem] h-[2rem] rounded-full text-[.5rem] font-bold uppercase grid place-items-center transition xlarge:w-[2.5rem]  xlarge:h-[2.5rem] xlarge:text-[.6rem] ${isDraggable
+              ? "bg-[#315affc0] text-white"
+              : "text-[rgb(10,8,58)] border border-gray-400"
+              }`}
             onClick={handleIsDraggable}
           >
             Drag

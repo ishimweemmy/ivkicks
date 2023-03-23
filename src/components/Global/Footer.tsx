@@ -43,9 +43,8 @@ const Footer = () => {
   const [mobile, setMobile] = useState(window.innerWidth < 768 ? true : false);
 
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      setMobile(window.innerWidth < 768 ? true : false);
-    });
+    window.addEventListener("resize", () => setMobile(window.innerWidth < 768 ? true : false));
+    return () => window.removeEventListener("resize", () => setMobile(window.innerWidth < 768 ? true : false));
   }, [mobile]);
 
   const handleAccordionMoves = (summary: string) => {

@@ -16,12 +16,15 @@ const FeaturedPros = () => {
 
   const categoriesRef = useRef<HTMLDivElement | null>(null);
 
+  const resizeDetect = () => {
+    setMobile(window.innerWidth <= 765);
+    setTablet(window.innerWidth <= 769);
+    setDesktop(window.innerWidth <= 1024);
+  }
+
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      setMobile(window.innerWidth <= 765);
-      setTablet(window.innerWidth <= 769);
-      setDesktop(window.innerWidth <= 1024);
-    });
+    window.addEventListener("resize", resizeDetect);
+    return () => window.removeEventListener("resize", resizeDetect);
   }, [mobile, desktop, tablet]);
 
   return (

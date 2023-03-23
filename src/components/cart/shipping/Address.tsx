@@ -1,6 +1,8 @@
 const Address = () => {
     return (
-        <div></div>
+        <div className="w-full h-full bg-[blue]">
+
+        </div>
     )
 }
 

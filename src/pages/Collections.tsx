@@ -116,14 +116,17 @@ const Collections = () => {
 
   const [baseValue, setBaseValue] = useState(mobile ? 1 : md ? 6 : 2);
 
+  const resizeDetect = () => {
+    setIsMobile(window.innerWidth < 430);
+    setBaseValue(mobile ? 1 : md ? 6 : 2);
+    setLsm(window.innerWidth <= 500);
+    setMd(window.innerWidth >= 768);
+    set2xl(window.innerWidth >= 1536);
+  }
+
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      setIsMobile(window.innerWidth < 430);
-      setBaseValue(mobile ? 1 : md ? 6 : 2);
-      setLsm(window.innerWidth <= 500);
-      setMd(window.innerWidth >= 768);
-      set2xl(window.innerWidth >= 1536);
-    });
+    window.addEventListener("resize", resizeDetect);
+    return () => window.removeEventListener("resize", resizeDetect);
   }, [mobile, baseValue, lsm, md]);
 
   const [page, setPage] = useState(1);
@@ -295,9 +298,8 @@ const Collections = () => {
                       className="hover:bg-[#f5f5f5] border-0"
                     >
                       <span
-                        className={`w-full text-base font-bold hover:text-[#0A083A] ${
-                          open ? "text-[#0A083A]" : "text-gray-600"
-                        }  transition-all duration-700 flex justify-between items-center`}
+                        className={`w-full text-base font-bold hover:text-[#0A083A] ${open ? "text-[#0A083A]" : "text-gray-600"
+                          }  transition-all duration-700 flex justify-between items-center`}
                       >
                         {label}
                       </span>
@@ -364,9 +366,8 @@ const Collections = () => {
                       className="hover:bg-[#f5f5f5] border-0"
                     >
                       <span
-                        className={`w-full text-base font-bold hover:text-[#0A083A] ${
-                          open ? "text-[#0A083A]" : "text-gray-600"
-                        }  transition-all duration-700 flex justify-between items-center`}
+                        className={`w-full text-base font-bold hover:text-[#0A083A] ${open ? "text-[#0A083A]" : "text-gray-600"
+                          }  transition-all duration-700 flex justify-between items-center`}
                       >
                         {label}
                       </span>
@@ -428,8 +429,8 @@ const Collections = () => {
                 mobile
                   ? categoryProData.length
                   : md
-                  ? Math.floor(categoryProData.length / 3)
-                  : categoryProData.length / 2
+                    ? Math.floor(categoryProData.length / 3)
+                    : categoryProData.length / 2
               }
               siblingCount={0}
               defaultPage={1}

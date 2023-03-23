@@ -24,12 +24,16 @@ const Dedication = () => {
     window.innerWidth <= 500 ? true : false
   );
 
+  const resizeDetect = () => {
+    setMobile(window.innerWidth <= 767 ? true : false);
+    setMiniLaptop(window.innerWidth <= 1226 ? true : false);
+    setSmallMobile(window.innerWidth <= 500 ? true : false);
+  }
+
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      setMobile(window.innerWidth <= 767 ? true : false);
-      setMiniLaptop(window.innerWidth <= 1226 ? true : false);
-      setSmallMobile(window.innerWidth <= 500 ? true : false);
-    });
+    window.addEventListener("resize", resizeDetect);
+
+    return () => window.removeEventListener('resize', resizeDetect);
   }, [mobile, miniLaptop, smallMobile]);
 
   const swipingButtonRef = useRef<HTMLButtonElement | null>(null);

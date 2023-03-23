@@ -1,6 +1,5 @@
 import { TextField } from "@material-ui/core";
 import YoumayLikes from "../components/Global/YoumayLikes";
-import CartItem from "../components/cart/CartItem";
 import SummaryField from "../components/cart/SummaryField";
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 import { Outlet, useLocation } from "react-router-dom";
@@ -29,6 +28,13 @@ const Cart = () => {
     }
   ])
 
+  const [mobile, setMobile] = useState(window.innerWidth > 650)
+
+  useEffect(() => {
+    window.addEventListener('resize', () => setMobile(window.innerWidth > 650))
+    return () => window.removeEventListener('resize', () => setMobile(window.innerWidth > 650))
+  }, [mobile])
+
   useEffect(() => {
     setLocationUrls(prevUrls => {
       return prevUrls.map(url => {
@@ -40,12 +46,12 @@ const Cart = () => {
   return (
     <div className="w-full h-fit py-4 flex flex-col items-center justify-center gap-2 bg-white px-2 circleLg:border-t">
       <div className="w-full h-full pt-[1rem] flex justify-start items-center pl-[1rem] gap-2 bg-white lsm:px-8 xl:px-20 2xl:px-24">
-        {locationUrls.map((url, index) => {
-          return <div className={`w-fit text-base font-medium ${url.active ? "text-[rgb(10,8,58)]" : "text-slate-500"} 2xl:text-lg flex items-center justify-center gap-2`}>
+        {location.pathname != "/cart" && location.pathname != "/cart/" && mobile ? locationUrls.map((url, index) => {
+          return <div className={`w-fit text-2xl font-bold ${url.active ? "text-[rgb(10,8,58)]" : "text-slate-400"} 2xl:text-lg flex items-center justify-center gap-2`}>
             <span>{url.name}</span>
             {index != 3 && <IoMdArrowDropright />}
           </div>
-        })}
+        }) : <div className="w-full text-2xl font-bold text-[rgb(10,8,58)] 2xl:text-lg flex items-center justify-center gap-2">{locationUrls.filter(url => url.active)[0].name}</div>}
       </div>
       <div className="w-full h-fit grid place-items-center gap-8 circleLg:grid-cols-[60%_40%] circleLg:pt-[3rem] mini2xl:px-[3rem] 2xl:px-[7rem]">
         <Outlet />
