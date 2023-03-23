@@ -35,12 +35,15 @@ const Cart = () => {
     return () => window.removeEventListener('resize', () => setMobile(window.innerWidth > 650))
   }, [mobile])
 
+  const [mobileHeader, setMobileHeader] = useState("")
+
   useEffect(() => {
     setLocationUrls(prevUrls => {
       return prevUrls.map(url => {
         return url.name.toLowerCase() == capitalizeLetter1(location.pathname) ? { ...url, active: true } : url
       })
     })
+
   }, [location])
 
   return (
@@ -51,7 +54,7 @@ const Cart = () => {
             <span>{url.name}</span>
             {index != 3 && <IoMdArrowDropright />}
           </div>
-        }) : <div className="w-full text-2xl font-bold text-[rgb(10,8,58)] 2xl:text-lg flex items-center justify-center gap-2">{locationUrls.filter(url => url.active)[0].name}</div>}
+        }) : <div className="w-full text-2xl font-bold text-[rgb(10,8,58)] 2xl:text-lg flex items-center justify-center gap-2">{capitalizeLetter1(location.pathname, true)}</div>}
       </div>
       <div className="w-full h-fit grid place-items-center gap-8 circleLg:grid-cols-[60%_40%] circleLg:pt-[3rem] mini2xl:px-[3rem] 2xl:px-[7rem]">
         <Outlet />
