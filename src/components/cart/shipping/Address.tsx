@@ -3,6 +3,7 @@ import { SetStateAction, useEffect, useState } from "react";
 import VisitorAPI from 'visitorapi';
 import FTextField from "../../FormComponents/FTextField";
 import { Checkbox } from "@material-ui/core";
+import { IoMdArrowDropleft } from "react-icons/io";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -45,7 +46,7 @@ const Address = () => {
     };
 
     return (
-        <div className="w-full h-full flex flex-col items-center gap-4 xlssm:w-[90%] xMiniTablet:mt-[5rem]">
+        <div className="w-full h-full flex flex-col items-center gap-4 xlssm:w-[90%] xMiniTablet:mt-[5rem] circleLg:gap-8 2xl:-ml-24">
             <FTextField label="Email" />
             <div className="w-full h-fit flex gap-2">
                 <FTextField label="First name" />
@@ -102,7 +103,6 @@ const Address = () => {
                 className="w-full"
                 control={
                     <Checkbox
-                        defaultChecked
                         checked={saveDInfo}
                         color="primary"
                         size="small"
@@ -110,6 +110,15 @@ const Address = () => {
                     />
                 }
             />
+            <div className="w-full flex justify-between">
+                <span className="w-full flex items-center justify-start poppins font-black text-lg text-[rgb(10,8,58)] md:w-[90%]">
+                    <IoMdArrowDropleft />
+                    continue shopping
+                </span>
+                <button className="button hover:buttonOutline py-1 h-16 hover:py-1">
+                    Proceed to delivery
+                </button>
+            </div>
         </div>
     );
 }
