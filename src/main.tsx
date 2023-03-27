@@ -48,7 +48,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Route path="cart" element={<Cart />}>
           <Route path="" element={<CartItems />} />
           <Route path="address" element={<Address />} />
-          <Route path="shipping" element={<Shipping />} />
+          <Route path="delivery" element={<Shipping />} />
           <Route path="billing" element={<Billing />} />
         </Route>
 

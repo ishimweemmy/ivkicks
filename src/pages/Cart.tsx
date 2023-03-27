@@ -19,7 +19,7 @@ const Cart = () => {
       active: false
     },
     {
-      name: "Shipping",
+      name: "Delivery",
       active: false
     },
     {
