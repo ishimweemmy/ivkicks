@@ -2,19 +2,6 @@ import type { FC } from "react";
 import { colors } from "../../data";
 import { Bounce } from "react-reveal";
 
-export interface TriangleProps {
-  position: {
-    left?: number;
-    bottom?: number;
-    top?: number;
-    right?: number;
-    floatOr?: string;
-  };
-  id: number;
-  rotation: string;
-  delay?: number;
-}
-
 const Triangle: FC<TriangleProps> = (props) => {
   const { position, id, rotation, delay } = props;
 

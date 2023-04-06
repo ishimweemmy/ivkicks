@@ -3,30 +3,10 @@ import filledStar from "../../assets/Star 4.svg";
 import unFilledStar from "../../assets/Star 5.svg";
 import { FC } from "react";
 import { memo } from "react";
-
-export interface FeaturedProInterface {
-  rating: number;
-  description: string;
-  price: Number;
-  imgSource: string;
-  id: string;
-  indexId: number;
-  from?: string;
-}
-
-export interface color {
-  firstColor: string;
-  secondColor: string;
-}
+import { colors } from "../../data";
 
 const FeaturedPro: FC<FeaturedProInterface> = (props) => {
   const { rating, description, price, imgSource, id, indexId, from } = props;
-  const colors: color[] = [
-    { firstColor: "#FE7831", secondColor: "#FFDEBE" },
-    { firstColor: "#02BE83", secondColor: "#B3F6DC" },
-    { firstColor: "#FF3C78", secondColor: "#FFB2B2" },
-    { firstColor: "#8AA8F8", secondColor: "#315BFF" },
-  ];
 
   const styles = {
     background: `linear-gradient(270deg, ${colors[indexId].firstColor} 0%, ${colors[indexId].secondColor} 100%)`,

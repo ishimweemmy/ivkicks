@@ -1,7 +1,7 @@
 import { memo, useEffect, useState } from "react";
 import type { FC } from "react";
 
-const Cursor: FC<{ pageOver?: string }> = () => {
+const Cursor: FC<CursorProps> = () => {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
     x: -100,
     y: -100,

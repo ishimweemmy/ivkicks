@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import filledStar from "../../assets/Star 4.svg";
 import unFilledStar from "../../assets/Star 5.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -41,15 +41,15 @@ const Product = () => {
   const theUnfilledStars: JSX.Element[] =
     4 < 5
       ? [...Array(5 - Math.floor(4))].map((el: undefined, index: number) => {
-        return (
-          <img
-            src={unFilledStar}
-            alt=""
-            key={index}
-            className="miniTablet:w-3 2xl:max-w-4"
-          />
-        );
-      })
+          return (
+            <img
+              src={unFilledStar}
+              alt=""
+              key={index}
+              className="miniTablet:w-3 2xl:max-w-4"
+            />
+          );
+        })
       : [];
 
   const categoriesRef = useRef<HTMLDivElement | null>(null);
@@ -73,32 +73,34 @@ const Product = () => {
     { isActive: false, isAvailable: false, size: 10.5 },
   ]);
 
-  const accordionData = [
-    {
-      question: "Material",
-      answer:
-        "yes it is possible that you can change the shipping address anytime before 3 days but notice that if you do so it will the delay in the arrival of your order",
-      panel: "panel1",
-    },
-    {
-      question: "Delivery & Returns",
-      answer:
-        "Yeah, the discounts are available as well as the promo codes, but not on all the products",
-      panel: "panel2",
-    },
-    {
-      question: "Description",
-      answer:
-        "Yeah, that is very simple after you have added the product or you didn't that's also possible, click on the basket icon in the right corner and you're good to go",
-      panel: "panel3",
-    },
-    {
-      question: "Reviews",
-      answer:
-        "Yeah, that is very simple after you have added the product or you didn't that's also possible, click on the basket icon in the right corner and you're good to go",
-      panel: "panel4",
-    },
-  ];
+  const accordionData = useMemo(() => {
+    return [
+      {
+        question: "Material",
+        answer:
+          "yes it is possible that you can change the shipping address anytime before 3 days but notice that if you do so it will the delay in the arrival of your order",
+        panel: "panel1",
+      },
+      {
+        question: "Delivery & Returns",
+        answer:
+          "Yeah, the discounts are available as well as the promo codes, but not on all the products",
+        panel: "panel2",
+      },
+      {
+        question: "Description",
+        answer:
+          "Yeah, that is very simple after you have added the product or you didn't that's also possible, click on the basket icon in the right corner and you're good to go",
+        panel: "panel3",
+      },
+      {
+        question: "Reviews",
+        answer:
+          "Yeah, that is very simple after you have added the product or you didn't that's also possible, click on the basket icon in the right corner and you're good to go",
+        panel: "panel4",
+      },
+    ];
+  }, []);
 
   const toggleIsActive = (size: number) => {
     setAvailableSizes((prevSizes) => {
@@ -137,14 +139,12 @@ const Product = () => {
   const [miniLaptop, setMiniLaptop] = useState(window.innerWidth >= 900);
   const [mdTab, setMdTab] = useState(window.innerWidth >= 768);
 
-  const [nbrOfProducts, setNbrOfProducts] = useState(1);
-
   const resizeDetect = () => {
     setTablet(window.innerWidth >= 550);
     setLargeTablet(window.innerWidth <= 699);
     setMiniLaptop(window.innerWidth >= 900);
     setMdTab(window.innerWidth >= 768);
-  }
+  };
 
   useEffect(() => {
     window.addEventListener("resize", resizeDetect);
@@ -211,8 +211,9 @@ const Product = () => {
               spaceBetween={10}
               onSlideChange={(swiper) => {
                 if (categoriesRef.current) {
-                  categoriesRef.current.style.transform = `translateX(${swiper.activeIndex * 38
-                    }%)`;
+                  categoriesRef.current.style.transform = `translateX(${
+                    swiper.activeIndex * 38
+                  }%)`;
                 }
               }}
             >
@@ -226,8 +227,9 @@ const Product = () => {
                         className="max-w-none w-full h-full"
                       />
                       <div
-                        className={`w-11 h-11 rounded-full backdrop-blur-md absolute top-11 left-32 grid place-items-center border border-gray-400 ${index != 0 && "hidden"
-                          }`}
+                        className={`w-11 h-11 rounded-full backdrop-blur-md absolute top-11 left-32 grid place-items-center border border-gray-400 ${
+                          index != 0 && "hidden"
+                        }`}
                       >
                         <Add />
                       </div>
@@ -245,14 +247,16 @@ const Product = () => {
                       backgroundImage: `url(${img})`,
                       backgroundPosition: `center`,
                     }}
-                    className={`w-full h-full grid place-items-center bg-[#f5f5f5] bg-contain bg-no-repeat ${index == 0 ? "col-span-2" : ""
-                      }`}
+                    className={`w-full h-full grid place-items-center bg-[#f5f5f5] bg-contain bg-no-repeat ${
+                      index == 0 ? "col-span-2" : ""
+                    }`}
                   >
                     <img
                       src={img}
                       key={index}
-                      className={`w-full h-[60%] lg:h-[75%] 2xl:max-w-full 2xl:max-h-full ${index == 0 ? "col-span-2 lgMd:h-[80%] " : ""
-                        }`}
+                      className={`w-full h-[60%] lg:h-[75%] 2xl:max-w-full 2xl:max-h-full ${
+                        index == 0 ? "col-span-2 lgMd:h-[80%] " : ""
+                      }`}
                     />
                   </div>
                 );

@@ -1,15 +1,6 @@
 import type { FC } from "react";
-import Triangle, { TriangleProps } from "./Triangle";
-import { Zoom, Fade, Bounce, Flip } from "react-reveal";
-
-export interface QualityCProps {
-  imgSrc: string;
-  heading: string;
-  description: string;
-  triangles: TriangleProps[];
-  id: number;
-  delay: number;
-}
+import Triangle from "./Triangle";
+import { Zoom, Fade, Bounce } from "react-reveal";
 
 const QualityCard: FC<QualityCProps> = (props) => {
   const { imgSrc, heading, description, triangles, id, delay } = props;

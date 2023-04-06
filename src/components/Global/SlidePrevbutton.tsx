@@ -2,11 +2,7 @@ import { useSwiper } from "swiper/react";
 import type { FC } from "react";
 import { memo } from "react";
 
-interface ButtonProps {
-  swipingButtonRefPrev: any;
-}
-
-const SlidePrevButton: FC<ButtonProps> = (props) => {
+const SlidePrevButton: FC<PrevButtonProps> = (props) => {
   const swiper = useSwiper();
 
   return (

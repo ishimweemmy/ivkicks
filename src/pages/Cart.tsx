@@ -7,51 +7,68 @@ import { capitalizeLetter1 } from "../functions/capitalizeLetter1";
 import { useEffect, useState } from "react";
 
 const Cart = () => {
-  const location = useLocation()
+  const location = useLocation();
 
   const [locationUrls, setLocationUrls] = useState([
     {
       name: "Cart",
-      active: false
+      active: false,
     },
     {
       name: "Address",
-      active: false
+      active: false,
     },
     {
       name: "Delivery",
-      active: false
+      active: false,
     },
     {
       name: "Billing",
-      active: false
-    }
-  ])
+      active: false,
+    },
+  ]);
 
-  const [mobile, setMobile] = useState(window.innerWidth > 650)
-
-  useEffect(() => {
-    window.addEventListener('resize', () => setMobile(window.innerWidth > 650))
-    return () => window.removeEventListener('resize', () => setMobile(window.innerWidth > 650))
-  }, [mobile])
+  const [mobile, setMobile] = useState(window.innerWidth > 650);
 
   useEffect(() => {
-    setLocationUrls(prevUrls => {
-      return prevUrls.map(url => {
-        return url.name.toLowerCase() == capitalizeLetter1(location.pathname) ? { ...url, active: true } : url
-      })
-    })
-  }, [location])
+    window.addEventListener("resize", () => setMobile(window.innerWidth > 650));
+    return () =>
+      window.removeEventListener("resize", () =>
+        setMobile(window.innerWidth > 650)
+      );
+  }, [mobile]);
+
+  useEffect(() => {
+    setLocationUrls((prevUrls) => {
+      return prevUrls.map((url) => {
+        return url.name.toLowerCase() == capitalizeLetter1(location.pathname)
+          ? { ...url, active: true }
+          : url;
+      });
+    });
+  }, [location]);
 
   return (
     <div className="w-full h-fit py-4 flex flex-col items-center justify-center gap-2 bg-white px-2 circleLg:border-t ">
       <div className="w-full h-full pt-[1rem] flex justify-start items-center pl-[1rem] gap-2 bg-white lsm:px-8 xl:px-20 2xl:px-24">
-        {location.pathname != "/cart" && location.pathname != "/cart/" && mobile ? locationUrls.map((url, index) => {
-          return <div className={`w-fit text-2xl font-bold ${url.active ? "text-[rgb(10,8,58)]" : "text-slate-400"} flex items-center justify-center gap-2 circleLg:text-3xl`}>
-            <span>{url.name}</span>
-            {index != 3 && <IoMdArrowDropright />}
-          </div>
-        }) : !mobile && <div className="w-full text-2xl font-bold text-[rgb(10,8,58)] 2xl:text-lg flex items-center justify-center gap-2">{capitalizeLetter1(location.pathname, true)}</div>}
+        {location.pathname != "/cart" && location.pathname != "/cart/" && mobile
+          ? locationUrls.map((url, index) => {
+              return (
+                <div
+                  className={`w-fit text-2xl font-bold ${
+                    url.active ? "text-[rgb(10,8,58)]" : "text-slate-400"
+                  } flex items-center justify-center gap-2 circleLg:text-3xl`}
+                >
+                  <span>{url.name}</span>
+                  {index != 3 && <IoMdArrowDropright />}
+                </div>
+              );
+            })
+          : !mobile && (
+              <div className="w-full text-2xl font-bold text-[rgb(10,8,58)] 2xl:text-lg flex items-center justify-center gap-2">
+                {capitalizeLetter1(location.pathname, true)}
+              </div>
+            )}
       </div>
       <div className="w-full h-fit grid place-items-center gap-8 circleLg:grid-cols-[60%_40%] circleLg:pt-[3rem] mini2xl:px-[3rem] 2xl:px-[7rem]">
         <Outlet />
@@ -101,8 +118,9 @@ const Cart = () => {
                       <img
                         src={`/server-assets/${src}`}
                         key={index}
-                        className={`w-14 h-12 ${index == 0 && "scale-150"} ${index == 1 && "h-5"
-                          }`}
+                        className={`w-14 h-12 ${index == 0 && "scale-150"} ${
+                          index == 1 && "h-5"
+                        }`}
                         alt=""
                       />
                     );
@@ -121,7 +139,11 @@ const Cart = () => {
           continue shopping
         </span>
       </div>
-      {location.pathname == "/cart" || location.pathname == "/cart/" ? <YoumayLikes /> : <></>}
+      {location.pathname == "/cart" || location.pathname == "/cart/" ? (
+        <YoumayLikes />
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

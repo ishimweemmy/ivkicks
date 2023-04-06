@@ -3,7 +3,7 @@ import { AiFillFilePdf } from "react-icons/ai";
 import { catalogueData } from "../../data";
 import Triangle from "../About/Triangle";
 import Category from "./Category";
-import { Zoom, Flip, Fade, Bounce } from "react-reveal";
+import { Zoom, Bounce } from "react-reveal";
 
 const Catalogue = () => {
   return (

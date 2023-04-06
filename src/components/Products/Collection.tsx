@@ -1,13 +1,6 @@
 import { FC, memo } from "react";
 
-interface CollectionProps {
-  id: number;
-  imgSrc: string;
-  categoryName: string;
-  productsNbr: number;
-}
-
-const Collection: FC<CollectionProps> = (props) => {
+const Collection: FC<CollectionProps1> = (props) => {
   const { id, imgSrc, categoryName, productsNbr } = props;
   return (
     <div

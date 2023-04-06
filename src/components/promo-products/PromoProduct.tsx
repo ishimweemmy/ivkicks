@@ -5,17 +5,6 @@ import filledStar from "../../assets/Star 4.svg";
 import unFilledStar from "../../assets/Star 5.svg";
 import { memo } from "react";
 
-export interface PromoProductProps {
-  sneakerName: string;
-  madeOf: string;
-  durabilityType: string;
-  imgSrc: string;
-  userImage: string;
-  rating: number;
-  userTestimonial: string;
-  id: number;
-}
-
 const PromoProduct: FC<PromoProductProps> = (props) => {
   const {
     sneakerName,

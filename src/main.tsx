@@ -22,8 +22,8 @@ import Product from "./components/Products/Product";
 import Auth from "./pages/auth/Auth";
 const Shipping = lazy(() => import("./components/cart/shipping/Shipping"));
 const Billing = lazy(() => import("./components/cart/shipping/Billing"));
-const CartItems = lazy(() => import("./components/cart/CartItems"))
-const Address = lazy(() => import("./components/cart/shipping/Address"))
+const CartItems = lazy(() => import("./components/cart/CartItems"));
+const Address = lazy(() => import("./components/cart/shipping/Address"));
 const Collections = lazy(() => import("./pages/Collections"));
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

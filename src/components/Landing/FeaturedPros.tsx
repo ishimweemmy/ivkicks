@@ -1,5 +1,4 @@
 import { memo, useEffect, useRef, useState } from "react";
-import { FeaturedProInterface } from "./FeaturedPro";
 import FeaturedPro from "./FeaturedPro";
 import chevronLeft from "../../assets/chevron-right.png";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -20,7 +19,7 @@ const FeaturedPros = () => {
     setMobile(window.innerWidth <= 765);
     setTablet(window.innerWidth <= 769);
     setDesktop(window.innerWidth <= 1024);
-  }
+  };
 
   useEffect(() => {
     window.addEventListener("resize", resizeDetect);

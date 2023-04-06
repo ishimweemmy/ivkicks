@@ -1,12 +1,9 @@
-import { useEffect, useState } from "react";
 import backDecor from "../../assets/backDecor.svg";
 import alexanderMcQueen from "../../assets/videoBg.png";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import Car from "../../assets/Car.png";
-import Group from "../../assets/Group.png";
-import Group1 from "../../assets/Group-1.png";
-import Wallet from "../../assets/Wallet.png";
 import { Fade, Zoom } from "react-reveal";
+import { reasonsData } from "../../data";
+
 const WhyUs = () => {
   return (
     <div className="w-full h-[150vh] bg-white flex flex-col items-center justify-center gap-[2rem] md:flex-row-reverse md:h-[100vh] md:items-end md:pb-[5rem] ">
@@ -25,12 +22,7 @@ const WhyUs = () => {
         </Fade>
         <Fade bottom delay={1000}>
           <div className="w-full h-fit md:grid place-items-center gap-[2rem] hidden md:grid-cols-2 md:justify-items-start">
-            {[
-              { imgSrc: Car, name: "Fast delivery" },
-              { imgSrc: Wallet, name: "cool prices" },
-              { imgSrc: Group, name: "Great Support" },
-              { imgSrc: Group1, name: "Hight Quality" },
-            ].map((item) => {
+            {reasonsData.map((item) => {
               return (
                 <div className="w-[10rem] flex gap-3 text-sm">
                   <img src={item.imgSrc} alt="" />{" "}
@@ -58,12 +50,7 @@ const WhyUs = () => {
         />
       </div>
       <div className="w-full h-fit grid place-items-center gap-[2rem] md:hidden">
-        {[
-          { imgSrc: Car, name: "Fast delivery" },
-          { imgSrc: Wallet, name: "cool prices" },
-          { imgSrc: Group, name: "Great Support" },
-          { imgSrc: Group1, name: "Hight Quality" },
-        ].map((item) => {
+        {reasonsData.map((item) => {
           return (
             <Fade bottom>
               <div className="w-[10rem] flex gap-3 text-sm">

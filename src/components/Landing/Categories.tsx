@@ -26,7 +26,7 @@ const Categories = () => {
     setMobile(window.innerWidth <= 768 ? true : false);
     setMiniLaptop(window.innerWidth <= 1226 ? true : false);
     setSmallMobile(window.innerWidth <= 500 ? true : false);
-  }
+  };
   useEffect(() => {
     window.addEventListener("resize", resizeDetect);
     return () => window.removeEventListener("resize", resizeDetect);
@@ -78,10 +78,11 @@ const Categories = () => {
             spaceBetween={smallMobile ? 10 : mobile ? 15 : miniLaptop ? 20 : 30}
             onSlideChange={(swiper) => {
               if (categoriesRef.current) {
-                categoriesRef.current.style.transform = `translateX(${mobile
+                categoriesRef.current.style.transform = `translateX(${
+                  mobile
                     ? swiper.activeIndex * 35
                     : (swiper.activeIndex * 200) / collectionsData.length
-                  }%)`;
+                }%)`;
               }
             }}
           >

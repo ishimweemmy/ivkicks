@@ -1,9 +1,5 @@
 const OrderSummary = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return <div></div>;
+};
 
-export default OrderSummary
+export default OrderSummary;

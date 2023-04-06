@@ -2,11 +2,11 @@ import { memo, useEffect, useState } from "react";
 import { Tablet, Twitter } from "@mui/icons-material";
 import { FacebookRounded } from "@mui/icons-material";
 import { Instagram } from "@mui/icons-material";
-import Social, { SocialProps } from "./Social";
+import Social from "./Social";
 import type { FC } from "react";
 import { Bounce } from "react-reveal";
 
-const Socials: FC<{ section?: string }> = (props) => {
+const Socials: FC<SocialsProps> = (props) => {
   const { section } = props;
   const [tablet, setTablet] = useState(window.innerWidth > 768 ? true : false);
   const [mobile, setMobile] = useState(window.innerWidth < 768 ? true : false);
@@ -14,11 +14,11 @@ const Socials: FC<{ section?: string }> = (props) => {
   const resizeDetect = () => {
     setTablet(window.innerWidth > 768 ? true : false);
     setMobile(window.innerWidth < 768 ? true : false);
-  }
+  };
 
   useEffect(() => {
     window.addEventListener("resize", resizeDetect);
-    return () => window.removeEventListener('resize', resizeDetect)
+    return () => window.removeEventListener("resize", resizeDetect);
   }, [tablet, mobile]);
 
   const socialsData: SocialProps[] = [
@@ -71,16 +71,19 @@ const Socials: FC<{ section?: string }> = (props) => {
       <div
         className="w-full h-[20%] flex items-center justify-center gap-3"
         style={{
-          justifyContent: `${section == "subscriptions" && tablet
-            ? "flex-end"
-            : section == "footer" && !mobile
+          justifyContent: `${
+            section == "subscriptions" && tablet
+              ? "flex-end"
+              : section == "footer" && !mobile
               ? "flex-start"
               : "center"
-            }`,
-          paddingRight: `${section == "subscriptions" && tablet ? "2rem" : "0"
-            }`,
-          alignItems: `${section == "subscriptions" && tablet ? "flex-end" : "center"
-            }`,
+          }`,
+          paddingRight: `${
+            section == "subscriptions" && tablet ? "2rem" : "0"
+          }`,
+          alignItems: `${
+            section == "subscriptions" && tablet ? "flex-end" : "center"
+          }`,
         }}
       >
         {socials}

@@ -1,14 +1,6 @@
 import type { FC } from "react";
 import { AiOutlineZoomIn } from "react-icons/ai";
 
-interface YouMayLikeProps {
-  name: string;
-  imgSrc: string;
-  company: string;
-  price: number;
-  id: number;
-}
-
 const YouMayLike: FC<YouMayLikeProps> = (props) => {
   const { name, imgSrc, company, price, id } = props;
   return (

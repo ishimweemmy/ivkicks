@@ -1,7 +1,5 @@
 const Sale = () => {
-  return (
-    <div>Sale</div>
-  )
-}
+  return <div>Sale</div>;
+};
 
-export default Sale
+export default Sale;

@@ -6,7 +6,7 @@ import { Autoplay, Controller } from "swiper";
 import "swiper/css";
 import "swiper/css/autoplay";
 import SlideNextButton from "../../../components/Global/SlideNextButton";
-import SlidePrevButton from "../../../components/Global/SlidePrev";
+import SlidePrevButton from "../../../components/Global/SlidePrevbutton";
 import PromoProduct from "../../../components/promo-products/PromoProduct";
 import Circle from "../../../components/promo-products/Circle";
 import { promoProducts } from "../../../data";
@@ -167,15 +167,18 @@ const Promo = () => {
             </div>
           </Bounce>
           <div className="w-[90%] h-fit flex justify-between mt-[6rem] px-2 lsm:w-full lsm:mt-[10rem] md:mt-[12rem] lg:px-[4rem] mini2xl:w-[80%] z-50 ">
-            <Fade left duration={1200} delay={2000}><FiArrowLeft
-              className="text-white lsm:text-xl"
-              onClick={() => swipingButtonRefPrev.current?.click()}
-            /></Fade>
-            <Fade right duration={1200} delay={2000}><FiArrowRight
-              className="text-white lsm:text-xl"
-              onClick={() => swipingButtonRef.current?.click()}
-            /></Fade>
-            
+            <Fade left duration={1200} delay={2000}>
+              <FiArrowLeft
+                className="text-white lsm:text-xl"
+                onClick={() => swipingButtonRefPrev.current?.click()}
+              />
+            </Fade>
+            <Fade right duration={1200} delay={2000}>
+              <FiArrowRight
+                className="text-white lsm:text-xl"
+                onClick={() => swipingButtonRef.current?.click()}
+              />
+            </Fade>
           </div>
         </div>
       </div>

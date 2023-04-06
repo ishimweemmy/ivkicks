@@ -9,22 +9,11 @@ import { useState } from "react";
 import { ImCross } from "react-icons/im";
 import Incrementor from "../Global/Incrementor";
 
-interface CartItem {
-  id: number;
-  imgSrc: string;
-  name: string;
-  description: string;
-  size: number;
-  price: number;
-  quantity: number;
-}
-
 const CartItem = () => {
   const [nbrOfShoes, setNbrOfShoes] = useState("");
   const handleSelectionChange = (event: SelectChangeEvent) => {
     setNbrOfShoes(event.target.value as string);
   };
-  const [nbrOfProducts, setNbrOfProducts] = useState(1);
 
   return (
     <div className="w-full h-[8rem] bg-white flex items-center justify-center gap-2 md:h-full md:gap-8 2xl:w-[90%]">

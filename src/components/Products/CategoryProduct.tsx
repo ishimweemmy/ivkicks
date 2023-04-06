@@ -2,15 +2,6 @@ import { AiOutlineHeart } from "react-icons/ai";
 import type { FC } from "react";
 import { Fade } from "react-reveal";
 
-interface CategoryProductProps {
-  id: number;
-  imgSrc: string;
-  discount?: number;
-  sneakersName: string;
-  sneakersType: string;
-  price: number;
-}
-
 const CategoryProduct: FC<CategoryProductProps> = (props) => {
   const { imgSrc, discount, sneakersName, sneakersType, price } = props;
   return (

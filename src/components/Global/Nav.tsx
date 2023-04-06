@@ -10,12 +10,6 @@ import { FiMenu } from "react-icons/fi";
 import { links } from "../../data";
 import { Fade } from "react-reveal";
 
-interface Link {
-  to: string;
-  end: boolean;
-  displayName: string;
-}
-
 const Nav: FC = () => {
   const homeLinkRef = useRef<HTMLAnchorElement>(null);
 
@@ -27,13 +21,14 @@ const Nav: FC = () => {
         className={`w-auto h-[6rem] flex items-center justify-around px-[7rem] gap-[12rem] lg:gap-[4rem] lg:px-[2rem] md:justify-between md:px-8 lsm:gap-[25rem] xMiniTablet:gap-[30rem] transition-all overflow-hidden z-30 lssm:justify-between lssm:px-4 xl:pl-[5rem] xs:gap-2 xs:p-0 xs:pl-4 xs:justify-between 2xl:pl-[6rem] duration-700`}
         id="top"
         style={{
-          background: `${location.pathname == "/about" ||
-              location.pathname == "/products/promoProducts"
+          background: `${
+            location.pathname == "/about" ||
+            location.pathname == "/products/promoProducts"
               ? "rgb(10,8,58)"
               : location.pathname == "/"
-                ? "#F5F5F5"
-                : "white"
-            }`,
+              ? "#F5F5F5"
+              : "white"
+          }`,
         }}
       >
         <img
@@ -54,11 +49,12 @@ const Nav: FC = () => {
                     : `text-lg font-medium grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] transition-all duration-1000`
                 }
                 style={{
-                  color: `${location.pathname == "/about" ||
-                      location.pathname == "/products/promoProducts"
+                  color: `${
+                    location.pathname == "/about" ||
+                    location.pathname == "/products/promoProducts"
                       ? "white"
                       : "#0A083A"
-                    }`,
+                  }`,
                 }}
                 ref={link.to === "/" ? homeLinkRef : null}
                 key={link.to}
@@ -70,34 +66,37 @@ const Nav: FC = () => {
         </div>
         <div className="min-w-[10rem] lg:w-[20rem] h-[4rem] sm:min-w-[8rem] xs:gap-6 bg-[bue] bg-blue] flex items-center justify-center gap-8 lg:gap-[3rem] sm:gap-8 transition-all">
           <FiSearch
-            className={`w-[1.3rem] xs:w-[1rem] lg:w-[2rem] miniTablet:w-[3rem] miniTablet:h-[1.5rem] lg:h-[1.5rem] h-[1.3rem] sm:w-[1rem] block md:hidden lg:block font-black text-${location.pathname == "/about" ||
-                location.pathname == "/products/promoProducts"
+            className={`w-[1.3rem] xs:w-[1rem] lg:w-[2rem] miniTablet:w-[3rem] miniTablet:h-[1.5rem] lg:h-[1.5rem] h-[1.3rem] sm:w-[1rem] block md:hidden lg:block font-black text-${
+              location.pathname == "/about" ||
+              location.pathname == "/products/promoProducts"
                 ? "white"
                 : "black"
-              }`}
+            }`}
           />
           <FiUser
-            className={`w-[1.5rem] h-[1.5rem] hidden lg:block text-${location.pathname == "/about" ||
-                location.pathname == "/products/promoProducts"
+            className={`w-[1.5rem] h-[1.5rem] hidden lg:block text-${
+              location.pathname == "/about" ||
+              location.pathname == "/products/promoProducts"
                 ? "white"
                 : "to-black"
-              }`}
+            }`}
           />
 
           <Link to="/cart" className="w-fit h-fit relative md:hidden lg:block">
             <FiShoppingBag
-              className={`w-[1.5rem] xs:w-[1rem] sm:w-[1rem] miniTablet:w-[1.75rem] lg:w-[2rem] h-[1.5rem] font-bold ${location.pathname == "/about" ||
-                  location.pathname == "/products/promoProducts"
+              className={`w-[1.5rem] xs:w-[1rem] sm:w-[1rem] miniTablet:w-[1.75rem] lg:w-[2rem] h-[1.5rem] font-bold ${
+                location.pathname == "/about" ||
+                location.pathname == "/products/promoProducts"
                   ? "text-white"
                   : "black"
-                }`}
+              }`}
             />
             <span className="absolute bg-[#FF3C78] w-[1.2rem] xs:w-[1rem] xs:h-[1rem] xs:text-xs xs:font-semibold sm:w-[.9rem] sm:h-[.9rem] lg:w-[1rem] lg:h-[1rem] h-[1.2rem] sm:text-xs rounded-full grid place-content-center text-white right-[-.5rem] miniTablet:right-[-.3rem]  lg:right-[-.3rem] top-[.75rem]">
               3
             </span>
           </Link>
           {location.pathname != "/about" &&
-            location.pathname != "/products/promoProducts" ? (
+          location.pathname != "/products/promoProducts" ? (
             <img
               src={menu}
               alt="menu"
@@ -112,10 +111,11 @@ const Nav: FC = () => {
           )}
         </div>
         <div
-          className={`${!isDisplayed
+          className={`${
+            !isDisplayed
               ? "animate-nav-hide h-0 md:h-0 miniTablet:h-0 md:animate-nav-display-hide miniTablet:animate-nav-display-hide"
               : "h-[8rem] md:h-[10rem]"
-            } lg:hidden bg-white w-[10rem] xs:w-[8rem] md:w-[12rem] miniTablet:w-[15rem] absolute top-[4.5rem] right-3 miniTablet:right-[7rem] sm:right-[1rem] flex flex-col justify-center transition-all duration-300 overflow-hidden gap-2`}
+          } lg:hidden bg-white w-[10rem] xs:w-[8rem] md:w-[12rem] miniTablet:w-[15rem] absolute top-[4.5rem] right-3 miniTablet:right-[7rem] sm:right-[1rem] flex flex-col justify-center transition-all duration-300 overflow-hidden gap-2`}
           style={{ boxShadow: "#d3d3d3 0px 2px 20px 0px" }}
         >
           {links.map((link) => {

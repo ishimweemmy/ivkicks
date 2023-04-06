@@ -1,6 +1,6 @@
 import { differenceData } from "../../data";
 import DiffCard from "./DiffCard";
-import { Zoom, Bounce } from "react-reveal";
+import { Bounce } from "react-reveal";
 
 const Difference = () => {
   return (

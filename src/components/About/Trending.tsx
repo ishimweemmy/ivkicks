@@ -2,14 +2,6 @@ import type { FC } from "react";
 import { FiShoppingBag } from "react-icons/fi";
 import { Flip } from "react-reveal";
 
-interface TrendingProps {
-  imgSrc: string;
-  name: string;
-  size: number;
-  price: number;
-  category: string;
-}
-
 const Trending: FC<TrendingProps> = (props) => {
   const { imgSrc, name, category, size, price } = props;
 

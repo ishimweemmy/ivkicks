@@ -5,7 +5,6 @@ import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import NewArrival from "../Global/NewArrival";
-import { FeaturedProInterface } from "./FeaturedPro";
 import "swiper/css/autoplay";
 import { newArrivalsData } from "../../data";
 import { Zoom, Flip } from "react-reveal";
@@ -27,7 +26,7 @@ const NewArrivals: FC<FeaturedProInterface> = () => {
     setMobile(window.innerWidth <= 767 ? true : false);
     setMiniLaptop(window.innerWidth <= 1226 ? true : false);
     setSmallMobile(window.innerWidth <= 500 ? true : false);
-  }
+  };
 
   useEffect(() => {
     window.addEventListener("resize", resizeDetect);

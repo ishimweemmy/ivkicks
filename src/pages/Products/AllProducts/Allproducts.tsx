@@ -1,12 +1,5 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
 
-const Allproducts = () => {
-  return (
-    <div>
-      <Outlet />
-    </div>
-  );
-};
+const Allproducts = () => <Outlet />;
 
 export default Allproducts;

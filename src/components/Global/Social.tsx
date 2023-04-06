@@ -1,13 +1,6 @@
 import type { FC } from "react";
 import { memo } from "react";
 
-export interface SocialProps {
-  name: string;
-  link: string;
-  icon: any;
-  section?: string;
-}
-
 const Social: FC<SocialProps> = (props) => {
   const { icon, section, ...others } = props;
   return (

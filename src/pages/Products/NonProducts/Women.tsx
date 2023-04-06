@@ -1,11 +1,5 @@
 import { Outlet } from "react-router-dom";
 
-const Women = () => {
-  return (
-    <div>
-      <Outlet />
-    </div>
-  );
-};
+const Women = () => <Outlet />;
 
 export default Women;

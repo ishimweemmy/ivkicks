@@ -2,12 +2,11 @@ import {
   MenuItem,
   OutlinedInput,
   SelectChangeEvent,
-  TextField,
   Select,
   FormControl,
   FormControlLabel,
 } from "@mui/material";
-import { SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import VisitorAPI from "visitorapi";
 import FTextField from "../../FormComponents/FTextField";
 import { Checkbox } from "@material-ui/core";

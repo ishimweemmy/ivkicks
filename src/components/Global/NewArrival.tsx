@@ -1,6 +1,4 @@
 import type { FC } from "react";
-import arrivalShoe from "../../assets/image 7.png";
-import { color, FeaturedProInterface } from "../Landing/FeaturedPro";
 import filledStar from "../../assets/Star 4.svg";
 import unFilledStar from "../../assets/Star 5.svg";
 import { colors } from "../../data";

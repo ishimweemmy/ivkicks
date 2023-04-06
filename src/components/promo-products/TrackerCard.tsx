@@ -1,11 +1,6 @@
 import type { FC } from "react";
 import { memo } from "react";
 
-interface TrackerCard {
-  id: number;
-  measurement: string;
-  imgSrc: string;
-}
 const TrackerCard: FC<TrackerCard> = (props) => {
   const { id, measurement, imgSrc } = props;
   return (

@@ -1,21 +1,9 @@
 import type { FC } from "react";
-import { color } from "../Landing/FeaturedPro";
 import { Fade } from "react-reveal";
-
-interface TasteProps {
-  imgUrl: string;
-  heading: string;
-  content: string;
-  id: number;
-}
+import { colors } from "../../data";
 
 const Taste: FC<TasteProps> = (props) => {
   const { imgUrl, heading, content, id } = props;
-  const colors: color[] = [
-    { firstColor: "#FE7831", secondColor: "#FFDEBE" },
-    { firstColor: "#FF3C78", secondColor: "#FFB2B2" },
-    { firstColor: "#02BE83", secondColor: "#B3F6DC" },
-  ];
 
   const styles = {
     background: `linear-gradient(270deg, ${colors[id - 1].firstColor} 0%, ${

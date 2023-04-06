@@ -19,6 +19,8 @@ import theLookData from "./theLookData.json";
 import youMayLike from "./youmayLike.json";
 import collections from "./collections.json";
 import categoryProData from "./categoryPro.json";
+import brandLogosData from "./brandLogos.json";
+import reasonsData from "./reasonsData.json";
 
 export {
   brandsData,
@@ -42,4 +44,6 @@ export {
   youMayLike,
   collections,
   categoryProData,
+  brandLogosData,
+  reasonsData,
 };

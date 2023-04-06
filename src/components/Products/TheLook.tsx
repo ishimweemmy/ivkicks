@@ -1,13 +1,5 @@
 import { FC, useEffect, useState } from "react";
 
-interface TheLookProps {
-  name: string;
-  imgSrc: string;
-  type: string;
-  price: number;
-  id: number;
-}
-
 const TheLook: FC<TheLookProps> = (props) => {
   const { name, imgSrc, type, price, id } = props;
   const [tablet, setTablet] = useState(window.innerWidth >= 768);
@@ -17,6 +9,7 @@ const TheLook: FC<TheLookProps> = (props) => {
       setTablet(window.innerWidth >= 768);
     });
   }, [tablet]);
+
   return (
     <div className="w-full h-full flex flex-col gap-4 ">
       <div

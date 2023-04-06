@@ -20,7 +20,7 @@ import "swiper/css/autoplay";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import SlideNextButton from "../components/Global/SlideNextButton";
-import SlidePrevButton from "../components/Global/SlidePrev";
+import SlidePrevButton from "../components/Global/SlidePrevbutton";
 import { useMemo, useRef, useState } from "react";
 import alexander from "/server-assets/alexander.png";
 import { Link } from "react-router-dom";

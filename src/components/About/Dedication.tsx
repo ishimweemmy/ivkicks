@@ -6,7 +6,7 @@ import { Pagination } from "swiper";
 import leftIcon from "../../assets/arrow-left-circle.png";
 import rightIcon from "../../assets/arrow-left-circle-1.png";
 import SlideNextButton from "../Global/SlideNextButton";
-import SlidePrevButton from "../Global/SlidePrev";
+import SlidePrevButton from "../Global/SlidePrevbutton";
 import DedCard from "./DedCard";
 import { brandsData } from "../../data";
 import { Zoom, Bounce, Fade } from "react-reveal";
@@ -28,12 +28,12 @@ const Dedication = () => {
     setMobile(window.innerWidth <= 767 ? true : false);
     setMiniLaptop(window.innerWidth <= 1226 ? true : false);
     setSmallMobile(window.innerWidth <= 500 ? true : false);
-  }
+  };
 
   useEffect(() => {
     window.addEventListener("resize", resizeDetect);
 
-    return () => window.removeEventListener('resize', resizeDetect);
+    return () => window.removeEventListener("resize", resizeDetect);
   }, [mobile, miniLaptop, smallMobile]);
 
   const swipingButtonRef = useRef<HTMLButtonElement | null>(null);

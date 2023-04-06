@@ -3,13 +3,13 @@ import { Autoplay, Controller } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { designerTalksData, testimonialsData } from "../../data";
 import SlideNextButton from "../Global/SlideNextButton";
-import SlidePrevButton from "../Global/SlidePrev";
+import SlidePrevButton from "../Global/SlidePrevbutton";
 import { useRef, useState } from "react";
 import leftArrow from "../../assets/arrow-left-circle-1.png";
 import rightArrow from "../../assets/arrow-left-circle.png";
 import mcQueenWear from "../../assets/mcQueenWear.jpeg";
 import DesignerTalk from "./DesignerTalk";
-import { Fade, Bounce} from "react-reveal";
+import { Fade, Bounce } from "react-reveal";
 import "swiper/css";
 import "swiper/css/navigation";
 

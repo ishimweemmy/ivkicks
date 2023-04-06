@@ -14,7 +14,7 @@ import OurProducts from "../components/About/OurProducts";
 import PopularBrands from "../components/About/PopularBrands";
 import { descriptionsData } from "../data";
 import { Link } from "react-router-dom";
-import { Fade, Zoom, Flip, Bounce } from "react-reveal";
+import { Zoom, Flip } from "react-reveal";
 
 const About = () => {
   return (

@@ -2,13 +2,6 @@ import type { FC } from "react";
 import { FiExternalLink } from "react-icons/fi";
 import { memo } from "react";
 
-interface CategoryProps {
-  url: string;
-  img: string;
-  name: string;
-  id: number;
-}
-
 const Category: FC<CategoryProps> = (props) => {
   const { url, img, name, id } = props;
 

@@ -1,11 +1,5 @@
 import type { FC } from "react";
 
-interface DescriptionProps {
-  imgSrc: string;
-  description: string;
-  degree: number;
-}
-
 const Description: FC<DescriptionProps> = (props) => {
   const { imgSrc, description, degree } = props;
   return (

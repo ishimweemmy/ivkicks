@@ -4,7 +4,7 @@ import subscriptionSneaker from "../../assets/subscription.png";
 import { Flip, Zoom, Bounce } from "react-reveal";
 import type { FC } from "react";
 
-const Subscriptions: FC<{ page?: string }> = (props) => {
+const Subscriptions: FC<PageProps> = (props) => {
   const [email, setEmail] = useState("");
   const [emailValid, setEmailValid] = useState(true);
   const [tablet, setTablet] = useState(window.innerWidth > 768 ? true : false);
@@ -26,12 +26,14 @@ const Subscriptions: FC<{ page?: string }> = (props) => {
   const handleSubscription = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const regEX = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}.[A-Z]/gim;
-    const emailValidation = regEX.test(email);
+    const emailValidation = regEX.exec(email);
     console.log({ email });
   };
   return (
     <div
-      className={`w-full h-screen flex flex-col rounded-tr-2xl rounded-br-2xl md:flex-row md:h-[50vh] md:w-screen gMd:w-[90%] ${props.page === "collections" && "gMd:w-full" }`}
+      className={`w-full h-screen flex flex-col rounded-tr-2xl rounded-br-2xl md:flex-row md:h-[50vh] md:w-screen gMd:w-[90%] ${
+        props.page === "collections" && "gMd:w-full"
+      }`}
       style={{
         background:
           "linear-gradient(97.49deg, #8AA8F8 -0.43%, #315BFF 144.53%)",

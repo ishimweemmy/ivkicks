@@ -1,7 +1,7 @@
 import { useState } from "react";
 import FacAccordion from "./FacAccordion";
 import Triangle from "../About/Triangle";
-import { Fade, Bounce, Flip, Zoom } from "react-reveal";
+import { Bounce, Zoom } from "react-reveal";
 
 const Faqs = () => {
   const [accordionData, setAccordionData] = useState([

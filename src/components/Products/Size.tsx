@@ -1,12 +1,5 @@
 import type { FC } from "react";
 
-interface SizeProps {
-  isAvailable: boolean;
-  isActive: boolean;
-  size: number;
-  toggleIsActive: (size: number) => any;
-}
-
 const Size: FC<SizeProps> = (props) => {
   const { isActive, isAvailable, size, toggleIsActive } = props;
   return (

@@ -5,13 +5,6 @@ import filledStar from "../../assets/Star 4.svg";
 import { Zoom, Fade, Bounce } from "react-reveal";
 import Bubble from "./Bubble";
 
-interface BestSeller {
-  rating: number;
-  improvement: string;
-  description: string;
-  price: number;
-}
-
 const BestSeller: FC<BestSeller> = (props) => {
   const { rating, improvement, description, price } = props;
 

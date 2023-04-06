@@ -3,12 +3,6 @@ import type { FC } from "react";
 import filledStar from "../../assets/Star 4.svg";
 import unFilledStar from "../../assets/Star 5.svg";
 
-interface CustomerTestProps {
-  customerName: string;
-  rating: number;
-  testimonial: string;
-}
-
 const Testimonial: FC<CustomerTestProps> = (props) => {
   const { customerName, rating, testimonial } = props;
   const theFilledStars: JSX.Element[] = [...Array(Math.floor(rating))].map(
@@ -34,7 +28,9 @@ const Testimonial: FC<CustomerTestProps> = (props) => {
         {theFilledStars}
         {theUnfilledStars}
       </span>
-      <p className="text-white text-sm text-center font-bold z-10 mini2xl:text-start">{testimonial}</p>
+      <p className="text-white text-sm text-center font-bold z-10 mini2xl:text-start">
+        {testimonial}
+      </p>
       <span className="text-[#2e1fff] text-sm">{customerName}</span>
     </div>
   );

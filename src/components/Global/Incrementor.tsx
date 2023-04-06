@@ -1,10 +1,5 @@
-import React, { memo, useState } from "react";
+import { memo, useState } from "react";
 import type { FC } from "react";
-interface IncrementorProps {
-  customStyles?: {
-    container: string;
-  };
-}
 
 const Incrementor: FC<IncrementorProps> = (props) => {
   const [nbrOfProducts, setNbrOfProducts] = useState(1);

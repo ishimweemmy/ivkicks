@@ -1,20 +1,10 @@
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
-import { useEffect, useState } from "react";
 import type { FC } from "react";
 import { IoMdAdd } from "react-icons/io";
 import { IoIosRemove } from "react-icons/io";
 import { Fade } from "react-reveal";
 
-export interface AccordionProps {
-  question: string;
-  answer: string;
-  expanded: boolean;
-  panel: string;
-  handleChange: (question: string) => any;
-  page?: string;
-}
-
-const FacAccordion: FC<AccordionProps> = (props) => {
+const FacAccordion: FC<AccordionProps1> = (props) => {
   const { question, answer, handleChange, panel, expanded, page } = props;
 
   return (

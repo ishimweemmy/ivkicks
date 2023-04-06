@@ -122,7 +122,7 @@ const Collections = () => {
     setLsm(window.innerWidth <= 500);
     setMd(window.innerWidth >= 768);
     set2xl(window.innerWidth >= 1536);
-  }
+  };
 
   useEffect(() => {
     window.addEventListener("resize", resizeDetect);
@@ -298,8 +298,9 @@ const Collections = () => {
                       className="hover:bg-[#f5f5f5] border-0"
                     >
                       <span
-                        className={`w-full text-base font-bold hover:text-[#0A083A] ${open ? "text-[#0A083A]" : "text-gray-600"
-                          }  transition-all duration-700 flex justify-between items-center`}
+                        className={`w-full text-base font-bold hover:text-[#0A083A] ${
+                          open ? "text-[#0A083A]" : "text-gray-600"
+                        }  transition-all duration-700 flex justify-between items-center`}
                       >
                         {label}
                       </span>
@@ -366,8 +367,9 @@ const Collections = () => {
                       className="hover:bg-[#f5f5f5] border-0"
                     >
                       <span
-                        className={`w-full text-base font-bold hover:text-[#0A083A] ${open ? "text-[#0A083A]" : "text-gray-600"
-                          }  transition-all duration-700 flex justify-between items-center`}
+                        className={`w-full text-base font-bold hover:text-[#0A083A] ${
+                          open ? "text-[#0A083A]" : "text-gray-600"
+                        }  transition-all duration-700 flex justify-between items-center`}
                       >
                         {label}
                       </span>
@@ -429,8 +431,8 @@ const Collections = () => {
                 mobile
                   ? categoryProData.length
                   : md
-                    ? Math.floor(categoryProData.length / 3)
-                    : categoryProData.length / 2
+                  ? Math.floor(categoryProData.length / 3)
+                  : categoryProData.length / 2
               }
               siblingCount={0}
               defaultPage={1}

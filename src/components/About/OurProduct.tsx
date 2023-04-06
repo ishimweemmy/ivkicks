@@ -1,24 +1,12 @@
 import type { FC } from "react";
-import { color } from "../Landing/FeaturedPro";
 import { Link } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
 import { Fade, Flip } from "react-reveal";
-
-export interface OurProductProps {
-  imgSrc: string;
-  id: number;
-  summary: string;
-  description: string;
-  productUrl: string;
-}
+import { colors } from "../../data";
 
 const OurProduct: FC<OurProductProps> = (props) => {
   const { imgSrc, id, summary, description, productUrl } = props;
-  const colors: color[] = [
-    { firstColor: "#FE7831", secondColor: "#FFDEBE" },
-    { firstColor: "#8AA8F8", secondColor: "#315BFF" },
-    { firstColor: "#FF3C78", secondColor: "#FFB2B2" },
-  ];
+
   const textColors: string[] = ["#315BFF", "#FE7831", "#FF3C78", "#02BE83"];
 
   const styles = {

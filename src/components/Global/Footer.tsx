@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Socials from "./Socials";
 import { KeyboardArrowUp } from "@mui/icons-material";
-import Accordion, { AccordionProps } from "../Landing/Accordion";
+import Accordion from "../Landing/Accordion";
 import logo from "../../assets/Logo.svg";
 import { Fade, Flip } from "react-reveal";
 
@@ -43,8 +43,13 @@ const Footer = () => {
   const [mobile, setMobile] = useState(window.innerWidth < 768 ? true : false);
 
   useEffect(() => {
-    window.addEventListener("resize", () => setMobile(window.innerWidth < 768 ? true : false));
-    return () => window.removeEventListener("resize", () => setMobile(window.innerWidth < 768 ? true : false));
+    window.addEventListener("resize", () =>
+      setMobile(window.innerWidth < 768 ? true : false)
+    );
+    return () =>
+      window.removeEventListener("resize", () =>
+        setMobile(window.innerWidth < 768 ? true : false)
+      );
   }, [mobile]);
 
   const handleAccordionMoves = (summary: string) => {

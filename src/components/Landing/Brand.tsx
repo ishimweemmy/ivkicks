@@ -2,12 +2,6 @@ import { SwiperSlide } from "swiper/react";
 import type { FC } from "react";
 import { memo } from "react";
 
-export interface BrandProps {
-  id: number;
-  imgSrc: string;
-  from?: string;
-}
-
 const Brand: FC<BrandProps> = (props) => {
   const { id, imgSrc, from } = props;
   return (

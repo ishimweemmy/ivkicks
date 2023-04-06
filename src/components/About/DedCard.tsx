@@ -1,11 +1,5 @@
 import type { FC } from "react";
 
-export interface DedCardProps {
-  id: number;
-  heading: string;
-  description: string;
-}
-
 const DedCard: FC<DedCardProps> = (props) => {
   const { id, heading, description } = props;
   const borderColors: string[] = ["#315BFF", "#FE7831", "#02BE83"];

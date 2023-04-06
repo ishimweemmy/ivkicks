@@ -2,13 +2,14 @@ import { memo, useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import Brand, { BrandProps } from "./Brand";
+import Brand from "./Brand";
 import { Pagination } from "swiper";
 import leftIcon from "../../assets/leftIcon.png";
 import rightIcon from "../../assets/rightIcon.png";
 import SlideNextButton from "../Global/SlideNextButton";
-import SlidePrevButton from "../Global/SlidePrev";
-import { Fade, Zoom, Flip } from "react-reveal";
+import SlidePrevButton from "../Global/SlidePrevbutton";
+import { Flip } from "react-reveal";
+import { brandLogosData } from "../../data";
 
 const Brands = () => {
   const [mobile, setMobile] = useState<boolean>(
@@ -16,20 +17,17 @@ const Brands = () => {
   );
 
   useEffect(() => {
-    window.addEventListener("resize", () => setMobile(window.innerWidth <= 768 ? true : false));
-    return () => window.removeEventListener("resize", () => setMobile(window.innerWidth <= 768 ? true : false));
+    window.addEventListener("resize", () =>
+      setMobile(window.innerWidth <= 768 ? true : false)
+    );
+    return () =>
+      window.removeEventListener("resize", () =>
+        setMobile(window.innerWidth <= 768 ? true : false)
+      );
   }, [mobile]);
 
   const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
   const swipingButtonRefPrev = useRef<HTMLButtonElement | null>(null);
-
-  const brands: BrandProps[] = [
-    { id: 0, imgSrc: "/server-assets/nike.png" },
-    { id: 1, imgSrc: "/server-assets/newBalance.png" },
-    { id: 2, imgSrc: "/server-assets/adidas.png" },
-    { id: 3, imgSrc: "/server-assets/horse.png" },
-    { id: 1, imgSrc: "/server-assets/newBalance.png" },
-  ];
 
   return (
     <div className="w-full h-[70vh] flex flex-col items-center justify-end relative bg-[#f5f5f5] px-[5rem] sm:px-[1rem] lg:justify-start lg:pt-[3rem]">
@@ -59,7 +57,7 @@ const Brands = () => {
             className="w-full h-[50%] md:w-[90%] sm:h-[40%] miniTablet:h-[40%] lg:h-[50%]"
             spaceBetween={10}
           >
-            {brands.map((brand) => {
+            {brandLogosData.map((brand) => {
               const { id, imgSrc } = brand;
 
               return (
