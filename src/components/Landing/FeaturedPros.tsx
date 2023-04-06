@@ -43,7 +43,7 @@ const FeaturedPros = () => {
         <Zoom bottom>
           <div className="w-full flex flex-col items-center justify-center gap-[5rem] md:flex-row md:gap-0">
             {featuredProsData.map((product: FeaturedProInterface) => {
-              const { rating, description, price, imgSource, id, indexId } =
+              const { rating, description, price, imgSrc, id, indexId } =
                 product;
               return (
                 <FeaturedPro
@@ -51,7 +51,7 @@ const FeaturedPros = () => {
                   rating={rating}
                   description={description}
                   price={price}
-                  imgSource={imgSource}
+                  imgSrc={imgSrc}
                   id={id}
                   indexId={indexId}
                   from="desktop"
@@ -79,7 +79,7 @@ const FeaturedPros = () => {
                 }}
               >
                 {featuredProsData.map((product: FeaturedProInterface) => {
-                  const { rating, description, price, imgSource, id, indexId } =
+                  const { rating, description, price, imgSrc, id, indexId } =
                     product;
                   return (
                     <SwiperSlide key={id} className="w-screen md:w-[23rem] ">
@@ -87,7 +87,7 @@ const FeaturedPros = () => {
                         rating={rating}
                         description={description}
                         price={price}
-                        imgSource={imgSource}
+                        imgSrc={imgSrc}
                         id={id}
                         indexId={indexId}
                       />

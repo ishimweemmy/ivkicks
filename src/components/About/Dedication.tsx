@@ -102,7 +102,7 @@ const Dedication = () => {
                 </SwiperSlide>
               );
             })}
-            <SlideNextButton swipingButtonRef={swipingButtonRef} />
+            <SlideNextButton swipingButtonRefNext={swipingButtonRef} />
             <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
           </Swiper>
           <img

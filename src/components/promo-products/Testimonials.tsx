@@ -53,7 +53,7 @@ const Testimonials = () => {
                       rating={rating}
                       testimonial={testimonial}
                     />
-                    <SlideNextButton swipingButtonRef={swipingButtonRef} />
+                    <SlideNextButton swipingButtonRefNext={swipingButtonRef} />
                     <SlidePrevButton
                       swipingButtonRefPrev={swipingButtonRefPrev}
                     />

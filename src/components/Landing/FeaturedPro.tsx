@@ -6,7 +6,7 @@ import { memo } from "react";
 import { colors } from "../../data";
 
 const FeaturedPro: FC<FeaturedProInterface> = (props) => {
-  const { rating, description, price, imgSource, id, indexId, from } = props;
+  const { rating, description, price, imgSrc, id, indexId, from } = props;
 
   const styles = {
     background: `linear-gradient(270deg, ${colors[indexId].firstColor} 0%, ${colors[indexId].secondColor} 100%)`,
@@ -36,7 +36,7 @@ const FeaturedPro: FC<FeaturedProInterface> = (props) => {
           className="w-[7rem] h-[7rem] rounded-full absolute top-[-1rem] right-[9rem] sm:right-[30%] lsm:right-[40%] lssm:right-[40%]"
           style={styles}
         ></div>
-        <img src={imgSource} alt="" className="h-[10rem] z-0" loading="lazy" />
+        <img src={imgSrc} alt="" className="h-[10rem] z-0" loading="lazy" />
         <div
           className="w-[2rem] h-[2rem] rounded-full grid place-items-center absolute bottom-10 z-10 "
           style={{

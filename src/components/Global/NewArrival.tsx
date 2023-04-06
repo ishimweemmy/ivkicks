@@ -5,7 +5,7 @@ import { colors } from "../../data";
 import { memo } from "react";
 
 const NewArrival: FC<FeaturedProInterface> = (props) => {
-  const { rating, description, price, imgSource, id, indexId } = props;
+  const { rating, description, price, imgSrc, id, indexId } = props;
 
   const styles = {
     background: `linear-gradient(270deg, ${colors[indexId].firstColor} 0%, ${colors[indexId].secondColor} 100%)`,
@@ -34,7 +34,7 @@ const NewArrival: FC<FeaturedProInterface> = (props) => {
       >
         <span className="text-3xl text-white font-extrabold">0{id}</span>
         <img
-          src={imgSource}
+          src={imgSrc}
           alt=""
           className="absolute top-[-.5rem] right-[-5.5rem] max-w-none"
         />

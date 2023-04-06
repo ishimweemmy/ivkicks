@@ -1,14 +1,17 @@
+interface ParentProps {
+  id: number;
+  description: string;
+  imgSrc: string;
+}
+
 interface DedCardProps {
   id: number;
   heading: string;
   description: string;
 }
 
-interface OurProductProps {
-  imgSrc: string;
-  id: number;
+interface OurProductProps extends ParentProps {
   summary: string;
-  description: string;
   productUrl: string;
 }
 
@@ -18,12 +21,9 @@ interface DescriptionProps {
   degree: number;
 }
 
-interface QualityCProps {
-  imgSrc: string;
+interface QualityCProps extends ParentProps {
   heading: string;
-  description: string;
   triangles: TriangleProps[];
-  id: number;
   delay: number;
 }
 
@@ -48,11 +48,8 @@ interface TriangleProps {
   delay?: number;
 }
 
-interface CartItem {
-  id: number;
-  imgSrc: string;
+interface CartItem extends ParentProps {
   name: string;
-  description: string;
   size: number;
   price: number;
   quantity: number;
@@ -86,7 +83,7 @@ interface Link1 {
 }
 
 interface NextButtonProps {
-  swipingButtonRef: any;
+  swipingButtonRefNext: any;
 }
 
 interface PrevButtonProps {
@@ -141,12 +138,9 @@ interface CollectionProps {
   imgSource: string;
 }
 
-interface FeaturedProInterface {
+interface FeaturedProInterface extends ParentProps {
   rating: number;
-  description: string;
   price: Number;
-  imgSource: string;
-  id: string;
   indexId: number;
   from?: string;
 }
@@ -197,7 +191,7 @@ interface YouMayLikeProps {
 
 interface CategoryProps {
   url: string;
-  img: string;
+  imgSrc: string;
   name: string;
   id: number;
 }
@@ -211,7 +205,7 @@ interface DesignerTalkProps {
 interface DiffProps {
   heading: string;
   content: string;
-  imgUrl: string;
+  imgSrc: string;
 }
 
 interface AccordionProps1 {
@@ -224,6 +218,7 @@ interface AccordionProps1 {
 }
 
 interface PromoProductProps {
+  id: number;
   sneakerName: string;
   madeOf: string;
   durabilityType: string;
@@ -231,14 +226,13 @@ interface PromoProductProps {
   userImage: string;
   rating: number;
   userTestimonial: string;
-  id: number;
 }
 
 interface TasteProps {
-  imgUrl: string;
+  id: number;
+  imgSrc: string;
   heading: string;
   content: string;
-  id: number;
 }
 
 interface CustomerTestProps {

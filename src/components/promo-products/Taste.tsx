@@ -3,7 +3,7 @@ import { Fade } from "react-reveal";
 import { colors } from "../../data";
 
 const Taste: FC<TasteProps> = (props) => {
-  const { imgUrl, heading, content, id } = props;
+  const { imgSrc, heading, content, id } = props;
 
   const styles = {
     background: `linear-gradient(270deg, ${colors[id - 1].firstColor} 0%, ${
@@ -17,7 +17,7 @@ const Taste: FC<TasteProps> = (props) => {
           className="w-16 h-16 grid place-items-center p-4 bg-[#E6A271] rounded-full md:h-14 shadow-xl"
           style={{ ...styles }}
         >
-          <img src={imgUrl} alt="" className="w-full h-full " />
+          <img src={imgSrc} alt="" className="w-full h-full " />
         </div>
         <div className="flex flex-col w-full miniTablet:pr-[2rem] ">
           <span className="text-center text-lg font-bold lg:text-xl md:text-start ">

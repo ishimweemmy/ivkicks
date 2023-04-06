@@ -90,7 +90,7 @@ const YoumayLikes: FC<PageProps> = (props) => {
                   imgSrc={imgSrc}
                   id={id}
                 />
-                <SlideNextButton swipingButtonRef={nextButtonRef} />
+                <SlideNextButton swipingButtonRefNext={nextButtonRef} />
                 <SlidePrev swipingButtonRefPrev={prevButtonRef} />
               </SwiperSlide>
             );

@@ -25,10 +25,10 @@ const Benefits = () => {
 
       <div className="w-fit h-fit flex flex-col items-center justify-center minSm:w-[70%] miniTablet:w-[60%] md:w-full lg:col-start-1">
         {tastesData.map((tasteData) => {
-          const { imgUrl, heading, content, id } = tasteData;
+          const { imgSrc, heading, content, id } = tasteData;
           return (
             <Taste
-              imgUrl={imgUrl}
+              imgSrc={imgSrc}
               heading={heading}
               content={content}
               id={id}

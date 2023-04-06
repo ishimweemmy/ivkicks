@@ -34,7 +34,7 @@ const NewArrivals: FC<FeaturedProInterface> = () => {
   }, [mobile, miniLaptop, smallMobile]);
 
   const newArrivals = newArrivalsData.map((data: FeaturedProInterface) => {
-    const { rating, description, price, imgSource, id, indexId } = data;
+    const { rating, description, price, imgSrc, id, indexId } = data;
 
     return (
       <SwiperSlide key={id} className="grid place-items-center">
@@ -42,7 +42,7 @@ const NewArrivals: FC<FeaturedProInterface> = () => {
           rating={rating}
           description={description}
           price={price}
-          imgSource={imgSource}
+          imgSrc={imgSrc}
           id={id}
           indexId={indexId}
         />
