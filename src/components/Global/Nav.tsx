@@ -15,6 +15,7 @@ const Nav: FC = () => {
 
   const [isDisplayed, setIsDisplayed] = useState<Boolean>(false);
   const location = useLocation();
+  
   return (
     <Fade delay={300}>
       <nav

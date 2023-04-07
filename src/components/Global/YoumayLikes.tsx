@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import SlideNextButton from "./SlideNextButton";
 import SlidePrev from "./SlidePrevbutton";
 import type { FC } from "react";
+import { useResponsive } from "../../hooks/useResponsive";
 
 const YoumayLikes: FC<PageProps> = (props) => {
   const prevButtonRef = useRef<HTMLDivElement | null>(null);
@@ -20,22 +21,7 @@ const YoumayLikes: FC<PageProps> = (props) => {
     });
   };
 
-  const [tablet, setTablet] = useState(window.innerWidth >= 550);
-  const [miniLaptop, setMiniLaptop] = useState(window.innerWidth >= 900);
-  const [laptop, setLaptop] = useState(window.innerWidth >= 1500);
-  const [mdTab, setMdTab] = useState(window.innerWidth >= 768);
-
-  const resizeDetect = () => {
-    setTablet(window.innerWidth >= 550);
-    setMiniLaptop(window.innerWidth >= 900);
-    setLaptop(window.innerWidth >= 1500);
-    setMdTab(window.innerWidth >= 768);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", resizeDetect);
-    return () => window.removeEventListener("resize", resizeDetect);
-  }, [tablet, miniLaptop, laptop, mdTab]);
+  const [tablet, miniLaptop, laptop, mobile] = useResponsive();
 
   return (
     <div className="w-full bg-white flex flex-col items-center xl:px-16 2xl:px-32">
@@ -77,7 +63,7 @@ const YoumayLikes: FC<PageProps> = (props) => {
           loop={true}
           noSwiping={!isDraggable}
           noSwipingClass="swiper-slide"
-          pagination={mdTab}
+          pagination={mobile}
         >
           {youMayLike.map((data) => {
             const { name, company, price, id, imgSrc } = data;

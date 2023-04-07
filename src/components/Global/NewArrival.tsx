@@ -2,29 +2,34 @@ import type { FC } from "react";
 import filledStar from "../../assets/Star 4.svg";
 import unFilledStar from "../../assets/Star 5.svg";
 import { colors } from "../../data";
-import { memo } from "react";
+import { memo, useMemo } from "react";
 
 const NewArrival: FC<FeaturedProInterface> = (props) => {
   const { rating, description, price, imgSrc, id, indexId } = props;
 
-  const styles = {
-    background: `linear-gradient(270deg, ${colors[indexId].firstColor} 0%, ${colors[indexId].secondColor} 100%)`,
-  };
+  const styles = useMemo(() => {
+    return {
+      background: `linear-gradient(270deg, ${colors[indexId].firstColor} 0%, ${colors[indexId].secondColor} 100%)`,
+    };
+  }, [indexId]);
 
-  const theRatingStars: JSX.Element[] = [...Array(Math.floor(rating))].map(
-    (el: undefined, index: number) => {
-      return <img src={filledStar} alt="" key={index} />;
-    }
-  );
+  const theRatingStars: JSX.Element[] = useMemo(() => {
+    return [...Array(Math.floor(rating))].map(
+      (el: undefined, index: number) => {
+        return <img src={filledStar} alt="" key={index} />;
+      }
+    );
+  }, [id, rating]);
 
-  const theUnfilledStars: JSX.Element[] =
-    rating < 5
+  const theUnfilledStars: JSX.Element[] = useMemo(() => {
+    return rating < 5
       ? [...Array(5 - Math.floor(rating))].map(
           (el: undefined, index: number) => {
             return <img src={unFilledStar} alt="" key={index} />;
           }
         )
       : [];
+  }, [id, rating]);
 
   return (
     <div className="w-[20rem] h-[30rem] flex flex-col items-center justify-between">

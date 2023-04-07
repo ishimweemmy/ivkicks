@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useState } from "react";
 import { Tablet, Twitter } from "@mui/icons-material";
 import { FacebookRounded } from "@mui/icons-material";
 import { Instagram } from "@mui/icons-material";
@@ -11,61 +11,51 @@ const Socials: FC<SocialsProps> = (props) => {
   const [tablet, setTablet] = useState(window.innerWidth > 768 ? true : false);
   const [mobile, setMobile] = useState(window.innerWidth < 768 ? true : false);
 
-  const resizeDetect = () => {
+  const resizeDetect = useCallback(() => {
     setTablet(window.innerWidth > 768 ? true : false);
     setMobile(window.innerWidth < 768 ? true : false);
-  };
+  }, [tablet, mobile]);
 
   useEffect(() => {
     window.addEventListener("resize", resizeDetect);
     return () => window.removeEventListener("resize", resizeDetect);
   }, [tablet, mobile]);
 
-  const socialsData: SocialProps[] = [
-    {
-      name: "twitter",
-      link: "https://twitter.com",
-      icon: (
-        <Twitter
-          fontSize={section == "footer" ? `medium` : "small"}
-          className={`text-[${section == "footer" ? "#FF3C78" : "#315BFF"}] `}
-        />
-      ),
-    },
-    {
-      name: "facebook",
-      link: "https://facebook.com",
-      icon: (
-        <FacebookRounded
-          fontSize={section == "footer" ? `medium` : "small"}
-          className={`text-[${section == "footer" ? "#FF3C78" : "#315BFF"}] `}
-        />
-      ),
-    },
-    {
-      name: "instagram",
-      link: "https://instagram.com",
-      icon: (
-        <Instagram
-          fontSize={section == "footer" ? `medium` : "small"}
-          className={`text-[${section == "footer" ? "#FF3C78" : "#315BFF"}] `}
-        />
-      ),
-    },
-  ];
+  const socialsData: SocialProps[] = useMemo(() => {
+    return [
+      {
+        name: "twitter",
+        link: "https://twitter.com",
+        icon: (
+          <Twitter
+            fontSize={section == "footer" ? `medium` : "small"}
+            className={`text-[${section == "footer" ? "#FF3C78" : "#315BFF"}] `}
+          />
+        ),
+      },
+      {
+        name: "facebook",
+        link: "https://facebook.com",
+        icon: (
+          <FacebookRounded
+            fontSize={section == "footer" ? `medium` : "small"}
+            className={`text-[${section == "footer" ? "#FF3C78" : "#315BFF"}] `}
+          />
+        ),
+      },
+      {
+        name: "instagram",
+        link: "https://instagram.com",
+        icon: (
+          <Instagram
+            fontSize={section == "footer" ? `medium` : "small"}
+            className={`text-[${section == "footer" ? "#FF3C78" : "#315BFF"}] `}
+          />
+        ),
+      },
+    ];
+  }, []);
 
-  const socials = socialsData.map((socialData) => {
-    const { link, name, icon } = socialData;
-    return (
-      <Social
-        key={link}
-        link={link}
-        name={name}
-        icon={icon}
-        section={section}
-      />
-    );
-  });
   return (
     <Bounce left duration={1000}>
       <div
@@ -86,7 +76,18 @@ const Socials: FC<SocialsProps> = (props) => {
           }`,
         }}
       >
-        {socials}
+        {socialsData.map((socialData) => {
+          const { link, name, icon } = socialData;
+          return (
+            <Social
+              key={link}
+              link={link}
+              name={name}
+              icon={icon}
+              section={section}
+            />
+          );
+        })}
       </div>
     </Bounce>
   );
