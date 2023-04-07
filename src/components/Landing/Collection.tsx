@@ -11,9 +11,11 @@ const Collection: FC<CollectionProps> = (props) => {
     return ["#315BFF", "#FE7831", "#FF3C78", "#02BE83"];
   }, []);
 
-  const styles = {
-    background: `linear-gradient(270deg, ${colors[indexId].firstColor} 0%, ${colors[indexId].secondColor} 100%)`,
-  };
+  const styles = useMemo(() => {
+    return {
+      background: `linear-gradient(270deg, ${colors[indexId].firstColor} 0%, ${colors[indexId].secondColor} 100%)`,
+    };
+  }, [indexId]);
 
   return (
     <div className="w-[85%] h-[65%] bg-[#F5F5f5] rounded-xl flex flex-col items-center justify-center relative top-[-2rem] md:items-start lg:w-[70%] miniLarge:w-[85%]">

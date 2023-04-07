@@ -1,34 +1,46 @@
-import { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import Socials from "../Global/Socials";
 import subscriptionSneaker from "../../assets/subscription.png";
 import { Flip, Zoom, Bounce } from "react-reveal";
-import type { FC } from "react";
+import type { ChangeEvent, FC, FormEvent } from "react";
+import { useResponsive } from "../../hooks/useResponsive";
 
 const Subscriptions: FC<PageProps> = (props) => {
   const [email, setEmail] = useState("");
   const [emailValid, setEmailValid] = useState(true);
-  const [tablet, setTablet] = useState(window.innerWidth > 768 ? true : false);
+  const [
+    tablet,
+    miniLaptop,
+    laptop,
+    mobile,
+    smallMobile,
+    catMiniLaptop,
+    desktop,
+    newArrMobile,
+    largeTablet,
+  ] = useResponsive();
 
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setTablet(window.innerWidth > 768 ? true : false);
-    });
-  }, [tablet]);
+  const handleChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      setEmail(event.target.value);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
+      const regEX = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}.[A-Z]/gim;
+      const emailValidation = regEX.test(email);
+      setEmailValid(emailValidation);
+    },
+    [email, emailValid]
+  );
 
-    const regEX = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}.[A-Z]/gim;
-    const emailValidation = regEX.test(email);
-    setEmailValid(emailValidation);
-  };
+  const handleSubscription = useCallback(
+    (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      const regEX = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}.[A-Z]/gim;
+      const emailValidation = regEX.exec(email);
+      console.log({ email });
+    },
+    []
+  );
 
-  const handleSubscription = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const regEX = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}.[A-Z]/gim;
-    const emailValidation = regEX.exec(email);
-    console.log({ email });
-  };
   return (
     <div
       className={`w-full h-screen flex flex-col rounded-tr-2xl rounded-br-2xl md:flex-row md:h-[50vh] md:w-screen gMd:w-[90%] ${
@@ -39,7 +51,7 @@ const Subscriptions: FC<PageProps> = (props) => {
           "linear-gradient(97.49deg, #8AA8F8 -0.43%, #315BFF 144.53%)",
       }}
     >
-      {tablet ? (
+      {mobile ? (
         <Flip duration={1000}>
           <div
             className="h-[5rem] w-[5rem] rounded-full"
@@ -87,10 +99,10 @@ const Subscriptions: FC<PageProps> = (props) => {
             </button>
           </form>
         </Bounce>
-        {!tablet && <Socials section="subscriptions" />}
+        {!mobile && <Socials section="subscriptions" />}
       </div>{" "}
       <div className="w-full h-[40%] grid items-end justify-items-center relative pb-11 md:h-full gMd:h-full md:flex md:flex-col md:items-center md:justify-between md:pb-0 md:w-[50%]">
-        {tablet && <Socials section="subscriptions" />}
+        {mobile && <Socials section="subscriptions" />}
         <div>
           <Flip>
             <div

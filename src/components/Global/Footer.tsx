@@ -4,6 +4,7 @@ import { KeyboardArrowUp } from "@mui/icons-material";
 import Accordion from "../Landing/Accordion";
 import logo from "../../assets/Logo.svg";
 import { Fade, Flip } from "react-reveal";
+import { useResponsive } from "../../hooks/useResponsive";
 
 const Footer = () => {
   const [accordionData, setAccordionData] = useState([
@@ -40,17 +41,17 @@ const Footer = () => {
     },
   ]);
 
-  const [mobile, setMobile] = useState(window.innerWidth < 768 ? true : false);
-
-  useEffect(() => {
-    window.addEventListener("resize", () =>
-      setMobile(window.innerWidth < 768 ? true : false)
-    );
-    return () =>
-      window.removeEventListener("resize", () =>
-        setMobile(window.innerWidth < 768 ? true : false)
-      );
-  }, [mobile]);
+  const [
+    tablet,
+    miniLaptop,
+    laptop,
+    mobile,
+    smallMobile,
+    catMiniLaptop,
+    desktop,
+    newArrMobile,
+    largeTablet,
+  ] = useResponsive();
 
   const handleAccordionMoves = useCallback((summary: string) => {
     setAccordionData((prevData) => {
@@ -63,13 +64,13 @@ const Footer = () => {
           : data;
       });
     });
-  }, []);
+  }, [accordionData]);
 
   return (
     <footer className="w-full h-[100vh] bg-white flex flex-col md:grid md:grid-cols-footer md:grid-rows-footer md:place-content-center md:place-items-center md:h-[60vh] md:self-center z-[1999]">
       <Fade left>
         <div className="w-full h-[20%] flex items-end justify-center pb-6 border md:border-none md:w-fit md:h-[80%] md:flex md:flex-col md:items-start md:gap-4 md:p-0 ">
-          {!mobile && (
+          {mobile && (
             <img
               src={logo}
               alt="logo"
@@ -79,7 +80,7 @@ const Footer = () => {
           <span className="text-lg text-gray-800 text-center px-14 md:px-0 md:text-start">
             Our shop is the best choice for buying footwear.
           </span>
-          {!mobile && <Socials section="footer" />}
+          {mobile && <Socials section="footer" />}
         </div>
       </Fade>
       <Flip top>
@@ -99,7 +100,7 @@ const Footer = () => {
         </div>
       </Flip>
       <div className="w-full h-[30%] flex flex-col items-center justify-center gap-6 md:h-full md:col-span-2 md:border-t-2 md:flex-row md:items-center md:justify-between ">
-        {mobile && <Socials section="footer" />}
+        {!mobile && <Socials section="footer" />}
         <p className="text-center text-md text-gray-700 px-4 md:p-0 md:text-base">
           © 2021 Shop. Made with love for thray{" "}
         </p>

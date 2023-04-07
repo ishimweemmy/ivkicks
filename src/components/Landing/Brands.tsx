@@ -10,23 +10,22 @@ import SlideNextButton from "../Global/SlideNextButton";
 import SlidePrevButton from "../Global/SlidePrevbutton";
 import { Flip } from "react-reveal";
 import { brandLogosData } from "../../data";
+import { useResponsive } from "../../hooks/useResponsive";
 
 const Brands = () => {
-  const [mobile, setMobile] = useState<boolean>(
-    window.innerWidth <= 768 ? true : false
-  );
+  const [
+    tablet,
+    miniLaptop,
+    laptop,
+    mobile,
+    smallMobile,
+    catMiniLaptop,
+    desktop,
+    newArrMobile,
+    largeTablet,
+  ] = useResponsive();
 
-  useEffect(() => {
-    window.addEventListener("resize", () =>
-      setMobile(window.innerWidth <= 768 ? true : false)
-    );
-    return () =>
-      window.removeEventListener("resize", () =>
-        setMobile(window.innerWidth <= 768 ? true : false)
-      );
-  }, [mobile]);
-
-  const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
+  const swipingButtonRefNext = useRef<HTMLButtonElement | null>(null);
   const swipingButtonRefPrev = useRef<HTMLButtonElement | null>(null);
 
   return (
@@ -49,11 +48,11 @@ const Brands = () => {
             src={leftIcon}
             alt="leftIcon"
             className="w-2  hidden lg:block"
-            onClick={() => swipingButtonRef.current?.click()}
+            onClick={() => swipingButtonRefNext.current?.click()}
           />
           <Swiper
             modules={[Pagination]}
-            slidesPerView={mobile ? 2 : 4}
+            slidesPerView={!mobile ? 2 : 4}
             className="w-full h-[50%] md:w-[90%] sm:h-[40%] miniTablet:h-[40%] lg:h-[50%]"
             spaceBetween={10}
           >
@@ -69,7 +68,7 @@ const Brands = () => {
                 </SwiperSlide>
               );
             })}
-            <SlideNextButton swipingButtonRefNext={swipingButtonRef} />
+            <SlideNextButton swipingButtonRefNext={swipingButtonRefNext} />
             <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
           </Swiper>
           <img
@@ -89,7 +88,7 @@ const Brands = () => {
               src={rightIcon}
               alt="leftIcon"
               className="w-2"
-              onClick={() => swipingButtonRef.current?.click()}
+              onClick={() => swipingButtonRefNext.current?.click()}
             />
           </div>
         </div>

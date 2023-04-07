@@ -1,4 +1,10 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import filledStar from "../../assets/Star 4.svg";
 import unFilledStar from "../../assets/Star 5.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -21,12 +27,15 @@ import JoinOthers from "../Global/JoinOthers";
 import "swiper/css/bundle";
 import YoumayLikes from "../Global/YoumayLikes";
 import Incrementor from "../Global/Incrementor";
+import { useResponsive } from "../../hooks/useResponsive";
 
 const Product = () => {
-  const colors = ["red", "black", "orange"];
+  const colors = useMemo(() => {
+    return ["red", "black", "orange"];
+  }, []);
 
-  const theRatingStars: JSX.Element[] = [...Array(Math.floor(4))].map(
-    (el: undefined, index: number) => {
+  const theRatingStars: JSX.Element[] = useMemo(() => {
+    return [...Array(Math.floor(4))].map((el: undefined, index: number) => {
       return (
         <img
           src={filledStar}
@@ -35,11 +44,11 @@ const Product = () => {
           className="miniTablet:w-3 2xl:max-w-4"
         />
       );
-    }
-  );
+    });
+  }, []);
 
-  const theUnfilledStars: JSX.Element[] =
-    4 < 5
+  const theUnfilledStars: JSX.Element[] = useMemo(() => {
+    return 4 < 5
       ? [...Array(5 - Math.floor(4))].map((el: undefined, index: number) => {
           return (
             <img
@@ -51,6 +60,7 @@ const Product = () => {
           );
         })
       : [];
+  }, []);
 
   const categoriesRef = useRef<HTMLDivElement | null>(null);
 
@@ -102,54 +112,57 @@ const Product = () => {
     ];
   }, []);
 
-  const toggleIsActive = (size: number) => {
-    setAvailableSizes((prevSizes) => {
-      return prevSizes.map((prevSize) => {
-        if (prevSize.size === size) {
-          if (prevSize.isAvailable) {
-            prevSizes.forEach((size) => {
-              if (size.isActive) size.isActive = false;
-            });
-            return { ...prevSize, isActive: !prevSize.isActive };
+  const toggleIsActive = useCallback(
+    (size: number) => {
+      setAvailableSizes((prevSizes) => {
+        return prevSizes.map((prevSize) => {
+          if (prevSize.size === size) {
+            if (prevSize.isAvailable) {
+              prevSizes.forEach((size) => {
+                if (size.isActive) size.isActive = false;
+              });
+              return { ...prevSize, isActive: !prevSize.isActive };
+            } else {
+              return prevSize;
+            }
           } else {
             return prevSize;
           }
-        } else {
-          return prevSize;
-        }
+        });
       });
-    });
-  };
+    },
+    [accordionData]
+  );
 
   const [nbrOfShoes, setNbrOfShoes] = useState("");
 
-  const handleSelectionChange = (event: SelectChangeEvent) => {
-    setNbrOfShoes(event.target.value as string);
-  };
+  const handleSelectionChange = useCallback(
+    (event: SelectChangeEvent) => {
+      setNbrOfShoes(event.target.value as string);
+    },
+    [nbrOfShoes]
+  );
 
   const [expanded, setExpanded] = useState<string | false>(false);
 
-  const handleChange =
+  const handleChange = useCallback(
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
-    };
+    },
+    [expanded]
+  );
 
-  const [tablet, setTablet] = useState(window.innerWidth >= 550);
-  const [largeTablet, setLargeTablet] = useState(window.innerWidth <= 699);
-  const [miniLaptop, setMiniLaptop] = useState(window.innerWidth >= 900);
-  const [mdTab, setMdTab] = useState(window.innerWidth >= 768);
-
-  const resizeDetect = () => {
-    setTablet(window.innerWidth >= 550);
-    setLargeTablet(window.innerWidth <= 699);
-    setMiniLaptop(window.innerWidth >= 900);
-    setMdTab(window.innerWidth >= 768);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", resizeDetect);
-    return () => window.removeEventListener("resize", resizeDetect);
-  }, [tablet, largeTablet, miniLaptop]);
+  const [
+    tablet,
+    miniLaptop,
+    laptop,
+    mobile,
+    smallMobile,
+    catMiniLaptop,
+    desktop,
+    newArrMobile,
+    largeTablet,
+  ] = useResponsive();
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-white">
@@ -356,7 +369,7 @@ const Product = () => {
           3 items
         </span>
         <div className="productSwiper w-full h-[28rem] place-items-center miniSm:h-[40rem] md:h-[30rem] max2xl:px-16 2xl:h-[40rem]">
-          {!mdTab ? (
+          {!mobile ? (
             <Swiper
               modules={[Controller, Autoplay, Pagination]}
               slidesPerView={tablet ? 2 : 1}

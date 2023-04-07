@@ -122,6 +122,7 @@ interface BestSeller {
   improvement: string;
   description: string;
   price: number;
+  id: number
 }
 
 interface BrandProps {

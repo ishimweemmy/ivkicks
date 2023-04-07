@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -10,30 +10,20 @@ import SlidePrevButton from "../Global/SlidePrevbutton";
 import DedCard from "./DedCard";
 import { brandsData } from "../../data";
 import { Zoom, Bounce, Fade } from "react-reveal";
+import { useResponsive } from "../../hooks/useResponsive";
 
 const Dedication = () => {
-  const [mobile, setMobile] = useState<boolean>(
-    window.innerWidth <= 767 ? true : false
-  );
-
-  const [miniLaptop, setMiniLaptop] = useState(
-    window.innerWidth <= 1200 ? true : false
-  );
-
-  const [smallMobile, setSmallMobile] = useState(
-    window.innerWidth <= 500 ? true : false
-  );
-
-  const resizeDetect = () => {
-    setMobile(window.innerWidth <= 767 ? true : false);
-    setMiniLaptop(window.innerWidth <= 1226 ? true : false);
-    setSmallMobile(window.innerWidth <= 500 ? true : false);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", resizeDetect);
-    return () => window.removeEventListener("resize", resizeDetect);
-  }, [mobile, miniLaptop, smallMobile]);
+  const [
+    tablet,
+    miniLaptop,
+    laptop,
+    mobile,
+    smallMobile,
+    catMiniLaptop,
+    desktop,
+    newArrMobile,
+    largeTablet,
+  ] = useResponsive();
 
   const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
   const swipingButtonRefPrev = useRef<HTMLButtonElement | null>(null);
@@ -84,7 +74,7 @@ const Dedication = () => {
           />
           <Swiper
             modules={[Pagination]}
-            slidesPerView={smallMobile ? 1 : mobile ? 2 : 3}
+            slidesPerView={!smallMobile ? 1 : !mobile ? 2 : 3}
             className="w-full h-[70%]"
             spaceBetween={10}
           >

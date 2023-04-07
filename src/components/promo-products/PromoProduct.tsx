@@ -3,7 +3,7 @@ import StackedLineChartIcon from "@mui/icons-material/StackedLineChart";
 import AutoModeIcon from "@mui/icons-material/AutoMode";
 import filledStar from "../../assets/Star 4.svg";
 import unFilledStar from "../../assets/Star 5.svg";
-import { memo } from "react";
+import { memo, useMemo } from "react";
 
 const PromoProduct: FC<PromoProductProps> = (props) => {
   const {
@@ -14,16 +14,19 @@ const PromoProduct: FC<PromoProductProps> = (props) => {
     userImage,
     userTestimonial,
     rating,
+    id,
   } = props;
 
-  const theRatingStars: JSX.Element[] = [...Array(Math.floor(rating))].map(
-    (el: undefined, index: number) => {
-      return <img src={filledStar} alt="" key={index} className="w-3" />;
-    }
-  );
+  const theRatingStars: JSX.Element[] = useMemo(() => {
+    return [...Array(Math.floor(rating))].map(
+      (el: undefined, index: number) => {
+        return <img src={filledStar} alt="" key={index} className="w-3" />;
+      }
+    );
+  }, [id]);
 
-  const theUnfilledStars: JSX.Element[] =
-    rating < 5
+  const theUnfilledStars: JSX.Element[] = useMemo(() => {
+    return rating < 5
       ? [...Array(5 - Math.floor(rating))].map(
           (el: undefined, index: number) => {
             return (
@@ -32,6 +35,7 @@ const PromoProduct: FC<PromoProductProps> = (props) => {
           }
         )
       : [];
+  }, []);
   return (
     <div className="w-[20rem] h-full flex flex-col items-center justify-center relative z-40 lsm:w-[30rem] lsm:h-[30rem] ">
       <div className="w-full h-[40%] flex flex-col items-center justify-start gap-0 lsm:h-fit lsm:gap-x-[2rem] lsm:gap-y-[1rem] lsm:grid lsm:justify-center lsm:place-items-center">

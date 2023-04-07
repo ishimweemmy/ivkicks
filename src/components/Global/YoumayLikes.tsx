@@ -3,7 +3,7 @@ import { Autoplay, Controller, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { youMayLike } from "../../data";
 import YouMayLike from "../Products/YouMayLike";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import SlideNextButton from "./SlideNextButton";
 import SlidePrev from "./SlidePrevbutton";
 import type { FC } from "react";
@@ -14,14 +14,23 @@ const YoumayLikes: FC<PageProps> = (props) => {
   const nextButtonRef = useRef<HTMLDivElement | null>(null);
   const [isDraggable, setIsDraggable] = useState(false);
 
-  const handleIsDraggable = () => {
+  const handleIsDraggable = useCallback(() => {
     setIsDraggable((prev) => {
-      console.log(!prev);
       return !prev;
     });
-  };
+  }, [isDraggable]);
 
-  const [tablet, miniLaptop, laptop, mobile] = useResponsive();
+  const [
+    tablet,
+    miniLaptop,
+    laptop,
+    mobile,
+    smallMobile,
+    catMiniLaptop,
+    desktop,
+    newArrMobile,
+    largeTablet,
+  ] = useResponsive();
 
   return (
     <div className="w-full bg-white flex flex-col items-center xl:px-16 2xl:px-32">

@@ -1,14 +1,20 @@
 import { FC, useEffect, useState } from "react";
+import { useResponsive } from "../../hooks/useResponsive";
 
 const TheLook: FC<TheLookProps> = (props) => {
   const { name, imgSrc, type, price, id } = props;
-  const [tablet, setTablet] = useState(window.innerWidth >= 768);
 
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setTablet(window.innerWidth >= 768);
-    });
-  }, [tablet]);
+  const [
+    tablet,
+    miniLaptop,
+    laptop,
+    mobile,
+    smallMobile,
+    catMiniLaptop,
+    desktop,
+    newArrMobile,
+    largeTablet,
+  ] = useResponsive();
 
   return (
     <div className="w-full h-full flex flex-col gap-4 ">
@@ -17,7 +23,7 @@ const TheLook: FC<TheLookProps> = (props) => {
         style={{
           backgroundImage: `url(${imgSrc}`,
           backgroundPosition: `center`,
-          backgroundSize: `${tablet && "90%"}`,
+          backgroundSize: `${mobile && "90%"}`,
         }}
       ></div>
       <div className="w-full h-[20%] grid grid-cols-[60%_40%] place-items-center">

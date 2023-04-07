@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import chevronLeft from "../../assets/chevron-right.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
@@ -8,30 +8,20 @@ import NewArrival from "../Global/NewArrival";
 import "swiper/css/autoplay";
 import { newArrivalsData } from "../../data";
 import { Zoom, Flip } from "react-reveal";
+import { useResponsive } from "../../hooks/useResponsive";
 
 const NewArrivals: FC<FeaturedProInterface> = () => {
-  const [mobile, setMobile] = useState<boolean>(
-    window.innerWidth <= 800 ? true : false
-  );
-
-  const [miniLaptop, setMiniLaptop] = useState(
-    window.innerWidth <= 1200 ? true : false
-  );
-
-  const [smallMobile, setSmallMobile] = useState(
-    window.innerWidth <= 500 ? true : false
-  );
-
-  const resizeDetect = () => {
-    setMobile(window.innerWidth <= 767 ? true : false);
-    setMiniLaptop(window.innerWidth <= 1226 ? true : false);
-    setSmallMobile(window.innerWidth <= 500 ? true : false);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", resizeDetect);
-    return () => window.removeEventListener("resize", resizeDetect);
-  }, [mobile, miniLaptop, smallMobile]);
+  const [
+    tablet,
+    miniLaptop,
+    laptop,
+    mobile,
+    smallMobile,
+    catMiniLaptop,
+    desktop,
+    newArrMobile,
+    largeTablet,
+  ] = useResponsive();
 
   const newArrivals = newArrivalsData.map((data: FeaturedProInterface) => {
     const { rating, description, price, imgSrc, id, indexId } = data;
@@ -73,9 +63,13 @@ const NewArrivals: FC<FeaturedProInterface> = () => {
           <Swiper
             pagination={{ clickable: true }}
             modules={[Pagination]}
-            slidesPerView={smallMobile ? 1 : mobile ? 2 : miniLaptop ? 3 : 4}
+            slidesPerView={
+              !smallMobile ? 1 : newArrMobile ? 2 : !catMiniLaptop ? 3 : 4
+            }
             autoplay
-            spaceBetween={smallMobile ? 10 : mobile ? 15 : miniLaptop ? 20 : 30}
+            spaceBetween={
+              !smallMobile ? 10 : newArrMobile ? 15 : !catMiniLaptop ? 20 : 30
+            }
             className="w-full h-full"
           >
             {newArrivals}

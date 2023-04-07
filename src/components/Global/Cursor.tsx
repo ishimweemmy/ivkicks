@@ -10,7 +10,17 @@ const Cursor: FC<CursorProps> = () => {
 
   const [mouseVisible, setMouseVisible] = useState(true);
 
-  const [mobile] = useResponsive();
+  const [
+    tablet,
+    miniLaptop,
+    laptop,
+    mobile,
+    smallMobile,
+    catMiniLaptop,
+    desktop,
+    newArrMobile,
+    largeTablet,
+  ] = useResponsive();
 
   useEffect(() => {
     const mouseMoveHandler = (e: MouseEvent) => {

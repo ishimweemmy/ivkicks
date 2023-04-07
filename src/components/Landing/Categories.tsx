@@ -6,31 +6,22 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { collectionsData } from "../../data";
 import { Zoom, Flip } from "react-reveal";
+import { useResponsive } from "../../hooks/useResponsive";
 
 const Categories = () => {
   const categoriesRef = useRef<HTMLDivElement | null>(null);
 
-  const [mobile, setMobile] = useState<boolean>(
-    window.innerWidth <= 768 ? true : false
-  );
-
-  const [miniLaptop, setMiniLaptop] = useState(
-    window.innerWidth <= 1200 ? true : false
-  );
-
-  const [smallMobile, setSmallMobile] = useState(
-    window.innerWidth <= 500 ? true : false
-  );
-
-  const resizeDetect = () => {
-    setMobile(window.innerWidth <= 768 ? true : false);
-    setMiniLaptop(window.innerWidth <= 1226 ? true : false);
-    setSmallMobile(window.innerWidth <= 500 ? true : false);
-  };
-  useEffect(() => {
-    window.addEventListener("resize", resizeDetect);
-    return () => window.removeEventListener("resize", resizeDetect);
-  }, [mobile, miniLaptop, smallMobile]);
+  const [
+    tablet,
+    miniLaptop,
+    laptop,
+    mobile,
+    smallMobile,
+    catMiniLaptop,
+    desktop,
+    newArrMobile,
+    largeTablet,
+  ] = useResponsive();
 
   const collections = collectionsData.map((collection) => {
     const {
@@ -74,12 +65,14 @@ const Categories = () => {
         <div className="w-full h-[60%] grid place-items-center self-center 2xl:w-[70%] lg:gap-[10rem]">
           <Swiper
             className="w-full h-full"
-            slidesPerView={smallMobile ? 1 : miniLaptop || mobile ? 2 : 3}
-            spaceBetween={smallMobile ? 10 : mobile ? 15 : miniLaptop ? 20 : 30}
+            slidesPerView={!smallMobile ? 1 : !catMiniLaptop || !mobile ? 2 : 3}
+            spaceBetween={
+              !smallMobile ? 10 : mobile ? 15 : catMiniLaptop ? 20 : 30
+            }
             onSlideChange={(swiper) => {
               if (categoriesRef.current) {
                 categoriesRef.current.style.transform = `translateX(${
-                  mobile
+                  !mobile
                     ? swiper.activeIndex * 35
                     : (swiper.activeIndex * 200) / collectionsData.length
                 }%)`;

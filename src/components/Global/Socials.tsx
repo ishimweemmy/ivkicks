@@ -5,21 +5,21 @@ import { Instagram } from "@mui/icons-material";
 import Social from "./Social";
 import type { FC } from "react";
 import { Bounce } from "react-reveal";
+import { useResponsive } from "../../hooks/useResponsive";
 
 const Socials: FC<SocialsProps> = (props) => {
   const { section } = props;
-  const [tablet, setTablet] = useState(window.innerWidth > 768 ? true : false);
-  const [mobile, setMobile] = useState(window.innerWidth < 768 ? true : false);
-
-  const resizeDetect = useCallback(() => {
-    setTablet(window.innerWidth > 768 ? true : false);
-    setMobile(window.innerWidth < 768 ? true : false);
-  }, [tablet, mobile]);
-
-  useEffect(() => {
-    window.addEventListener("resize", resizeDetect);
-    return () => window.removeEventListener("resize", resizeDetect);
-  }, [tablet, mobile]);
+  const [
+    tablet,
+    miniLaptop,
+    laptop,
+    mobile,
+    smallMobile,
+    catMiniLaptop,
+    desktop,
+    newArrMobile,
+    largeTablet,
+  ] = useResponsive();
 
   const socialsData: SocialProps[] = useMemo(() => {
     return [
@@ -62,17 +62,17 @@ const Socials: FC<SocialsProps> = (props) => {
         className="w-full h-[20%] flex items-center justify-center gap-3"
         style={{
           justifyContent: `${
-            section == "subscriptions" && tablet
+            section == "subscriptions" && mobile
               ? "flex-end"
-              : section == "footer" && !mobile
+              : section == "footer" && mobile
               ? "flex-start"
               : "center"
           }`,
           paddingRight: `${
-            section == "subscriptions" && tablet ? "2rem" : "0"
+            section == "subscriptions" && mobile ? "2rem" : "0"
           }`,
           alignItems: `${
-            section == "subscriptions" && tablet ? "flex-end" : "center"
+            section == "subscriptions" && mobile ? "flex-end" : "center"
           }`,
         }}
       >

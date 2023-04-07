@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import FacAccordion from "./FacAccordion";
 import Triangle from "../About/Triangle";
 import { Bounce, Zoom } from "react-reveal";
@@ -27,10 +27,10 @@ const Faqs = () => {
 
   const [expanded, setExpanded] = useState<string | false>(false);
 
-  const handleChange =
+  const handleChange = useCallback(
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
-    };
+    }, [expanded])
   return (
     <div className="w-full h-fit py-16 flex flex-col gap-[2rem] items-center relative">
       <div className="w-full h-fit flex flex-col items-start justify-center gap-4 pl-6 miniSm:pl-8 xMiniTablet:pl-12 md:items-center">

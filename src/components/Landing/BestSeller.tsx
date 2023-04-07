@@ -1,20 +1,22 @@
 import type { FC } from "react";
-import { memo } from "react";
+import { memo, useMemo } from "react";
 import Switch from "./Switch";
 import filledStar from "../../assets/Star 4.svg";
 import { Zoom, Fade, Bounce } from "react-reveal";
 import Bubble from "./Bubble";
 
 const BestSeller: FC<BestSeller> = (props) => {
-  const { rating, improvement, description, price } = props;
+  const { rating, improvement, description, price, id } = props;
 
-  const ratings = [...Array(Math.floor(rating))].map(
-    (rate: undefined, index: number) => {
-      return (
-        <img src={filledStar} className="w-5 lsm:w-4" alt="" key={index} />
-      );
-    }
-  );
+  const ratings = useMemo(() => {
+    return [...Array(Math.floor(rating))].map(
+      (rate: undefined, index: number) => {
+        return (
+          <img src={filledStar} className="w-5 lsm:w-4" alt="" key={index} />
+        );
+      }
+    );
+  }, [id]);
 
   return (
     <div className="w-full h-fit bg-white py-[4rem] flex flex-col gap-12 ">

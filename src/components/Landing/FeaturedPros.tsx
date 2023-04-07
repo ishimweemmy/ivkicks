@@ -1,4 +1,4 @@
-import { memo, useEffect, useRef, useState } from "react";
+import { memo, useRef } from "react";
 import FeaturedPro from "./FeaturedPro";
 import chevronLeft from "../../assets/chevron-right.png";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -6,25 +6,22 @@ import { featuredProsData } from "../../data";
 import { Flip, Zoom } from "react-reveal";
 import { Autoplay, Pagination } from "swiper";
 import "swiper/css/autoplay";
+import { useResponsive } from "../../hooks/useResponsive";
 
 const FeaturedPros = () => {
-  const [mobile, setMobile] = useState(window.innerWidth <= 765);
-  const [desktop, setDesktop] = useState<boolean>(window.innerWidth <= 1024);
-
-  const [tablet, setTablet] = useState<boolean>(window.innerWidth <= 769);
+  const [
+    tablet,
+    miniLaptop,
+    laptop,
+    mobile,
+    smallMobile,
+    catMiniLaptop,
+    desktop,
+    newArrMobile,
+    largeTablet,
+  ] = useResponsive();
 
   const categoriesRef = useRef<HTMLDivElement | null>(null);
-
-  const resizeDetect = () => {
-    setMobile(window.innerWidth <= 765);
-    setTablet(window.innerWidth <= 769);
-    setDesktop(window.innerWidth <= 1024);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", resizeDetect);
-    return () => window.removeEventListener("resize", resizeDetect);
-  }, [mobile, desktop, tablet]);
 
   return (
     <div className="w-full h-fit bg-white flex flex-col items-center justify-center py-[4rem] gap-[3rem] lg:pl-[5rem]">
@@ -39,7 +36,7 @@ const FeaturedPros = () => {
           </span>
         </div>
       </Zoom>
-      {mobile ? (
+      {!mobile ? (
         <Zoom bottom>
           <div className="w-full flex flex-col items-center justify-center gap-[5rem] md:flex-row md:gap-0">
             {featuredProsData.map((product: FeaturedProInterface) => {

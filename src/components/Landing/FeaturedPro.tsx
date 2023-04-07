@@ -1,31 +1,36 @@
 import addToCartIcon from "../../assets/Group.svg";
 import filledStar from "../../assets/Star 4.svg";
 import unFilledStar from "../../assets/Star 5.svg";
-import { FC } from "react";
+import { FC, useMemo } from "react";
 import { memo } from "react";
 import { colors } from "../../data";
 
 const FeaturedPro: FC<FeaturedProInterface> = (props) => {
   const { rating, description, price, imgSrc, id, indexId, from } = props;
 
-  const styles = {
-    background: `linear-gradient(270deg, ${colors[indexId].firstColor} 0%, ${colors[indexId].secondColor} 100%)`,
-  };
+  const styles = useMemo(() => {
+    return {
+      background: `linear-gradient(270deg, ${colors[indexId].firstColor} 0%, ${colors[indexId].secondColor} 100%)`,
+    };
+  }, []);
 
-  const theRatingStars: JSX.Element[] = [...Array(Math.floor(rating))].map(
-    (el: undefined, index: number) => {
-      return <img src={filledStar} alt="" key={index} />;
-    }
-  );
+  const theRatingStars: JSX.Element[] = useMemo(() => {
+    return [...Array(Math.floor(rating))].map(
+      (el: undefined, index: number) => {
+        return <img src={filledStar} alt="" key={index} />;
+      }
+    );
+  }, [id]);
 
-  const theUnfilledStars: JSX.Element[] =
-    rating < 5
+  const theUnfilledStars: JSX.Element[] = useMemo(() => {
+    return rating < 5
       ? [...Array(5 - Math.floor(rating))].map(
           (el: undefined, index: number) => {
             return <img src={unFilledStar} alt="" key={index} />;
           }
         )
       : [];
+  }, [indexId]);
 
   return (
     <div

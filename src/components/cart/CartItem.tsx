@@ -13,7 +13,7 @@ const CartItem = () => {
 
   const handleSelectionChange = useCallback((event: SelectChangeEvent) => {
     setNbrOfShoes(event.target.value as string);
-  }, []);
+  }, [nbrOfShoes]);
 
   return (
     <div className="w-full h-[8rem] bg-white flex items-center justify-center gap-2 md:h-full md:gap-8 2xl:w-[90%]">
