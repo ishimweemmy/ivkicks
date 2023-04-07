@@ -1,6 +1,6 @@
 import Triangle from "./Triangle";
 import { trianglesData } from "../../data";
-import { Zoom, Fade, Bounce } from "react-reveal";
+import { Zoom, Fade } from "react-reveal";
 
 const FounderMessage = () => {
   return (

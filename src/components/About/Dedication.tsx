@@ -32,7 +32,6 @@ const Dedication = () => {
 
   useEffect(() => {
     window.addEventListener("resize", resizeDetect);
-
     return () => window.removeEventListener("resize", resizeDetect);
   }, [mobile, miniLaptop, smallMobile]);
 

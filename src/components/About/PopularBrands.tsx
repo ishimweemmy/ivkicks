@@ -1,6 +1,6 @@
 import { popularBrandsData } from "../../data";
 import Brand from "../Landing/Brand";
-import { Fade, Zoom, Flip } from "react-reveal";
+import { Fade, Zoom } from "react-reveal";
 
 const PopularBrands = () => {
   return (

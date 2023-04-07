@@ -1,8 +1,12 @@
-import type { FC } from "react";
+import { FC, useMemo } from "react";
 
 const DedCard: FC<DedCardProps> = (props) => {
   const { id, heading, description } = props;
-  const borderColors: string[] = ["#315BFF", "#FE7831", "#02BE83"];
+
+  const borderColors: string[] = useMemo(() => {
+    return ["#315BFF", "#FE7831", "#02BE83"];
+  }, []);
+
   return (
     <div
       className={`w-full h-full bg-white rounded-md border-2 border-dashed flex flex-col items-center justify-center gap-[2rem] lg:gap-4`}

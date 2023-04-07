@@ -6,6 +6,7 @@ const Cursor: FC<CursorProps> = () => {
     x: -100,
     y: -100,
   });
+
   const [mouseVisible, setMouseVisible] = useState(true);
 
   const [mobile, setMobile] = useState(window.innerWidth <= 768);
@@ -20,9 +21,11 @@ const Cursor: FC<CursorProps> = () => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    const mouseLeaveHandler = () => {
+    const mouseLeaveHandler = (e: MouseEvent) => {
       setMouseVisible(false);
+      setMousePosition({ x: e.clientX, y: e.clientY });
     };
+
     document.addEventListener("mouseleave", mouseLeaveHandler);
 
     document.addEventListener("mousemove", mouseMoveHandler);

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Socials from "./Socials";
 import { KeyboardArrowUp } from "@mui/icons-material";
 import Accordion from "../Landing/Accordion";
@@ -12,7 +12,7 @@ const Footer = () => {
       links: [
         { link: "Support Center", to: "support" },
         { link: "Customer Support", to: "support" },
-        { link: "Copyright", to: "#" },
+        { link: "Copyright", to: "copyright" },
         { link: "Popular Campaign", to: "campaign" },
       ],
       isActive: false,
@@ -52,7 +52,7 @@ const Footer = () => {
       );
   }, [mobile]);
 
-  const handleAccordionMoves = (summary: string) => {
+  const handleAccordionMoves = useCallback((summary: string) => {
     setAccordionData((prevData) => {
       return prevData.map((data) => {
         if (data.isActive) data.isActive = false;
@@ -63,20 +63,7 @@ const Footer = () => {
           : data;
       });
     });
-  };
-
-  const accordions = accordionData.map((data) => {
-    const { summary, links, isActive } = data;
-    return (
-      <Accordion
-        summary={summary}
-        links={links}
-        key={summary}
-        isActive={isActive}
-        handleChange={handleAccordionMoves}
-      />
-    );
-  });
+  }, []);
 
   return (
     <footer className="w-full h-[100vh] bg-white flex flex-col md:grid md:grid-cols-footer md:grid-rows-footer md:place-content-center md:place-items-center md:h-[60vh] md:self-center z-[1999]">
@@ -97,7 +84,18 @@ const Footer = () => {
       </Fade>
       <Flip top>
         <div className="h-fit w-full border md:border-none flex flex-col items-center justify-center py-8 gap-8 md:w-[90%] md:h-[80%] md:flex-row md:gap-0 ">
-          {accordions}
+          {accordionData.map((data) => {
+            const { summary, links, isActive } = data;
+            return (
+              <Accordion
+                summary={summary}
+                links={links}
+                key={summary}
+                isActive={isActive}
+                handleChange={handleAccordionMoves}
+              />
+            );
+          })}
         </div>
       </Flip>
       <div className="w-full h-[30%] flex flex-col items-center justify-center gap-6 md:h-full md:col-span-2 md:border-t-2 md:flex-row md:items-center md:justify-between ">

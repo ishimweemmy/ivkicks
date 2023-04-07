@@ -6,7 +6,7 @@ import {
   FormControl,
   FormControlLabel,
 } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import VisitorAPI from "visitorapi";
 import FTextField from "../../FormComponents/FTextField";
 import { Checkbox } from "@material-ui/core";
@@ -37,7 +37,7 @@ const Address = () => {
   const [countries, setCountries] = useState<any>([]);
   const [saveDInfo, setSaveDInfo] = useState(false);
 
-  const handleSaveDInfo = () => setSaveDInfo((prev) => !prev);
+  const handleSaveDInfo = useCallback(() => setSaveDInfo((prev) => !prev), [saveDInfo]);
 
   useEffect(() => {
     fetchCountries().then((res) => setCountries(res));
@@ -46,12 +46,15 @@ const Address = () => {
     });
   }, []);
 
-  const handleChange = (event: SelectChangeEvent<typeof country>) => {
-    const {
-      target: { value },
-    } = event;
-    setCountry(value);
-  };
+  const handleChange = useCallback(
+    (event: SelectChangeEvent<typeof country>) => {
+      const {
+        target: { value },
+      } = event;
+      setCountry(value);
+    },
+    [country]
+  );
 
   return (
     <div className="w-full h-full flex flex-col items-center gap-4 xlssm:w-[90%] xMiniTablet:mt-[5rem] circleLg:gap-8 2xl:-ml-24">

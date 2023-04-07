@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import logo from "../../assets/Logo.svg";
 import { FiSearch } from "react-icons/fi";
 import { FiUser } from "react-icons/fi";

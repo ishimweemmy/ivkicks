@@ -1,19 +1,19 @@
 import {
   FormControl,
-  InputLabel,
   MenuItem,
   Select,
   SelectChangeEvent,
 } from "@mui/material";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { ImCross } from "react-icons/im";
 import Incrementor from "../Global/Incrementor";
 
 const CartItem = () => {
   const [nbrOfShoes, setNbrOfShoes] = useState("");
-  const handleSelectionChange = (event: SelectChangeEvent) => {
+
+  const handleSelectionChange = useCallback((event: SelectChangeEvent) => {
     setNbrOfShoes(event.target.value as string);
-  };
+  }, []);
 
   return (
     <div className="w-full h-[8rem] bg-white flex items-center justify-center gap-2 md:h-full md:gap-8 2xl:w-[90%]">

@@ -1,4 +1,3 @@
-import React from "react";
 import CartItem from "./CartItem";
 import { IoMdArrowDropleft } from "react-icons/io";
 

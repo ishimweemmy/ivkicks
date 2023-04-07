@@ -1,12 +1,17 @@
-import type { FC } from "react";
+import { FC, useMemo } from "react";
 import Triangle from "./Triangle";
 import { Zoom, Fade, Bounce } from "react-reveal";
 
 const QualityCard: FC<QualityCProps> = (props) => {
   const { imgSrc, heading, description, triangles, id, delay } = props;
-  const textColors: string[] = ["#315BFF", "#FE7831", "#02BE83"];
 
-  const fadeDirection = id == 1 ? { right: true } : { left: true };
+  const textColors: string[] = useMemo(() => {
+    return ["#315BFF", "#FE7831", "#02BE83"];
+  }, []);
+
+  const fadeDirection = useMemo(() => {
+    return id == 1 ? { right: true } : { left: true };
+  }, [id]);
 
   return (
     <div

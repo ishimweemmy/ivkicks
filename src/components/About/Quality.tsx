@@ -1,6 +1,6 @@
 import { qualityCardsData } from "../../data";
 import QualityCard from "./QualityCard";
-import { Zoom, Fade, Flip } from "react-reveal";
+import { Zoom, Flip } from "react-reveal";
 
 const Quality = () => {
   return (

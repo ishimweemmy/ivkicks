@@ -6,11 +6,10 @@ import {
   FormControlLabel,
   MenuItem,
   Radio,
-  RadioGroup,
   Select,
   SelectChangeEvent,
 } from "@mui/material";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { OutlinedInput } from "@material-ui/core";
 
 const ITEM_HEIGHT = 40;
@@ -25,16 +24,16 @@ const MenuProps = {
 };
 
 const Shipping = () => {
-  const [plan, setPlan] = useState<string>("");
+  const [plan, setPlan] = useState<string>("Free");
   const handleSendSUpdates = () => setSendSUpdates((prev) => !prev);
   const [sendSUpdates, setSendSUpdates] = useState(false);
 
-  const handleChange = (event: SelectChangeEvent<typeof plan>) => {
+  const handleChange = useCallback((event: SelectChangeEvent<typeof plan>) => {
     const {
       target: { value },
     } = event;
     setPlan(value);
-  };
+  }, [plan]);
 
   return (
     <div className="w-full h-full flex flex-col gap-4 xlssm:w-[90%]">

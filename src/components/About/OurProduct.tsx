@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { FC, memo, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
 import { Fade, Flip } from "react-reveal";
@@ -7,11 +7,15 @@ import { colors } from "../../data";
 const OurProduct: FC<OurProductProps> = (props) => {
   const { imgSrc, id, summary, description, productUrl } = props;
 
-  const textColors: string[] = ["#315BFF", "#FE7831", "#FF3C78", "#02BE83"];
+  const textColors: string[] = useMemo(() => {
+    return ["#315BFF", "#FE7831", "#FF3C78", "#02BE83"];
+  }, []);
 
-  const styles = {
-    background: `linear-gradient(270deg, ${colors[id].firstColor} 0%, ${colors[id].secondColor} 100%)`,
-  };
+  const styles = useMemo(() => {
+    return {
+      background: `linear-gradient(270deg, ${colors[id].firstColor} 0%, ${colors[id].secondColor} 100%)`,
+    };
+  }, [id]);
 
   return (
     <div className="w-[85%] h-fit flex flex-col items-start justify-center gap-[1.5rem] pl-4 lsm:items-center">
@@ -50,4 +54,4 @@ const OurProduct: FC<OurProductProps> = (props) => {
   );
 };
 
-export default OurProduct;
+export default memo(OurProduct);
