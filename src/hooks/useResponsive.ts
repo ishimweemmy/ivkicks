@@ -35,7 +35,7 @@ export const useResponsive = () => {
     smallMobile,
     desktop,
     newArrMobile,
-    largeTablet
+    largeTablet,
   ]);
 
   return useMemo(() => {
@@ -48,7 +48,7 @@ export const useResponsive = () => {
       catMiniLaptop,
       desktop,
       newArrMobile,
-      largeTablet
+      largeTablet,
     ];
   }, [
     tablet,
@@ -59,6 +59,6 @@ export const useResponsive = () => {
     catMiniLaptop,
     desktop,
     newArrMobile,
-    largeTablet
+    largeTablet,
   ]);
 };

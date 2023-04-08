@@ -1,20 +1,11 @@
-import Triangle1 from "../../../public/server-assets/triangle1.svg";
-import Triangle2 from "../../../public/server-assets/triangle2.svg";
-import uniqueShoe from "/server-assets/alexander.png";
-import uniqueShoe1 from "/server-assets/alexander1.png";
-import uniquesArrow from "/server-assets/uniques-arrow.svg";
-import filledStar from "../../assets/Star 4.svg";
 import { IoHeart } from "react-icons/io5";
-import mcQueenWear from "../../assets/mcQueenWear.jpeg";
-import nikeShoesWear from "../../assets/nikeShoes.jpg";
-import yeezyShoesWear from "../../assets/yeezyBoost.jpg";
 import { FiEdit3 } from "react-icons/fi";
-import { Zoom, Flip, Bounce, Fade } from "react-reveal";
+import { Zoom, Flip, Fade } from "react-reveal";
 
 const UniqueProducts = () => {
   const theRatingStars: JSX.Element[] = [...Array(Math.floor(5))].map(
     (el: undefined, index: number) => {
-      return <img src={filledStar} alt="" key={index} className="w-2" />;
+      return <img src="/server-assets/Star 4.svg" alt="" key={index} className="w-2" />;
     }
   );
   return (
@@ -40,24 +31,24 @@ const UniqueProducts = () => {
 
             <div className="w-full h-fit flex items-center relative miniTablet:rotate-[-90deg]">
               <img
-                src={uniquesArrow}
+                src="/server-assets/uniques-arrow.svg"
                 alt=""
                 className="w-14 h-14 absolute left-8 top-10 rotate-[-45deg] miniTablet:top-20 miniTablet:left-0 miniTablet:h-16 miniTablet:w-16 z-50 lg:w-24  lg:left-[2.5rem] lg:top-[12rem] mini2xl:left-[20%] mini2xl:w-40"
               />
               <div className="w-full h-56 flex items-center justify-center relative">
                 <img
-                  src={Triangle2}
+                  src="/server-assets/triangle2.svg"
                   alt=""
                   className="w-[65%] absolute rotate-[-20deg] left-8 miniTablet:rotate-[80deg] max-w-none miniTablet:w-[120%] miniTablet:bottom-[6rem] miniTablet:left-0 lg:bottom-0 xlarge:w-[110%] xlarge:bottom-[5rem]"
                 />
                 <img
-                  src={uniqueShoe}
+                  src="/server-assets/alexander.png"
                   alt=""
                   className="w-[55%] max-w-none absolute rotate-[20deg] right-14 bottom-2 minSm:right-24 minSm:-bottom-4 miniTablet:rotate-[120deg] miniTablet:w-[90%] miniTablet:left-12 miniTablet:-top-4 lg:w-[100%] lg:left-[3rem] lg:-top-[9rem] xlarge:-top-[12rem] 2xl:-top-[18rem] 2xl:left-[0rem]"
                 />
               </div>
               <img
-                src={uniquesArrow}
+                src="/server-assets/uniques-arrow.svg"
                 alt=""
                 className="w-12 h-12 absolute right-8 top-12 rotate-[45deg] miniTablet:top-20 miniTablet:-right-4 miniTablet:h-16 miniTablet:w-16 lg:w-24 lg:top-[12rem] lg:right-[1rem] mini2xl:right-[20%] mini2xl:w-40"
               />
@@ -67,22 +58,22 @@ const UniqueProducts = () => {
 
             <div className="w-full h-56 flex items-center justify-start  relative miniTablet:rotate-[-90deg] ">
               <img
-                src={uniquesArrow}
+                src="/server-assets/uniques-arrow.svg"
                 alt=""
                 className="w-14 h-14 absolute left-8 bottom-6 rotate-[-130deg] miniTablet:top-20 miniTablet:left-0 miniTablet:h-16 miniTablet:w-16 lg:w-24 lg:rotate-[-150deg] lg:top-0 lg:left-[3rem] mini2xl:left-[20%] mini2xl:w-[20%]"
               />
               <img
-                src={Triangle1}
+                src="/server-assets/triangle1.svg"
                 alt=""
                 className="w-[55%] max-w-none absolute rotate-[15deg] right-16 miniTablet:w-[120%] miniTablet:rotate-[110deg] miniTablet:top-[11rem] miniTablet:left-0 lg:w-[80%] lg:left-[12rem] lg:top-[5rem]"
               />
               <img
-                src={uniqueShoe1}
+                src="/server-assets/alexander1.png"
                 alt=""
                 className="w-[55%] absolute rotate-[20deg] right-20 bottom-6 minSm:-bottom-4 miniTablet:rotate-[130deg] miniTablet:w-[90%] miniTablet:left-10 miniTablet:top-16 lg:w-[70%] lg:left-[15rem] lg:rotate-[125deg] lg:top-[2rem] "
               />
               <img
-                src={uniquesArrow}
+                src="/server-assets/uniques-arrow.svg"
                 alt=""
                 className="w-12 h-12 absolute right-8 bottom-6 rotate-[130deg] miniTablet:top-20 miniTablet:-right-8 miniTablet:h-16 miniTablet:w-16 lg:w-24 lg:right-[1rem] lg:top-[-1rem] mini2xl:right-[20%] mini2xl:w-[20%]"
               />
@@ -156,7 +147,7 @@ const UniqueProducts = () => {
               </div>
               <div className="w-[80%] h-fit flex justify-center items-center gap-2 ml-3 xLgMd:ml-0 xLgMd:w-full xLgMd:justify-between xLgMd:pr-4">
                 <img
-                  src={nikeShoesWear}
+                  src="/server-assets/nikeShoes.jpg"
                   alt=""
                   className="w-[30%] h-[2rem] rounded-md xLgMd:h-[3rem] 2xl:min-h-[4rem]"
                 />
@@ -189,7 +180,7 @@ const UniqueProducts = () => {
               </div>
               <div className="w-[80%] h-fit flex justify-center items-center gap-2 ml-3 xLgMd:ml-0 xLgMd:w-full xLgMd:justify-between xLgMd:pr-4">
                 <img
-                  src={yeezyShoesWear}
+                  src="/server-assets/yeezyBoost.jpg"
                   alt=""
                   className="w-[30%] h-[2rem] rounded-md xLgMd:h-[3rem] 2xl:min-h-[4rem] 2xl:max-h-[4rem]"
                 />
@@ -266,7 +257,7 @@ const UniqueProducts = () => {
           <Fade right delay={1500}>
             <div className="w-[11rem] h-[5rem] backdrop-blur-3xl rounded-md before:content-[''] before:absolute before:w-full before:h-full before:bg-[#fcd0af51] before:blur-3xl flex items-center justify-between px-2 miniSm:w-[50%] miniTablet:col-start-2 miniTablet:row-start-2 miniTablet:relative miniTablet:w-full miniTablet:left-[-5.5rem] miniTablet:h-[7rem] lg:w-[70%] lg:left-[7rem] xlarge:w-[55%] xlarge:left-[9rem] ">
               <img
-                src={mcQueenWear}
+                src="/server-assets/mcQueenWear.jpeg"
                 alt=""
                 className="w-[35%] h-[70%] rounded-lg miniTablet:w-[50%] miniTablet:h-[85%]"
               />

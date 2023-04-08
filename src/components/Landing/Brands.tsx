@@ -1,11 +1,9 @@
-import { memo, useEffect, useRef, useState } from "react";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { memo, useRef  } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import Brand from "./Brand";
 import { Pagination } from "swiper";
-import leftIcon from "../../assets/leftIcon.png";
-import rightIcon from "../../assets/rightIcon.png";
 import SlideNextButton from "../Global/SlideNextButton";
 import SlidePrevButton from "../Global/SlidePrevbutton";
 import { Flip } from "react-reveal";
@@ -45,7 +43,7 @@ const Brands = () => {
       <Flip bottom>
         <div className="w-full h-[70%] flex flex-col items-center justify-center gap-4 p-2 lg:flex-row lg:gap-2 md:w-[90%]">
           <img
-            src={leftIcon}
+            src="/server-assets/leftIcon.png"
             alt="leftIcon"
             className="w-2  hidden lg:block"
             onClick={() => swipingButtonRefNext.current?.click()}
@@ -72,20 +70,20 @@ const Brands = () => {
             <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
           </Swiper>
           <img
-            src={rightIcon}
+            src="/server-assets/rightIcon.png"
             alt="leftIcon"
             className="w-2  hidden lg:block"
             onClick={() => swipingButtonRefPrev.current?.click()}
           />
           <div className="w-full h-8 flex self-center gap-4 items-center justify-center lg:hidden">
             <img
-              src={leftIcon}
+              src="/server-assets/leftIcon.png"
               alt="leftIcon"
               className="w-2 "
               onClick={() => swipingButtonRefPrev.current?.click()}
             />
             <img
-              src={rightIcon}
+              src="/server-assets/rightIcon.png"
               alt="leftIcon"
               className="w-2"
               onClick={() => swipingButtonRefNext.current?.click()}

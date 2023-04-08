@@ -1,5 +1,3 @@
-import backDecor from "../../assets/backDecor.svg";
-import alexanderMcQueen from "../../assets/videoBg.png";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { Fade, Zoom } from "react-reveal";
 import { reasonsData } from "../../data";
@@ -36,7 +34,7 @@ const WhyUs = () => {
       <div className="w-full h-[16rem] grid place-items-center relative md:h-[20rem]">
         <Zoom>
           <div className="w-[90%] h-[85%] z-20 rounded-[1rem] grid place-items-center relative md:rounded-[1rem] miniTablet:w-[70%] ">
-            <img src={alexanderMcQueen} alt="" className="h-full absolute" />
+            <img src={"/server-assets/videoBg.png"} alt="" className="h-full absolute" />
 
             <div className="w-12 h-12 rounded-full border border-white grid place-items-center  filter z-10 ishimwe absolute">
               <PlayArrowIcon className="text-white backdrop-filter backdrop-blur-md" />
@@ -44,7 +42,7 @@ const WhyUs = () => {
           </div>
         </Zoom>
         <img
-          src={backDecor}
+          src={"/server-assets/backDecor.svg"}
           alt=""
           className="w-full h-full absolute bottom-[-3rem] left-[-5.5rem] z-0"
         />

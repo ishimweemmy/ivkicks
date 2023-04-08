@@ -1,6 +1,5 @@
 import { memo, useRef } from "react";
 import FeaturedPro from "./FeaturedPro";
-import chevronLeft from "../../assets/chevron-right.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { featuredProsData } from "../../data";
 import { Flip, Zoom } from "react-reveal";
@@ -32,7 +31,7 @@ const FeaturedPros = () => {
           </h1>
           <span className="text-sm text-[#FF3C78]  hidden lg:flex md:flex lgMd:flex xl:flex 2xl:flex lg:text-base md:items-center md:justify-center">
             <span className="font-semibold text-lg">View all</span>{" "}
-            <img src={chevronLeft} alt="" className="h-5 lg:h-5 lg:w-5" />{" "}
+            <img src="/server-assets/chevron-right.png" alt="" className="h-5 lg:h-5 lg:w-5" />{" "}
           </span>
         </div>
       </Zoom>
@@ -105,7 +104,7 @@ const FeaturedPros = () => {
         </>
       )}
       <span className="text-sm text-[#FF3C78] flex gap-2 md:hidden lg:hidden xl:hidden 2xl:hidden">
-        view all <img src={chevronLeft} alt="" className="h-5" />{" "}
+        view all <img src="/server-assets/chevron-right.png" alt="" className="h-5" />{" "}
       </span>
     </div>
   );

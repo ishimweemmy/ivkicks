@@ -1,14 +1,19 @@
 import { ImQuotesLeft } from "react-icons/im";
 import { useMemo, type FC } from "react";
-import filledStar from "../../assets/Star 4.svg";
-import unFilledStar from "../../assets/Star 5.svg";
 
 const Testimonial: FC<CustomerTestProps> = (props) => {
   const { customerName, rating, testimonial } = props;
   const theFilledStars: JSX.Element[] = useMemo(() => {
     return [...Array(Math.floor(rating))].map(
       (el: undefined, index: number) => {
-        return <img src={filledStar} alt="" key={index} className="w-4" />;
+        return (
+          <img
+            src="/server-assets/Star 4.svg"
+            alt=""
+            key={index}
+            className="w-4"
+          />
+        );
       }
     );
   }, []);
@@ -18,7 +23,12 @@ const Testimonial: FC<CustomerTestProps> = (props) => {
       ? [...Array(5 - Math.floor(rating))].map(
           (el: undefined, index: number) => {
             return (
-              <img src={unFilledStar} alt="" key={index} className="w-4" />
+              <img
+                src="/server-assets/Star 5.svg"
+                alt=""
+                key={index}
+                className="w-4"
+              />
             );
           }
         )

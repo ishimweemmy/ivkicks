@@ -1,6 +1,5 @@
 import { tastesData } from "../../data";
 import Taste from "./Taste";
-import mcQueenWear from "../../assets/mcQueenWear.jpeg";
 import { Flip, Zoom, Bounce } from "react-reveal";
 
 const Benefits = () => {
@@ -40,7 +39,7 @@ const Benefits = () => {
         <div
           className="w-full h-[30rem] relative bg-no-repeat bg-cover flex items-end justify-center rounded-md minSm:w-[90%] xlssm:w-[80%] xLgMd:w-[90%] transition group md:w-full lg:h-full lg:row-start-1 lg:col-start-2 lg:row-span-3"
           style={{
-            backgroundImage: `url(${mcQueenWear})`,
+            backgroundImage: `url("/server-assets/mcQueenWear.jpeg")`,
             backgroundPosition: `center`,
           }}
         >
@@ -48,7 +47,7 @@ const Benefits = () => {
             <div
               className="w-[35%] h-full rounded-lg bg-no-repeat bg-cover"
               style={{
-                backgroundImage: `url(${mcQueenWear})`,
+                backgroundImage: `url("/server-assets/mcQueenWear.jpeg")`,
                 backgroundPosition: `center`,
               }}
             ></div>

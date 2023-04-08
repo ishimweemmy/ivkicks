@@ -1,8 +1,6 @@
 import type { FC } from "react";
 import StackedLineChartIcon from "@mui/icons-material/StackedLineChart";
 import AutoModeIcon from "@mui/icons-material/AutoMode";
-import filledStar from "../../assets/Star 4.svg";
-import unFilledStar from "../../assets/Star 5.svg";
 import { memo, useMemo } from "react";
 
 const PromoProduct: FC<PromoProductProps> = (props) => {
@@ -20,7 +18,14 @@ const PromoProduct: FC<PromoProductProps> = (props) => {
   const theRatingStars: JSX.Element[] = useMemo(() => {
     return [...Array(Math.floor(rating))].map(
       (el: undefined, index: number) => {
-        return <img src={filledStar} alt="" key={index} className="w-3" />;
+        return (
+          <img
+            src="/server-assets/Star 4.svg"
+            alt=""
+            key={index}
+            className="w-3"
+          />
+        );
       }
     );
   }, [id]);
@@ -30,7 +35,12 @@ const PromoProduct: FC<PromoProductProps> = (props) => {
       ? [...Array(5 - Math.floor(rating))].map(
           (el: undefined, index: number) => {
             return (
-              <img src={unFilledStar} alt="" key={index} className="w-3" />
+              <img
+                src="/server-assets/Star 5.svg"
+                alt=""
+                key={index}
+                className="w-3"
+              />
             );
           }
         )

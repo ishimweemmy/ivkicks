@@ -1,5 +1,5 @@
-import { memo, useCallback, useEffect, useMemo, useState } from "react";
-import { Tablet, Twitter } from "@mui/icons-material";
+import { memo, useMemo } from "react";
+import { Twitter } from "@mui/icons-material";
 import { FacebookRounded } from "@mui/icons-material";
 import { Instagram } from "@mui/icons-material";
 import Social from "./Social";
@@ -9,6 +9,7 @@ import { useResponsive } from "../../hooks/useResponsive";
 
 const Socials: FC<SocialsProps> = (props) => {
   const { section } = props;
+
   const [
     tablet,
     miniLaptop,

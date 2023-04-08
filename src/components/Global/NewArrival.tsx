@@ -1,6 +1,4 @@
 import type { FC } from "react";
-import filledStar from "../../assets/Star 4.svg";
-import unFilledStar from "../../assets/Star 5.svg";
 import { colors } from "../../data";
 import { memo, useMemo } from "react";
 
@@ -16,7 +14,7 @@ const NewArrival: FC<FeaturedProInterface> = (props) => {
   const theRatingStars: JSX.Element[] = useMemo(() => {
     return [...Array(Math.floor(rating))].map(
       (el: undefined, index: number) => {
-        return <img src={filledStar} alt="" key={index} />;
+        return <img src="/server-assets/Star 4.svg" alt="" key={index} />;
       }
     );
   }, [id, rating]);
@@ -25,7 +23,7 @@ const NewArrival: FC<FeaturedProInterface> = (props) => {
     return rating < 5
       ? [...Array(5 - Math.floor(rating))].map(
           (el: undefined, index: number) => {
-            return <img src={unFilledStar} alt="" key={index} />;
+            return <img src="/server-assets/Star 5.svg" alt="" key={index} />;
           }
         )
       : [];

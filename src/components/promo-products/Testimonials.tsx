@@ -5,9 +5,6 @@ import { designerTalksData, testimonialsData } from "../../data";
 import SlideNextButton from "../Global/SlideNextButton";
 import SlidePrevButton from "../Global/SlidePrevbutton";
 import { useRef, useState } from "react";
-import leftArrow from "../../assets/arrow-left-circle-1.png";
-import rightArrow from "../../assets/arrow-left-circle.png";
-import mcQueenWear from "../../assets/mcQueenWear.jpeg";
 import DesignerTalk from "./DesignerTalk";
 import { Fade, Bounce } from "react-reveal";
 import "swiper/css";
@@ -65,13 +62,21 @@ const Testimonials = () => {
         </Fade>
         <div className="flex gap-4 xMiniTablet:w-[80%] xMiniTablet:justify-end xMiniTablet:self-end xMiniTablet:mr-[5%]">
           <img
-            src={reachEnd ? leftArrow : rightArrow}
+            src={
+              reachEnd
+                ? "/server-assets/arrow-left-circle-1.png"
+                : "/server-assets/arrow-left-circle.png"
+            }
             alt=""
             onClick={() => swipingButtonRefPrev.current?.click()}
             className={`${reachEnd ? "-rotate-180" : ""}`}
           />
           <img
-            src={reachEnd ? rightArrow : leftArrow}
+            src={
+              reachEnd
+                ? "/server-assets/arrow-left-circle.png"
+                : "/server-assets/arrow-left-circle-1.png"
+            }
             alt=""
             onClick={() => swipingButtonRef.current?.click()}
             className={`${reachEnd ? "rotate-180" : ""}`}
@@ -100,7 +105,7 @@ const Testimonials = () => {
                   <div
                     className="w-full h-[15rem] bg-cover bg-no-repeat xMiniTablet:h-[70%] xMiniTablet:w-[85%] md:w-full lg:h-[90%] "
                     style={{
-                      backgroundImage: `url(${mcQueenWear})`,
+                      backgroundImage: `url("/server-assets/mcQueenWear.jpeg")`,
                       backgroundPosition: `center`,
                     }}
                   ></div>

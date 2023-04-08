@@ -1,7 +1,4 @@
 import type { FC } from "react";
-import football from "../../assets/football 1.png";
-import fback from "../../assets/fback.png";
-import volleyShirt from "../../assets/volley 1.png";
 import { Fade, Zoom } from "react-reveal";
 
 const Accessories: FC = () => {
@@ -24,13 +21,13 @@ const Accessories: FC = () => {
           <div className="w-2/3 h-1/2 relative flex items-center justify-center md:w-1/2 md:h-full">
             <Zoom>
               <img
-                src={football}
+                src="/server-assets/football 1.png"
                 alt=""
                 className="absolute z-10 xl:scale-[1.2]"
               />
             </Zoom>
             <img
-              src={fback}
+              src="/server-assets/fback.png"
               alt=""
               className="absolute right-[8%] bottom-[3%] w-[60%] md:bottom-[25%] xLgMd:right-[15%]"
             />
@@ -73,13 +70,13 @@ const Accessories: FC = () => {
           <div className="w-2/3 h-1/2 relative flex items-center justify-center md:w-1/2 xLgMd:w-1/2 md:h-full xLgMd:h-full">
             <Zoom>
               <img
-                src={volleyShirt}
+                src="/server-assets/volley 1.png"
                 alt=""
                 className="w-[14rem] absolute z-10 lg:scale-[1.2] xl:scale-[1.3] 2xl:scale-[1.5]"
               />
             </Zoom>
             <img
-              src={fback}
+              src="/server-assets/fback.png"
               alt=""
               className="absolute right-[15%] bottom-[-2%] w-[50%] md:bottom-[15%] xLgMd:bottom-[10%] xLgMd:right-[20%]"
             />

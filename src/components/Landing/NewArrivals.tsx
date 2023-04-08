@@ -1,5 +1,4 @@
 import { FC } from "react";
-import chevronLeft from "../../assets/chevron-right.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
@@ -54,7 +53,7 @@ const NewArrivals: FC<FeaturedProInterface> = () => {
             </p>
           </div>
           <span className="text-sm text-[#FF3C78] text-center  flex gap-2">
-            View all <img src={chevronLeft} alt="" className="h-5" />{" "}
+            View all <img src={"/server-assets/chevron-right.png"} alt="" className="h-5" />{" "}
           </span>
         </div>
       </Zoom>

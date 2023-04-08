@@ -1,4 +1,3 @@
-import { SwiperSlide } from "swiper/react";
 import type { FC } from "react";
 import { memo } from "react";
 

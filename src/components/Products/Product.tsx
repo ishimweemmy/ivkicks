@@ -1,11 +1,4 @@
-import React, {
-  useCallback,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
-import filledStar from "/server-assets/Star 4.svg";
-import unFilledStar from "/server-assets/Star 5.svg";
+import React, { useCallback, useMemo, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -37,7 +30,7 @@ const Product = () => {
     return [...Array(Math.floor(4))].map((el: undefined, index: number) => {
       return (
         <img
-          src={filledStar}
+          src="/server-assets/Star 4.svg"
           alt=""
           key={index}
           className="miniTablet:w-3 2xl:max-w-4"
@@ -51,7 +44,7 @@ const Product = () => {
       ? [...Array(5 - Math.floor(4))].map((el: undefined, index: number) => {
           return (
             <img
-              src={unFilledStar}
+              src="/server-assets/Star 5.svg"
               alt=""
               key={index}
               className="miniTablet:w-3 2xl:max-w-4"

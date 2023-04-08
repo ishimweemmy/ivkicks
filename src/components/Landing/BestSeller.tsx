@@ -1,7 +1,6 @@
 import type { FC } from "react";
 import { memo, useMemo } from "react";
 import Switch from "./Switch";
-import filledStar from "../../assets/Star 4.svg";
 import { Zoom, Fade, Bounce } from "react-reveal";
 import Bubble from "./Bubble";
 
@@ -12,7 +11,12 @@ const BestSeller: FC<BestSeller> = (props) => {
     return [...Array(Math.floor(rating))].map(
       (rate: undefined, index: number) => {
         return (
-          <img src={filledStar} className="w-5 lsm:w-4" alt="" key={index} />
+          <img
+            src="/server-assets/Star 4.svg"
+            className="w-5 lsm:w-4"
+            alt=""
+            key={index}
+          />
         );
       }
     );

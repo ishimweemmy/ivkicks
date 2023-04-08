@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { useResponsive } from "../../hooks/useResponsive";
 
 const TheLook: FC<TheLookProps> = (props) => {
