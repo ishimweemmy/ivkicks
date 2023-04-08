@@ -119,9 +119,9 @@ const Home = () => {
             </div>
           </div>
           <div className="flex flex-col items-start justify-center gap-[1rem] pl-24 mt-[1rem] md:justify-start md:p-0 md:flex-row md:gap-[4rem] xMiniTablet:items-center xMiniTablet:mr-[25%] lsm:ml-[0%] md:pt-4 lssm:items-center lssm:mr-[50%]">
-            {["Free shipping", "Free returns"].map((item) => {
+            {["Free shipping", "Free returns"].map((item, index) => {
               return (
-                <Zoom delay={1500} left>
+                <Zoom delay={1500} left key={index}>
                   <div className="flex items-center justify-center gap-4">
                     <img src="/server-assets/Group 4.png" alt="" className="w-[1.3rem]" />
                     <span className="text-xs text-gray-800 whitespace-nowrap xl:text-base xl:font-medium xMiniTablet:text-base lsm:text-sm">
@@ -199,10 +199,10 @@ const Home = () => {
             {[
               { imgUrl: "/server-assets/arrow-left-circle.png", ref: swipingButtonRefPrev },
               { imgUrl: "/server-assets/arrow-left-circle-1.png", ref: swipingButtonRef },
-            ].map((item) => {
+            ].map((item, index) => {
               const { imgUrl, ref } = item;
               return (
-                <img src={imgUrl} alt="" onClick={() => ref.current?.click()} />
+                <img src={imgUrl} alt="" key={index} onClick={() => ref.current?.click()} />
               );
             })}
           </div>

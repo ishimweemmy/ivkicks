@@ -50,7 +50,7 @@ const Faqs = () => {
         </Bounce>
       </div>
       <div className="w-full h-fit flex flex-col items-start justify-center pl-2 md:items-center ">
-        {accordionData.map((data) => {
+        {accordionData.map((data, index) => {
           return (
             <FacAccordion
               expanded={expanded === data.panel}
@@ -58,6 +58,7 @@ const Faqs = () => {
               question={data.question}
               panel={data.panel}
               answer={data.answer}
+              key={index}
             />
           );
         })}

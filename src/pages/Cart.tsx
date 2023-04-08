@@ -58,6 +58,7 @@ const Cart = () => {
                   className={`w-fit text-2xl font-bold ${
                     url.active ? "text-[rgb(10,8,58)]" : "text-slate-400"
                   } flex items-center justify-center gap-2 circleLg:text-3xl`}
+                  key={index}
                 >
                   <span>{url.name}</span>
                   {index != 3 && <IoMdArrowDropright />}

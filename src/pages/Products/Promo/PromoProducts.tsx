@@ -104,6 +104,7 @@ const Promo = () => {
                           id={id}
                           measurement={measurement}
                           imgSrc={imgSrc}
+                          key={id}
                         />
                       );
                     })}

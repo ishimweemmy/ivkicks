@@ -130,13 +130,14 @@ const About = () => {
       </div>
       <Flip top delay={4000}>
         <div className="w-full h-fit flex flex-col items-center justify-center gap-[2rem] mb-10 lsm:flex-row lsm:gap-0 lg:gap-10">
-          {descriptionsData.map((descriptionData) => {
+          {descriptionsData.map((descriptionData, index) => {
             const { imgSrc, degree, description } = descriptionData;
             return (
               <Description
                 imgSrc={imgSrc}
                 degree={degree}
                 description={description}
+                key={index}
               />
             );
           })}

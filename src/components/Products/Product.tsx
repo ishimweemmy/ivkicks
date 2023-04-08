@@ -187,11 +187,12 @@ const Product = () => {
               Available in
             </span>
             <div className="flex gap-3">
-              {colors.map((color) => {
+              {colors.map((color, index) => {
                 return (
                   <div
                     className={`w-5 h-5 rounded-full 2xl:max-w-6 2xl:max-h-6`}
                     style={{ background: `${color}` }}
+                    key={index}
                   ></div>
                 );
               })}

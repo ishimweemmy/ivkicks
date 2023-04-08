@@ -19,10 +19,10 @@ const Difference = () => {
         </Bounce>
       </div>
       <div className="w-fit h-full lsm:grid lsm:grid-cols-2 transition duration-1000 ">
-        {differenceData.map((data) => {
+        {differenceData.map((data, index) => {
           const { heading, content, imgSrc } = data;
           return (
-            <DiffCard heading={heading} content={content} imgSrc={imgSrc} />
+            <DiffCard heading={heading} content={content} imgSrc={imgSrc} key={index} />
           );
         })}
       </div>

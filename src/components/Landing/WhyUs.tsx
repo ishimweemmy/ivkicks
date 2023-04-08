@@ -20,9 +20,9 @@ const WhyUs = () => {
         </Fade>
         <Fade bottom delay={1000}>
           <div className="w-full h-fit md:grid place-items-center gap-[2rem] hidden md:grid-cols-2 md:justify-items-start">
-            {reasonsData.map((item) => {
+            {reasonsData.map((item, index) => {
               return (
-                <div className="w-[10rem] flex gap-3 text-sm">
+                <div className="w-[10rem] flex gap-3 text-sm" key={index}>
                   <img src={item.imgSrc} alt="" />{" "}
                   <span className="text-base">{item.name}</span>
                 </div>
@@ -34,7 +34,11 @@ const WhyUs = () => {
       <div className="w-full h-[16rem] grid place-items-center relative md:h-[20rem]">
         <Zoom>
           <div className="w-[90%] h-[85%] z-20 rounded-[1rem] grid place-items-center relative md:rounded-[1rem] miniTablet:w-[70%] ">
-            <img src={"/server-assets/videoBg.png"} alt="" className="h-full absolute" />
+            <img
+              src={"/server-assets/videoBg.png"}
+              alt=""
+              className="h-full absolute"
+            />
 
             <div className="w-12 h-12 rounded-full border border-white grid place-items-center  filter z-10 ishimwe absolute">
               <PlayArrowIcon className="text-white backdrop-filter backdrop-blur-md" />
@@ -48,9 +52,9 @@ const WhyUs = () => {
         />
       </div>
       <div className="w-full h-fit grid place-items-center gap-[2rem] md:hidden">
-        {reasonsData.map((item) => {
+        {reasonsData.map((item, index) => {
           return (
-            <Fade bottom>
+            <Fade bottom key={index}>
               <div className="w-[10rem] flex gap-3 text-sm">
                 <img src={item.imgSrc} alt="" />{" "}
                 <span className="text-base">{item.name}</span>

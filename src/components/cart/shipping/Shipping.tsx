@@ -72,9 +72,9 @@ const Shipping = () => {
             {[
               { label: "Free", value: "Free", type: "Standard delivery" },
               { label: "Pay $50", value: "Pay $50", type: "Premium delivery" },
-            ].map((el) => {
+            ].map((el, index) => {
               return (
-                <MenuItem value={el.label}>
+                <MenuItem value={el.label} key={index}>
                   <div className="w-full flex justify-between items-center">
                     <div>
                       <Radio checked color="success" />

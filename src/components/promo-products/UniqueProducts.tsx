@@ -132,9 +132,9 @@ const UniqueProducts = () => {
                 {[
                   { title: "orders", measurement: 3425 },
                   { title: "returns", measurement: 34.25 },
-                ].map(({ title, measurement }) => {
+                ].map(({ title, measurement }, index) => {
                   return (
-                    <div className="flex flex-col">
+                    <div className="flex flex-col" key={index}>
                       <span className="text-[.6rem] font-semibold text-[#0A083A] uppercase xLgMd:text-xs">
                         {title}
                       </span>

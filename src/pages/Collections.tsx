@@ -266,9 +266,13 @@ const Collections = () => {
           <FormControl className="w-[50%] md:w-[30%]">
             <InputLabel>filter by</InputLabel>
             <Select value={filter} label="Filter" onChange={handleChange}>
-              {filters.map((filter) => {
+              {filters.map((filter, index) => {
                 const { label, value } = filter;
-                return <MenuItem value={value}>{label}</MenuItem>;
+                return (
+                  <MenuItem value={value} key={index}>
+                    {label}
+                  </MenuItem>
+                );
               })}
             </Select>
           </FormControl>
@@ -276,7 +280,7 @@ const Collections = () => {
         <div className="w-full h-full flex gap-4 md:grid md:grid-cols-[30%_70%] max2xl:grid-cols-[25%_75%] max2xl:gap-[5rem]">
           <div className="w-full h-fit hidden md:flex flex-col gap-4 pl-[1rem]">
             <div className="w-[80%] h-full bg-white border rounded-md shadow-md md:w-full">
-              {filters.slice(0, 4).map((filter) => {
+              {filters.slice(0, 4).map((filter, index) => {
                 const { value, label, open } = filter;
                 return (
                   <Accordion
@@ -285,6 +289,7 @@ const Collections = () => {
                       boxShadow: `none`,
                       background: `#ffffff`,
                     }}
+                    key={index}
                     onChange={() => handleFiltersMdopen(value)}
                   >
                     <AccordionSummary
@@ -344,7 +349,7 @@ const Collections = () => {
               </Select>
             </FormControl>
             <div className="w-[80%] h-full bg-white border rounded-md shadow-md md:w-full">
-              {otherFilters.slice(1).map((filter) => {
+              {otherFilters.slice(1).map((filter, index) => {
                 const { value, label, open, choices, panel } = filter;
                 return (
                   <Accordion
@@ -355,6 +360,7 @@ const Collections = () => {
                     }}
                     onChange={handleExpanded(panel)}
                     expanded={expanded === panel}
+                    key={index}
                   >
                     <AccordionSummary
                       expandIcon={
@@ -376,7 +382,7 @@ const Collections = () => {
                     </AccordionSummary>
                     <AccordionDetails className="w-full h-full flex flex-col items-start justify-center gap-2">
                       <FormGroup>
-                        {choices.map((choice: any) => {
+                        {choices.map((choice: any, index: number) => {
                           const { checked, choice: name } = choice;
                           return (
                             <FormControlLabel
@@ -387,6 +393,7 @@ const Collections = () => {
                                 />
                               }
                               label={name}
+                              key={index}
                             />
                           );
                         })}

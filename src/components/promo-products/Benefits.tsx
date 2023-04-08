@@ -31,6 +31,7 @@ const Benefits = () => {
               heading={heading}
               content={content}
               id={id}
+              key={id}
             />
           );
         })}

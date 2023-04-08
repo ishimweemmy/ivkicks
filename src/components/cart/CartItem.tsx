@@ -56,7 +56,7 @@ const CartItem = () => {
               >
                 {[...Array(10)].map((item, index) => {
                   return (
-                    <MenuItem value={index + 1}>
+                    <MenuItem value={index + 1} key={index}>
                       <span className="text-[rgb(10,8,58)] font-bold">
                         {index + 1}
                       </span>
