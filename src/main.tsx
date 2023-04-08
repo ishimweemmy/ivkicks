@@ -20,6 +20,8 @@ const Men = lazy(() => import("./pages/Products/NonProducts/Men"));
 const Women = lazy(() => import("./pages/Products/NonProducts/Women"));
 import Product from "./components/Products/Product";
 import Auth from "./pages/auth/Auth";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 const Shipping = lazy(() => import("./components/cart/shipping/Shipping"));
 const Billing = lazy(() => import("./components/cart/shipping/Billing"));
 const CartItems = lazy(() => import("./components/cart/CartItems"));
@@ -27,39 +29,41 @@ const Address = lazy(() => import("./components/cart/shipping/Address"));
 const Collections = lazy(() => import("./pages/Collections"));
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />}>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="products" element={<Allproducts />}>
-          <Route path="" element={<Products />}>
-            <Route path="men" element={<Men />}>
-              <Route path=":productId" element={<Product />} />
+  <Provider store={store}>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="products" element={<Allproducts />}>
+            <Route path="" element={<Products />}>
+              <Route path="men" element={<Men />}>
+                <Route path=":productId" element={<Product />} />
+              </Route>
+              <Route path="women" element={<Women />}>
+                <Route path=":productId" element={<Product />} />
+              </Route>
             </Route>
-            <Route path="women" element={<Women />}>
-              <Route path=":productId" element={<Product />} />
-            </Route>
+            <Route path="promoProducts" element={<Promo />} />
+            <Route path="collections" element={<Collections />} />
           </Route>
-          <Route path="promoProducts" element={<Promo />} />
-          <Route path="collections" element={<Collections />} />
-        </Route>
-        <Route path="sale" element={<Sale />} />
-        <Route path="cart" element={<Cart />}>
-          <Route path="" element={<CartItems />} />
-          <Route path="address" element={<Address />} />
-          <Route path="delivery" element={<Shipping />} />
-          <Route path="billing" element={<Billing />} />
-        </Route>
+          <Route path="sale" element={<Sale />} />
+          <Route path="cart" element={<Cart />}>
+            <Route path="" element={<CartItems />} />
+            <Route path="address" element={<Address />} />
+            <Route path="delivery" element={<Shipping />} />
+            <Route path="billing" element={<Billing />} />
+          </Route>
 
-        {/* Auth pages */}
+          {/* Auth pages */}
 
-        <Route path="auth" element={<Auth />}>
-          <Route path="signup" element={<SignUp />} />
-          <Route path="login" element={<Login />} />
+          <Route path="auth" element={<Auth />}>
+            <Route path="signup" element={<SignUp />} />
+            <Route path="login" element={<Login />} />
+          </Route>
+          <Route path="*" element={<Notfound />} />
         </Route>
-        <Route path="*" element={<Notfound />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>
+      </Routes>
+    </BrowserRouter>
+  </Provider>
 );

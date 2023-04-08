@@ -122,7 +122,7 @@ interface BestSeller {
   improvement: string;
   description: string;
   price: number;
-  id: number
+  id: number;
 }
 
 interface BrandProps {
@@ -246,4 +246,12 @@ interface TrackerCard {
   id: number;
   measurement: string;
   imgSrc: string;
+}
+
+interface UserState {
+  id: string;
+  username: string;
+  email: string;
+  password: string;
+  token: string;
 }
