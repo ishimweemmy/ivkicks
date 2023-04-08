@@ -150,7 +150,7 @@ const Home = () => {
                 >
                   <SwiperSlide className="flex items-start justify-end lg:mt-[2rem] xl:mt-0">
                     <img
-                      src={"/server-assets/alexander.png"}
+                      src="/server-assets/alexander.png"
                       alt=""
                       className="w-full h-full scale-[1.1] md:max-w-lg md:scale-[1.2] lg:max-w-lg xl:max-w-none xl:h-[35rem] lg:scale-[1.1] -rotate-[35deg]"
                     />
@@ -164,7 +164,7 @@ const Home = () => {
             </Zoom>
             <Flip delay={20} left>
               <img
-                src={"/server-assets/Group 267.svg"}
+                src="/server-assets/Group 267.svg"
                 alt=""
                 className="md:w-[100rem] md:max-w-md lg:max-w-lg xl:max-w-2xl xl:relative xl:z-0 xl:bottom-[-2rem] "
               />
@@ -186,7 +186,7 @@ const Home = () => {
                 }}
               >
                 <div className="w-[2rem] h-[2rem] bg-white grid place-items-center rounded-full shadow-slate-400 shadow-xl absolute right-5 top-[-1rem]">
-                  <img src={"/server-assets/lock.png"} alt="" width={12} />
+                  <img src="/server-assets/lock.png" alt="" width={12} />
                 </div>
                 <img src={"/server-assets/Ellipse 6.png"} alt="" />
                 <span className="text-xs xl:text-sm ">

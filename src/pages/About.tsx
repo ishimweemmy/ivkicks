@@ -1,9 +1,4 @@
 import Description from "../components/About/Description";
-import mcQueenWear from "../assets/mcQueenWear.jpeg";
-import nikeShoesWear from "../assets/nikeShoes.jpg";
-import yeezyShoesWear from "../assets/yeezyBoost.jpg";
-import lock from "../assets/lock.png";
-import personImage from "../assets/Ellipse 6.png";
 import Trending from "../components/About/Trending";
 import { FiGift } from "react-icons/fi";
 import FounderMessage from "../components/About/FounderMessage";
@@ -36,7 +31,7 @@ const About = () => {
           <div
             className="w-[90%] h-full flex flex-col items-center justify-center rounded-md bg-no-repeat bg-cover md:row-span-2 md:w-full md:h-[95%] md:self-end  "
             style={{
-              backgroundImage: `url(${mcQueenWear})`,
+              backgroundImage: `url("/server-assets/mcQueenWear.jpeg")`,
               backgroundPosition: "center",
             }}
           >
@@ -54,9 +49,9 @@ const About = () => {
                 style={{ boxShadow: "0px 20px 30px rgba(64, 103, 254, 0.15)" }}
               >
                 <div className="w-[2rem] h-[2rem] bg-white grid place-items-center rounded-full shadow-slate-400 shadow-xl absolute right-5 top-[-1rem]">
-                  <img src={lock} alt="" width={12} />
+                  <img src="/server-assets/lock.png" alt="" width={12} />
                 </div>
-                <img src={personImage} alt="" className="w-8" />
+                <img src="/server-assets/Ellipse 6.png" alt="" className="w-8" />
                 <span className="text-xs">
                   <b>Joan</b> has just purchased these sneakers right now.
                 </span>
@@ -68,7 +63,7 @@ const About = () => {
           <div
             className="w-[90%] h-full flex flex-col items-center justify-end rounded-md bg-no-repeat bg-cover gap-4 overflow-hidden md:w-full md:h-[75%] md:self-end xl:flex-col-reverse"
             style={{
-              backgroundImage: `url(${nikeShoesWear})`,
+              backgroundImage: `url("/server-assets/nikeShoes.jpg")`,
               backgroundPosition: "center",
             }}
           >
@@ -82,7 +77,7 @@ const About = () => {
             </div>
 
             <Trending
-              imgSrc={nikeShoesWear}
+              imgSrc="/server-assets/nikeShoes.jpg"
               name="Nike Air 780c"
               price={890}
               size={8}
@@ -94,7 +89,7 @@ const About = () => {
           <div
             className="w-[90%] h-full flex flex-col items-center justify-end bg-[white] rounded-md bg-no-repeat bg-contain gap-2 md:w-full md:h-[85%] md:self-start xl:justify-start xl:pt-[2rem] "
             style={{
-              backgroundImage: `url(${yeezyShoesWear})`,
+              backgroundImage: `url("/server-assets/yeezyBoost.jpg")`,
               backgroundPosition: "center",
             }}
           >

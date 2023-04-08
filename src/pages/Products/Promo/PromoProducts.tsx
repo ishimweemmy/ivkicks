@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { IoFootsteps } from "react-icons/io5";
 import { Swiper as SwiperEl, SwiperSlide } from "swiper/react";
@@ -22,7 +22,7 @@ import Faqs from "../../../components/promo-products/Faqs";
 import { Flip, Bounce, Fade, Zoom } from "react-reveal";
 
 const Promo = () => {
-  const swipingButtonRef = useRef<HTMLButtonElement | null>(null);
+  const swipingButtonRefNext = useRef<HTMLButtonElement | null>(null);
   const swipingButtonRefPrev = useRef<HTMLButtonElement | null>(null);
 
   return (
@@ -161,7 +161,7 @@ const Promo = () => {
                 {/* fa9358 */}
                 {/* <div className="spinBlur1 w-[20rem] h-[16rem] absolute bg-[#FF3C78] rounded-full bottom-[4rem] left-[26rem] -z-10 filter blur-3xl"></div> */}
 
-                <SlideNextButton swipingButtonRef={swipingButtonRef} />
+                <SlideNextButton swipingButtonRefNext={swipingButtonRefNext} />
                 <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
               </SwiperEl>
             </div>
@@ -176,7 +176,7 @@ const Promo = () => {
             <Fade right duration={1200} delay={2000}>
               <FiArrowRight
                 className="text-white lsm:text-xl"
-                onClick={() => swipingButtonRef.current?.click()}
+                onClick={() => swipingButtonRefNext.current?.click()}
               />
             </Fade>
           </div>

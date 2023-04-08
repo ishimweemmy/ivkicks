@@ -251,7 +251,7 @@ const Collections = () => {
                     categoryName={categoryName}
                     productsNbr={productsNbr}
                   />
-                  <SlideNextButton swipingButtonRef={nextButtonRef} />
+                  <SlideNextButton swipingButtonRefNext={nextButtonRef} />
                 </SwiperSlide>
               );
             })}

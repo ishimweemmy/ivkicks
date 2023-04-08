@@ -48,7 +48,7 @@ const BestSeller: FC<BestSeller> = (props) => {
             >
               <Zoom delay={500}>
                 <img
-                  src="/server-assets/alexander1.png"
+                  src="/server-assets/alexander.png"
                   alt=""
                   className="max-w-none w-[20rem] minSm:w-[28rem] lsm:w-[20rem] absolute bottom-[-5rem] minSm:bottom-[-8rem] lsm:bottom-[-5rem] md:w-[23rem] lgMd:w-[26rem] lgMd:bottom-[-7rem] lg:w-[30rem] lg:bottom-[-8rem] lg:left-16 mini2xl:left-[5rem] 2xl:w-[40rem] 2xl:bottom-[-12rem] 2xl:left-[10rem] after:content-[''] after:w-96 after:h-96 after:absolute after:z-50 after:bg-[blue]"
                 />
