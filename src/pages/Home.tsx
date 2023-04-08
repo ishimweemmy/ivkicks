@@ -1,12 +1,4 @@
-import heartIcon from "../assets/Vector.png";
-import heartIcon2 from "/server-assets/heartIcon2.svg";
-import checkIcon from "../assets/Group 4.png";
-import mainHeroImg from "../assets/Group 267.svg";
-import leftArrow from "../assets/arrow-left-circle-1.png";
-import rightArrow from "../assets/arrow-left-circle.png";
-import personImage from "../assets/Ellipse 6.png";
 import FeaturedPros from "../components/Landing/FeaturedPros";
-import lock from "../assets/lock.png";
 import Accessories from "../components/Global/Accessories";
 import BestSeller from "../components/Landing/BestSeller";
 import NewArrivals from "../components/Landing/NewArrivals";
@@ -22,7 +14,6 @@ import { Autoplay } from "swiper";
 import SlideNextButton from "../components/Global/SlideNextButton";
 import SlidePrevButton from "../components/Global/SlidePrevbutton";
 import { useMemo, useRef, useState } from "react";
-import alexander from "/server-assets/alexander.png";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -41,13 +32,14 @@ const Home = () => {
           improvement={"Improved stability, traction control & sole handling"}
           description={"Adidas Falcon Shoes for women - 2021 Edition"}
           price={120.5}
+          id={2}
         />
         <NewArrivals
           rating={0}
           description={""}
           price={90}
-          imgSource={""}
-          id={""}
+          imgSrc={""}
+          id={3}
           indexId={0}
         />
         <WhyUs />
@@ -98,7 +90,7 @@ const Home = () => {
                 className="w-fit h-fit"
                 onClick={() => setIsLiked((prev) => !prev)}
               >
-                <img src={heartIcon} alt="" className={`relative z-20 `} />
+                <img src="/server-assets/Vector.png" alt="" className={`relative z-20 `} />
               </div>
             </Fade>
             <div
@@ -107,7 +99,7 @@ const Home = () => {
               } `}
             >
               <Zoom duration={1000}>
-                <img src={heartIcon2} alt="" className={`w-[50rem] relative`} />
+                <img src="/server-assets/heartIcon2.svg" alt="" className={`w-[50rem] relative`} />
               </Zoom>
               <Flip right>
                 <div className="absolute grid gap-2 text-white place-items-center">
@@ -131,7 +123,7 @@ const Home = () => {
               return (
                 <Zoom delay={1500} left>
                   <div className="flex items-center justify-center gap-4">
-                    <img src={checkIcon} alt="" className="w-[1.3rem]" />
+                    <img src="/server-assets/Group 4.png" alt="" className="w-[1.3rem]" />
                     <span className="text-xs text-gray-800 whitespace-nowrap xl:text-base xl:font-medium xMiniTablet:text-base lsm:text-sm">
                       {item}
                     </span>
@@ -158,12 +150,12 @@ const Home = () => {
                 >
                   <SwiperSlide className="flex items-start justify-end lg:mt-[2rem] xl:mt-0">
                     <img
-                      src={alexander}
+                      src={"/server-assets/alexander.png"}
                       alt=""
                       className="w-full h-full scale-[1.1] md:max-w-lg md:scale-[1.2] lg:max-w-lg xl:max-w-none xl:h-[35rem] lg:scale-[1.1] -rotate-[35deg]"
                     />
                   </SwiperSlide>
-                  <SlideNextButton swipingButtonRef={swipingButtonRef} />
+                  <SlideNextButton swipingButtonRefNext={swipingButtonRef} />
                   <SlidePrevButton
                     swipingButtonRefPrev={swipingButtonRefPrev}
                   />
@@ -172,7 +164,7 @@ const Home = () => {
             </Zoom>
             <Flip delay={20} left>
               <img
-                src={mainHeroImg}
+                src={"/server-assets/Group 267.svg"}
                 alt=""
                 className="md:w-[100rem] md:max-w-md lg:max-w-lg xl:max-w-2xl xl:relative xl:z-0 xl:bottom-[-2rem] "
               />
@@ -194,9 +186,9 @@ const Home = () => {
                 }}
               >
                 <div className="w-[2rem] h-[2rem] bg-white grid place-items-center rounded-full shadow-slate-400 shadow-xl absolute right-5 top-[-1rem]">
-                  <img src={lock} alt="" width={12} />
+                  <img src={"/server-assets/lock.png"} alt="" width={12} />
                 </div>
-                <img src={personImage} alt="" />
+                <img src={"/server-assets/Ellipse 6.png"} alt="" />
                 <span className="text-xs xl:text-sm ">
                   <b>Joan</b> has just purchased these sneakers right now.
                 </span>
@@ -205,8 +197,8 @@ const Home = () => {
           </div>
           <div className="flex gap-4 z-50">
             {[
-              { imgUrl: rightArrow, ref: swipingButtonRefPrev },
-              { imgUrl: leftArrow, ref: swipingButtonRef },
+              { imgUrl: "/server-assets/arrow-left-circle.png", ref: swipingButtonRefPrev },
+              { imgUrl: "/server-assets/arrow-left-circle-1.png", ref: swipingButtonRef },
             ].map((item) => {
               const { imgUrl, ref } = item;
               return (

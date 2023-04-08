@@ -1,8 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import Socials from "./Socials";
 import { KeyboardArrowUp } from "@mui/icons-material";
 import Accordion from "../Landing/Accordion";
-import logo from "../../assets/Logo.svg";
 import { Fade, Flip } from "react-reveal";
 import { useResponsive } from "../../hooks/useResponsive";
 
@@ -72,7 +71,7 @@ const Footer = () => {
         <div className="w-full h-[20%] flex items-end justify-center pb-6 border md:border-none md:w-fit md:h-[80%] md:flex md:flex-col md:items-start md:gap-4 md:p-0 ">
           {mobile && (
             <img
-              src={logo}
+              src="/server-assets/Logo.svg"
               alt="logo"
               className="w-[2rem] lg:w-[3rem] transition-all  xs:w-[1.5rem]"
             />

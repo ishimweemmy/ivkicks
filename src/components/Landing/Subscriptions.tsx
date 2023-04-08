@@ -1,6 +1,5 @@
 import { useCallback, useState } from "react";
 import Socials from "../Global/Socials";
-import subscriptionSneaker from "../../assets/subscription.png";
 import { Flip, Zoom, Bounce } from "react-reveal";
 import type { ChangeEvent, FC, FormEvent } from "react";
 import { useResponsive } from "../../hooks/useResponsive";
@@ -115,7 +114,7 @@ const Subscriptions: FC<PageProps> = (props) => {
           </Flip>
           <Zoom>
             <img
-              src={subscriptionSneaker}
+              src={"/server-assets/subscription.png"}
               alt=""
               className="absolute left-[-2.5rem] bottom-[2rem] miniTablet:left-[4rem] md:left-[-2.5rem] md:bottom-0"
             />

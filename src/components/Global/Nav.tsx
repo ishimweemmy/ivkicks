@@ -1,9 +1,7 @@
 import { useRef, useState } from "react";
-import logo from "../../assets/Logo.svg";
 import { FiSearch } from "react-icons/fi";
 import { FiUser } from "react-icons/fi";
 import { FiShoppingBag } from "react-icons/fi";
-import menu from "../../assets/hamburger icon.png";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import type { FC } from "react";
 import { FiMenu } from "react-icons/fi";
@@ -33,7 +31,7 @@ const Nav: FC = () => {
         }}
       >
         <img
-          src={logo}
+          src="/server-assets/Logo.svg"
           alt="logo"
           className="w-[2rem] lg:w-[3rem] transition-all  xs:w-[1.5rem]"
           onClick={() => homeLinkRef.current?.click()}
@@ -99,7 +97,7 @@ const Nav: FC = () => {
           {location.pathname != "/about" &&
           location.pathname != "/products/promoProducts" ? (
             <img
-              src={menu}
+              src="/server-assets/hamburger icon.png"
               alt="menu"
               className="sm:w-[1rem] xs:w-[.75rem] lg:hidden miniTablet:w-[2rem] "
               onClick={() => setIsDisplayed((prev) => !prev)}

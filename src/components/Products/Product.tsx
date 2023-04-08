@@ -1,12 +1,11 @@
 import React, {
   useCallback,
-  useEffect,
   useMemo,
   useRef,
   useState,
 } from "react";
-import filledStar from "../../assets/Star 4.svg";
-import unFilledStar from "../../assets/Star 5.svg";
+import filledStar from "/server-assets/Star 4.svg";
+import unFilledStar from "/server-assets/Star 5.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
