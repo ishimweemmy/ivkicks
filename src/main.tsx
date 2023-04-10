@@ -27,14 +27,17 @@ const Billing = lazy(() => import("./components/cart/shipping/Billing"));
 const CartItems = lazy(() => import("./components/cart/CartItems"));
 const Address = lazy(() => import("./components/cart/shipping/Address"));
 const Collections = lazy(() => import("./pages/Collections"));
+const Search = lazy(() => import("./pages/Search"));
+const Profile = lazy(() => import("./pages/Profile"));
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <Provider store={store}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="/" element={<Home />} />
+          <Route path="" element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="profile" element={<Profile />} />
           <Route path="products" element={<Allproducts />}>
             <Route path="" element={<Products />}>
               <Route path="men" element={<Men />}>
@@ -46,6 +49,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
             </Route>
             <Route path="promoProducts" element={<Promo />} />
             <Route path="collections" element={<Collections />} />
+            <Route path="search" element={<Search />} />
           </Route>
           <Route path="sale" element={<Sale />} />
           <Route path="cart" element={<Cart />}>
@@ -61,6 +65,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
             <Route path="signup" element={<SignUp />} />
             <Route path="login" element={<Login />} />
           </Route>
+
           <Route path="*" element={<Notfound />} />
         </Route>
       </Routes>

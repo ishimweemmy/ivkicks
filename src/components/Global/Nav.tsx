@@ -13,7 +13,7 @@ const Nav: FC = () => {
 
   const [isDisplayed, setIsDisplayed] = useState<Boolean>(false);
   const location = useLocation();
-  
+
   return (
     <Fade delay={300}>
       <nav
@@ -64,22 +64,26 @@ const Nav: FC = () => {
           })}
         </div>
         <div className="min-w-[10rem] lg:w-[20rem] h-[4rem] sm:min-w-[8rem] xs:gap-6 bg-[bue] bg-blue] flex items-center justify-center gap-8 lg:gap-[3rem] sm:gap-8 transition-all">
-          <FiSearch
-            className={`w-[1.3rem] xs:w-[1rem] lg:w-[2rem] miniTablet:w-[3rem] miniTablet:h-[1.5rem] lg:h-[1.5rem] h-[1.3rem] sm:w-[1rem] block md:hidden lg:block font-black text-${
-              location.pathname == "/about" ||
-              location.pathname == "/products/promoProducts"
-                ? "white"
-                : "black"
-            }`}
-          />
-          <FiUser
-            className={`w-[1.5rem] h-[1.5rem] hidden lg:block text-${
-              location.pathname == "/about" ||
-              location.pathname == "/products/promoProducts"
-                ? "white"
-                : "to-black"
-            }`}
-          />
+          <NavLink to="/products/search">
+            <FiSearch
+              className={`w-[1.3rem] xs:w-[1rem] lg:w-[2rem] miniTablet:w-[3rem] miniTablet:h-[1.5rem] lg:h-[1.5rem] h-[1.3rem] sm:w-[1rem] block md:hidden lg:block font-black text-${
+                location.pathname == "/about" ||
+                location.pathname == "/products/promoProducts"
+                  ? "white"
+                  : "black"
+              }`}
+            />
+          </NavLink>
+          <NavLink to="/profile">
+            <FiUser
+              className={`w-[1.5rem] h-[1.5rem] hidden lg:block text-${
+                location.pathname == "/about" ||
+                location.pathname == "/products/promoProducts"
+                  ? "white"
+                  : "to-black"
+              }`}
+            />
+          </NavLink>
 
           <Link to="/cart" className="w-fit h-fit relative md:hidden lg:block">
             <FiShoppingBag
