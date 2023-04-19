@@ -28,15 +28,18 @@ const Shipping = () => {
   const handleSendSUpdates = () => setSendSUpdates((prev) => !prev);
   const [sendSUpdates, setSendSUpdates] = useState(false);
 
-  const handleChange = useCallback((event: SelectChangeEvent<typeof plan>) => {
-    const {
-      target: { value },
-    } = event;
-    setPlan(value);
-  }, [plan]);
+  const handleChange = useCallback(
+    (event: SelectChangeEvent<typeof plan>) => {
+      const {
+        target: { value },
+      } = event;
+      setPlan(value);
+    },
+    [plan]
+  );
 
   return (
-    <div className="w-full h-full flex flex-col gap-4 xlssm:w-[90%]">
+    <div className="w-full h-full flex flex-col gap-4 xlssm:w-[90%] circleLg:gap-10 2xl:-ml-24">
       <div className="w-full h-fit flex flex-col gap-4 border border-gray-200 p-6">
         <FTextField label="Email" variant="standard" />
         <FTextField label="Phone" variant="standard" />

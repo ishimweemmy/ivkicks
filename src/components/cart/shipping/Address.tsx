@@ -37,7 +37,10 @@ const Address = () => {
   const [countries, setCountries] = useState<any>([]);
   const [saveDInfo, setSaveDInfo] = useState(false);
 
-  const handleSaveDInfo = useCallback(() => setSaveDInfo((prev) => !prev), [saveDInfo]);
+  const handleSaveDInfo = useCallback(
+    () => setSaveDInfo((prev) => !prev),
+    [saveDInfo]
+  );
 
   useEffect(() => {
     fetchCountries().then((res) => setCountries(res));
