@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import DisplaySize from "../enums/DisplaySize";
+import { useDebouncedCallback } from "use-debounce";
 
 export const useResponsive = () => {
   const [tablet, setTablet] = useState(window.innerWidth >= DisplaySize.Tablet);
@@ -36,9 +37,11 @@ export const useResponsive = () => {
     setLargeTablet(window.innerWidth <= DisplaySize.LargeTablet);
   };
 
+  const debouncedVar = useDebouncedCallback(resizeDetect, 500);
+
   useEffect(() => {
-    window.addEventListener("resize", resizeDetect);
-    return () => window.removeEventListener("resize", resizeDetect);
+    window.addEventListener("resize", debouncedVar, false);
+    return () => window.removeEventListener("resize", debouncedVar, false);
   }, [
     tablet,
     miniLaptop,
