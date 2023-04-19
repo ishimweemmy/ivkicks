@@ -1,7 +1,6 @@
-import type { FC } from "react";
 import StackedLineChartIcon from "@mui/icons-material/StackedLineChart";
 import AutoModeIcon from "@mui/icons-material/AutoMode";
-import { memo, useMemo } from "react";
+import { memo, useMemo, type FC } from "react";
 
 const PromoProduct: FC<PromoProductProps> = (props) => {
   const {

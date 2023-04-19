@@ -1,6 +1,5 @@
-import type { FC } from "react";
 import { FiExternalLink } from "react-icons/fi";
-import { memo, useCallback } from "react";
+import { memo, useCallback, type FC } from "react";
 
 const Category: FC<CategoryProps> = (props) => {
   const { url, imgSrc, name, id } = props;

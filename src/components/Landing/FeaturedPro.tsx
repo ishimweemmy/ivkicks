@@ -1,4 +1,4 @@
-import { FC, useMemo } from "react";
+import { type FC, useMemo } from "react";
 import { memo } from "react";
 import { colors } from "../../data";
 

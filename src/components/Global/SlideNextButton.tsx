@@ -1,6 +1,5 @@
 import { useSwiper } from "swiper/react";
-import type { FC } from "react";
-import { memo } from "react";
+import { memo, type FC } from "react";
 
 const SlideNextButton: FC<NextButtonProps> = (props) => {
   const swiper = useSwiper();

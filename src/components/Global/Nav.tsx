@@ -1,9 +1,8 @@
-import { useRef, useState } from "react";
+import { useRef, useState, type FC } from "react";
 import { FiSearch } from "react-icons/fi";
 import { FiUser } from "react-icons/fi";
 import { FiShoppingBag } from "react-icons/fi";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import type { FC } from "react";
 import { FiMenu } from "react-icons/fi";
 import { links } from "../../data";
 import { Fade } from "react-reveal";

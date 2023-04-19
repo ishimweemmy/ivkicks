@@ -1,5 +1,4 @@
-import { memo, useState } from "react";
-import type { FC } from "react";
+import { memo, useState, type FC } from "react";
 
 const Incrementor: FC<IncrementorProps> = (props) => {
   const [nbrOfProducts, setNbrOfProducts] = useState(1);

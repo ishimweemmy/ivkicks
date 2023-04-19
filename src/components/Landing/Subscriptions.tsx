@@ -1,7 +1,6 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, type FC, type ChangeEvent, type FormEvent } from "react";
 import Socials from "../Global/Socials";
 import { Flip, Zoom, Bounce } from "react-reveal";
-import type { ChangeEvent, FC, FormEvent } from "react";
 import { useResponsive } from "../../hooks/useResponsive";
 
 const Subscriptions: FC<PageProps> = (props) => {

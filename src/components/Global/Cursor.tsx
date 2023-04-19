@@ -1,5 +1,4 @@
-import { memo, useEffect, useState } from "react";
-import type { FC } from "react";
+import { memo, useEffect, useState, type FC } from "react";
 import { useResponsive } from "../../hooks/useResponsive";
 
 const Cursor: FC<CursorProps> = () => {

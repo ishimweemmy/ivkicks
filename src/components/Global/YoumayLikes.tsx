@@ -3,10 +3,9 @@ import { Autoplay, Controller, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { youMayLike } from "../../data";
 import YouMayLike from "../Products/YouMayLike";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef, useState, type FC } from "react";
 import SlideNextButton from "./SlideNextButton";
 import SlidePrev from "./SlidePrevbutton";
-import type { FC } from "react";
 import { useResponsive } from "../../hooks/useResponsive";
 
 const YoumayLikes: FC<PageProps> = (props) => {

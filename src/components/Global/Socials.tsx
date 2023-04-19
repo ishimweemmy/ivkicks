@@ -1,9 +1,8 @@
-import { memo, useMemo } from "react";
+import { memo, useMemo, type FC } from "react";
 import { Twitter } from "@mui/icons-material";
 import { FacebookRounded } from "@mui/icons-material";
 import { Instagram } from "@mui/icons-material";
 import Social from "./Social";
-import type { FC } from "react";
 import { Bounce } from "react-reveal";
 import { useResponsive } from "../../hooks/useResponsive";
 

@@ -1,4 +1,4 @@
-import { FC, memo } from "react";
+import { type FC, memo } from "react";
 
 const Collection: FC<CollectionProps1> = (props) => {
   const { id, imgSrc, categoryName, productsNbr } = props;

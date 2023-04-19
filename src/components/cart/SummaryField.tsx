@@ -1,4 +1,4 @@
-import { FC, memo } from "react";
+import { type FC, memo } from "react";
 
 const SummaryField: FC<SummaryProps> = (props) => {
   const { label, value } = props;

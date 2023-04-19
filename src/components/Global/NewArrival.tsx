@@ -1,6 +1,5 @@
-import type { FC } from "react";
 import { colors } from "../../data";
-import { memo, useMemo } from "react";
+import { memo, useMemo, type FC } from "react";
 
 const NewArrival: FC<FeaturedProInterface> = (props) => {
   const { rating, description, price, imgSrc, id, indexId } = props;

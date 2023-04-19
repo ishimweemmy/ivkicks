@@ -1,5 +1,4 @@
-import type { FC } from "react";
-import { memo, useMemo } from "react";
+import { memo, useMemo, type FC } from "react";
 import Switch from "./Switch";
 import { Zoom, Fade, Bounce } from "react-reveal";
 import Bubble from "./Bubble";
