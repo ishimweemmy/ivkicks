@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { memo, type FC } from "react";
 import { Fade, Zoom } from "react-reveal";
 
 const Accessories: FC = () => {
@@ -103,4 +103,4 @@ const Accessories: FC = () => {
   );
 };
 
-export default Accessories;
+export default memo(Accessories);

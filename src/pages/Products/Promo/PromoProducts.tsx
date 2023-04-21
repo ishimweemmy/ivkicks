@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { memo, useRef } from "react";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { IoFootsteps } from "react-icons/io5";
 import { Swiper as SwiperEl, SwiperSlide } from "swiper/react";
@@ -194,4 +194,4 @@ const Promo = () => {
   );
 };
 
-export default Promo;
+export default memo(Promo);

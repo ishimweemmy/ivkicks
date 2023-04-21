@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { qualityCardsData } from "../../data";
 import QualityCard from "./QualityCard";
 import { Zoom, Flip } from "react-reveal";
@@ -40,4 +41,4 @@ const Quality = () => {
   );
 };
 
-export default Quality;
+export default memo(Quality);

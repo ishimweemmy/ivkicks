@@ -4,7 +4,7 @@ import SummaryField from "../components/cart/SummaryField";
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 import { Outlet, useLocation } from "react-router-dom";
 import { capitalizeLetter1 } from "../functions/capitalizeLetter1";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 
 const Cart = () => {
   const location = useLocation();
@@ -149,4 +149,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default memo(Cart);

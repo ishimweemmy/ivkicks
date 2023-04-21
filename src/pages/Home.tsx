@@ -13,7 +13,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import SlideNextButton from "../components/Global/SlideNextButton";
 import SlidePrevButton from "../components/Global/SlidePrevbutton";
-import { useMemo, useRef, useState } from "react";
+import { memo, useCallback, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -21,34 +21,6 @@ const Home = () => {
   const swipingButtonRefPrev = useRef<HTMLButtonElement | null>(null);
 
   const [isLiked, setIsLiked] = useState(false);
-
-  const getChilComponents = useMemo(() => {
-    return (
-      <>
-        <FeaturedPros />
-        <Accessories />
-        <BestSeller
-          rating={5}
-          improvement={"Improved stability, traction control & sole handling"}
-          description={"Adidas Falcon Shoes for women - 2021 Edition"}
-          price={120.5}
-          id={2}
-        />
-        <NewArrivals
-          rating={0}
-          description={""}
-          price={90}
-          imgSrc={""}
-          id={3}
-          indexId={0}
-        />
-        <WhyUs />
-        <Categories />
-        <Brands />
-        <Subscriptions />
-      </>
-    );
-  }, []);
 
   return (
     <div className="w-screen h-fit flex sm:flex-col xs:flex-col relative overflow-hidden">
@@ -90,7 +62,11 @@ const Home = () => {
                 className="w-fit h-fit"
                 onClick={() => setIsLiked((prev) => !prev)}
               >
-                <img src="/server-assets/Vector.png" alt="" className={`relative z-20 `} />
+                <img
+                  src="/server-assets/Vector.png"
+                  alt=""
+                  className={`relative z-20 `}
+                />
               </div>
             </Fade>
             <div
@@ -99,7 +75,11 @@ const Home = () => {
               } `}
             >
               <Zoom duration={1000}>
-                <img src="/server-assets/heartIcon2.svg" alt="" className={`w-[50rem] relative`} />
+                <img
+                  src="/server-assets/heartIcon2.svg"
+                  alt=""
+                  className={`w-[50rem] relative`}
+                />
               </Zoom>
               <Flip right>
                 <div className="absolute grid gap-2 text-white place-items-center">
@@ -123,7 +103,11 @@ const Home = () => {
               return (
                 <Zoom delay={1500} left key={index}>
                   <div className="flex items-center justify-center gap-4">
-                    <img src="/server-assets/Group 4.png" alt="" className="w-[1.3rem]" />
+                    <img
+                      src="/server-assets/Group 4.png"
+                      alt=""
+                      className="w-[1.3rem]"
+                    />
                     <span className="text-xs text-gray-800 whitespace-nowrap xl:text-base xl:font-medium xMiniTablet:text-base lsm:text-sm">
                       {item}
                     </span>
@@ -197,20 +181,51 @@ const Home = () => {
           </div>
           <div className="flex gap-4 z-50">
             {[
-              { imgUrl: "/server-assets/arrow-left-circle.png", ref: swipingButtonRefPrev },
-              { imgUrl: "/server-assets/arrow-left-circle-1.png", ref: swipingButtonRef },
+              {
+                imgUrl: "/server-assets/arrow-left-circle.png",
+                ref: swipingButtonRefPrev,
+              },
+              {
+                imgUrl: "/server-assets/arrow-left-circle-1.png",
+                ref: swipingButtonRef,
+              },
             ].map((item, index) => {
               const { imgUrl, ref } = item;
               return (
-                <img src={imgUrl} alt="" key={index} onClick={() => ref.current?.click()} />
+                <img
+                  src={imgUrl}
+                  alt=""
+                  key={index}
+                  onClick={() => ref.current?.click()}
+                />
               );
             })}
           </div>
         </div>
       </div>
-      {getChilComponents}
+      <FeaturedPros />
+      <Accessories />
+      <BestSeller
+        rating={5}
+        improvement={"Improved stability, traction control & sole handling"}
+        description={"Adidas Falcon Shoes for women - 2021 Edition"}
+        price={120.5}
+        id={2}
+      />
+      <NewArrivals
+        rating={0}
+        description={""}
+        price={90}
+        imgSrc={""}
+        id={3}
+        indexId={0}
+      />
+      <WhyUs />
+      <Categories />
+      <Brands />
+      <Subscriptions />
     </div>
   );
 };
 
-export default Home;
+export default memo(Home);

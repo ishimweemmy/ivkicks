@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { productsData } from "../../data";
 import OurProduct from "./OurProduct";
 import { Zoom } from "react-reveal";
@@ -29,4 +30,4 @@ const OurProducts = () => {
   );
 };
 
-export default OurProducts;
+export default memo(OurProducts);

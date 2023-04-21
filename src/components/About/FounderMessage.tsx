@@ -1,6 +1,7 @@
 import Triangle from "./Triangle";
 import { trianglesData } from "../../data";
 import { Zoom, Fade } from "react-reveal";
+import { memo } from "react";
 
 const FounderMessage = () => {
   return (
@@ -61,4 +62,4 @@ const FounderMessage = () => {
   );
 };
 
-export default FounderMessage;
+export default memo(FounderMessage);

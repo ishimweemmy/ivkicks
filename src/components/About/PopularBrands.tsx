@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { popularBrandsData } from "../../data";
 import Brand from "../Landing/Brand";
 import { Fade, Zoom } from "react-reveal";
@@ -56,4 +57,4 @@ const PopularBrands = () => {
   );
 };
 
-export default PopularBrands;
+export default memo(PopularBrands);

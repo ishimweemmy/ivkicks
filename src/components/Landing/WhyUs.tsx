@@ -1,6 +1,7 @@
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { Fade, Zoom } from "react-reveal";
 import { reasonsData } from "../../data";
+import { memo } from "react";
 
 const WhyUs = () => {
   return (
@@ -67,4 +68,4 @@ const WhyUs = () => {
   );
 };
 
-export default WhyUs;
+export default memo(WhyUs);

@@ -1,5 +1,6 @@
+import { memo } from "react";
 import { Outlet } from "react-router-dom";
 
 const Women = () => <Outlet />;
 
-export default Women;
+export default memo(Women);

@@ -7,6 +7,7 @@ const FOutlinedInput: FC<FTextFieldProps> = (props) => {
 
   return (
     <OutlinedInput
+      fullWidth
       placeholder={label}
       className="w-full text-white"
       endAdornment={<InputAdornment position="end">{children}</InputAdornment>}

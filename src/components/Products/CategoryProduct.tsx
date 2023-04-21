@@ -1,5 +1,5 @@
 import { AiOutlineHeart } from "react-icons/ai";
-import type { FC } from "react";
+import { FC, memo } from "react";
 import { Fade } from "react-reveal";
 
 const CategoryProduct: FC<CategoryProductProps> = (props) => {
@@ -33,4 +33,4 @@ const CategoryProduct: FC<CategoryProductProps> = (props) => {
   );
 };
 
-export default CategoryProduct;
+export default memo(CategoryProduct);

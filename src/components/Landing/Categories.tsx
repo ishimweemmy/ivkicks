@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { memo, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Collection from "./Collection";
@@ -95,4 +95,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default memo(Categories);

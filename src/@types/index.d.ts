@@ -1,6 +1,3 @@
-import { ReactNode } from "react";
-import { IconType } from "react-icons";
-
 interface ParentProps {
   id: number;
   description: string;

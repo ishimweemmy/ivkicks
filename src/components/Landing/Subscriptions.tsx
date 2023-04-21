@@ -1,4 +1,4 @@
-import { useCallback, useState, type FC, type ChangeEvent, type FormEvent } from "react";
+import { useCallback, useState, type FC, type ChangeEvent, type FormEvent, memo } from "react";
 import Socials from "../Global/Socials";
 import { Flip, Zoom, Bounce } from "react-reveal";
 import { useResponsive } from "../../hooks/useResponsive";
@@ -124,4 +124,4 @@ const Subscriptions: FC<PageProps> = (props) => {
   );
 };
 
-export default Subscriptions;
+export default memo(Subscriptions);

@@ -3,7 +3,7 @@ import { Autoplay, Controller, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { youMayLike } from "../../data";
 import YouMayLike from "../Products/YouMayLike";
-import { useCallback, useRef, useState, type FC } from "react";
+import { useCallback, useRef, useState, type FC, memo } from "react";
 import SlideNextButton from "./SlideNextButton";
 import SlidePrev from "./SlidePrevbutton";
 import { useResponsive } from "../../hooks/useResponsive";
@@ -95,4 +95,4 @@ const YoumayLikes: FC<PageProps> = (props) => {
   );
 };
 
-export default YoumayLikes;
+export default memo(YoumayLikes);

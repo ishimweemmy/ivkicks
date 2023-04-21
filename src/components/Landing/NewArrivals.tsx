@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
@@ -79,4 +79,4 @@ const NewArrivals: FC<FeaturedProInterface> = () => {
   );
 };
 
-export default NewArrivals;
+export default memo(NewArrivals);

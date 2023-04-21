@@ -1,5 +1,6 @@
 import { memo, type FC } from "react";
 import { Flip } from "react-reveal";
+import { DiffProps } from "../../@types";
 
 const DiffCard: FC<DiffProps> = (props) => {
   const { heading, content, imgSrc } = props;

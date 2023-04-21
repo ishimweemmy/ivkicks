@@ -29,46 +29,51 @@ const Address = lazy(() => import("./components/cart/shipping/Address"));
 const Collections = lazy(() => import("./pages/Collections"));
 const Search = lazy(() => import("./pages/Search"));
 const Profile = lazy(() => import("./pages/Profile"));
+import type {} from "@mui/x-date-pickers/themeAugmentation";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route path="" element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="products" element={<Allproducts />}>
-            <Route path="" element={<Products />}>
-              <Route path="men" element={<Men />}>
-                <Route path=":productId" element={<Product />} />
+  <LocalizationProvider dateAdapter={AdapterMoment}>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />}>
+            <Route path="" element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="products" element={<Allproducts />}>
+              <Route path="" element={<Products />}>
+                <Route path="men" element={<Men />}>
+                  <Route path=":productId" element={<Product />} />
+                </Route>
+                <Route path="women" element={<Women />}>
+                  <Route path=":productId" element={<Product />} />
+                </Route>
               </Route>
-              <Route path="women" element={<Women />}>
-                <Route path=":productId" element={<Product />} />
-              </Route>
+              <Route path="promoProducts" element={<Promo />} />
+              <Route path="collections" element={<Collections />} />
+              <Route path="search" element={<Search />} />
             </Route>
-            <Route path="promoProducts" element={<Promo />} />
-            <Route path="collections" element={<Collections />} />
-            <Route path="search" element={<Search />} />
-          </Route>
-          <Route path="sale" element={<Sale />} />
-          <Route path="cart" element={<Cart />}>
-            <Route path="" element={<CartItems />} />
-            <Route path="address" element={<Address />} />
-            <Route path="delivery" element={<Shipping />} />
-            <Route path="billing" element={<Billing />} />
-          </Route>
+            <Route path="sale" element={<Sale />} />
+            <Route path="cart" element={<Cart />}>
+              <Route path="" element={<CartItems />} />
+              <Route path="address" element={<Address />} />
+              <Route path="delivery" element={<Shipping />} />
+              <Route path="billing" element={<Billing />} />
+            </Route>
 
-          {/* Auth pages */}
+            {/* Auth pages */}
 
-          <Route path="auth" element={<Auth />}>
-            <Route path="signup" element={<SignUp />} />
-            <Route path="login" element={<Login />} />
+            <Route path="auth" element={<Auth />}>
+              <Route path="signup" element={<SignUp />} />
+              <Route path="login" element={<Login />} />
+            </Route>
+
+            <Route path="*" element={<Notfound />} />
           </Route>
-
-          <Route path="*" element={<Notfound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  </Provider>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
+  </LocalizationProvider>
 );

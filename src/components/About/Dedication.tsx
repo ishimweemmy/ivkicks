@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { memo, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -120,4 +120,4 @@ const Dedication = () => {
   );
 };
 
-export default Dedication;
+export default memo(Dedication);

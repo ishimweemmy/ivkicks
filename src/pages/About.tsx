@@ -10,6 +10,7 @@ import PopularBrands from "../components/About/PopularBrands";
 import { descriptionsData } from "../data";
 import { Link } from "react-router-dom";
 import { Zoom, Flip } from "react-reveal";
+import { memo } from "react";
 
 const About = () => {
   return (
@@ -51,7 +52,11 @@ const About = () => {
                 <div className="w-[2rem] h-[2rem] bg-white grid place-items-center rounded-full shadow-slate-400 shadow-xl absolute right-5 top-[-1rem]">
                   <img src="/server-assets/lock.png" alt="" width={12} />
                 </div>
-                <img src="/server-assets/Ellipse 6.png" alt="" className="w-8" />
+                <img
+                  src="/server-assets/Ellipse 6.png"
+                  alt=""
+                  className="w-8"
+                />
                 <span className="text-xs">
                   <b>Joan</b> has just purchased these sneakers right now.
                 </span>
@@ -153,4 +158,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default memo(About);

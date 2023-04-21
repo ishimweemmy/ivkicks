@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Collection from "../components/Products/Collection";
 import SlideNextButton from "../components/Global/SlideNextButton";
 import { categoryProData, collections } from "../data";
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, memo, useEffect, useRef, useState } from "react";
 import {
   Accordion,
   AccordionDetails,
@@ -456,4 +456,4 @@ const Collections = () => {
   );
 };
 
-export default Collections;
+export default memo(Collections);
