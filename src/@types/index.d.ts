@@ -1,3 +1,6 @@
+import { ReactNode } from "react";
+import { IconType } from "react-icons";
+
 interface ParentProps {
   id: number;
   description: string;
@@ -60,10 +63,11 @@ interface SummaryProps {
   value: number;
 }
 
-interface FTextField {
+interface FTextFieldProps {
   label: string;
   variant?: "standard" | "filled" | "outlined" | undefined;
   type?: string;
+  children?: ReactNode;
 }
 
 interface CursorProps {

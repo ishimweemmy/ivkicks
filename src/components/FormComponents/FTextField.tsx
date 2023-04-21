@@ -1,8 +1,9 @@
-import { TextField } from "@mui/material";
+import { InputAdornment, TextField } from "@mui/material";
 import type { FC } from "react";
+import { FTextFieldProps } from "../../@types";
 
-const FTextField: FC<FTextField> = (props) => {
-  const { label, variant } = props;
+const FTextField: FC<FTextFieldProps> = (props) => {
+  const { label, variant, children } = props;
 
   return (
     <TextField
@@ -10,6 +11,11 @@ const FTextField: FC<FTextField> = (props) => {
       variant={variant || "outlined"}
       className="w-full text-white"
       InputLabelProps={{ style: { color: "rgb(10,8,58)" } }}
+      InputProps={{
+        startAdornment: (
+          <InputAdornment position="end">{children}</InputAdornment>
+        ),
+      }}
     />
   );
 };
