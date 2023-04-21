@@ -33,7 +33,7 @@ const fetchCountries = async () => {
 
 const Billing = () => {
   const [saveDInfo, setSaveDInfo] = useState(false);
-  const [plan, setPlan] = useState<string>("Free");
+  const [paymentMethod, setPaymentMethod] = useState<string>("Free");
 
   const handleSaveDInfo = useCallback(
     () => setSaveDInfo((prev) => !prev),
@@ -41,13 +41,13 @@ const Billing = () => {
   );
 
   const handleChange = useCallback(
-    (event: SelectChangeEvent<typeof plan>) => {
+    (event: SelectChangeEvent<typeof paymentMethod>) => {
       const {
         target: { value },
       } = event;
-      setPlan(value);
+      setPaymentMethod(value);
     },
-    [plan]
+    [paymentMethod]
   );
 
   return (
@@ -55,7 +55,7 @@ const Billing = () => {
       <div className="w-full h-fit flex flex-col gap-4 border border-gray-200 p-6">
         <FormControl fullWidth>
           <Select
-            value={plan}
+            value={paymentMethod}
             input={<OutlinedInput />}
             MenuProps={MenuProps}
             className="w-full"
@@ -65,21 +65,34 @@ const Billing = () => {
               Choose Option
             </MenuItem>
             {[
-              { label: "Free", value: "Free", type: "Standard delivery" },
               {
-                label: "Pay $50",
-                value: "Pay $50",
-                type: "Premium delivery",
+                label: "PayPal",
+                value: "paypal",
+                imgSrc: "payment1.png",
+              },
+              {
+                label: "Credit card",
+                value: "visa credit card",
+                imgSrc: "payment2.png",
+              },
+              {
+                label: "MoMo Pay",
+                value: "momopay",
+                imgSrc: "payment3.png",
               },
             ].map((el, index) => {
               return (
-                <MenuItem value={el.label} key={index}>
+                <MenuItem value={el.value} key={index}>
                   <div className="w-full flex justify-between items-center">
                     <div>
                       <Radio checked color="success" />
-                      <span>{el.type}</span>
+                      <span>{el.label}</span>
                     </div>
-                    <span>{el.label}</span>
+                    <img
+                      src={`/server-assets/${el.imgSrc}`}
+                      className="w-12 h-12"
+                      alt=""
+                    />
                   </div>
                 </MenuItem>
               );
@@ -95,13 +108,13 @@ const Billing = () => {
         </div>
       </div>
 
-      <div className="w-full flex justify-between">
-        <span className="w-full flex items-center justify-start poppins font-black text-lg text-[rgb(10,8,58)] md:w-[90%]">
+      <div className="w-full flex justify-between text-base  md:text-lg">
+        <span className="w-full flex items-center justify-start poppins font-black text-[rgb(10,8,58)] md:w-[90%]">
           <IoMdArrowDropleft />
-          continue shopping
+          return to delivery
         </span>
         <button className="button hover:buttonOutline py-1 h-16 hover:py-1">
-          Proceed to delivery
+          Pay Safely
         </button>
       </div>
     </div>
