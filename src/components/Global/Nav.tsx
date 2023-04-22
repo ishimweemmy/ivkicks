@@ -35,33 +35,36 @@ const Nav: FC = () => {
           className="w-[2rem] lg:w-[3rem] transition-all  xs:w-[1.5rem]"
           onClick={() => homeLinkRef.current?.click()}
         />
-        <div className="hidden lg:flex lg:h-[5rem] flex-grow items-center justify-center gap-[5rem] transition-all self-end">
-          {links.map((link) => {
-            return (
-              <NavLink
-                to={link.to}
-                end
-                className={({ isActive }) =>
-                  isActive
-                    ? `text-lg font-medium text-[#FF3C78] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full after:bg-[#FF3C78] transition-all duration-700 after:animate-ping `
-                    : `text-lg font-medium grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] transition-all duration-1000`
-                }
-                style={{
-                  color: `${
-                    location.pathname == "/about" ||
-                    location.pathname == "/products/promoProducts"
-                      ? "white"
-                      : "#0A083A"
-                  }`,
-                }}
-                ref={link.to === "/" ? homeLinkRef : null}
-                key={link.to}
-              >
-                {link.displayName}
-              </NavLink>
-            );
-          })}
-        </div>
+        {location.pathname != "/auth/login" &&
+          location.pathname != "/auth/signup" && (
+            <div className="hidden lg:flex lg:h-[5rem] flex-grow items-center justify-center gap-[5rem] transition-all self-end">
+              {links.map((link) => {
+                return (
+                  <NavLink
+                    to={link.to}
+                    end
+                    className={({ isActive }) =>
+                      isActive
+                        ? `text-lg font-medium text-[#FF3C78] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full after:bg-[#FF3C78] transition-all duration-700 after:animate-ping `
+                        : `text-lg font-medium grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] transition-all duration-1000`
+                    }
+                    style={{
+                      color: `${
+                        location.pathname == "/about" ||
+                        location.pathname == "/products/promoProducts"
+                          ? "white"
+                          : "#0A083A"
+                      }`,
+                    }}
+                    ref={link.to === "/" ? homeLinkRef : null}
+                    key={link.to}
+                  >
+                    {link.displayName}
+                  </NavLink>
+                );
+              })}
+            </div>
+          )}
         <div className="min-w-[10rem] lg:w-[20rem] h-[4rem] sm:min-w-[8rem] xs:gap-6 bg-[bue] bg-blue] flex items-center justify-center gap-8 lg:gap-[3rem] sm:gap-8 transition-all">
           <NavLink to="/products/search">
             <FiSearch
@@ -84,7 +87,10 @@ const Nav: FC = () => {
             />
           </NavLink>
 
-          <Link to="/cart" className="w-fit h-fit relative md:hidden lg:block">
+          <NavLink
+            to="/cart"
+            className="w-fit h-fit relative md:hidden lg:block"
+          >
             <FiShoppingBag
               className={`w-[1.5rem] xs:w-[1rem] sm:w-[1rem] miniTablet:w-[1.75rem] lg:w-[2rem] h-[1.5rem] font-bold ${
                 location.pathname == "/about" ||
@@ -96,7 +102,7 @@ const Nav: FC = () => {
             <span className="absolute bg-[#FF3C78] w-[1.2rem] xs:w-[1rem] xs:h-[1rem] xs:text-xs xs:font-semibold sm:w-[.9rem] sm:h-[.9rem] lg:w-[1rem] lg:h-[1rem] h-[1.2rem] sm:text-xs rounded-full grid place-content-center text-white right-[-.5rem] miniTablet:right-[-.3rem]  lg:right-[-.3rem] top-[.75rem]">
               3
             </span>
-          </Link>
+          </NavLink>
           {location.pathname != "/about" &&
           location.pathname != "/products/promoProducts" ? (
             <img

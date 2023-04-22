@@ -20,6 +20,10 @@
   .buttonOutline {
     @apply w-full py-5 bg-transparent text-[rgb(10,8,58)] border border-[rgb(10,8,58)] rounded-sm text-sm font-bold poppins transition duration-300;
   }
+
+  .loginOption {
+    @apply w-full h-14 p-3 border rounded-xl border-gray-400 grid place-items-center hover:scale-110 transition hover:border-none hover:shadow-2xl;
+  }
 }
 
 .bg-hover {
