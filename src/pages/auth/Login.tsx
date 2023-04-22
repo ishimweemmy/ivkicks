@@ -23,45 +23,7 @@ const Login = () => {
           <Link to={"/"}></Link>
         </div>
         <div className="w-full h-full grid place-items-center relative ">
-          <div className="w-1/2 h-[20rem] bg-[#4468fb85] rounded-tr-full rounded-br-full absolute left-0 mt-20">
-            <NavLink to="/products/search">
-              <FiSearch
-                className={`w-[1.3rem] xs:w-[1rem] lg:w-[2rem] miniTablet:w-[3rem] miniTablet:h-[1.5rem] lg:h-[1.5rem] h-[1.3rem] sm:w-[1rem] block md:hidden lg:block font-black text-${
-                  location.pathname == "/about" ||
-                  location.pathname == "/products/promoProducts"
-                    ? "white"
-                    : "black"
-                }`}
-              />
-            </NavLink>
-            <NavLink to="/profile">
-              <FiUser
-                className={`w-[1.5rem] h-[1.5rem] hidden lg:block text-${
-                  location.pathname == "/about" ||
-                  location.pathname == "/products/promoProducts"
-                    ? "white"
-                    : "to-black"
-                }`}
-              />
-            </NavLink>
-
-            <Link
-              to="/cart"
-              className="w-fit h-fit relative md:hidden lg:block"
-            >
-              <FiShoppingBag
-                className={`w-[1.5rem] xs:w-[1rem] sm:w-[1rem] miniTablet:w-[1.75rem] lg:w-[2rem] h-[1.5rem] font-bold ${
-                  location.pathname == "/about" ||
-                  location.pathname == "/products/promoProducts"
-                    ? "text-white"
-                    : "black"
-                }`}
-              />
-              <span className="absolute bg-[#FF3C78] w-[1.2rem] xs:w-[1rem] xs:h-[1rem] xs:text-xs xs:font-semibold sm:w-[.9rem] sm:h-[.9rem] lg:w-[1rem] lg:h-[1rem] h-[1.2rem] sm:text-xs rounded-full grid place-content-center text-white right-[-.5rem] miniTablet:right-[-.3rem]  lg:right-[-.3rem] top-[.75rem]">
-                3
-              </span>
-            </Link>
-          </div>
+          
           <img
             src="/server-assets/backDecor.svg"
             alt=""
