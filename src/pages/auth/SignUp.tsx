@@ -60,8 +60,8 @@ const SignUp = () => {
   const handleSendSUpdates = () => setSendSUpdates((prev) => !prev);
 
   return (
-    <div className="w-full h-fit grid gap-4 bg-white md:grid-cols-2">
-      <div className="w-full h-fit flex flex-col items-center justify-center gap-4 px-4 lsm:px-8">
+    <div className="w-full h-fit grid gap-4 bg-white md:grid-cols-2 miniLarge:gap-8 miniLarge:pl-8 2xl:gap-24 2xl:pl-20">
+      <div className="w-full h-fit flex flex-col items-center justify-center gap-4 px-4 lsm:px-8 miniLarge:gap-8">
         <h1 className="text-2xl font-bold text-center text-[#0A083A] lsm:text-3xl md:text-2xl">
           create your Kicks account
         </h1>
@@ -129,22 +129,22 @@ const SignUp = () => {
           <img
             src="/server-assets/backDecor.svg"
             alt=""
-            className="rotate-[110deg] miniLarge:scale-[1.2]"
+            className="rotate-[110deg] miniLarge:scale-[1.3]"
           />
           <img
             src="/server-assets/authBg.png"
             alt=""
-            className="absolute w-[20rem] h-[15rem] miniLarge:scale-[1.2] "
+            className="absolute w-[20rem] h-[15rem] miniLarge:scale-[1.2] animate-pulse"
           />
           <img
             src="/server-assets/authBg1.png"
             alt=""
-            className="absolute w-[8rem] h-[10rem] left-4 bottom-[2rem] miniLarge:scale-[1.2]"
+            className="absolute w-[8rem] h-[10rem] left-4 bottom-[2rem] miniLarge:scale-[1.2] miniLarge:left-10"
           />
           <img
             src="/server-assets/authBg7.png"
             alt=""
-            className="absolute w-[7rem] h-[10rem] right-9 bottom-[2rem] rotate-[25deg] miniLarge:scale-[1.2]"
+            className="absolute w-[7rem] h-[10rem] right-9 bottom-[2rem] rotate-[25deg] miniLarge:scale-[1.2] miniLarge:right-16"
           />
         </div>
         <div className="w-full h-fit flex flex-col items-center justify-center gap-3">
