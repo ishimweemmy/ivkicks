@@ -1,11 +1,11 @@
 import { useRef, useState, type FC } from "react";
-import { FiSearch } from "react-icons/fi";
 import { FiUser } from "react-icons/fi";
 import { FiShoppingBag } from "react-icons/fi";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { links } from "../../data";
 import { Fade } from "react-reveal";
+import Search from "../Search/Search";
 
 const Nav: FC = () => {
   const homeLinkRef = useRef<HTMLAnchorElement>(null);
@@ -66,16 +66,7 @@ const Nav: FC = () => {
             </div>
           )}
         <div className="min-w-[10rem] lg:w-[20rem] h-[4rem] sm:min-w-[8rem] xs:gap-6 bg-[bue] bg-blue] flex items-center justify-center gap-8 lg:gap-[3rem] sm:gap-8 transition-all">
-          <NavLink to="/products/search">
-            <FiSearch
-              className={`w-[1.3rem] xs:w-[1rem] lg:w-[2rem] miniTablet:w-[3rem] miniTablet:h-[1.5rem] lg:h-[1.5rem] h-[1.3rem] sm:w-[1rem] block md:hidden lg:block font-black text-${
-                location.pathname == "/about" ||
-                location.pathname == "/products/promoProducts"
-                  ? "white"
-                  : "black"
-              }`}
-            />
-          </NavLink>
+          <Search pathname={location.pathname} />
           <NavLink to="/profile">
             <FiUser
               className={`w-[1.5rem] h-[1.5rem] hidden lg:block text-${
