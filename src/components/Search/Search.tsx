@@ -1,11 +1,10 @@
 import { memo, type FC } from "react";
 import { FiSearch } from "react-icons/fi";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { toggleModal } from "../../features/modal/modalReducer";
+import SearchModal from "./SearchModal";
+import { useDisclosure } from "@mantine/hooks";
 
 const Search: FC<{ pathname: string }> = ({ pathname }) => {
-  const dispatch = useAppDispatch();
-  const modal = useAppSelector((state) => state.modal);
+  const [opened, { open, close }] = useDisclosure(false);
 
   return (
     <div className="w-fit h-fit flex items-center justify-center">
@@ -15,8 +14,9 @@ const Search: FC<{ pathname: string }> = ({ pathname }) => {
             ? "white"
             : "black"
         }`}
-        onClick={() => dispatch(toggleModal(modal))}
+        onClick={open}
       />
+      <SearchModal opened={opened} close={close} />
     </div>
   );
 };

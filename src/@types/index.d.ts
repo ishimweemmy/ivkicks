@@ -65,6 +65,7 @@ interface FTextFieldProps {
   variant?: "standard" | "filled" | "outlined" | undefined;
   type?: string;
   children?: ReactNode;
+  _onChange: ChangeEventHandler;
 }
 
 interface CursorProps {
@@ -84,17 +85,17 @@ interface Link1 {
 }
 
 interface NextButtonProps {
-  swipingButtonRefNext: any;
+  swipingButtonRefNext: unknown;
 }
 
 interface PrevButtonProps {
-  swipingButtonRefPrev: any;
+  swipingButtonRefPrev: unknown;
 }
 
 interface SocialProps {
   name: string;
   link: string;
-  icon: any;
+  icon: unknown;
   section?: string;
 }
 
@@ -115,7 +116,7 @@ interface AccordionProps {
   summary: string;
   links: Link[];
   isActive: boolean;
-  handleChange: (summary: string) => any;
+  handleChange: (summary: string) => unknown;
 }
 
 interface BestSeller {
@@ -172,7 +173,7 @@ interface SizeProps {
   isAvailable: boolean;
   isActive: boolean;
   size: number;
-  toggleIsActive: (size: number) => any;
+  toggleIsActive: (size: number) => unknown;
 }
 
 interface TheLookProps {
@@ -215,7 +216,7 @@ interface AccordionProps1 {
   answer: string;
   expanded: boolean;
   panel: string;
-  handleChange: (question: string) => any;
+  handleChange: (question: string) => unknown;
   page?: string;
 }
 
@@ -254,4 +255,9 @@ interface UserState {
   username: string;
   email: string;
   token: string;
+}
+
+interface SearchModalProps {
+  opened: boolean;
+  close: () => void;
 }

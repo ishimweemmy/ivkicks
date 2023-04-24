@@ -1,8 +1,6 @@
 import { useRef, useState, type FC } from "react";
-import { FiUser } from "react-icons/fi";
-import { FiShoppingBag } from "react-icons/fi";
+import { FiUser, FiShoppingBag, FiMenu } from "react-icons/fi";
 import { NavLink, useLocation } from "react-router-dom";
-import { FiMenu } from "react-icons/fi";
 import { links } from "../../data";
 import { Fade } from "react-reveal";
 import Search from "../Search/Search";
@@ -10,7 +8,7 @@ import Search from "../Search/Search";
 const Nav: FC = () => {
   const homeLinkRef = useRef<HTMLAnchorElement>(null);
 
-  const [isDisplayed, setIsDisplayed] = useState<Boolean>(false);
+  const [isDisplayed, setIsDisplayed] = useState<boolean>(false);
   const location = useLocation();
 
   return (
