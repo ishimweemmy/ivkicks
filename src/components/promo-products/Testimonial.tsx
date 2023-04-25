@@ -8,7 +8,7 @@ const Testimonial: FC<CustomerTestProps> = (props) => {
       (el: undefined, index: number) => {
         return (
           <img
-            src="/server-assets/Star 4.svg"
+            src={import.meta.env.MEDIA_STORAGE_URL +"Star 4.svg"}
             alt=""
             key={index}
             className="w-4"
@@ -24,7 +24,7 @@ const Testimonial: FC<CustomerTestProps> = (props) => {
           (el: undefined, index: number) => {
             return (
               <img
-                src="/server-assets/Star 5.svg"
+                src={import.meta.env.MEDIA_STORAGE_URL +"Star 5.svg"}
                 alt=""
                 key={index}
                 className="w-4"

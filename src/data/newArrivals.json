@@ -3,7 +3,7 @@
         "rating": 5,
         "description": "Adidas Falcon Shoes for men - 2021 Edition",
         "price": 110,
-        "imgSrc": "/server-assets/arrival3.png",
+        "imgSrc": "https://storage.cloud.google.com/kicks/arrival3.png",
         "id": 1,
         "indexId": 0
     },
@@ -11,7 +11,7 @@
         "rating": 4,
         "description": "Adidas Falcon Shoes for men - 2021 Edition",
         "price": 100,
-        "imgSrc": "/server-assets/arrival2.png",
+        "imgSrc": "https://storage.cloud.google.com/kicks/arrival2.png",
         "id": 2,
         "indexId": 1
     },
@@ -19,7 +19,7 @@
         "rating": 3,
         "description": "Adidas Falcon Shoes for men - 2021 Edition",
         "price": 130,
-        "imgSrc": "/server-assets/arrival3.png",
+        "imgSrc": "https://storage.cloud.google.com/kicks/arrival3.png",
         "id": 3,
         "indexId": 2
     },
@@ -27,7 +27,7 @@
         "rating": 4.5,
         "description": "Adidas Falcon Shoes for men - 2021 Edition",
         "price": 120,
-        "imgSrc": "/server-assets/arrival2.png",
+        "imgSrc": "https://storage.cloud.google.com/kicks/arrival2.png",
         "id": 4,
         "indexId": 3
     },
@@ -35,7 +35,7 @@
         "rating": 5,
         "description": "Adidas Falcon Shoes for men - 2021 Edition",
         "price": 110,
-        "imgSrc": "/server-assets/arrival3.png",
+        "imgSrc": "https://storage.cloud.google.com/kicks/arrival3.png",
         "id": 1,
         "indexId": 0
     },
@@ -43,7 +43,7 @@
         "rating": 4,
         "description": "Adidas Falcon Shoes for men - 2021 Edition",
         "price": 100,
-        "imgSrc": "/server-assets/arrival2.png",
+        "imgSrc": "https://storage.cloud.google.com/kicks/arrival2.png",
         "id": 2,
         "indexId": 1
     }

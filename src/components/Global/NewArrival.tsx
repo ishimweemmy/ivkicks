@@ -13,7 +13,7 @@ const NewArrival: FC<FeaturedProInterface> = (props) => {
   const theRatingStars: JSX.Element[] = useMemo(() => {
     return [...Array(Math.floor(rating))].map(
       (el: undefined, index: number) => {
-        return <img src="/server-assets/Star 4.svg" alt="" key={index} />;
+        return <img src={import.meta.env.MEDIA_STORAGE_URL +"Star 4.svg"} alt="" key={index} />;
       }
     );
   }, [id, rating]);
@@ -22,7 +22,7 @@ const NewArrival: FC<FeaturedProInterface> = (props) => {
     return rating < 5
       ? [...Array(5 - Math.floor(rating))].map(
           (el: undefined, index: number) => {
-            return <img src="/server-assets/Star 5.svg" alt="" key={index} />;
+            return <img src={import.meta.env.MEDIA_STORAGE_URL +"Star 5.svg"} alt="" key={index} />;
           }
         )
       : [];

@@ -36,7 +36,7 @@ const WhyUs = () => {
         <Zoom>
           <div className="w-[90%] h-[85%] z-20 rounded-[1rem] grid place-items-center relative md:rounded-[1rem] miniTablet:w-[70%] ">
             <img
-              src={"/server-assets/videoBg.png"}
+              src={import.meta.env.MEDIA_STORAGE_URL +"videoBg.png"}
               alt=""
               className="h-full absolute"
             />
@@ -47,7 +47,7 @@ const WhyUs = () => {
           </div>
         </Zoom>
         <img
-          src={"/server-assets/backDecor.svg"}
+          src={import.meta.env.MEDIA_STORAGE_URL + "backDecor.svg"}
           alt=""
           className="w-full h-full absolute bottom-[-3rem] left-[-5.5rem] z-0"
         />

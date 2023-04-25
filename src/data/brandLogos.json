@@ -1,22 +1,22 @@
 [
     {
         "id": 0,
-        "imgSrc": "/server-assets/nike.png"
+        "imgSrc": "https://storage.cloud.google.com/kicks/nike.png"
     },
     {
         "id": 1,
-        "imgSrc": "/server-assets/newBalance.png"
+        "imgSrc": "https://storage.cloud.google.com/kicks/newBalance.png"
     },
     {
         "id": 2,
-        "imgSrc": "/server-assets/adidas.png"
+        "imgSrc": "https://storage.cloud.google.com/kicks/adidas.png"
     },
     {
         "id": 3,
-        "imgSrc": "/server-assets/horse.png"
+        "imgSrc": "https://storage.cloud.google.com/kicks/horse.png"
     },
     {
         "id": 1,
-        "imgSrc": "/server-assets/newBalance.png"
+        "imgSrc": "https://storage.cloud.google.com/kicks/newBalance.png"
     }
 ]

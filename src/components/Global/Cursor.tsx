@@ -44,7 +44,7 @@ const Cursor: FC<CursorProps> = () => {
 
   return (
     <img
-      src="/server-assets/custompointer.png"
+      src={import.meta.env.MEDIA_STORAGE_URL + "custompointer.png"}
       alt=""
       className={`w-14 h-12 z-[19999]  ${
         mouseVisible && mobile ? "fixed" : "hidden"

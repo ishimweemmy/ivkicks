@@ -74,9 +74,9 @@ const SignUp = () => {
           </p>
         </div>
         <div className="w-full flex flex-col gap-4">
-          <FOutlinedInput label="Full name" children={<BiUserCheck />} />
-          <FOutlinedInput label="Email" children={<MdAlternateEmail />} />
-          <FOutlinedInput label="Password" children={<AiFillLock />} />
+          <FOutlinedInput label="Full name" children={<BiUserCheck />} _onChange={undefined} />
+          <FOutlinedInput label="Email" children={<MdAlternateEmail />} _onChange={undefined} />
+          <FOutlinedInput label="Password" children={<AiFillLock />} _onChange={undefined} />
           <div className="w-full flex flex-col gap-2">
             <Calendar label="Date of birth" />
             <span className="text-gray-400 text-sm">
@@ -104,8 +104,8 @@ const SignUp = () => {
             </Select>
           </FormControl>
           <div className="w-full h-fit flex gap-2">
-            <FOutlinedInput label="Male" />
-            <FOutlinedInput label="Female" />
+            <FOutlinedInput label="Male" _onChange={undefined} />
+            <FOutlinedInput label="Female" _onChange={undefined} />
           </div>
         </div>
         <FormControlLabel

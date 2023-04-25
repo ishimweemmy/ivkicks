@@ -216,7 +216,7 @@ interface AccordionProps1 {
   answer: string;
   expanded: boolean;
   panel: string;
-  handleChange: (question: string) => unknown;
+  handleChange: (question: string) => any;
   page?: string;
 }
 

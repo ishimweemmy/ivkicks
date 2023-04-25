@@ -90,12 +90,14 @@ const Promo = () => {
                       {
                         id: 0,
                         measurement: "300Kcal",
-                        imgSrc: "/server-assets/calories.png",
+                        imgSrc:
+                          import.meta.env.MEDIA_STORAGE_URL + "/calories.png",
                       },
                       {
                         id: 1,
                         measurement: "20km",
-                        imgSrc: "/server-assets/distance.png",
+                        imgSrc:
+                          import.meta.env.MEDIA_STORAGE_URL + "/distance.png",
                       },
                     ].map((trackerData) => {
                       const { id, measurement, imgSrc } = trackerData;
@@ -159,9 +161,6 @@ const Promo = () => {
                     </SwiperSlide>
                   );
                 })}
-                {/* fa9358 */}
-                {/* <div className="spinBlur1 w-[20rem] h-[16rem] absolute bg-[#FF3C78] rounded-full bottom-[4rem] left-[26rem] -z-10 filter blur-3xl"></div> */}
-
                 <SlideNextButton swipingButtonRefNext={swipingButtonRefNext} />
                 <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
               </SwiperEl>

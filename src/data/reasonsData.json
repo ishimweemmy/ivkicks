@@ -1,18 +1,18 @@
 [
     {
-        "imgSrc": "/server-assets/Car.png",
+        "imgSrc": "https://storage.cloud.google.com/kicks/Car.png",
         "name": "Fast delivery"
     },
     {
-        "imgSrc": "/server-assets/Wallet.png",
+        "imgSrc": "https://storage.cloud.google.com/kicks/Wallet.png",
         "name": "cool prices"
     },
     {
-        "imgSrc": "/server-assets/Group.png",
+        "imgSrc": "https://storage.cloud.google.com/kicks/Group.png",
         "name": "Great Support"
     },
     {
-        "imgSrc": "/server-assets/Group-1.png",
+        "imgSrc": "https://storage.cloud.google.com/kicks/Group-1.png",
         "name": "Hight Quality"
     }
 ]

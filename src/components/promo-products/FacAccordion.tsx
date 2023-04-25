@@ -1,7 +1,6 @@
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import type { FC } from "react";
-import { IoMdAdd } from "react-icons/io";
-import { IoIosRemove } from "react-icons/io";
+import { IoMdAdd, IoIosRemove } from "react-icons/io";
 import { Fade } from "react-reveal";
 
 const FacAccordion: FC<AccordionProps1> = (props) => {

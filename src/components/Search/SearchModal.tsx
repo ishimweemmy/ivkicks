@@ -67,7 +67,7 @@ const SearchModal: FC<SearchModalProps> = (props) => {
         <div className="w-full h-fit grid gap-4 mt-[2rem]">
           <div className="w-full h-[6rem] flex gap-3">
             <img
-              src="/server-assets/nikeShoes.jpg"
+              src={import.meta.env.MEDIA_STORAGE_URL +"nikeShoes.jpg"}
               alt=""
               className="w-[30%] h-full rounded-md"
             />

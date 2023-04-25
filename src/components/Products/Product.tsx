@@ -30,7 +30,7 @@ const Product = () => {
     return [...Array(Math.floor(4))].map((el: undefined, index: number) => {
       return (
         <img
-          src="/server-assets/Star 4.svg"
+          src={import.meta.env.MEDIA_STORAGE_URL +"Star 4.svg"}
           alt=""
           key={index}
           className="miniTablet:w-3 2xl:max-w-4"
@@ -44,7 +44,7 @@ const Product = () => {
       ? [...Array(5 - Math.floor(4))].map((el: undefined, index: number) => {
           return (
             <img
-              src="/server-assets/Star 5.svg"
+              src={import.meta.env.MEDIA_STORAGE_URL +"Star 5.svg"}
               alt=""
               key={index}
               className="miniTablet:w-3 2xl:max-w-4"
@@ -57,11 +57,11 @@ const Product = () => {
   const categoriesRef = useRef<HTMLDivElement | null>(null);
 
   const imgSources = [
-    "/server-assets/image 6.png",
-    "/server-assets/image 4.png",
-    "/server-assets/image 6.png",
-    "/server-assets/image 4.png",
-    "/server-assets/image 6.png",
+    "image 6.png",
+    "image 4.png",
+    "image 6.png",
+    "image 4.png",
+    "image 6.png",
   ];
 
   const [availableSizes, setAvailableSizes] = useState([
@@ -130,7 +130,7 @@ const Product = () => {
 
   const handleSelectionChange = useCallback(
     (event: SelectChangeEvent) => {
-      setNbrOfShoes(event.target.value as string);
+      setNbrOfShoes(event.target.value);
     },
     [nbrOfShoes]
   );
@@ -250,12 +250,13 @@ const Product = () => {
                 return (
                   <div
                     style={{
-                      backgroundImage: `url(${img})`,
+                      backgroundImage: `url(${import.meta.env.MEDIA_STORAGE_URL + img})`,
                       backgroundPosition: `center`,
                     }}
                     className={`w-full h-full grid place-items-center bg-[#f5f5f5] bg-contain bg-no-repeat ${
                       index == 0 ? "col-span-2" : ""
                     }`}
+                    key={""}
                   >
                     <img
                       src={img}
@@ -305,6 +306,7 @@ const Product = () => {
                   isAvailable={isAvailable}
                   size={size}
                   toggleIsActive={toggleIsActive}
+                  key={""}
                 />
               );
             })}
@@ -322,7 +324,7 @@ const Product = () => {
                 >
                   {[...Array(10)].map((item, index) => {
                     return (
-                      <MenuItem value={index + 1}>
+                      <MenuItem value={index + 1} key={""}>
                         <span className="text-[rgb(10,8,58)] font-bold">
                           {index + 1}
                         </span>
@@ -348,6 +350,7 @@ const Product = () => {
                   panel={data.panel}
                   answer={data.answer}
                   page="product"
+                  key={""}
                 />
               );
             })}

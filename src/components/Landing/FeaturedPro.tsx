@@ -14,7 +14,7 @@ const FeaturedPro: FC<FeaturedProInterface> = (props) => {
   const theRatingStars: JSX.Element[] = useMemo(() => {
     return [...Array(Math.floor(rating))].map(
       (el: undefined, index: number) => {
-        return <img src="/server-assets/Star 4.svg" alt="" key={index} />;
+        return <img src={import.meta.env.MEDIA_STORAGE_URL +"Star 4.svg"} alt="" key={index} />;
       }
     );
   }, [id]);
@@ -23,7 +23,7 @@ const FeaturedPro: FC<FeaturedProInterface> = (props) => {
     return rating < 5
       ? [...Array(5 - Math.floor(rating))].map(
           (el: undefined, index: number) => {
-            return <img src="/server-assets/Star 5.svg" alt="" key={index} />;
+            return <img src={import.meta.env.MEDIA_STORAGE_URL +"Star 5.svg"} alt="" key={index} />;
           }
         )
       : [];
@@ -46,7 +46,7 @@ const FeaturedPro: FC<FeaturedProInterface> = (props) => {
               "linear-gradient(97.49deg, rgba(138, 168, 248, 0.6) -0.43%, rgba(49, 91, 255, 0.6) 144.53%)",
           }}
         >
-          <img src="/server-assets/Group.svg" alt="" />
+          <img src={import.meta.env.MEDIA_STORAGE_URL +"Group.svg"} alt="" />
         </div>
       </div>
       <div className="flex gap-2">

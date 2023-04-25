@@ -1,9 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { Outlet, useLocation } from "react-router";
 import Footer from "./components/Global/Footer";
 import Nav from "./components/Global/Nav";
 import Cursor from "./components/Global/Cursor";
-import { Suspense } from "react";
 import { Zoom } from "react-reveal";
 import "./index.css";
 

@@ -1,12 +1,11 @@
 import { AiFillLock } from "react-icons/ai";
 import FOutlinedInput from "../../components/FormComponents/FOutlinedInput";
 import { MdAlternateEmail } from "react-icons/md";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { BsApple } from "react-icons/bs";
 import { useRef } from "react";
-import { FiSearch, FiShoppingBag, FiUser } from "react-icons/fi";
 
 const Login = () => {
   const homeLinkRef = useRef<HTMLAnchorElement>(null);
@@ -67,9 +66,9 @@ const Login = () => {
           </p>
         </div>
         <div className="w-full flex flex-col gap-4">
-          <FOutlinedInput label="Enter Email" children={<MdAlternateEmail />} />
+          <FOutlinedInput label="Enter Email" children={<MdAlternateEmail />} _onChange={undefined} />
 
-          <FOutlinedInput label="Password" children={<AiFillLock />} />
+          <FOutlinedInput label="Password" children={<AiFillLock />} _onChange={undefined} />
           <Link to={`/recovery`} className="self-end text-sm text-gray-600">
             Recovery password
           </Link>

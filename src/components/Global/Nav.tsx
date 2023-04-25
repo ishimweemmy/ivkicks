@@ -28,7 +28,7 @@ const Nav: FC = () => {
         }}
       >
         <img
-          src="/server-assets/Logo.svg"
+          src={import.meta.env.MEDIA_STORAGE_URL +"Logo.svg"}
           alt="logo"
           className="w-[2rem] lg:w-[3rem] transition-all  xs:w-[1.5rem]"
           onClick={() => homeLinkRef.current?.click()}
@@ -95,7 +95,7 @@ const Nav: FC = () => {
           {location.pathname != "/about" &&
           location.pathname != "/products/promoProducts" ? (
             <img
-              src="/server-assets/hamburger icon.png"
+              src={import.meta.env.MEDIA_STORAGE_URL +"hamburger icon.png"}
               alt="menu"
               className="sm:w-[1rem] xs:w-[.75rem] lg:hidden miniTablet:w-[2rem] "
               onClick={() => setIsDisplayed((prev) => !prev)}

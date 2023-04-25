@@ -89,7 +89,7 @@ const Billing = () => {
                       <span>{el.label}</span>
                     </div>
                     <img
-                      src={`/server-assets/${el.imgSrc}`}
+                      src={import.meta.env.MEDIA_STORAGE_URL + el.imgSrc}
                       className="w-12 h-12"
                       alt=""
                     />
@@ -99,12 +99,12 @@ const Billing = () => {
             })}
           </Select>
         </FormControl>
-        <FOutlinedInput label="Card number" children={<AiFillLock />} />
-        <FOutlinedInput label="Card holder name" />
+        <FOutlinedInput label="Card number" children={<AiFillLock />} _onChange={undefined} />
+        <FOutlinedInput label="Card holder name" _onChange={undefined} />
 
         <div className="w-full h-fit flex gap-2">
-          <FOutlinedInput label="Expiration date (MM/YY)" />
-          <FOutlinedInput label="Security Code" />
+          <FOutlinedInput label="Expiration date (MM/YY)" _onChange={undefined} />
+          <FOutlinedInput label="Security Code" _onChange={undefined} />
         </div>
       </div>
 

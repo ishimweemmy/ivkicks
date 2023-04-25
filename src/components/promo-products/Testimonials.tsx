@@ -63,9 +63,9 @@ const Testimonials = () => {
         <div className="flex gap-4 xMiniTablet:w-[80%] xMiniTablet:justify-end xMiniTablet:self-end xMiniTablet:mr-[5%]">
           <img
             src={
-              reachEnd
-                ? "/server-assets/arrow-left-circle-1.png"
-                : "/server-assets/arrow-left-circle.png"
+              import.meta.env.MEDIA_STORAGE_URL + reachEnd
+                ? "arrow-left-circle-1.png"
+                : "arrow-left-circle.png"
             }
             alt=""
             onClick={() => swipingButtonRefPrev.current?.click()}
@@ -73,9 +73,9 @@ const Testimonials = () => {
           />
           <img
             src={
-              reachEnd
-                ? "/server-assets/arrow-left-circle.png"
-                : "/server-assets/arrow-left-circle-1.png"
+              import.meta.env.MEDIA_STORAGE_URL + reachEnd
+                ? "arrow-left-circle.png"
+                : "arrow-left-circle-1.png"
             }
             alt=""
             onClick={() => swipingButtonRef.current?.click()}
@@ -105,7 +105,7 @@ const Testimonials = () => {
                   <div
                     className="w-full h-[15rem] bg-cover bg-no-repeat xMiniTablet:h-[70%] xMiniTablet:w-[85%] md:w-full lg:h-[90%] "
                     style={{
-                      backgroundImage: `url("/server-assets/mcQueenWear.jpeg")`,
+                      backgroundImage: `url({import.meta.env.MEDIA_STORAGE_URL +mcQueenWear.jpeg")`,
                       backgroundPosition: `center`,
                     }}
                   ></div>
@@ -139,7 +139,7 @@ const Testimonials = () => {
         </div>
       </Fade>
       <img
-        src="/server-assets/TestimonialsDecor.svg"
+        src={import.meta.env.MEDIA_STORAGE_URL + "TestimonialsDecor.svg"}
         alt=""
         className="max-w-none h-[15rem] scale-[1.4] relative hover:scale-[1.6] transition duration-300 xMiniTablet:col-start-2 xMiniTablet:scale-[1] xMiniTablet:hover:scale-[1.2] md:scale-[1.4] md:hover:scale-[1.6] mini2xl:scale-[1.8]"
       />
