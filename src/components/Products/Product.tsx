@@ -30,7 +30,7 @@ const Product = () => {
     return [...Array(Math.floor(4))].map((el: undefined, index: number) => {
       return (
         <img
-          src={import.meta.env.MEDIA_STORAGE_URL +"Star 4.svg"}
+          src={import.meta.env.VITE_MEDIA_STORAGE_URL +"Star 4.svg"}
           alt=""
           key={index}
           className="miniTablet:w-3 2xl:max-w-4"
@@ -44,7 +44,7 @@ const Product = () => {
       ? [...Array(5 - Math.floor(4))].map((el: undefined, index: number) => {
           return (
             <img
-              src={import.meta.env.MEDIA_STORAGE_URL +"Star 5.svg"}
+              src={import.meta.env.VITE_MEDIA_STORAGE_URL +"Star 5.svg"}
               alt=""
               key={index}
               className="miniTablet:w-3 2xl:max-w-4"
@@ -250,7 +250,7 @@ const Product = () => {
                 return (
                   <div
                     style={{
-                      backgroundImage: `url(${import.meta.env.MEDIA_STORAGE_URL + img})`,
+                      backgroundImage: `url(${import.meta.env.VITE_MEDIA_STORAGE_URL + img})`,
                       backgroundPosition: `center`,
                     }}
                     className={`w-full h-full grid place-items-center bg-[#f5f5f5] bg-contain bg-no-repeat ${

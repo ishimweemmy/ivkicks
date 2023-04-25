@@ -48,13 +48,13 @@ const Dedication = () => {
         <Fade right delay={1000}>
           <div className="w-full hidden items-start justify-start gap-4 mt-[1rem] lg:flex lg:pl-[1.5rem]">
             <img
-              src={import.meta.env.MEDIA_STORAGE_URL + "arrow-left-circle.png"}
+              src={import.meta.env.VITE_MEDIA_STORAGE_URL + "arrow-left-circle.png"}
               alt="leftIcon"
               className="w-8"
               onClick={() => swipingButtonRefPrev.current?.click()}
             />
             <img
-              src={import.meta.env.MEDIA_STORAGE_URL + "arrow-left-circle-1.png"}
+              src={import.meta.env.VITE_MEDIA_STORAGE_URL + "arrow-left-circle-1.png"}
               alt="rightIcon"
               className="w-8"
               onClick={() => swipingButtonRef.current?.click()}
@@ -65,7 +65,7 @@ const Dedication = () => {
       <Zoom>
         <div className="w-full h-[28rem] flex flex-col items-center justify-center gap-4 p-2 md:flex-row md:h-[28rem] lg:w-[70%] lg:h-[20rem] lg:gap-2 md:w-[90%]">
           <img
-            src={import.meta.env.MEDIA_STORAGE_URL + "arrow-left-circle.png"}
+            src={import.meta.env.VITE_MEDIA_STORAGE_URL + "arrow-left-circle.png"}
             alt="leftIcon"
             className="w-8  hidden md:block lg:hidden"
             onClick={() => swipingButtonRefPrev.current?.click()}
@@ -93,20 +93,20 @@ const Dedication = () => {
             <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
           </Swiper>
           <img
-            src={import.meta.env.MEDIA_STORAGE_URL + "arrow-left-circle-1.png"}
+            src={import.meta.env.VITE_MEDIA_STORAGE_URL + "arrow-left-circle-1.png"}
             alt="rightIcon"
             className="w-8  hidden md:block lg:hidden"
             onClick={() => swipingButtonRef.current?.click()}
           />
           <div className="w-full h-8 flex self-center gap-4 items-center justify-center md:hidden">
             <img
-              src={import.meta.env.MEDIA_STORAGE_URL + "arrow-left-circle.png"}
+              src={import.meta.env.VITE_MEDIA_STORAGE_URL + "arrow-left-circle.png"}
               alt="leftIcon"
               className="w-8 "
               onClick={() => swipingButtonRefPrev.current?.click()}
             />
             <img
-              src={import.meta.env.MEDIA_STORAGE_URL + "arrow-left-circle-1.png"}
+              src={import.meta.env.VITE_MEDIA_STORAGE_URL + "arrow-left-circle-1.png"}
               alt="rightIcon"
               className="w-8 "
               onClick={() => swipingButtonRef.current?.click()}

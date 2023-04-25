@@ -21,13 +21,13 @@ const Accessories: FC = () => {
           <div className="w-2/3 h-1/2 relative flex items-center justify-center md:w-1/2 md:h-full">
             <Zoom>
               <img
-                src={import.meta.env.MEDIA_STORAGE_URL +"football 1.png"}
+                src={import.meta.env.VITE_MEDIA_STORAGE_URL +"football 1.png"}
                 alt=""
                 className="absolute z-10 xl:scale-[1.2]"
               />
             </Zoom>
             <img
-              src={import.meta.env.MEDIA_STORAGE_URL +"fback.png"}
+              src={import.meta.env.VITE_MEDIA_STORAGE_URL +"fback.png"}
               alt=""
               className="absolute right-[8%] bottom-[3%] w-[60%] md:bottom-[25%] xLgMd:right-[15%]"
             />
@@ -70,13 +70,13 @@ const Accessories: FC = () => {
           <div className="w-2/3 h-1/2 relative flex items-center justify-center md:w-1/2 xLgMd:w-1/2 md:h-full xLgMd:h-full">
             <Zoom>
               <img
-                src={import.meta.env.MEDIA_STORAGE_URL +"volley 1.png"}
+                src={import.meta.env.VITE_MEDIA_STORAGE_URL +"volley 1.png"}
                 alt=""
                 className="w-[14rem] absolute z-10 lg:scale-[1.2] xl:scale-[1.3] 2xl:scale-[1.5]"
               />
             </Zoom>
             <img
-              src={import.meta.env.MEDIA_STORAGE_URL +"fback.png"}
+              src={import.meta.env.VITE_MEDIA_STORAGE_URL +"fback.png"}
               alt=""
               className="absolute right-[15%] bottom-[-2%] w-[50%] md:bottom-[15%] xLgMd:bottom-[10%] xLgMd:right-[20%]"
             />
