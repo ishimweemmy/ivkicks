@@ -61,12 +61,12 @@ const Address = () => {
 
   return (
     <div className="w-full h-full flex flex-col items-center gap-4 xlssm:w-[90%] xMiniTablet:mt-[5rem] circleLg:gap-8 2xl:-ml-24">
-      <FTextField label="Email" />
+      <FTextField _onChange={undefined} label="Email" />
       <div className="w-full h-fit flex gap-2">
-        <FTextField label="First name" />
-        <FTextField label="Last name" />
+        <FTextField _onChange={undefined} label="First name" />
+        <FTextField _onChange={undefined} label="Last name" />
       </div>
-      <FTextField label="Adress 1" />
+      <FTextField _onChange={undefined} label="Adress 1" />
 
       <FormControl fullWidth className="tableLr:col-span-2">
         <Select
@@ -106,11 +106,11 @@ const Address = () => {
             </MenuItem>
           ))}
         </Select>
-        <FTextField label="ZIP" type="number" />
+        <FTextField _onChange={undefined} label="ZIP" type="number" />
       </div>
       <div className="w-full h-fit flex gap-4">
-        <FTextField label="State" />
-        <FTextField label="Apt/suite" />
+        <FTextField _onChange={undefined} label="State" />
+        <FTextField _onChange={undefined} label="Apt/suite" />
       </div>
       <FormControlLabel
         label="Save information for delivery"

@@ -41,9 +41,9 @@ const Shipping = () => {
   return (
     <div className="w-full h-full flex flex-col gap-4 xlssm:w-[90%] circleLg:gap-10 2xl:-ml-24">
       <div className="w-full h-fit flex flex-col gap-4 border border-gray-200 p-6">
-        <FTextField label="Email" variant="standard" />
-        <FTextField label="Phone" variant="standard" />
-        <FTextField label="Delivery Address" variant="standard" />
+        <FTextField _onChange={undefined} label="Email" variant="standard" />
+        <FTextField _onChange={undefined} label="Phone" variant="standard" />
+        <FTextField _onChange={undefined} label="Delivery Address" variant="standard" />
       </div>
       <FormControlLabel
         label="Please send me SMS shipping updates about my order."

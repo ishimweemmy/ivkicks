@@ -1,6 +1,5 @@
 import { InputAdornment, TextField } from "@mui/material";
 import type { FC } from "react";
-import { FTextFieldProps } from "../../@types";
 
 const FTextField: FC<FTextFieldProps> = (props) => {
   const { label, variant, children } = props;
