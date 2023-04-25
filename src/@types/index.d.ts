@@ -85,17 +85,17 @@ interface Link1 {
 }
 
 interface NextButtonProps {
-  swipingButtonRefNext: unknown;
+  swipingButtonRefNext: any;
 }
 
 interface PrevButtonProps {
-  swipingButtonRefPrev: unknown;
+  swipingButtonRefPrev: any;
 }
 
 interface SocialProps {
   name: string;
   link: string;
-  icon: unknown;
+  icon: any;
   section?: string;
 }
 
