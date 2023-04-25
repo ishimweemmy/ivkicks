@@ -32,7 +32,7 @@ const About = () => {
           <div
             className="w-[90%] h-full flex flex-col items-center justify-center rounded-md bg-no-repeat bg-cover md:row-span-2 md:w-full md:h-[95%] md:self-end  "
             style={{
-              backgroundImage: `url({import.meta.env.VITE_MEDIA_STORAGE_URL +mcQueenWear.jpeg")`,
+              backgroundImage: `url(${import.meta.env.VITE_MEDIA_STORAGE_URL + "mcQueenWear.jpeg"})`,
               backgroundPosition: "center",
             }}
           >
@@ -68,7 +68,7 @@ const About = () => {
           <div
             className="w-[90%] h-full flex flex-col items-center justify-end rounded-md bg-no-repeat bg-cover gap-4 overflow-hidden md:w-full md:h-[75%] md:self-end xl:flex-col-reverse"
             style={{
-              backgroundImage: `url({import.meta.env.VITE_MEDIA_STORAGE_URL +nikeShoes.jpg")`,
+              backgroundImage: `url(${import.meta.env.VITE_MEDIA_STORAGE_URL +"nikeShoes.jpg"})`,
               backgroundPosition: "center",
             }}
           >
@@ -94,7 +94,7 @@ const About = () => {
           <div
             className="w-[90%] h-full flex flex-col items-center justify-end bg-[white] rounded-md bg-no-repeat bg-contain gap-2 md:w-full md:h-[85%] md:self-start xl:justify-start xl:pt-[2rem] "
             style={{
-              backgroundImage: `url({import.meta.env.VITE_MEDIA_STORAGE_URL +yeezyBoost.jpg")`,
+              backgroundImage: `url(${import.meta.env.VITE_MEDIA_STORAGE_URL + "yeezyBoost.jpg"})`,
               backgroundPosition: "center",
             }}
           >

@@ -14,7 +14,7 @@ function App() {
       fallback={
         <div className="w-screen h-screen bg-white sticky flex items-center justify-center top-0 z-[1999]">
           <Zoom>
-            <img src="/public/Logo.svg" alt="" />
+            <img src={import.meta.env.VITE_MEDIA_STORAGE_URL + "Logo.svg"} alt="" />
           </Zoom>
         </div>
       }
