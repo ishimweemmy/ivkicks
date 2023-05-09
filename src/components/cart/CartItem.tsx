@@ -24,7 +24,7 @@ const CartItem = () => {
         className="w-[35%] h-full bg-cover bg-no-repeat md:w-[25%] md:h-[12rem] circleLg:w-[30%] 2xl:h-[15rem]  "
         style={{
           backgroundImage: `url(${
-            import.meta.env.VITE_MEDIA_STORAGE_URL + "thelook2.jpg"
+            import.meta.env.VITE_MEDIA_STORAGE_URL! + "thelook2.jpg"
           })`,
         }}
       ></div>

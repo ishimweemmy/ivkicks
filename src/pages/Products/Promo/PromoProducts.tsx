@@ -91,13 +91,13 @@ const Promo = () => {
                         id: 0,
                         measurement: "300Kcal",
                         imgSrc:
-                          import.meta.env.VITE_MEDIA_STORAGE_URL + "/calories.png",
+                          import.meta.env.VITE_MEDIA_STORAGE_URL! + "/calories.png",
                       },
                       {
                         id: 1,
                         measurement: "20km",
                         imgSrc:
-                          import.meta.env.VITE_MEDIA_STORAGE_URL + "/distance.png",
+                          import.meta.env.VITE_MEDIA_STORAGE_URL! + "/distance.png",
                       },
                     ].map((trackerData) => {
                       const { id, measurement, imgSrc } = trackerData;

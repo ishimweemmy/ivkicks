@@ -43,7 +43,7 @@ const Brands = () => {
       <Flip bottom>
         <div className="w-full h-[70%] flex flex-col items-center justify-center gap-4 p-2 lg:flex-row lg:gap-2 md:w-[90%]">
           <img
-            src={import.meta.env.VITE_MEDIA_STORAGE_URL +"leftIcon.png"}
+            src={import.meta.env.VITE_MEDIA_STORAGE_URL! +"leftIcon.png"}
             alt="leftIcon"
             className="w-2  hidden lg:block"
             onClick={() => swipingButtonRefNext.current?.click()}
@@ -70,20 +70,20 @@ const Brands = () => {
             <SlidePrevButton swipingButtonRefPrev={swipingButtonRefPrev} />
           </Swiper>
           <img
-            src={import.meta.env.VITE_MEDIA_STORAGE_URL +"rightIcon.png"}
+            src={import.meta.env.VITE_MEDIA_STORAGE_URL! +"rightIcon.png"}
             alt="leftIcon"
             className="w-2  hidden lg:block"
             onClick={() => swipingButtonRefPrev.current?.click()}
           />
           <div className="w-full h-8 flex self-center gap-4 items-center justify-center lg:hidden">
             <img
-              src={import.meta.env.VITE_MEDIA_STORAGE_URL +"leftIcon.png"}
+              src={import.meta.env.VITE_MEDIA_STORAGE_URL! +"leftIcon.png"}
               alt="leftIcon"
               className="w-2 "
               onClick={() => swipingButtonRefPrev.current?.click()}
             />
             <img
-              src={import.meta.env.VITE_MEDIA_STORAGE_URL +"rightIcon.png"}
+              src={import.meta.env.VITE_MEDIA_STORAGE_URL! +"rightIcon.png"}
               alt="leftIcon"
               className="w-2"
               onClick={() => swipingButtonRefNext.current?.click()}

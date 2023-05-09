@@ -21,7 +21,7 @@ const Home = () => {
   const swipingButtonRefPrev = useRef<HTMLButtonElement | null>(null);
 
   const [isLiked, setIsLiked] = useState(false);
-  console.log(import.meta.env.VITE_MEDIA_STORAGE_URL+"heartIcon2.svg")
+  console.log(import.meta.env.VITE_MEDIA_STORAGE_URL!!+"heartIcon2.svg")
 
   return (
     <div className="w-screen h-fit flex sm:flex-col xs:flex-col relative overflow-hidden">
@@ -64,7 +64,7 @@ const Home = () => {
                 onClick={() => setIsLiked((prev) => !prev)}
               >
                 <img
-                  src={import.meta.env.VITE_MEDIA_STORAGE_URL +"Vector.png"}
+                  src={import.meta.env.VITE_MEDIA_STORAGE_URL!! +"Vector.png"}
                   alt=""
                   className={`relative z-20 `}
                 />
@@ -77,7 +77,7 @@ const Home = () => {
             >
               <Zoom duration={1000}>
                 <img
-                  src={import.meta.env.VITE_MEDIA_STORAGE_URL +"heartIcon2.svg"}
+                  src={import.meta.env.VITE_MEDIA_STORAGE_URL!! +"heartIcon2.svg"}
                   alt=""
                   className={`w-[50rem] relative`}
                 />
@@ -105,7 +105,7 @@ const Home = () => {
                 <Zoom delay={1500} left key={index}>
                   <div className="flex items-center justify-center gap-4">
                     <img
-                      src={import.meta.env.VITE_MEDIA_STORAGE_URL +"Group 4.png"}
+                      src={import.meta.env.VITE_MEDIA_STORAGE_URL!! +"Group 4.png"}
                       alt=""
                       className="w-[1.3rem]"
                     />
@@ -135,7 +135,7 @@ const Home = () => {
                 >
                   <SwiperSlide className="flex items-start justify-end lg:mt-[2rem] xl:mt-0">
                     <img
-                      src={import.meta.env.VITE_MEDIA_STORAGE_URL +"alexander.png"}
+                      src={import.meta.env.VITE_MEDIA_STORAGE_URL!! +"alexander.png"}
                       alt=""
                       className="w-full h-full scale-[1.1] md:max-w-lg md:scale-[1.2] lg:max-w-lg xl:max-w-none xl:h-[35rem] lg:scale-[1.1] -rotate-[35deg]"
                     />
@@ -149,7 +149,7 @@ const Home = () => {
             </Zoom>
             <Flip delay={20} left>
               <img
-                src={import.meta.env.VITE_MEDIA_STORAGE_URL +"Group 267.svg"}
+                src={import.meta.env.VITE_MEDIA_STORAGE_URL!! +"Group 267.svg"}
                 alt=""
                 className="md:w-[100rem] md:max-w-md lg:max-w-lg xl:max-w-2xl xl:relative xl:z-0 xl:bottom-[-2rem] "
               />
@@ -171,9 +171,9 @@ const Home = () => {
                 }}
               >
                 <div className="w-[2rem] h-[2rem] bg-white grid place-items-center rounded-full shadow-slate-400 shadow-xl absolute right-5 top-[-1rem]">
-                  <img src={import.meta.env.VITE_MEDIA_STORAGE_URL +"lock.png"} alt="" width={12} />
+                  <img src={import.meta.env.VITE_MEDIA_STORAGE_URL!! +"lock.png"} alt="" width={12} />
                 </div>
-                <img src={import.meta.env.VITE_MEDIA_STORAGE_URL +"Ellipse 6.png"} alt="" />
+                <img src={import.meta.env.VITE_MEDIA_STORAGE_URL!! +"Ellipse 6.png"} alt="" />
                 <span className="text-xs xl:text-sm ">
                   <b>Joan</b> has just purchased these sneakers right now.
                 </span>
@@ -183,11 +183,11 @@ const Home = () => {
           <div className="flex gap-4 z-50">
             {[
               {
-                imgUrl: import.meta.env.VITE_MEDIA_STORAGE_URL +"arrow-left-circle.png",
+                imgUrl: import.meta.env.VITE_MEDIA_STORAGE_URL!! +"arrow-left-circle.png",
                 ref: swipingButtonRefPrev,
               },
               {
-                imgUrl: import.meta.env.VITE_MEDIA_STORAGE_URL +"arrow-left-circle-1.png",
+                imgUrl: import.meta.env.VITE_MEDIA_STORAGE_URL!! +"arrow-left-circle-1.png",
                 ref: swipingButtonRef,
               },
             ].map((item, index) => {

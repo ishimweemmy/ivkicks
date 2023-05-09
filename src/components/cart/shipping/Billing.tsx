@@ -89,7 +89,7 @@ const Billing = () => {
                       <span>{el.label}</span>
                     </div>
                     <img
-                      src={import.meta.env.VITE_MEDIA_STORAGE_URL + el.imgSrc}
+                      src={import.meta.env.VITE_MEDIA_STORAGE_URL!!!!!!!!!!!!!!!!!! + el.imgSrc}
                       className="w-12 h-12"
                       alt=""
                     />

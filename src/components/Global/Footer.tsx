@@ -71,7 +71,7 @@ const Footer = () => {
         <div className="w-full h-[20%] flex items-end justify-center pb-6 border md:border-none md:w-fit md:h-[80%] md:flex md:flex-col md:items-start md:gap-4 md:p-0 ">
           {mobile && (
             <img
-              src={import.meta.env.VITE_MEDIA_STORAGE_URL +"Logo.svg"}
+              src={import.meta.env.VITE_MEDIA_STORAGE_URL! +"Logo.svg"}
               alt="logo"
               className="w-[2rem] lg:w-[3rem] transition-all  xs:w-[1.5rem]"
             />

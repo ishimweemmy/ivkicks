@@ -117,7 +117,7 @@ const Cart = () => {
                   (src, index) => {
                     return (
                       <img
-                        src={import.meta.env.VITE_MEDIA_STORAGE_URL + src}
+                        src={import.meta.env.VITE_MEDIA_STORAGE_URL! + src}
                         key={index}
                         className={`w-14 h-12 ${index == 0 && "scale-150"} ${
                           index == 1 && "h-5"

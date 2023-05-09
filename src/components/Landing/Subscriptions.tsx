@@ -113,7 +113,7 @@ const Subscriptions: FC<PageProps> = (props) => {
           </Flip>
           <Zoom>
             <img
-              src={import.meta.env.VITE_MEDIA_STORAGE_URL +"subscription.png"}
+              src={import.meta.env.VITE_MEDIA_STORAGE_URL! +"subscription.png"}
               alt=""
               className="absolute left-[-2.5rem] bottom-[2rem] miniTablet:left-[4rem] md:left-[-2.5rem] md:bottom-0"
             />

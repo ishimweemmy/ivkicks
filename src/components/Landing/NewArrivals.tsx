@@ -53,7 +53,7 @@ const NewArrivals: FC<FeaturedProInterface> = () => {
             </p>
           </div>
           <span className="text-sm text-[#FF3C78] text-center  flex gap-2">
-            View all <img src={import.meta.env.VITE_MEDIA_STORAGE_URL + "chevron-right.png"} alt="" className="h-5" />{" "}
+            View all <img src={import.meta.env.VITE_MEDIA_STORAGE_URL! + "chevron-right.png"} alt="" className="h-5" />{" "}
           </span>
         </div>
       </Zoom>
