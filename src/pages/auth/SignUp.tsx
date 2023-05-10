@@ -1,4 +1,4 @@
-import { AiFillLock, AiOutlineCalendar } from "react-icons/ai";
+import { AiFillLock } from "react-icons/ai";
 import FOutlinedInput from "../../components/FormComponents/FOutlinedInput";
 import { BiUserCheck } from "react-icons/bi";
 import { MdAlternateEmail } from "react-icons/md";
@@ -74,9 +74,21 @@ const SignUp = () => {
           </p>
         </div>
         <div className="w-full flex flex-col gap-4">
-          <FOutlinedInput label="Full name" children={<BiUserCheck />} _onChange={undefined} />
-          <FOutlinedInput label="Email" children={<MdAlternateEmail />} _onChange={undefined} />
-          <FOutlinedInput label="Password" children={<AiFillLock />} _onChange={undefined} />
+          <FOutlinedInput
+            label="Full name"
+            children={<BiUserCheck />}
+            _onChange={undefined}
+          />
+          <FOutlinedInput
+            label="Email"
+            children={<MdAlternateEmail />}
+            _onChange={undefined}
+          />
+          <FOutlinedInput
+            label="Password"
+            children={<AiFillLock />}
+            _onChange={undefined}
+          />
           <div className="w-full flex flex-col gap-2">
             <Calendar label="Date of birth" />
             <span className="text-gray-400 text-sm">

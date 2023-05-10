@@ -19,7 +19,7 @@ const PromoProduct: FC<PromoProductProps> = (props) => {
       (el: undefined, index: number) => {
         return (
           <img
-            src={import.meta.env.VITE_MEDIA_STORAGE_URL!! +"Star 4.svg"}
+            src={import.meta.env.VITE_MEDIA_STORAGE_URL! + "Star 4.svg"}
             alt=""
             key={index}
             className="w-3"
@@ -35,7 +35,7 @@ const PromoProduct: FC<PromoProductProps> = (props) => {
           (el: undefined, index: number) => {
             return (
               <img
-                src={import.meta.env.VITE_MEDIA_STORAGE_URL!! +"Star 5.svg"}
+                src={import.meta.env.VITE_MEDIA_STORAGE_URL! + "Star 5.svg"}
                 alt=""
                 key={index}
                 className="w-3"

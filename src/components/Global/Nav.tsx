@@ -10,7 +10,6 @@ const Nav: FC = () => {
 
   const [isDisplayed, setIsDisplayed] = useState<boolean>(false);
   const location = useLocation();
-  console.log(import.meta.env.VITE_MEDIA_STORAGE_URL!! + "Logo.svg")
 
   return (
     <Fade delay={300}>

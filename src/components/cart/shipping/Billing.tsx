@@ -12,7 +12,9 @@ import { IoMdArrowDropleft } from "react-icons/io";
 import { AiFillLock } from "react-icons/ai";
 
 const ITEM_HEIGHT = 48;
+
 const ITEM_PADDING_TOP = 8;
+
 const MenuProps = {
   PaperProps: {
     style: {
@@ -22,23 +24,8 @@ const MenuProps = {
   },
 };
 
-const fetchCountries = async () => {
-  return new Promise((resolve, reject) => {
-    resolve(
-      fetch("https://restcountries.com/v3.1/all").then((data) => data.json())
-    );
-    reject(() => console.log("failed to fetch..."));
-  });
-};
-
 const Billing = () => {
-  const [saveDInfo, setSaveDInfo] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState<string>("Free");
-
-  const handleSaveDInfo = useCallback(
-    () => setSaveDInfo((prev) => !prev),
-    [saveDInfo]
-  );
 
   const handleChange = useCallback(
     (event: SelectChangeEvent<typeof paymentMethod>) => {
@@ -89,7 +76,7 @@ const Billing = () => {
                       <span>{el.label}</span>
                     </div>
                     <img
-                      src={import.meta.env.VITE_MEDIA_STORAGE_URL!!!!!!!!!!!!!!!!!! + el.imgSrc}
+                      src={import.meta.env.VITE_MEDIA_STORAGE_URL! + el.imgSrc}
                       className="w-12 h-12"
                       alt=""
                     />
@@ -99,11 +86,18 @@ const Billing = () => {
             })}
           </Select>
         </FormControl>
-        <FOutlinedInput label="Card number" children={<AiFillLock />} _onChange={undefined} />
+        <FOutlinedInput
+          label="Card number"
+          children={<AiFillLock />}
+          _onChange={undefined}
+        />
         <FOutlinedInput label="Card holder name" _onChange={undefined} />
 
         <div className="w-full h-fit flex gap-2">
-          <FOutlinedInput label="Expiration date (MM/YY)" _onChange={undefined} />
+          <FOutlinedInput
+            label="Expiration date (MM/YY)"
+            _onChange={undefined}
+          />
           <FOutlinedInput label="Security Code" _onChange={undefined} />
         </div>
       </div>

@@ -23,30 +23,6 @@ const Categories = () => {
     largeTablet,
   ] = useResponsive();
 
-  const collections = collectionsData.map((collection) => {
-    const {
-      collectionName,
-      nbrOfProducts,
-      imgSource,
-      indexId,
-      collectionPath,
-    } = collection;
-    return (
-      <SwiperSlide
-        className="w-full h-full grid place-items-center"
-        key={indexId}
-      >
-        <Collection
-          collectionName={collectionName}
-          nbrOfProducts={nbrOfProducts}
-          imgSource={imgSource}
-          indexId={indexId}
-          collectionPath={collectionPath}
-        />
-      </SwiperSlide>
-    );
-  });
-
   return (
     <div className="w-full h-[110vh] flex flex-col items-start justify-start bg-white">
       <Zoom>
@@ -79,7 +55,29 @@ const Categories = () => {
               }
             }}
           >
-            {collections}
+            {collectionsData.map((collection) => {
+              const {
+                collectionName,
+                nbrOfProducts,
+                imgSource,
+                indexId,
+                collectionPath,
+              } = collection;
+              return (
+                <SwiperSlide
+                  className="w-full h-full grid place-items-center"
+                  key={indexId}
+                >
+                  <Collection
+                    collectionName={collectionName}
+                    nbrOfProducts={nbrOfProducts}
+                    imgSource={imgSource}
+                    indexId={indexId}
+                    collectionPath={collectionPath}
+                  />
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
       </Flip>
