@@ -102,14 +102,12 @@ const SignUp = () => {
             children={<MdAlternateEmail />}
             _onChange={handleInputChange}
             name='email'
-            type="email"
           />
           <FOutlinedInput
             label="Password"
             children={<AiFillLock />}
             _onChange={handleInputChange}
             name='password'
-            type="password"
           />
           <div className="w-full flex flex-col gap-2">
             <Calendar label="Date of birth" />

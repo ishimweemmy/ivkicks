@@ -102,14 +102,12 @@ const SignUp = () => {
             children={<MdAlternateEmail />}
             _onChange={handleInputChange}
             name='email'
-            type="email"
           />
           <FOutlinedInput
             label="Password"
             children={<AiFillLock />}
             _onChange={handleInputChange}
             name='password'
-            type="password"
           />
           <div className="w-full flex flex-col gap-2">
             <Calendar label="Date of birth" />
@@ -139,8 +137,8 @@ const SignUp = () => {
             </Select>
           </div>
           <div className="w-full h-fit flex gap-2">
-            <FOutlinedInput label="Male" _onChange={undefined} />
-            <FOutlinedInput label="Female" _onChange={undefined} />
+            <FOutlinedInput label="Male" _onChange={undefined} name="" />
+            <FOutlinedInput label="Female" _onChange={undefined} name="" />
           </div>
         </form>
         <FormControlLabel

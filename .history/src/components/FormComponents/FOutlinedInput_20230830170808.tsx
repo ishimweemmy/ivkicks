@@ -12,7 +12,7 @@ const FOutlinedInput: FC<FTextFieldProps> = (props) => {
       endAdornment={<InputAdornment position="end">{children}</InputAdornment>}
       onChange={_onChange}
       name={name}
-      type={type}
+      type=""
     />
   );
 };

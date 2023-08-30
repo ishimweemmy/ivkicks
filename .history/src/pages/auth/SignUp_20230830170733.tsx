@@ -102,7 +102,7 @@ const SignUp = () => {
             children={<MdAlternateEmail />}
             _onChange={handleInputChange}
             name='email'
-            type="email"
+            type="password"
           />
           <FOutlinedInput
             label="Password"

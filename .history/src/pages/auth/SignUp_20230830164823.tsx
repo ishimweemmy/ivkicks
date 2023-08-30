@@ -62,20 +62,16 @@ const SignUp = () => {
   const handleSendSUpdates = () => setSendSUpdates((prev) => !prev);
 
   const [formValues, setFormValues] = useState({
-    fullName: '',
+    firstName: '',
     email: '',
     password: '',
-    dob: ''
+    dob: '',
+
   })
 
   const handleInputChange = (e: ChangeEvent) => {
-    const inputValue = (e.target as HTMLInputElement);
-    setFormValues(prevFormValues => {
-      return {
-        ...prevFormValues, [inputValue.name]: inputValue.value
-      }
-    })
-    console.log(formValues)
+    const inputValue = e.target;
+
   }
 
   return (
@@ -94,22 +90,17 @@ const SignUp = () => {
           <FOutlinedInput
             label="Full name"
             children={<BiUserCheck />}
-            _onChange={handleInputChange}
-            name='fullName'
+            _onChange={undefined}
           />
           <FOutlinedInput
             label="Email"
             children={<MdAlternateEmail />}
-            _onChange={handleInputChange}
-            name='email'
-            type="email"
+            _onChange={undefined}
           />
           <FOutlinedInput
             label="Password"
             children={<AiFillLock />}
-            _onChange={handleInputChange}
-            name='password'
-            type="password"
+            _onChange={undefined}
           />
           <div className="w-full flex flex-col gap-2">
             <Calendar label="Date of birth" />
@@ -117,13 +108,12 @@ const SignUp = () => {
               Get a yearly discount on your Birthday.
             </span>
           </div>
-          <div className="w-full tableLr:col-span-2">
+          <div fullWidth className="tableLr:col-span-2">
             <Select
               value={country}
               onChange={handleChange}
               input={<OutlinedInput />}
               MenuProps={MenuProps}
-              className="w-full"
             >
               <MenuItem disabled>Country</MenuItem>
               {countries?.map((cname: any) => (

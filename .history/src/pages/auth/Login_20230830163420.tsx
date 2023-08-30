@@ -62,13 +62,13 @@ const Login = () => {
           </h1>
           <p className="text-base">
             Not a member?
-            <Link to={'/auth/register'} className="text-[#315BFF] underline">Join Us</Link>
+            <Lin className="text-[#315BFF] underline">Join Us</Lin>
           </p>
         </div>
         <div className="w-full flex flex-col gap-4">
-          <FOutlinedInput label="Enter Email" children={<MdAlternateEmail />} _onChange={undefined} name="email" />
+          <FOutlinedInput label="Enter Email" children={<MdAlternateEmail />} _onChange={undefined} />
 
-          <FOutlinedInput label="Password" children={<AiFillLock />} _onChange={undefined} name="password" />
+          <FOutlinedInput label="Password" children={<AiFillLock />} _onChange={undefined} />
           <Link to={`/recovery`} className="self-end text-sm text-gray-600">
             Recovery password
           </Link>

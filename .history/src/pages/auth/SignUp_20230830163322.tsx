@@ -11,7 +11,7 @@ import {
   Select,
   SelectChangeEvent,
 } from "@mui/material";
-import { ChangeEvent, useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import VisitorAPI from "visitorapi";
 import Calendar from "../../components/Auth/Calendar";
 import { Link, NavLink } from "react-router-dom";
@@ -61,23 +61,6 @@ const SignUp = () => {
 
   const handleSendSUpdates = () => setSendSUpdates((prev) => !prev);
 
-  const [formValues, setFormValues] = useState({
-    fullName: '',
-    email: '',
-    password: '',
-    dob: ''
-  })
-
-  const handleInputChange = (e: ChangeEvent) => {
-    const inputValue = (e.target as HTMLInputElement);
-    setFormValues(prevFormValues => {
-      return {
-        ...prevFormValues, [inputValue.name]: inputValue.value
-      }
-    })
-    console.log(formValues)
-  }
-
   return (
     <div className="w-full h-fit grid gap-4 bg-white md:grid-cols-2 miniLarge:gap-8 miniLarge:pl-8 2xl:gap-24 2xl:pl-20">
       <div className="w-full h-fit flex flex-col items-center justify-center gap-4 px-4 lsm:px-8 miniLarge:gap-8 miniLarge:w-[80%]">
@@ -87,29 +70,24 @@ const SignUp = () => {
           </h1>
           <p className="text-base">
             Already have an account?{" "}
-            <Link to={'/auth/login'} className="text-[#315BFF] underline">Login</Link>
+            <Link to={''} className="text-[#315BFF] underline">Login</Link>
           </p>
         </div>
-        <form noValidate className="w-full flex flex-col gap-4">
+        <div className="w-full flex flex-col gap-4">
           <FOutlinedInput
             label="Full name"
             children={<BiUserCheck />}
-            _onChange={handleInputChange}
-            name='fullName'
+            _onChange={undefined}
           />
           <FOutlinedInput
             label="Email"
             children={<MdAlternateEmail />}
-            _onChange={handleInputChange}
-            name='email'
-            type="email"
+            _onChange={undefined}
           />
           <FOutlinedInput
             label="Password"
             children={<AiFillLock />}
-            _onChange={handleInputChange}
-            name='password'
-            type="password"
+            _onChange={undefined}
           />
           <div className="w-full flex flex-col gap-2">
             <Calendar label="Date of birth" />
@@ -117,13 +95,12 @@ const SignUp = () => {
               Get a yearly discount on your Birthday.
             </span>
           </div>
-          <div className="w-full tableLr:col-span-2">
+          <FormControl fullWidth className="tableLr:col-span-2">
             <Select
               value={country}
               onChange={handleChange}
               input={<OutlinedInput />}
               MenuProps={MenuProps}
-              className="w-full"
             >
               <MenuItem disabled>Country</MenuItem>
               {countries?.map((cname: any) => (
@@ -137,12 +114,12 @@ const SignUp = () => {
                 </MenuItem>
               ))}
             </Select>
-          </div>
+          </FormControl>
           <div className="w-full h-fit flex gap-2">
             <FOutlinedInput label="Male" _onChange={undefined} />
             <FOutlinedInput label="Female" _onChange={undefined} />
           </div>
-        </form>
+        </div>
         <FormControlLabel
           label="Sign up for emails to get updates from Shop, on products, benefits and offers."
           className="w-full"

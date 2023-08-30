@@ -66,7 +66,7 @@ interface FTextFieldProps {
   type?: string;
   children?: ReactNode;
   _onChange: ChangeEventHandler;
-  name?: string
+  name: string
 }
 
 interface CursorProps {

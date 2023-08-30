@@ -62,7 +62,7 @@ const SignUp = () => {
   const handleSendSUpdates = () => setSendSUpdates((prev) => !prev);
 
   const [formValues, setFormValues] = useState({
-    fullName: '',
+    firstName: '',
     email: '',
     password: '',
     dob: ''
@@ -70,12 +70,7 @@ const SignUp = () => {
 
   const handleInputChange = (e: ChangeEvent) => {
     const inputValue = (e.target as HTMLInputElement);
-    setFormValues(prevFormValues => {
-      return {
-        ...prevFormValues, [inputValue.name]: inputValue.value
-      }
-    })
-    console.log(formValues)
+    inputValue.
   }
 
   return (
@@ -94,22 +89,17 @@ const SignUp = () => {
           <FOutlinedInput
             label="Full name"
             children={<BiUserCheck />}
-            _onChange={handleInputChange}
-            name='fullName'
+            _onChange={undefined}
           />
           <FOutlinedInput
             label="Email"
             children={<MdAlternateEmail />}
-            _onChange={handleInputChange}
-            name='email'
-            type="email"
+            _onChange={undefined}
           />
           <FOutlinedInput
             label="Password"
             children={<AiFillLock />}
-            _onChange={handleInputChange}
-            name='password'
-            type="password"
+            _onChange={undefined}
           />
           <div className="w-full flex flex-col gap-2">
             <Calendar label="Date of birth" />
