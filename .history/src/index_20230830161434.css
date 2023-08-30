@@ -239,6 +239,7 @@ button {
   color: white;
   animation: animateDropdown .5s ease-in;
   opacity: 1;
+  left: 0;
 }
 
 @keyframes animateDropdown {
@@ -246,7 +247,9 @@ button {
     transform: scale(0);
     transform-origin: top left;
     transform-box: fill-box;
+    left: auto;
   } to {
     transform: scale(1);
+    left: auto;
   }
 }

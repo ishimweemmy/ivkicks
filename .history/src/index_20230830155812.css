@@ -236,17 +236,18 @@ button {
 }
 
 .navDropper:hover .navDropdown {
-  color: white;
-  animation: animateDropdown .5s ease-in;
+  color: yellow;
+  /* animation: animateDropdown .5s ease-in; */
+  transform: scale(1);
   opacity: 1;
 }
 
-@keyframes animateDropdown {
+/* @keyframes animateDropdown {
   from {
     transform: scale(0);
-    transform-origin: top left;
-    transform-box: fill-box;
+    transform-origin: top;
+    transform-box: content-box;
   } to {
     transform: scale(1);
   }
-}
+} */

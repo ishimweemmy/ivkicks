@@ -1,6 +1,6 @@
 import { useRef, useState, type FC } from "react";
 import { FiUser, FiShoppingBag, FiMenu } from "react-icons/fi";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { links } from "../../data";
 import { Fade } from "react-reveal";
 import Search from "../Search/Search";
@@ -11,12 +11,10 @@ const Nav: FC = () => {
   const [isDisplayed, setIsDisplayed] = useState<boolean>(false);
   const location = useLocation();
 
-  const [linkClicked, setLinkClicked] = useState(false)
-
   return (
     <Fade delay={300}>
       <nav
-        className={`w-auto h-[6rem] flex items-center justify-around px-[7rem] gap-[12rem] lg:gap-[4rem] lg:px-[2rem] md:justify-between md:px-8 lsm:gap-[25rem] xMiniTablet:gap-[30rem] transition-all z-30 lssm:justify-between lssm:px-4 xl:pl-[5rem] xs:gap-2 xs:p-0 xs:pl-4 xs:justify-between 2xl:pl-[6rem] duration-700`}
+        className={`w-auto h-[6rem] flex items-center justify-around px-[7rem] gap-[12rem] lg:gap-[4rem] lg:px-[2rem] md:justify-between md:px-8 lsm:gap-[25rem] xMiniTablet:gap-[30rem] transition-all overflow-hidden z-30 lssm:justify-between lssm:px-4 xl:pl-[5rem] xs:gap-2 xs:p-0 xs:pl-4 xs:justify-between 2xl:pl-[6rem] duration-700`}
         id="top"
         style={{
           background: `${
@@ -39,33 +37,7 @@ const Nav: FC = () => {
           location.pathname != "/auth/signup" && (
             <div className="hidden lg:flex lg:h-[5rem] flex-grow items-center justify-center gap-[5rem] transition-all self-end">
               {links.map((link) => {
-                if(link.displayName == "Products") {
-                  return <div
-                          className={`text-lg font-medium text-[#FF3C78] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full transition-all duration-700 after:animate-ping relative navDropper `}
-                          style={{
-                            color: `${
-                              location.pathname == "/about" ||
-                              location.pathname == "/products/promoProducts"
-                                ? "white"
-                                : "#0A083A"
-                            }`,
-                            cursor: 'pointer'
-                          }}
-                          key={link.to}
-                        >
-                          {link.displayName}
-                          <div className={`w-fit h-fit p-4 gap-1 ${
-                              location.pathname == "/about" ||
-                              location.pathname == "/products/promoProducts"
-                                ? "bg-[#ffffff50] shadow-[#ffffff2d]"
-                                : "bg-[rgb(10,8,58)] shadow-slate-500"
-                            } rounded-xl absolute top-8 flex flex-col items-center text-sm font-semibold shadow-2xl navDropdown `}>
-                            <Link to={'/products/promoProducts'}>promo products</Link>
-                            <Link to={'/products/collections'}>All products</Link>
-                          </div>
-                        </div>
-                }
-
+                if(link.displayName == "Products") 
                 return (
                   <NavLink
                     to={link.to}

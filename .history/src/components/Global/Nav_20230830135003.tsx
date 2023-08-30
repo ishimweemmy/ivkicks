@@ -4,6 +4,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { links } from "../../data";
 import { Fade } from "react-reveal";
 import Search from "../Search/Search";
+import { FormControl, InputAdornment, MenuItem, OutlinedInput, Select } from "@mui/material";
 
 const Nav: FC = () => {
   const homeLinkRef = useRef<HTMLAnchorElement>(null);
@@ -11,7 +12,9 @@ const Nav: FC = () => {
   const [isDisplayed, setIsDisplayed] = useState<boolean>(false);
   const location = useLocation();
 
-  const [linkClicked, setLinkClicked] = useState(false)
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen((prev) => !prev);
 
   return (
     <Fade delay={300}>
@@ -40,30 +43,65 @@ const Nav: FC = () => {
             <div className="hidden lg:flex lg:h-[5rem] flex-grow items-center justify-center gap-[5rem] transition-all self-end">
               {links.map((link) => {
                 if(link.displayName == "Products") {
-                  return <div
-                          className={`text-lg font-medium text-[#FF3C78] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full transition-all duration-700 after:animate-ping relative navDropper `}
-                          style={{
-                            color: `${
-                              location.pathname == "/about" ||
-                              location.pathname == "/products/promoProducts"
-                                ? "white"
-                                : "#0A083A"
-                            }`,
-                            cursor: 'pointer'
-                          }}
-                          key={link.to}
-                        >
-                          {link.displayName}
-                          <div className={`w-fit h-fit p-4 gap-1 ${
-                              location.pathname == "/about" ||
-                              location.pathname == "/products/promoProducts"
-                                ? "bg-[#ffffff50] shadow-[#ffffff2d]"
-                                : "bg-[rgb(10,8,58)] shadow-slate-500"
-                            } rounded-xl absolute top-8 flex flex-col items-center text-sm font-semibold shadow-2xl navDropdown `}>
-                            <Link to={'/products/promoProducts'}>promo products</Link>
-                            <Link to={'/products/collections'}>All products</Link>
-                          </div>
-                        </div>
+                  // return <div
+                  //         className={`text-lg font-medium text-[#FF3C78] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full transition-all duration-700 after:animate-ping relative `}
+                  //         style={{
+                  //           color: `${
+                  //             location.pathname == "/about" ||
+                  //             location.pathname == "/products/promoProducts"
+                  //               ? "white"
+                  //               : "#0A083A"
+                  //           }`,
+                  //         }}
+                  //         key={link.to}
+                  //       >
+                  //         {link.displayName}
+                  //         <div className={`w-fit h-fit p-4 gap-1 ${
+                  //             location.pathname == "/about" ||
+                  //             location.pathname == "/products/promoProducts"
+                  //               ? "bg-[#ffffff50]"
+                  //               : "bg-[#fff] "
+                  //           } rounded-xl absolute top-8 flex flex-col items-center text-base `}>
+                  //           <span className="">promo products</span>
+                  //           <span className="">All products</span>
+                  //         </div>
+                  //       </div>
+                  return <FormControl className="w-[30%] laptop:w-[40%] medium:w-2/3 tablet:w-1/2">
+                  <Select
+                    className="bg-gray-700 h-[3rem] sMobile:h-[2rem]"
+                    fullWidth
+                    open={open}
+                    input={
+                      <OutlinedInput
+                        className="relative"
+                        onClick={handleOpen}
+                        startAdornment={
+                          <InputAdornment position="start" className="cursor-pointer">
+                            <span className="text-white border-gray-400 pr-2 mr-2 border-r-2 4xl:text-xs sMobile:hidden">
+                              0113 ETH
+                            </span>
+                          </InputAdornment>
+                        }
+                      />
+                    }
+                    inputProps={{
+                      MenuProps: {
+                        MenuListProps: {
+                          sx: {
+                            backgroundColor: "#101011ee",
+                          },
+                        },
+                      },
+                    }}
+                  >
+                    <MenuItem
+                      style={{ color: "white" }}
+                      className="flex items-center justify-center"
+                    >
+                      <Link to="/logout">Disconnect</Link>
+                    </MenuItem>
+                  </Select>
+                </FormControl>
                 }
 
                 return (

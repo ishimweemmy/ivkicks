@@ -49,7 +49,6 @@ const Nav: FC = () => {
                                 ? "white"
                                 : "#0A083A"
                             }`,
-                            cursor: 'pointer'
                           }}
                           key={link.to}
                         >

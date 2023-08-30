@@ -232,21 +232,9 @@ button {
 .navDropdown {
   transition: 2s ease;
   cursor: pointer;
-  opacity: 0;
 }
 
 .navDropper:hover .navDropdown {
-  color: white;
-  animation: animateDropdown .5s ease-in;
-  opacity: 1;
-}
-
-@keyframes animateDropdown {
-  from {
-    transform: scale(0);
-    transform-origin: top left;
-    transform-box: fill-box;
-  } to {
-    transform: scale(1);
-  }
+  color: yellow;
+  animation: animateDropdown;
 }

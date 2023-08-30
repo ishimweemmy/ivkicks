@@ -239,6 +239,7 @@ button {
   color: white;
   animation: animateDropdown .5s ease-in;
   opacity: 1;
+  z-index: ;
 }
 
 @keyframes animateDropdown {

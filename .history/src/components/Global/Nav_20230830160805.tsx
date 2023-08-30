@@ -11,8 +11,6 @@ const Nav: FC = () => {
   const [isDisplayed, setIsDisplayed] = useState<boolean>(false);
   const location = useLocation();
 
-  const [linkClicked, setLinkClicked] = useState(false)
-
   return (
     <Fade delay={300}>
       <nav
@@ -49,7 +47,6 @@ const Nav: FC = () => {
                                 ? "white"
                                 : "#0A083A"
                             }`,
-                            cursor: 'pointer'
                           }}
                           key={link.to}
                         >

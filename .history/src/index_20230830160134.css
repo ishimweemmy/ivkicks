@@ -244,7 +244,7 @@ button {
 @keyframes animateDropdown {
   from {
     transform: scale(0);
-    transform-origin: top left;
+    transform-origin: bottom;
     transform-box: fill-box;
   } to {
     transform: scale(1);

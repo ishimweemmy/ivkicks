@@ -1,6 +1,6 @@
 import { useRef, useState, type FC } from "react";
 import { FiUser, FiShoppingBag, FiMenu } from "react-icons/fi";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { links } from "../../data";
 import { Fade } from "react-reveal";
 import Search from "../Search/Search";
@@ -10,8 +10,6 @@ const Nav: FC = () => {
 
   const [isDisplayed, setIsDisplayed] = useState<boolean>(false);
   const location = useLocation();
-
-  const [linkClicked, setLinkClicked] = useState(false)
 
   return (
     <Fade delay={300}>
@@ -40,30 +38,30 @@ const Nav: FC = () => {
             <div className="hidden lg:flex lg:h-[5rem] flex-grow items-center justify-center gap-[5rem] transition-all self-end">
               {links.map((link) => {
                 if(link.displayName == "Products") {
-                  return <div
-                          className={`text-lg font-medium text-[#FF3C78] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full transition-all duration-700 after:animate-ping relative navDropper `}
-                          style={{
-                            color: `${
-                              location.pathname == "/about" ||
-                              location.pathname == "/products/promoProducts"
-                                ? "white"
-                                : "#0A083A"
-                            }`,
-                            cursor: 'pointer'
-                          }}
-                          key={link.to}
-                        >
-                          {link.displayName}
-                          <div className={`w-fit h-fit p-4 gap-1 ${
-                              location.pathname == "/about" ||
-                              location.pathname == "/products/promoProducts"
-                                ? "bg-[#ffffff50] shadow-[#ffffff2d]"
-                                : "bg-[rgb(10,8,58)] shadow-slate-500"
-                            } rounded-xl absolute top-8 flex flex-col items-center text-sm font-semibold shadow-2xl navDropdown `}>
-                            <Link to={'/products/promoProducts'}>promo products</Link>
-                            <Link to={'/products/collections'}>All products</Link>
-                          </div>
-                        </div>
+                  // return <div
+                  //         className={`text-lg font-medium text-[#FF3C78] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full transition-all duration-700 after:animate-ping relative `}
+                  //         style={{
+                  //           color: `${
+                  //             location.pathname == "/about" ||
+                  //             location.pathname == "/products/promoProducts"
+                  //               ? "white"
+                  //               : "#0A083A"
+                  //           }`,
+                  //         }}
+                  //         key={link.to}
+                  //       >
+                  //         {link.displayName}
+                  //         <div className={`w-fit h-fit p-4 gap-1 ${
+                  //             location.pathname == "/about" ||
+                  //             location.pathname == "/products/promoProducts"
+                  //               ? "bg-[#ffffff50]"
+                  //               : "bg-[#fff] "
+                  //           } rounded-xl absolute top-8 flex flex-col items-center text-base `}>
+                  //           <span className="">promo products</span>
+                  //           <span className="">All products</span>
+                  //         </div>
+                  //       </div>
+                  return 
                 }
 
                 return (

@@ -49,7 +49,6 @@ const Nav: FC = () => {
                                 ? "white"
                                 : "#0A083A"
                             }`,
-                            cursor: 'pointer'
                           }}
                           key={link.to}
                         >
@@ -60,8 +59,8 @@ const Nav: FC = () => {
                                 ? "bg-[#ffffff50] shadow-[#ffffff2d]"
                                 : "bg-[rgb(10,8,58)] shadow-slate-500"
                             } rounded-xl absolute top-8 flex flex-col items-center text-sm font-semibold shadow-2xl navDropdown `}>
-                            <Link to={'/products/promoProducts'}>promo products</Link>
-                            <Link to={'/products/collections'}>All products</Link>
+                            <Link to={'/products/promoProducts'} onClick={() => setLinkClicked(true)}>promo products</Link>
+                            <Link to={'/products/collections'} onClick={() => setLinkClicked(true)}>All products</Link>
                           </div>
                         </div>
                 }

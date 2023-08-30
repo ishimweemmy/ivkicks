@@ -233,12 +233,14 @@ button {
   transition: 2s ease;
   cursor: pointer;
   opacity: 0;
+  top: 4rem;
 }
 
 .navDropper:hover .navDropdown {
   color: white;
   animation: animateDropdown .5s ease-in;
   opacity: 1;
+  top: 2rem;
 }
 
 @keyframes animateDropdown {

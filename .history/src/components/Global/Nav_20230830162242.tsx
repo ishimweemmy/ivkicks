@@ -41,7 +41,7 @@ const Nav: FC = () => {
               {links.map((link) => {
                 if(link.displayName == "Products") {
                   return <div
-                          className={`text-lg font-medium text-[#FF3C78] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full transition-all duration-700 after:animate-ping relative navDropper `}
+                          className={`text-lg font-medium text-[#FF3C78] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full after:animate-ping relative navDropper `}
                           style={{
                             color: `${
                               location.pathname == "/about" ||
@@ -59,7 +59,7 @@ const Nav: FC = () => {
                               location.pathname == "/products/promoProducts"
                                 ? "bg-[#ffffff50] shadow-[#ffffff2d]"
                                 : "bg-[rgb(10,8,58)] shadow-slate-500"
-                            } rounded-xl absolute top-8 flex flex-col items-center text-sm font-semibold shadow-2xl navDropdown `}>
+                            } rounded-xl absolute flex flex-col items-center text-sm font-semibold shadow-2xl navDropdown `}>
                             <Link to={'/products/promoProducts'}>promo products</Link>
                             <Link to={'/products/collections'}>All products</Link>
                           </div>

@@ -1,6 +1,6 @@
 import { useRef, useState, type FC } from "react";
 import { FiUser, FiShoppingBag, FiMenu } from "react-icons/fi";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { links } from "../../data";
 import { Fade } from "react-reveal";
 import Search from "../Search/Search";
@@ -10,8 +10,6 @@ const Nav: FC = () => {
 
   const [isDisplayed, setIsDisplayed] = useState<boolean>(false);
   const location = useLocation();
-
-  const [linkClicked, setLinkClicked] = useState(false)
 
   return (
     <Fade delay={300}>
@@ -49,7 +47,6 @@ const Nav: FC = () => {
                                 ? "white"
                                 : "#0A083A"
                             }`,
-                            cursor: 'pointer'
                           }}
                           key={link.to}
                         >
@@ -59,9 +56,9 @@ const Nav: FC = () => {
                               location.pathname == "/products/promoProducts"
                                 ? "bg-[#ffffff50] shadow-[#ffffff2d]"
                                 : "bg-[rgb(10,8,58)] shadow-slate-500"
-                            } rounded-xl absolute top-8 flex flex-col items-center text-sm font-semibold shadow-2xl navDropdown `}>
-                            <Link to={'/products/promoProducts'}>promo products</Link>
-                            <Link to={'/products/collections'}>All products</Link>
+                            } rounded-xl absolute top-8 flex flex-col items-center text-base shadow-2xl navDropdown `}>
+                            <span>promo products</span>
+                            <span >All products</span>
                           </div>
                         </div>
                 }
