@@ -46,13 +46,14 @@ const Brands = () => {
             src={import.meta.env.VITE_MEDIA_STORAGE_URL! +"leftIcon.png"}
             alt="leftIcon"
             className="w-2  hidden lg:block"
-            onClick={() => swipingButtonRefNext.current?.click()}
+            onClick={() => swipingButtonRefPrev.current?.click()}
           />
           <Swiper
             modules={[Pagination]}
             slidesPerView={!mobile ? 2 : 4}
             className="w-full h-[50%] md:w-[90%] sm:h-[40%] miniTablet:h-[40%] lg:h-[50%]"
             spaceBetween={10}
+            loop
           >
             {brandLogosData.map((brand) => {
               const { id, imgSrc } = brand;
@@ -73,7 +74,7 @@ const Brands = () => {
             src={import.meta.env.VITE_MEDIA_STORAGE_URL! +"rightIcon.png"}
             alt="leftIcon"
             className="w-2  hidden lg:block"
-            onClick={() => swipingButtonRefPrev.current?.click()}
+            onClick={() => swipingButtonRefNext.current?.click()}
           />
           <div className="w-full h-8 flex self-center gap-4 items-center justify-center lg:hidden">
             <img

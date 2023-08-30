@@ -1,31 +1,31 @@
 [
     {
         "id": 1,
-        "imgSrc": "https://storage.cloud.google.com/kicks/women3.jpg",
+        "imgSrc": "/server-assets/women3.jpg",
         "categoryName": "Performance",
         "productsNbr": 120
     },
     {
         "id": 2,
-        "imgSrc": "https://storage.cloud.google.com/kicks/women1.jpg",
+        "imgSrc": "/server-assets/women1.jpg",
         "categoryName": "Streetwear",
         "productsNbr": 45
     },
     {
         "id": 3,
-        "imgSrc": "https://storage.cloud.google.com/kicks/women.jpg",
+        "imgSrc": "/server-assets/women.jpg",
         "categoryName": "Performance",
         "productsNbr": 200
     },
     {
         "id": 4,
-        "imgSrc": "https://storage.cloud.google.com/kicks/women3.jpg",
+        "imgSrc": "/server-assets/women3.jpg",
         "categoryName": "Streetwear",
         "productsNbr": 100
     },
     {
         "id": 5,
-        "imgSrc": "https://storage.cloud.google.com/kicks/women1.jpg",
+        "imgSrc": "/server-assets/women1.jpg",
         "categoryName": "Performance",
         "productsNbr": 20
     }

@@ -2,28 +2,28 @@
     {
         "collectionName": "Sneakers",
         "nbrOfProducts": 89,
-        "imgSource": "https://storage.cloud.google.com/kicks/arrival3.png",
+        "imgSource": "/server-assets/arrival3.png",
         "indexId": 0,
         "collectionPath": "/2"
     },
     {
         "collectionName": "football",
         "nbrOfProducts": 120,
-        "imgSource": "https://storage.cloud.google.com/kicks/football1.png",
+        "imgSource": "/server-assets/football1.png",
         "indexId": 1,
         "collectionPath": "/2"
     },
     {
         "collectionName": "Volleyball",
         "nbrOfProducts": 200,
-        "imgSource": "https://storage.cloud.google.com/kicks/volley1.png",
+        "imgSource": "/server-assets/volley1.png",
         "indexId": 2,
         "collectionPath": "/2"
     },
     {
         "collectionName": "Basketball",
         "nbrOfProducts": 72,
-        "imgSource": "https://storage.cloud.google.com/kicks/football1.png",
+        "imgSource": "/server-assets/football1.png",
         "indexId": 3,
         "collectionPath": "/2"
     }

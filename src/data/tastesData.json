@@ -1,20 +1,21 @@
 [
     {
-        "imgSrc": "https://storage.cloud.google.com/kicks/performance.png",
+        "imgSrc": "/server-assets/performance.png",
         "heading": "performance",
         "content": "Bust any of these sneakers you may like and enjoy how performant they are",
         "id": 1
     },
     {
-        "imgSrc": "https://storage.cloud.google.com/kicks/running.png",
+        "imgSrc": "/server-assets/running.png",
         "heading": "Running",
         "content": "Bust any of these sneakers you may like and enjoy how they ease running and performant they are",
         "id": 2
     },
     {
-        "imgSrc": "https://storage.cloud.google.com/kicks/football.png",
+        "imgSrc": "/server-assets/football.png",
         "heading": "Football",
         "content": "Bust any of these sneakers you may like and enjoy how football friendly and performant they are. ",
         "id": 3
     }
 ]
+

@@ -1,16 +1,16 @@
 [
   {
-    "imgSrc": "https://storage.cloud.google.com/kicks/handShake.svg",
+    "imgSrc": "/server-assets/handShake.svg",
     "description": "founded",
     "degree": 2014
   },
   {
-    "imgSrc": "https://storage.cloud.google.com/kicks/clients.svg",
+    "imgSrc": "/server-assets/clients.svg",
     "description": "clients",
     "degree": 2000
   },
   {
-    "imgSrc": "https://storage.cloud.google.com/kicks/delivered.svg",
+    "imgSrc": "/server-assets/delivered.svg",
     "description": "Countries delivered",
     "degree": 20
   }

@@ -2,28 +2,28 @@
     {
         "company": "Nike",
         "name": "Woman nike socks ",
-        "imgSrc": "https://storage.cloud.google.com/kicks/thelook2.jpg",
+        "imgSrc": "/server-assets/thelook2.jpg",
         "price": 120.5,
         "id": 1
     },
     {
         "company": "Adidas ",
         "name": "Adidas man T-shirt",
-        "imgSrc": "https://storage.cloud.google.com/kicks/thelook3.jpg",
+        "imgSrc": "/server-assets/thelook3.jpg",
         "price": 42,
         "id": 2
     },
     {
         "company": "Nike",
         "name": "Man nike white hoodie",
-        "imgSrc": "https://storage.cloud.google.com/kicks/thelook7.jpg",
+        "imgSrc": "/server-assets/thelook7.jpg",
         "price": 68,
         "id": 3
     },
     {
         "company": "Nike",
         "name": "Man nike white hoodie",
-        "imgSrc": "https://storage.cloud.google.com/kicks/thelook5.jpg",
+        "imgSrc": "/server-assets/thelook5.jpg",
         "price": 68,
         "id": 4
     }

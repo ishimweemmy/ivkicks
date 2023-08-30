@@ -37,6 +37,8 @@ const Nav: FC = () => {
           location.pathname != "/auth/signup" && (
             <div className="hidden lg:flex lg:h-[5rem] flex-grow items-center justify-center gap-[5rem] transition-all self-end">
               {links.map((link) => {
+
+                if (link.displayName == 'Products') return <div className="relative text-yellow-100 cursor-pointer">{link.displayName}</div> 
                 return (
                   <NavLink
                     to={link.to}

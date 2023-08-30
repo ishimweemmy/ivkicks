@@ -17,19 +17,20 @@ const SearchModal: FC<SearchModalProps> = (props) => {
 
   const [searchValue, setSearchValue] = useState("");
 
-  const handleChange = (e: ChangeEvent) =>
-    useCallback(() => {
+  const handleChange = useCallback(
+    (e: ChangeEvent) => {
       const target = e.target as HTMLInputElement;
 
       setSearchValue(target.value);
-    }, [searchValue]);
+      console.log(searchValue);
+    },
+    [searchValue]
+  );
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) =>
-    useCallback(() => {
-      console.log((e.target as HTMLInputElement).value);
-      const navigate = useNavigate();
-      navigate("/search");
-    }, []);
+  const handleSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
+    const navigate = useNavigate();
+    navigate("/search");
+  }, []);
 
   return (
     <Modal
@@ -67,7 +68,7 @@ const SearchModal: FC<SearchModalProps> = (props) => {
         <div className="w-full h-fit grid gap-4 mt-[2rem]">
           <div className="w-full h-[6rem] flex gap-3">
             <img
-              src={import.meta.env.VITE_MEDIA_STORAGE_URL! +"nikeShoes.jpg"}
+              src={import.meta.env.VITE_MEDIA_STORAGE_URL! + "nikeShoes.jpg"}
               alt=""
               className="w-[30%] h-full rounded-md"
             />

@@ -1,18 +1,18 @@
 [
     {
         "id": 0,
-        "imgSrc": "https://storage.cloud.google.com/kicks/nike.png"
+        "imgSrc": "/server-assets/nike.png"
     },
     {
         "id": 1,
-        "imgSrc": "https://storage.cloud.google.com/kicks/newBalance.png"
+        "imgSrc": "/server-assets/newBalance.png"
     },
     {
         "id": 2,
-        "imgSrc": "https://storage.cloud.google.com/kicks/adidas.png"
+        "imgSrc": "/server-assets/adidas.png"
     },
     {
         "id": 3,
-        "imgSrc": "https://storage.cloud.google.com/kicks/horse.png"
+        "imgSrc": "/server-assets/horse.png"
     }
 ]
