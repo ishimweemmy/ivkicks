@@ -114,7 +114,6 @@ module.exports = {
       },
       gradientColorStops: {},
     },
-    cursor: "/assets",
     backgroundPosition: {
       "right-bottom": "3.5rem 7rem",
     },

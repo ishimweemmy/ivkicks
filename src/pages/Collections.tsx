@@ -354,7 +354,6 @@ const Collections = () => {
                 return (
                   <Accordion
                     style={{
-                      cursor: `none`,
                       boxShadow: `none`,
                       background: `#ffffff`,
                     }}

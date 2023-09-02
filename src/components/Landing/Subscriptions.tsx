@@ -91,7 +91,6 @@ const Subscriptions: FC<PageProps> = (props) => {
               //     !emailValid || email == "" ? "not-allowed" : ""
               //   }`,
               // }}
-              style={{ cursor: "none" }}
             >
               Subscribe
             </button>

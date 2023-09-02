@@ -13,7 +13,6 @@ const FacAccordion: FC<AccordionProps1> = (props) => {
           expanded={expanded}
           onChange={handleChange(panel)}
           style={{
-            cursor: `none`,
             boxShadow: `none`,
             background: `${page == "product" ? "white" : "#f5f5f5"}`,
             borderRadius: 0,

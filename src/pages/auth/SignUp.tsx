@@ -4,7 +4,6 @@ import { BiUserCheck } from "react-icons/bi";
 import { MdAlternateEmail } from "react-icons/md";
 import {
   Checkbox,
-  FormControl,
   FormControlLabel,
   MenuItem,
   OutlinedInput,
@@ -69,13 +68,13 @@ const SignUp = () => {
   })
 
   const handleInputChange = (e: ChangeEvent) => {
-    const inputValue = (e.target as HTMLInputElement);
+    const input = (e.target as HTMLInputElement);
     setFormValues(prevFormValues => {
+      console.log({...prevFormValues, [input.name]: input.value})
       return {
-        ...prevFormValues, [inputValue.name]: inputValue.value
+        ...prevFormValues, [input.name]: input.value
       }
     })
-    console.log(formValues)
   }
 
   return (
