@@ -144,7 +144,7 @@ interface CollectionProps {
 
 interface FeaturedProInterface extends ParentProps {
   rating: number;
-  price: number;
+  price: Number;
   indexId: number;
   from?: string;
 }
