@@ -20,6 +20,8 @@
     "@mui/x-date-pickers": "^6.2.1",
     "@reduxjs/toolkit": "^1.9.3",
     "apexcharts": "^3.36.3",
+    "browserslist": "^4.22.2",
+    "caniuse-lite": "^1.0.30001579",
     "cloudinary": "^1.33.0",
     "cloudinary-react": "^1.8.1",
     "moment": "^2.29.4",
