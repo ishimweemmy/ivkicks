@@ -84,13 +84,7 @@ const Subscriptions: FC<PageProps> = (props) => {
               {emailValid || email == "" ? "" : "Please input valid email"}
             </span>
             <button
-              // disabled={!emailValid || email == ""}
               className={`w-full text-white h-1/2 bg-[#315BFF] text-lg font-semibold uppercase`}
-              // style={{
-              //   cursor: `${
-              //     !emailValid || email == "" ? "not-allowed" : ""
-              //   }`,
-              // }}
             >
               Subscribe
             </button>

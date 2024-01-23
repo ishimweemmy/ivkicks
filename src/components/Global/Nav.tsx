@@ -41,15 +41,14 @@ const Nav: FC = () => {
               {links.map((link) => {
                 if(link.displayName == "Products") {
                   return <div
-                          className={`text-lg font-medium text-[#FF3C78] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full transition-all duration-700 after:animate-ping relative navDropper `}
+                          className={`text-lg font-medium text-[#FF3C78] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full transition-all duration-700 after:animate-ping relative cursor-pointer navDropper `}
                           style={{
                             color: `${
                               location.pathname == "/about" ||
                               location.pathname == "/products/promoProducts"
                                 ? "white"
                                 : "#0A083A"
-                            }`,
-                            cursor: 'pointer'
+                            }`
                           }}
                           key={link.to}
                         >
